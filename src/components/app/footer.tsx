@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import classNames from 'classnames'
 
 const Footer = () => {
   return (
@@ -55,7 +54,7 @@ const Footer = () => {
             <form className="flex flex-col mt-6 space-y-4">
               <input
                 type="text"
-                className="h-[70px] px-5 text-xl 2xl:text-2xl"
+                className="h-[70px] px-5 text-xl 2xl:text-2xl border"
                 placeholder="Enter your email address"
               />
               <button
@@ -66,6 +65,22 @@ const Footer = () => {
               </button>
             </form>
           </div>
+        </div>
+        <div className="flex justify-between w-full pt-4 text-lg border-t mt-14 2xl:text-2xl">
+          <div className="text-black/50">
+            Copyright © 2021 Jamie O’Brien. All rights reserved.
+          </div>
+          <ul className="flex items-center space-x-4 flex-nowrap">
+            {footerAuxiliaryLinks.map((item, index) => {
+              return (
+                <li className="flex items-center before:w-px before:h-3 before:bg-black/20 before:block before:mr-4 first:before:hidden">
+                  <Link href={item.path}>
+                    <a>{item.title}</a>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </div>
     </footer>
@@ -79,6 +94,13 @@ const footerNavLinks = [
   {title: 'Psych Mag', path: '/psych-mag'},
   {title: 'About Jamie', path: '/about'},
   {title: 'Contact', path: '/contact'},
+]
+
+const footerAuxiliaryLinks = [
+  {title: 'Privacy Policy', path: '/privacy-policy'},
+  {title: 'Terms of Use', path: '/terms-of-use'},
+  {title: 'Legal', path: '/legal'},
+  {title: 'Site Map', path: '/site-map'},
 ]
 
 const footerSocialLinks = [
