@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 const bodyFontFamily = '"Open Sans", sans-serif'
+const headingsFontFamily = '"Impact", sans-serif'
 
 module.exports = {
   content: [
@@ -11,9 +12,12 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
+      pink: '#ff119a',
+      blue: '#11c2ff',
     },
     fontFamily: {
       body: bodyFontFamily,
+      headings: headingsFontFamily,
     },
     container: {
       center: true,

@@ -1,5 +1,6 @@
 import React, {WheelEvent} from 'react'
 import type {NextPage} from 'next'
+import PageLayout from 'components/layouts/page-layout'
 
 import VideoEmbed from 'components/video-embed'
 
@@ -32,66 +33,38 @@ const Home: NextPage = () => {
   })
 
   return (
-    <div className="max-w-[1980px] mx-auto">
-      <div
-        className="relative flex justify-center w-full h-screen flex-nowrap touch-none"
-        onWheel={changeWidth}
-        onTouchMove={(e) => console.log('e:', e)}
-      >
-        <div className="relative w-1/2 overflow-hidden shrink-0">
-          <VideoEmbed
-            src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06B_Bali_1080p_013_preview.mp4"
-            className="absolute left-0"
-          />
-        </div>
+    <PageLayout>
+      <div className="max-w-[1980px] mx-auto">
         <div
-          className="absolute top-0 z-10 flex justify-center w-1/3 h-full overflow-hidden"
-          style={{width: `${currentWidth}%`}}
+          className="relative flex justify-center w-full flex-nowrap touch-none full-screen-height"
+          onWheel={changeWidth}
+          onTouchMove={(e) => console.log('e:', e)}
         >
-          <VideoEmbed
-            src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
-            className="absolute"
-          />
+          <div className="relative w-1/2 overflow-hidden shrink-0">
+            <VideoEmbed
+              src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06B_Bali_1080p_013_preview.mp4"
+              className="absolute left-0"
+            />
+          </div>
+          <div
+            className="absolute top-0 z-10 flex justify-center w-1/3 h-full overflow-hidden"
+            style={{width: `${currentWidth}%`}}
+          >
+            <VideoEmbed
+              src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
+              className="absolute"
+            />
+          </div>
+          <div className="relative w-1/2 overflow-hidden shrink-0">
+            <VideoEmbed
+              src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_13B_Bali_1080p_005_preview.mp4"
+              className="absolute right-0"
+            />
+          </div>
         </div>
-        <div className="relative w-1/2 overflow-hidden shrink-0">
-          <VideoEmbed
-            src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_13B_Bali_1080p_005_preview.mp4"
-            className="absolute right-0"
-          />
-        </div>
+        <h1 className="my-48 text-6xl text-center">Some content below</h1>
       </div>
-      <h1 className="my-48 text-6xl text-center">Some content below</h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus in
-      suscipit dolor modi quaerat, facilis illo quam, voluptatem magni nesciunt
-      voluptas pariatur assumenda adipisci qui, ratione velit ullam ut illum.
-    </div>
+    </PageLayout>
   )
 }
 
