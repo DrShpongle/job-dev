@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 
   return (
     <PageLayout>
-      <div className="max-w-[1504px] mx-auto">
+      <div className="max-w-[1496px] mx-auto">
         <div
           className="relative flex justify-center w-full flex-nowrap touch-none full-screen-height"
           onWheel={changeWidth}

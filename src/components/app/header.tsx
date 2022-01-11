@@ -3,19 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-const navLinks = [
-  {title: 'Surf App', path: '/surf-app'},
-  {title: 'Surf Experience', path: '/surf-experience'},
-  {title: 'Surf Store', path: '/surf-store'},
-  {title: 'Psych Mag', path: '/psych-mag'},
-  {title: 'About Jamie', path: '/about'},
-  {title: 'Contact', path: '/contact'},
-]
-
 const Header = () => {
   const router = useRouter()
   return (
-    <header className="h-20 py-5 border-b px-9">
+    <header className="h-20 py-5 px-9">
       <div className="container">
         <div className="flex items-center justify-between">
           <Link href="/">
@@ -53,3 +44,12 @@ const Header = () => {
 }
 
 export default Header
+
+const navLinks = [
+  {title: 'Surf App', path: '/surf-app'},
+  {title: 'Surf Experience', path: '/surf-experience'},
+  {title: 'Surf Store', path: '/surf-store'},
+  {title: 'Psych Mag', path: '/psych-mag'},
+  {title: 'About Jamie', path: '/about'},
+  {title: 'Contact', path: '/contact'},
+]

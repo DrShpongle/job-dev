@@ -15,6 +15,7 @@ module.exports = {
       ...colors,
       pink: '#ff119a',
       blue: '#11c2ff',
+      gray: '#f8f8f8',
     },
     fontFamily: {
       body: bodyFontFamily,
@@ -24,7 +25,7 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: '1.25rem',
       },
     },
     extend: {},

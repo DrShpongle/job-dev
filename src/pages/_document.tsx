@@ -40,7 +40,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
-        <body className="w-full text-dark dark:text-white font-body dark:bg-black">
+        <body className="w-full leading-normal font-body">
           <Main />
           <NextScript />
         </body>
