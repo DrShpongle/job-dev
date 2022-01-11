@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 
 const bodyFontFamily = '"Open Sans", sans-serif'
 const headingsFontFamily = '"Impact", sans-serif'
+const accentedFontFamily = '"Surf Up"'
 
 module.exports = {
   content: [
@@ -18,11 +19,12 @@ module.exports = {
     fontFamily: {
       body: bodyFontFamily,
       headings: headingsFontFamily,
+      accented: accentedFontFamily,
     },
     container: {
       center: true,
       padding: {
-        DEFAULT: '1.25rem',
+        DEFAULT: '1rem',
       },
     },
     extend: {},

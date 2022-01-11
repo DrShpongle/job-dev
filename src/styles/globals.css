@@ -23,6 +23,22 @@
   }
 }
 
+@font-face {
+  font-family: 'Surf Up';
+  src: url('/fonts/surf-up.otf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Impact';
+  src: url('/fonts/impact.otf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

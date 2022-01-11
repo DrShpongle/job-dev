@@ -28,9 +28,16 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
           />
           <link
-            href="https://www.dafontfree.net/embed/aW1wYWN0LXJlZ3VsYXImZGF0YS8yNS9pLzEyOTYxMi9pbXBhY3QudHRm"
-            rel="stylesheet"
-            type="text/css"
+            rel="preload"
+            href="/fonts/surf-up.otf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/impact.otf"
+            as="font"
+            crossOrigin=""
           />
         </Head>
         <body className="w-full text-dark dark:text-white font-body dark:bg-black">

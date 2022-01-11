@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 
   return (
     <PageLayout>
-      <div className="max-w-[1980px] mx-auto">
+      <div className="max-w-[1504px] mx-auto">
         <div
           className="relative flex justify-center w-full flex-nowrap touch-none full-screen-height"
           onWheel={changeWidth}
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
               className="absolute"
             />
-            <div className="absolute flex flex-col text-white text-xl bottom-0 space-y-4 items-center">
+            <div className="absolute bottom-0 flex flex-col items-center space-y-4 text-xl text-white">
               <span>scroll down</span>
               <div className="w-px h-10 bg-white" />
             </div>
