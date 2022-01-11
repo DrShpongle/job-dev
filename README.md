@@ -1,10 +1,3 @@
-This is a [Next.js](https://nextjs.org/) blog starter that is TypeScript based and includes next features:
-
-- tailwindcss (with **@tailwindcss/typography**)
-- MDX support (with **@next/mdx** and **next-mdx-remote** and frontmatter support with **gray-matter**)
-- blog implemented (with posts pagination)
-- light/dark mode implemented
-
 ## Getting Started
 
 First, run the development server:
