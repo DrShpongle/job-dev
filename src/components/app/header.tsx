@@ -15,7 +15,7 @@ const navLinks = [
 const Header = () => {
   const router = useRouter()
   return (
-    <header className="px-9 py-5 border-b">
+    <header className="px-9 py-5 border-b h-20">
       <div className="flex items-center justify-between">
         <Link href="/">
           <a className="flex shrink-0 relative w-[110px] h-[23px] md:w-[132px] md:h-[28px] 2xl:w-[198px] 2xl:h-[42px]">

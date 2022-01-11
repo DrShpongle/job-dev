@@ -29,5 +29,5 @@ body {
 }
 
 .full-screen-height {
-  height: calc(100vh - 81px);
+  height: calc(100vh - 80px);
 }

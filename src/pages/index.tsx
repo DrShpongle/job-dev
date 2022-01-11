@@ -54,6 +54,10 @@ const Home: NextPage = () => {
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
               className="absolute"
             />
+            <div className="absolute flex flex-col text-white text-xl bottom-0 space-y-4 items-center">
+              <span>scroll down</span>
+              <div className="w-px h-10 bg-white" />
+            </div>
           </div>
           <div className="relative w-1/2 overflow-hidden shrink-0">
             <VideoEmbed
