@@ -9,7 +9,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="grow">{children}</main>
-      <div className="mb-16">
+      <div className="mt-24 mb-16">
         <div className="container">
           <Partnered />
         </div>

@@ -73,7 +73,10 @@ const Footer = () => {
           <ul className="flex items-center space-x-4 flex-nowrap">
             {footerAuxiliaryLinks.map((item, index) => {
               return (
-                <li className="flex items-center before:w-px before:h-3 before:bg-black/20 before:block before:mr-4 first:before:hidden">
+                <li
+                  key={index}
+                  className="flex items-center before:w-px before:h-3 before:bg-black/20 before:block before:mr-4 first:before:hidden"
+                >
                   <Link href={item.path}>
                     <a>{item.title}</a>
                   </Link>

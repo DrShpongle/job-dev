@@ -13,10 +13,7 @@ const VideoEmbed: React.FC<{src: string; className?: string}> = ({
       loop
       muted
       playsInline
-      className={classNames(
-        'object-fill object-right-bottom h-full max-w-none',
-        className,
-      )}
+      className={classNames('object-cover w-full h-full', className)}
     />
   </>
 )
