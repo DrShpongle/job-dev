@@ -32,7 +32,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.full-screen-height {
-  height: calc(100vh - 80px);
-}
