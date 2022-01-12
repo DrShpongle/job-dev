@@ -17,11 +17,11 @@ const Partnered = () => {
           return (
             <a
               key={index}
-              className="block p-8 cell-with-border group"
+              className="block p-8 xl:p-12 2xl:p-14 cell-with-border group"
               href={logo.url}
               target="_blank"
             >
-              <div className="relative duration-150 aspect-square group-hover:scale-125">
+              <div className="relative duration-300 ease-in aspect-square group-hover:scale-125">
                 <Image src={logo.path} layout="fill" objectFit="contain" />
               </div>
             </a>
