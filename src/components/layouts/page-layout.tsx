@@ -4,7 +4,22 @@ import Header from 'components/app/header'
 import Footer from 'components/app/footer'
 import Partnered from 'components/partnered'
 
+const handleResize = () => {
+  let value = '100vh'
+  if (window.innerWidth <= 1366) {
+    value = `${window.innerHeight}px`
+  }
+  document.documentElement.style.setProperty('--real100vh', value)
+}
+
 const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
+  React.useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

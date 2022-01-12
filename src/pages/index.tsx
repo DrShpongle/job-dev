@@ -1,15 +1,12 @@
 import React from 'react'
 import type {NextPage} from 'next'
 import Image from 'next/image'
-import {motion, useViewportScroll} from 'framer-motion'
 
 import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/hero-sections/scrollable-hero'
 import VideoEmbed from 'components/video-embed'
 
 const Home: NextPage = () => {
-  const {scrollYProgress} = useViewportScroll()
-  console.log('scrollYProgress:', scrollYProgress)
   return (
     <PageLayout>
       <div className="max-w-[1980px] mx-auto">
@@ -70,9 +67,9 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <motion.div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2">
+          <div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2">
             <Image src="/images/iphone-frame.png" width={640} height={1292} />
-          </motion.div>
+          </div>
         </div>
       </div>
     </PageLayout>

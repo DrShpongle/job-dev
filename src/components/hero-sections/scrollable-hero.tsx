@@ -35,7 +35,7 @@ const ScrollableHero: React.FC = () => {
       <style jsx>
         {`
           .full-screen-height {
-            height: calc(100vh - 80px);
+            height: calc(var(--real100vh) - 80px);
           }
         `}
       </style>

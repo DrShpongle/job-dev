@@ -28,6 +28,10 @@
   font-display: swap;
 }
 
+:root {
+  --real100vh: 100vh;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
