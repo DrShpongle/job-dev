@@ -12,16 +12,16 @@ const Partnered = () => {
         `}
       </style>
       <h3 className="text-[2.5rem]">Proud to be partnered with&hellip;</h3>
-      <div className="grid grid-cols-5 mt-8 gap-[1px] p-[1px]">
+      <div className="grid grid-cols-5 mt-8 gap-[1px] p-[1px] overflow-hidden">
         {partneredLogos.map((logo, index) => {
           return (
             <a
               key={index}
-              className="block p-8 cell-with-border"
+              className="block p-8 cell-with-border group"
               href={logo.url}
               target="_blank"
             >
-              <div className="relative aspect-square">
+              <div className="relative duration-150 aspect-square group-hover:scale-125">
                 <Image src={logo.path} layout="fill" objectFit="contain" />
               </div>
             </a>
