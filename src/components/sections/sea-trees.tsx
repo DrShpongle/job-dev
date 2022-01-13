@@ -68,7 +68,7 @@ const SeaTrees = () => {
           className="self-end"
         />
       </div>
-      <div className="mt-14 md:mt-20 lg:mt-0 lg:w-1/2 xl:w-2/5 3xl:pl-10">
+      <div className="mt-14 md:mt-20 lg:mt-0 lg:w-1/2 xl:w-2/5">
         <Description />
       </div>
     </div>
