@@ -35,7 +35,7 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href="/fonts/impact.otf"
+            href="/fonts/impact.ttf"
             as="font"
             crossOrigin=""
           />
