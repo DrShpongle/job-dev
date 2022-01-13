@@ -34,7 +34,7 @@ const Description: React.FC<{
           SeaTrees
         </h3>
       </div>
-      <p className="text-lg md:text-xl lg:text-2xl leading-relaxed xl:text-[28px] 2xl:text-[34px]">
+      <p className="text-lg md:text-xl lg:text-2xl xl:leading-relaxed xl:text-[28px] 2xl:text-[34px]">
         Jamie O’Brien has partnered with the SeaTrees initiative to directly
         support communities planting and protecting blue-carbon coastal
         ecosystems. The most effective way to suck carbon out of the atmosphere
