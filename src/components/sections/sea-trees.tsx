@@ -23,7 +23,7 @@ const EquationBlock: React.FC<{
 
 const Description: React.FC<{
   className?: string
-}> = ({className}) => {
+}> = () => {
   return (
     <div className="flex flex-col items-center space-y-6 text-white md:space-y-10 lg:space-y-12 lg:items-start">
       <div className="flex justify-center lg:justify-start lg:items-center lg:space-x-4 flex-nowrap">

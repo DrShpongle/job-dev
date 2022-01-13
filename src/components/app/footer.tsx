@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="flex">
           <div className="w-3/5">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 2xl:grid-cols-3">
               <div>
                 <h4 className="text-pink text-[1.625rem]">Explore</h4>
                 <ul className="space-y-4 mt-7">

@@ -5,12 +5,13 @@ import Image from 'next/image'
 import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/sections/scrollable-hero'
 import SeaTrees from 'components/sections/sea-trees'
+import TotallyPsyched from 'components/sections/totally-psyched'
 import VideoEmbed from 'components/video-embed'
 
 const Home: NextPage = () => {
   return (
     <PageLayout>
-      <div className="max-w-[1980px] mx-auto">
+      <div className="max-w-[1920px] mx-auto">
         <ScrollableHero />
 
         <div className="relative pt-40 overflow-hidden">
@@ -71,10 +72,16 @@ const Home: NextPage = () => {
           <div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center">
             <Image src="/images/iphone-frame.png" width={909} height={1835} />
             <div className="absolute w-[430px] top-56">
-              <Image src="/images/job-app-logo.png" width={867} height={664} />
+              <Image
+                src="/images/job-app-logo.png"
+                width={867}
+                height={664}
+                layout="responsive"
+              />
             </div>
           </div>
         </div>
+        <TotallyPsyched />
         <SeaTrees />
       </div>
     </PageLayout>
