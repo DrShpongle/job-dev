@@ -1,24 +1,19 @@
 import React, {WheelEvent} from 'react'
+import classNames from 'classnames'
 
 import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
   const [currentWidth, setCurrentWidth] = React.useState<number>(33)
-  const changeWidth = (event: WheelEvent<HTMLDivElement>) => {
-    // event.preventDefault()
-    // window.addEventListener('wheel', {passive: false})
 
+  const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
     let scale = currentWidth
-
-    scale += event.deltaY * 0.1
-
-    // Restrict scale
+    scale += e.deltaY * 0.1
     scale = Math.min(Math.max(33, scale), 100)
-
-    // Apply scale transform
-    // el.style.transform = `scale(${scale})`;
     setCurrentWidth(scale)
   }
+
+  let clientY: number = 0
 
   React.useEffect(() => {
     document.body.style.position = 'fixed'
@@ -28,7 +23,7 @@ const ScrollableHero: React.FC = () => {
     return () => {
       document.body.style.position = ''
     }
-  })
+  }, [currentWidth])
 
   return (
     <>
@@ -40,9 +35,21 @@ const ScrollableHero: React.FC = () => {
         `}
       </style>
       <div
-        className="relative flex justify-center w-full overflow-hidden flex-nowrap touch-none full-screen-height"
-        onWheel={changeWidth}
-        onTouchMove={(e) => console.log('e:', e)}
+        className={classNames(
+          'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height',
+          currentWidth < 100 && 'touch-none',
+        )}
+        onWheel={handlerChangeWidth}
+        onTouchStart={(e) => {
+          clientY = e.touches[0].clientY
+        }}
+        onTouchEnd={(e) => {
+          const deltaY = e.changedTouches[0].clientY - clientY
+          let scale = currentWidth
+          scale += deltaY * -0.1
+          let computedScale = Math.min(Math.max(33, scale), 100)
+          setCurrentWidth(computedScale)
+        }}
       >
         <div className="relative w-1/2 h-full overflow-hidden shrink-0">
           <VideoEmbed
