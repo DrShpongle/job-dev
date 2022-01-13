@@ -3,7 +3,8 @@ import type {NextPage} from 'next'
 import Image from 'next/image'
 
 import PageLayout from 'components/layouts/page-layout'
-import ScrollableHero from 'components/hero-sections/scrollable-hero'
+import ScrollableHero from 'components/sections/scrollable-hero'
+import SeaTrees from 'components/sections/sea-trees'
 import VideoEmbed from 'components/video-embed'
 
 const Home: NextPage = () => {
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
                 <div className="flex items-center mt-8 space-x-7">
-                  <button className="px-4 py-3 text-white uppercase rounded-full bg-pink font-headings text-[29px]">
+                  <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-[29px]">
                     Download App
                   </button>
                   <a
@@ -67,10 +68,14 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2">
-            <Image src="/images/iphone-frame.png" width={640} height={1292} />
+          <div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center">
+            <Image src="/images/iphone-frame.png" width={909} height={1835} />
+            <div className="absolute w-[430px] top-56">
+              <Image src="/images/job-app-logo.png" width={867} height={664} />
+            </div>
           </div>
         </div>
+        <SeaTrees />
       </div>
     </PageLayout>
   )

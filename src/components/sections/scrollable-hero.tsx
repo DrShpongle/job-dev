@@ -30,11 +30,11 @@ const ScrollableHero: React.FC = () => {
       <style jsx>
         {`
           .full-screen-height {
-            height: calc(var(--real100vh) - 80px);
+            height: var(--real100vh);
           }
         `}
       </style>
-      <div
+      <section
         className={classNames(
           'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height',
           currentWidth < 100 && 'touch-none',
@@ -83,7 +83,7 @@ const ScrollableHero: React.FC = () => {
           </div>
           <div className="mt-10">with Jamie</div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

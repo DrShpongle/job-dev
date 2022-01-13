@@ -6,7 +6,7 @@ import classNames from 'classnames'
 const Header = () => {
   const router = useRouter()
   return (
-    <header className="h-20 py-5 px-9">
+    <header className="fixed top-0 left-0 z-30 w-full h-20 py-5 bg-white px-9">
       <div className="container">
         <div className="flex items-center justify-between">
           <Link href="/">

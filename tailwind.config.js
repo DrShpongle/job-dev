@@ -28,7 +28,11 @@ module.exports = {
         DEFAULT: '1.25rem',
       },
     },
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '1980px',
+      },
+    },
   },
   plugins: [],
 }
