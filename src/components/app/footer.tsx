@@ -4,17 +4,19 @@ const Footer = () => {
   return (
     <footer className="py-16 bg-gray">
       <div className="container">
-        <div className="flex">
-          <div className="w-3/5">
-            <div className="grid grid-cols-2 2xl:grid-cols-3">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-3/5">
+            <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
               <div>
-                <h4 className="text-pink text-[1.625rem]">Explore</h4>
-                <ul className="space-y-4 mt-7">
+                <h4 className="text-pink text-xl md:text-[1.625rem]">
+                  Explore
+                </h4>
+                <ul className="mt-3 space-y-3 md:space-y-4 md:mt-7">
                   {navLinks.map((item, index) => {
                     return (
                       <li key={index}>
                         <Link href={item.path}>
-                          <a className="text-xl duration-150 2xl:text-2xl hover:text-blue">
+                          <a className="text-lg duration-150 md:text-xl 2xl:text-2xl hover:text-blue">
                             {item.title}
                           </a>
                         </Link>
@@ -24,8 +26,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-pink text-[1.625rem]">Socials</h4>
-                <ul className="space-y-4 mt-7">
+                <h4 className="text-pink text-xl md:text-[1.625rem]">
+                  Socials
+                </h4>
+                <ul className="mt-3 space-y-3 md:space-y-4 md:mt-7">
                   {socialLinks.map((item, index) => {
                     return (
                       <li key={index}>
@@ -33,7 +37,7 @@ const Footer = () => {
                           target="_blank"
                           rel="noreferrer"
                           href={item.path}
-                          className="text-xl duration-150 2xl:text-2xl hover:text-blue"
+                          className="text-lg duration-150 md:text-xl 2xl:text-2xl hover:text-blue"
                         >
                           {item.title}
                         </a>
@@ -44,23 +48,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-2/5">
-            <h4 className="text-pink text-[1.625rem] text-right">
+          <div className="w-full mt-10 md:w-2/5 md:mt-0">
+            <h4 className="text-pink text-xl md:text-[1.625rem] md:h-8text-right">
               Stay in touch
             </h4>
-            <p className="text-xl text-right 2xl:leading-relaxed mt-7 2xl:text-2xl">
+            <p className="mt-3 text-lg md:text-xl md:text-right 2xl:leading-relaxed md:mt-7 2xl:text-2xl">
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
             <form className="flex flex-col mt-6 space-y-4">
               <input
                 type="text"
-                className="h-[70px] px-5 text-xl 2xl:text-2xl border"
+                className="h-[56px] md:h-[60px] lg:h-[70px] px-5 text-lg md:text-xl 2xl:text-2xl border"
                 placeholder="Enter your email address"
               />
               <button
                 type="button"
-                className="font-headings h-[70px] bg-pink text-white text-center text-[1.625rem] uppercase"
+                className="font-headings h-[56px] md:h-[60px] lg:h-[70px] bg-pink text-white text-center text-lg md:text-xl xl:text-[1.625rem] uppercase"
               >
                 Submit
               </button>
