@@ -36,3 +36,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.mobile-menu {
+  height: calc(var(--real100vh) - 40px);
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    height: calc(var(--real100vh) - 56px);
+  }
+}

@@ -16,8 +16,10 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
   React.useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
+    // window.addEventListener('touchmove', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
+      // window.removeEventListener('touchmove', handleResize)
     }
   }, [])
   return (
@@ -29,7 +31,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
           <Partnered />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

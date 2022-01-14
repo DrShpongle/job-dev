@@ -1,10 +1,15 @@
+import React from 'react'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
 
+import MobileMenu, {MobileMenuToggler} from 'components/mobile-menu'
+
 const Header = () => {
   const router = useRouter()
+  const [mobileMenuIsOpened, setMobileMenuIsOpened] =
+    React.useState<boolean>(false)
   return (
     <header className="fixed top-0 left-0 z-30 w-full h-10 py-2 bg-white md:py-3 md:h-14 lg:py-5 lg:h-20">
       <div className="container">
@@ -42,6 +47,13 @@ const Header = () => {
           <button className="hidden h-10 px-4 py-2 text-white uppercase rounded-full bg-pink font-headings lg:block">
             Download app
           </button>
+          <MobileMenuToggler
+            onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
+            isOpened={mobileMenuIsOpened}
+          >
+            X
+          </MobileMenuToggler>
+          <MobileMenu data={navLinks} isOpened={mobileMenuIsOpened} />
         </div>
       </div>
     </header>
