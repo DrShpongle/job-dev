@@ -10,7 +10,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-pink text-[1.625rem]">Explore</h4>
                 <ul className="space-y-4 mt-7">
-                  {footerNavLinks.map((item, index) => {
+                  {navLinks.map((item, index) => {
                     return (
                       <li key={index}>
                         <Link href={item.path}>
@@ -26,7 +26,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-pink text-[1.625rem]">Socials</h4>
                 <ul className="space-y-4 mt-7">
-                  {footerSocialLinks.map((item, index) => {
+                  {socialLinks.map((item, index) => {
                     return (
                       <li key={index}>
                         <a
@@ -72,7 +72,7 @@ const Footer = () => {
             Copyright © 2021 Jamie O’Brien. All rights reserved.
           </div>
           <ul className="flex items-center space-x-4 flex-nowrap">
-            {footerAuxiliaryLinks.map((item, index) => {
+            {auxiliaryLinks.map((item, index) => {
               return (
                 <li
                   key={index}
@@ -91,7 +91,7 @@ const Footer = () => {
   )
 }
 
-const footerNavLinks = [
+const navLinks = [
   {title: 'Surf App', path: '/surf-app'},
   {title: 'Surf Experience', path: '/surf-experience'},
   {title: 'Surf Store', path: '/surf-store'},
@@ -100,21 +100,21 @@ const footerNavLinks = [
   {title: 'Contact', path: '/contact'},
 ]
 
-const footerAuxiliaryLinks = [
+const auxiliaryLinks = [
   {title: 'Privacy Policy', path: '/privacy-policy'},
   {title: 'Terms of Use', path: '/terms-of-use'},
   {title: 'Legal', path: '/legal'},
   {title: 'Site Map', path: '/site-map'},
 ]
 
-const footerSocialLinks = [
-  {title: 'Twitter', path: 'https://twitter.com/whoisjob'},
+const socialLinks = [
   {title: 'Instagram', path: 'https://www.instagram.com/whoisjob/'},
-  {title: 'Facebook', path: 'https://www.facebook.com/whoisjob/'},
+  {title: 'Twitter', path: 'https://twitter.com/whoisjob'},
   {
     title: 'Youtube',
     path: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
   },
+  {title: 'Facebook', path: 'https://www.facebook.com/whoisjob/'},
 ]
 
 export default Footer

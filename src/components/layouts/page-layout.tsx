@@ -31,7 +31,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
           <Partnered />
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
