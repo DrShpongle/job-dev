@@ -22,7 +22,12 @@ const Partnered = () => {
               rel="noreferrer"
             >
               <div className="relative duration-300 ease-in aspect-square group-hover:scale-125">
-                <Image src={logo.path} layout="fill" objectFit="contain" />
+                <Image
+                  src={logo.path}
+                  layout="fill"
+                  objectFit="contain"
+                  alt={logo.title}
+                />
               </div>
             </a>
           )

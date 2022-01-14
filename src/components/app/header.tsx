@@ -11,7 +11,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex justify-start w-[120px] h-6 shrink-0 md:w-40 md:h-8 xl:w-[198px] xl:h-10">
-              <Image src="/images/logo.svg" width={198} height={40} />
+              <Image
+                src="/images/logo.svg"
+                width={198}
+                height={40}
+                alt="Jamie O'Brien"
+              />
             </a>
           </Link>
           <ul className="hidden lg:flex shrink-0 lg:space-x-6 xl:space-x-10 2xl:space-x-16 flex-nowrap">

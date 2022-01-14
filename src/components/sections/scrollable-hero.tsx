@@ -20,7 +20,7 @@ const ScrollableHero: React.FC = () => {
 
   React.useEffect(() => {
     setIsMounted(true)
-  })
+  }, [])
 
   React.useEffect(() => {
     document.body.style.position = 'fixed'

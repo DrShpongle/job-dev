@@ -56,6 +56,7 @@ const Home: NextPage = () => {
                       src="/images/download-on-app-store.svg"
                       width={240}
                       height={80}
+                      alt="Download on App Store"
                     />
                   </a>
                   <a href="#" className="">
@@ -63,6 +64,7 @@ const Home: NextPage = () => {
                       src="/images/get-it-on-google-play.svg"
                       width={240}
                       height={80}
+                      alt="Get it on Google Play"
                     />
                   </a>
                 </div>
@@ -70,13 +72,19 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="w-[640px] h-[1292px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center">
-            <Image src="/images/iphone-frame.png" width={909} height={1835} />
+            <Image
+              src="/images/iphone-frame.png"
+              width={909}
+              height={1835}
+              alt="Jamie O'Brien"
+            />
             <div className="absolute w-[430px] top-56">
               <Image
                 src="/images/job-app-logo.png"
                 width={867}
                 height={664}
                 layout="responsive"
+                alt="Jamie O'Brien"
               />
             </div>
           </div>

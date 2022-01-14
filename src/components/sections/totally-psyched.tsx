@@ -30,6 +30,7 @@ const TotallyPsyched = () => {
                   src="/images/download-on-app-store.svg"
                   width={240}
                   height={80}
+                  alt="Download on App Store"
                 />
               </a>
               <a href="#" className="">
@@ -37,6 +38,7 @@ const TotallyPsyched = () => {
                   src="/images/get-it-on-google-play.svg"
                   width={240}
                   height={80}
+                  alt="Get it on Google Play"
                 />
               </a>
             </div>
