@@ -6,7 +6,7 @@ import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  const {width} = useWindowSize()
+  const {width, height} = useWindowSize()
   const [currentSize, setCurrentWidth] = React.useState<number>(33)
 
   const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
@@ -44,8 +44,9 @@ const ScrollableHero: React.FC = () => {
       {isMounted && (
         <section
           className={classNames(
-            'relative flex flex-col lg:flex-row justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-20',
+            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-20',
             currentSize < 100 && 'touch-none',
+            width >= height ? 'flex-row' : 'flex-col',
           )}
           onWheel={handlerChangeWidth}
           onTouchStart={(e) => {
@@ -59,18 +60,26 @@ const ScrollableHero: React.FC = () => {
             setCurrentWidth(computedScale)
           }}
         >
-          <div className="relative overflow-hidden h-1/2 lg:w-1/2 lg:h-full shrink-0">
+          <div
+            className={classNames(
+              'relative overflow-hidden shrink-0',
+              width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
+            )}
+          >
             <VideoEmbed
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06B_Bali_1080p_013_preview.mp4"
               className="absolute left-0 object-center"
             />
           </div>
           <div
-            className="absolute top-0 bottom-0 z-10 flex justify-center w-full m-auto overflow-hidden h-1/3 lg:w-1/3 lg:h-full"
+            className={classNames(
+              'absolute top-0 bottom-0 z-10 flex justify-center m-auto overflow-hidden',
+              width >= height ? 'h-full w-1/3' : 'w-full h-1/3',
+            )}
             style={
-              width < 1024
-                ? {height: `${currentSize}%`}
-                : {width: `${currentSize}%`}
+              width >= height
+                ? {width: `${currentSize}%`}
+                : {height: `${currentSize}%`}
             }
           >
             <VideoEmbed
@@ -82,7 +91,12 @@ const ScrollableHero: React.FC = () => {
               <div className="w-px h-10 bg-white" />
             </div>
           </div>
-          <div className="relative overflow-hidden h-1/2 lg:w-1/2 lg:h-full shrink-0">
+          <div
+            className={classNames(
+              'relative overflow-hidden shrink-0',
+              width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
+            )}
+          >
             <VideoEmbed
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_13B_Bali_1080p_005_preview.mp4"
               className="absolute right-0 object-center"
