@@ -19,6 +19,7 @@ const Partnered = () => {
               className="block p-8 xl:p-12 2xl:p-14 cell-with-border group"
               href={logo.url}
               target="_blank"
+              rel="noreferrer"
             >
               <div className="relative duration-300 ease-in aspect-square group-hover:scale-125">
                 <Image src={logo.path} layout="fill" objectFit="contain" />

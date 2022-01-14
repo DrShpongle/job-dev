@@ -25,14 +25,14 @@ const TotallyPsyched = () => {
               nem nonsedit, utestiam.
             </p>
             <div className="flex space-x-4">
-              <a href="/" className="">
+              <a href="#" className="">
                 <Image
                   src="/images/download-on-app-store.svg"
                   width={240}
                   height={80}
                 />
               </a>
-              <a href="/" className="">
+              <a href="#" className="">
                 <Image
                   src="/images/get-it-on-google-play.svg"
                   width={240}

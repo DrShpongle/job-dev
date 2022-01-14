@@ -31,6 +31,7 @@ const Footer = () => {
                       <li key={index}>
                         <a
                           target="_blank"
+                          rel="noreferrer"
                           href={item.path}
                           className="text-xl duration-150 2xl:text-2xl hover:text-blue"
                         >

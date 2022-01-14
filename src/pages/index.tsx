@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                     Download App
                   </button>
                   <a
-                    href="/"
+                    href="#"
                     className="flex items-center space-x-1 text-[29px] text-blue font-headings"
                   >
                     <span>Learn more</span>
@@ -51,14 +51,14 @@ const Home: NextPage = () => {
               </div>
               <div className="flex justify-center w-1/3">
                 <div className="flex flex-col space-y-3">
-                  <a href="/" className="">
+                  <a href="#" className="">
                     <Image
                       src="/images/download-on-app-store.svg"
                       width={240}
                       height={80}
                     />
                   </a>
-                  <a href="/" className="">
+                  <a href="#" className="">
                     <Image
                       src="/images/get-it-on-google-play.svg"
                       width={240}
