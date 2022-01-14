@@ -6,22 +6,22 @@ import classNames from 'classnames'
 const Header = () => {
   const router = useRouter()
   return (
-    <header className="fixed top-0 left-0 z-30 w-full h-20 py-5 bg-white">
+    <header className="fixed top-0 left-0 z-30 w-full h-10 py-2 bg-white md:py-3 md:h-14 lg:py-5 lg:h-20">
       <div className="container">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex shrink-0 relative w-[110px] h-[23px] md:w-[132px] md:h-[28px] 2xl:w-[198px] 2xl:h-[42px]">
-              <Image src="/images/logo.svg" layout="fill" />
+            <a className="flex justify-start w-[120px] h-6 shrink-0 md:w-40 md:h-8 xl:w-[198px] xl:h-10">
+              <Image src="/images/logo.svg" width={198} height={40} />
             </a>
           </Link>
-          <ul className="flex space-x-8 shrink-0 2xl:space-x-16 flex-nowrap">
+          <ul className="hidden lg:flex shrink-0 lg:space-x-6 xl:space-x-10 2xl:space-x-16 flex-nowrap">
             {navLinks.map((item, index) => {
               return (
                 <li key={index}>
                   <Link href={item.path}>
                     <a
                       className={classNames(
-                        'hover:text-blue duration-150 font-headings uppercase text-lg',
+                        'hover:text-blue duration-150 font-headings uppercase lg:text-lg',
                         router.pathname === item.path
                           ? ' text-blue'
                           : 'text-pink',
@@ -34,7 +34,7 @@ const Header = () => {
               )
             })}
           </ul>
-          <button className="h-10 px-4 py-2 text-white uppercase rounded-full bg-pink font-headings">
+          <button className="hidden h-10 px-4 py-2 text-white uppercase rounded-full bg-pink font-headings lg:block">
             Download app
           </button>
         </div>

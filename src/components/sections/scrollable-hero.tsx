@@ -37,14 +37,24 @@ const ScrollableHero: React.FC = () => {
       <style jsx>
         {`
           .full-screen-height {
-            height: calc(var(--real100vh) - 80px);
+            height: calc(var(--real100vh) - 40px);
+          }
+          @media (min-width: 768px) {
+            .full-screen-height {
+              height: calc(var(--real100vh) - 56px);
+            }
+          }
+          @media (min-width: 1024px) {
+            .full-screen-height {
+              height: calc(var(--real100vh) - 80px);
+            }
           }
         `}
       </style>
       {isMounted && (
         <section
           className={classNames(
-            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-20',
+            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-10 md:mt-14 lg:mt-20',
             currentSize < 100 && 'touch-none',
             width >= height ? 'flex-row' : 'flex-col',
           )}
