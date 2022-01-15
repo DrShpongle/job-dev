@@ -26,6 +26,8 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: '1.25rem',
+        md: '1.5rem',
+        lg: '2rem',
       },
     },
     extend: {},
