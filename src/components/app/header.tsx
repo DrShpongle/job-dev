@@ -28,18 +28,28 @@ const Header = () => {
             {navLinks.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link href={item.path}>
+                  {item.external ? (
                     <a
-                      className={classNames(
-                        'hover:text-blue duration-150 font-headings uppercase lg:text-lg',
-                        router.pathname === item.path
-                          ? ' text-blue'
-                          : 'text-pink',
-                      )}
+                      className="uppercase duration-150 text-pink hover:text-blue font-headings lg:text-lg"
+                      href={item.path}
+                      target="_blank"
                     >
                       {item.title}
                     </a>
-                  </Link>
+                  ) : (
+                    <Link href={item.path}>
+                      <a
+                        className={classNames(
+                          'hover:text-blue duration-150 font-headings uppercase lg:text-lg',
+                          router.pathname === item.path
+                            ? ' text-blue'
+                            : 'text-pink',
+                        )}
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
+                  )}
                 </li>
               )
             })}
@@ -64,8 +74,16 @@ export default Header
 
 const navLinks = [
   {title: 'Surf App', path: '/surf-app'},
-  {title: 'Surf Experience', path: '/surf-experience'},
-  {title: 'Surf Store', path: '/surf-store'},
+  {
+    title: 'Surf Experience',
+    path: 'https://www.jobsurfexperience.com/',
+    external: true,
+  },
+  {
+    title: 'Surf Store',
+    path: 'https://www.jamieobrienshop.com/',
+    external: true,
+  },
   {title: 'Psych Mag', path: '/psych-mag'},
   {title: 'About Jamie', path: '/about'},
   {title: 'Contact', path: '/contact'},
