@@ -4,9 +4,11 @@ import Header from 'components/app/header'
 import Footer from 'components/app/footer'
 import Partnered from 'components/sections/partnered'
 
+import {isTouchDevice} from 'utils/isTouchDevice'
+
 const handleResize = () => {
   let value = '100vh'
-  if (window.innerWidth <= 1366) {
+  if (isTouchDevice()) {
     value = `${window.innerHeight}px`
   }
   document.documentElement.style.setProperty('--real100vh', value)
