@@ -33,6 +33,7 @@ const Header = () => {
                       className="uppercase duration-150 text-pink hover:text-blue font-headings lg:text-lg"
                       href={item.path}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       {item.title}
                     </a>
