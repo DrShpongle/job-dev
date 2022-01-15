@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import Header from 'components/app/header'
 import Footer from 'components/app/footer'
-import Partnered from 'components/partnered'
+import Partnered from 'components/sections/partnered'
 
 const handleResize = () => {
   let value = '100vh'
