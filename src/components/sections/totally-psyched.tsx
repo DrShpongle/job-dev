@@ -19,7 +19,7 @@ const TotallyPsyched = () => {
           <h2 className="mt-2 text-5xl text-center font-headings md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
             What are you waiting for?!
           </h2>
-          <div className="max-w-[830px] flex flex-col items-center space-y-10 xl:space-y-20 text-center text-xl xl:text-[34px] mt-9">
+          <div className="max-w-[830px] flex flex-col items-center space-y-10 xl:space-y-20 text-center text-xl xl:text-[34px] xl:leading-normal mt-9">
             <p>
               Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam.

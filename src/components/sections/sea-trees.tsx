@@ -54,7 +54,7 @@ const Description: React.FC<{
 
 const SeaTrees = () => {
   return (
-    <div className="relative flex flex-col px-4 py-10 md:px-16 md:py-16 lg:px-20 lg:py-24 lg:flex-row xl:py-32 2xl:py-40 xl:px-24 2xl:px-36">
+    <div className="relative">
       <div className="absolute inset-0 z-[-1]">
         <Image
           src="/images/sea-trees.png"
@@ -63,28 +63,32 @@ const SeaTrees = () => {
           alt="SeaTrees"
         />
       </div>
-      <div className="flex items-center justify-between lg:justify-start lg:pr-16 lg:space-y-16 lg:w-1/2 lg:flex-col xl:pr-32 xl:w-3/5">
-        <EquationBlock
-          leftExpression="1 app download"
-          rightExpression="1 sea tree planted"
-          className="self-start"
-        />
-        <div className="w-10 mx-4 lg:hidden shrink-0 md:w-auto">
-          <Image
-            src="/images/sea-trees-logo.png"
-            width={75}
-            height={89}
-            alt="SeaTrees"
-          />
+      <div className="container">
+        <div className="flex flex-col py-10 lg:py-24 lg:flex-row xl:py-32 2xl:py-40 md:py-16">
+          <div className="flex items-center justify-between lg:justify-start lg:pr-16 lg:space-y-16 lg:w-1/2 lg:flex-col xl:pr-32 xl:w-3/5">
+            <EquationBlock
+              leftExpression="1 app download"
+              rightExpression="1 sea tree planted"
+              className="self-start"
+            />
+            <div className="w-10 mx-4 lg:hidden shrink-0 md:w-auto">
+              <Image
+                src="/images/sea-trees-logo.png"
+                width={75}
+                height={89}
+                alt="SeaTrees"
+              />
+            </div>
+            <EquationBlock
+              leftExpression="1 booked experience"
+              rightExpression="1 sea tree planted"
+              className="self-end"
+            />
+          </div>
+          <div className="mt-14 md:mt-20 lg:mt-0 lg:w-1/2 xl:w-2/5">
+            <Description />
+          </div>
         </div>
-        <EquationBlock
-          leftExpression="1 booked experience"
-          rightExpression="1 sea tree planted"
-          className="self-end"
-        />
-      </div>
-      <div className="mt-14 md:mt-20 lg:mt-0 lg:w-1/2 xl:w-2/5">
-        <Description />
       </div>
     </div>
   )
