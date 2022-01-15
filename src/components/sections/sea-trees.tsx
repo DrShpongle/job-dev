@@ -35,7 +35,7 @@ const Description: React.FC<{
             alt="SeaTrees"
           />
         </div>
-        <h3 className="font-headings text-3xl md:text-[48px] lg:text-[60px] xl:text-[80px] 2xl:text-[111px] leading-none text-center lg:text-left">
+        <h3 className="font-headings text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-center lg:text-left">
           SeaTrees
         </h3>
       </div>
@@ -45,7 +45,7 @@ const Description: React.FC<{
         ecosystems. The most effective way to suck carbon out of the atmosphere
         - period.
       </p>
-      <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-[29px]">
+      <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
         Find out more
       </button>
     </div>

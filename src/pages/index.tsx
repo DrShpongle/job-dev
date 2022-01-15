@@ -26,7 +26,7 @@ const Home: NextPage = () => {
                   Get Psyched
                 </h3>
                 <div className="max-w-[44rem]">
-                  <h2 className="text-[111px] leading-none">
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
                     with Jamie in your pocket
                   </h2>
                   <p className="mt-12 text-[34px] leading-normal">
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
                 <div className="flex items-center mt-8 space-x-7">
-                  <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-[29px]">
+                  <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
                     Download App
                   </button>
                   <a

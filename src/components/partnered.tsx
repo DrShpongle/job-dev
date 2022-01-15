@@ -11,7 +11,7 @@ const Partnered = () => {
           }
         `}
       </style>
-      <h3 className="text-2xl md:text-3xl lg:text-[2.5rem]">
+      <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
         Proud to be partnered with&hellip;
       </h3>
       <div className="grid grid-cols-3 md:grid-cols-5 mt-4 md:mt-8 gap-[1px] p-[1px] overflow-hidden">
