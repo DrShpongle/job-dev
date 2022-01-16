@@ -27,9 +27,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="grow">
-        <div className="max-w-[1920px] mx-auto">{children}</div>
-      </main>
+      <main className="grow">{children}</main>
       <div className="py-8 md:py-16 xl:mt-24 xl:mb-16">
         <div className="container">
           <Partnered />
