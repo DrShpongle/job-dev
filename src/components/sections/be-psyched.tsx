@@ -6,23 +6,11 @@ import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 const BePsyched = () => {
   const refBoards = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refBoards)
-  console.log('start:', start)
-  console.log('end:', end)
   const {scrollYProgress} = useViewportScroll()
   const x = useTransform(scrollYProgress, [start, end], ['-90%', '0%'])
 
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])
   const rotate = useTransform(scrollYProgress, [start, end], [0, 720])
-
-  const handlerScroll = () => {
-    const rect = refBoards.current.getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    console.log('scrollTop:', scrollTop)
-  }
-
-  React.useEffect(() => {
-    window.addEventListener('scroll', handlerScroll)
-  }, [])
 
   return (
     <section ref={refBoards} className="relative overflow-hidden bg-blue py-36">
