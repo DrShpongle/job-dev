@@ -13,10 +13,13 @@ const BePsyched = () => {
   const rotate = useTransform(scrollYProgress, [start, end], [0, 720])
 
   return (
-    <section ref={refBoards} className="relative overflow-hidden bg-blue py-36">
+    <section
+      ref={refBoards}
+      className="relative overflow-hidden bg-blue xl:py-28 2xl:py-36"
+    >
       <motion.div
-        className="absolute top-0"
-        initial={{x: '-100%'}}
+        className="absolute top-0 xl:w-[500px] 2xl:w-[630px]"
+        initial={{x: '-90%'}}
         style={{x, y: '-2rem'}}
         transition={{
           type: 'spring',
@@ -34,8 +37,11 @@ const BePsyched = () => {
       </motion.div>
       <div className="container">
         <div className="flex flex-col lg:flex-row">
-          <div className="relative flex justify-end pt-48 pr-24 grow">
-            <motion.div className="shrink-0" style={{opacity, rotate}}>
+          <div className="relative flex items-start justify-end pt-48 xl:pr-16 2xl:pr-24 grow">
+            <motion.div
+              className="origin-center shrink-0 xl:w-[350px] 2xl:w-[487px]"
+              style={{opacity, rotate}}
+            >
               <Image
                 src="/images/job-surf-experience-logo.png"
                 width={487}
@@ -44,18 +50,20 @@ const BePsyched = () => {
               />
             </motion.div>
           </div>
-          <div className="w-2/5 2xl:w-[45%]">
+          <div className="w-2/5 xl:w-[45%]">
             <h3 className="font-accented text-pink text-[70px]">Be Psyched</h3>
-            <h2 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
-              with The Jamie O’Brien Experience
+            <h2 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-[111px] leading-none">
+              with The
+              <br />
+              Jamie O’Brien Experience
             </h2>
-            <p className="mt-12 text-[34px] leading-normal text-white">
+            <p className="mt-12 xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal text-white">
               Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
               optat quam nam nimagnis doloreh enistorro.
             </p>
             <div className="flex items-center mt-8 space-x-10">
-              <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
+              <button className="px-10 py-4 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-2xl 2xl:text-[29px]">
                 Book your experience
               </button>
               <a

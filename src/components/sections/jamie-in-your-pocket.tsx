@@ -25,7 +25,7 @@ const JamieInYourPocket = () => {
               </p>
             </div>
             <div className="flex items-center mt-8 space-x-10">
-              <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
+              <button className="px-10 py-4 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
                 Download App
               </button>
               <a

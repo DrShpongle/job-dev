@@ -13,7 +13,7 @@ export const useRefScrollProgress = (inputRef: any) => {
     const computedStart =
       (rect.top + scrollTop - window.innerHeight) / document.body.clientHeight
     const computedEnd =
-      (rect.bottom + scrollTop - window.innerHeight + 250) /
+      (rect.bottom + scrollTop - window.innerHeight) /
       document.body.clientHeight
     setStart(computedStart)
     setEnd(computedEnd)
