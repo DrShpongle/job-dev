@@ -16,7 +16,7 @@ const Footer = () => {
                     return (
                       <li key={index}>
                         <Link href={item.path}>
-                          <a className="text-lg duration-150 md:text-xl 2xl:text-2xl hover:text-blue">
+                          <a className="text-lg duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-blue">
                             {item.title}
                           </a>
                         </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                           target="_blank"
                           rel="noreferrer"
                           href={item.path}
-                          className="text-lg duration-150 md:text-xl 2xl:text-2xl hover:text-blue"
+                          className="text-lg duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-blue"
                         >
                           {item.title}
                         </a>

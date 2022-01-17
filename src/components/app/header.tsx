@@ -30,7 +30,7 @@ const Header = () => {
                 <li key={index}>
                   {item.external ? (
                     <a
-                      className="uppercase duration-150 text-pink hover:text-blue font-headings lg:text-lg"
+                      className="uppercase duration-150 text-pink hover-hover:hover:text-blue font-headings lg:text-lg"
                       href={item.path}
                       target="_blank"
                       rel="noreferrer"
@@ -41,7 +41,7 @@ const Header = () => {
                     <Link href={item.path}>
                       <a
                         className={classNames(
-                          'hover:text-blue duration-150 font-headings uppercase lg:text-lg',
+                          'hover-hover:hover:text-blue duration-150 font-headings uppercase lg:text-lg',
                           router.pathname === item.path
                             ? ' text-blue'
                             : 'text-pink',

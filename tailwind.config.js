@@ -29,7 +29,11 @@ module.exports = {
         md: '2rem',
       },
     },
-    extend: {},
+    extend: {
+      screens: {
+        'hover-hover': {raw: '(hover: hover)'},
+      },
+    },
   },
   plugins: [],
 }

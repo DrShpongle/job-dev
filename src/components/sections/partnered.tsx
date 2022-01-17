@@ -27,7 +27,7 @@ const Partnered = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <div className="relative duration-300 ease-in aspect-square group-hover:scale-125">
+              <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-125">
                 <Image
                   src={logo.path}
                   layout="fill"
