@@ -15,10 +15,10 @@ const BePsyched = () => {
   return (
     <section
       ref={refBoards}
-      className="relative overflow-hidden bg-blue xl:py-28 2xl:py-36"
+      className="relative overflow-hidden bg-blue lg:py-20 xl:py-28 2xl:py-36"
     >
       <motion.div
-        className="absolute top-0 xl:w-[500px] 2xl:w-[630px]"
+        className="absolute top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"
         initial={{x: '-90%'}}
         style={{x, y: '-2rem'}}
         transition={{
@@ -37,9 +37,9 @@ const BePsyched = () => {
       </motion.div>
       <div className="container">
         <div className="flex flex-col lg:flex-row">
-          <div className="relative flex items-start justify-end pt-48 xl:pr-16 2xl:pr-24 grow">
+          <div className="relative flex items-start justify-end pt-48 lg:pr-8 xl:pr-16 2xl:pr-24 grow">
             <motion.div
-              className="origin-center shrink-0 xl:w-[350px] 2xl:w-[487px]"
+              className="origin-center shrink-0 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
               style={{opacity, rotate}}
             >
               <Image
@@ -50,25 +50,25 @@ const BePsyched = () => {
               />
             </motion.div>
           </div>
-          <div className="w-2/5 xl:w-[45%]">
+          <div className="lg:w-2/5 xl:w-[45%]">
             <h3 className="font-accented text-pink text-[70px]">Be Psyched</h3>
-            <h2 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-[111px] leading-none">
+            <h2 className="text-white text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-[111px] leading-none">
               with The
               <br />
               Jamie O’Brien Experience
             </h2>
-            <p className="mt-12 xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal text-white">
+            <p className="mt-12 lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal text-white">
               Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
               optat quam nam nimagnis doloreh enistorro.
             </p>
-            <div className="flex items-center mt-8 space-x-10">
-              <button className="px-10 py-4 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-2xl 2xl:text-[29px]">
+            <div className="flex items-center mt-8 lg:space-x-6 xl:space-x-10">
+              <button className="lg:px-6 xl:px-10 py-4 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]">
                 Book your experience
               </button>
               <a
                 href="#"
-                className="flex items-center space-x-1 text-[29px] text-pink font-headings"
+                className="flex items-center space-x-1 lg:text-xl xl:text-[29px] text-pink font-headings whitespace-nowrap"
               >
                 <span>Learn more</span>
                 <span className="translate-y-0.5">&#62;</span>
