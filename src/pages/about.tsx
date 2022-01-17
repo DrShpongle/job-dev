@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import type {NextPage} from 'next'
 import PageLayout from 'components/layouts/page-layout'
 

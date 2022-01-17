@@ -24,13 +24,13 @@ const JamieInYourPocket = () => {
                 optat quam nam nimagnis doloreh enistorro vendis voluptaqua.
               </p>
             </div>
-            <div className="flex items-center mt-8 space-x-7">
+            <div className="flex items-center mt-8 space-x-10">
               <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
                 Download App
               </button>
               <a
                 href="#"
-                className="flex items-center space-x-1 text-[29px] text-blue font-headings"
+                className="flex items-center space-x-1 text-[29px] text-pink font-headings"
               >
                 <span>Learn more</span>
                 <span className="translate-y-0.5">&#62;</span>
