@@ -35,7 +35,7 @@ const JamieInYourPocket = () => {
             </div>
             <div
               ref={refPhoneFrame}
-              className="flex items-center mt-8 space-x-6 md:space-x-10 pb-[400px] md:pb-[520px] lg:pb-[650px] xl:pb-[700px] 2xl:pb-[800px]"
+              className="flex items-center mt-8 space-x-6 md:space-x-10 pb-[400px] md:pb-[520px] lg:pb-[650px] xl:pb-[700px] 2xl:pb-[840px]"
             >
               <button className="px-6 md:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl xl:text-[29px]">
                 Download App
@@ -74,7 +74,7 @@ const JamieInYourPocket = () => {
       <motion.div
         style={{y: rangeY}}
         initial={{y: '90%'}}
-        className="w-[280px] md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[640px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center"
+        className="w-[280px] md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center"
       >
         <Image
           src="/images/iphone-frame.png"
