@@ -6,8 +6,7 @@ import {useWindowSize} from 'react-use'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
 const BePsyched = () => {
-  const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  const {width, height} = useWindowSize()
+  const {width} = useWindowSize()
   const refBoards = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refBoards)
   const {scrollYProgress} = useViewportScroll()
@@ -16,44 +15,38 @@ const BePsyched = () => {
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])
   const rotate = useTransform(scrollYProgress, [start, end], [0, 720])
 
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
   return (
     <section
       ref={refBoards}
       className="relative pt-8 overflow-hidden md:pt-10 bg-blue lg:py-20 xl:py-28 2xl:py-36"
     >
-      {isMounted && (
-        <motion.div
-          className="absolute bottom-0 w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px] flex"
-          initial={width >= 1024 ? {x: '-90%'} : {}}
-          style={width >= 1024 ? {x: rangeX} : {}}
-          transition={{
-            type: 'spring',
-            damping: 10,
-            mass: 0.75,
-            stiffness: 100,
-          }}
-        >
-          {width >= 1024 ? (
-            <Image
-              src="/images/windsurfing-boards-vertical.png"
-              width={630}
-              height={1190}
-              priority
-            />
-          ) : (
-            <Image
-              src="/images/windsurfing-boards-horizontal.png"
-              width={1536}
-              height={813}
-              priority
-            />
-          )}
-        </motion.div>
-      )}
+      <motion.div
+        className="absolute bottom-0 w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px] flex"
+        initial={width >= 1024 ? {x: '-90%'} : {}}
+        style={width >= 1024 ? {x: rangeX} : {}}
+        transition={{
+          type: 'spring',
+          damping: 10,
+          mass: 0.75,
+          stiffness: 100,
+        }}
+      >
+        {width >= 1024 ? (
+          <Image
+            src="/images/windsurfing-boards-vertical.png"
+            width={630}
+            height={1190}
+            priority
+          />
+        ) : (
+          <Image
+            src="/images/windsurfing-boards-horizontal.png"
+            width={1536}
+            height={813}
+            priority
+          />
+        )}
+      </motion.div>
       <div className="container">
         <div className="flex flex-col lg:flex-row pb-[250px] md:pb-[500px] lg:pb-0">
           <div className="relative flex items-start justify-end lg:pt-48 lg:pr-8 xl:pr-16 2xl:pr-24 grow">

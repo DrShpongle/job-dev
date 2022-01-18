@@ -9,11 +9,15 @@ import TotallyPsyched from 'components/sections/totally-psyched'
 import SeaTrees from 'components/sections/sea-trees'
 
 const Home: NextPage = () => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
   return (
     <PageLayout>
       <ScrollableHero />
       <JamieInYourPocket />
-      <BePsyched />
+      {isMounted && <BePsyched />}
       <TotallyPsyched />
       <SeaTrees />
     </PageLayout>
