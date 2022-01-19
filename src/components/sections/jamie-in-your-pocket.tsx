@@ -77,7 +77,7 @@ const JamieInYourPocket = () => {
         className="w-[280px] md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px] absolute mx-auto bottom-0 left-0 right-0 translate-y-1/2 flex justify-center"
       >
         <Image
-          src="/images/iphone-frame.png"
+          src="/images/iphone-frame-portrait.png"
           width={909}
           height={1835}
           alt="Jamie O'Brien"
