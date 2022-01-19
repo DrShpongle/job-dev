@@ -50,6 +50,12 @@ const MobileMenu: React.FC<{
   isOpened: boolean
   data: any[]
 }> = ({isOpened, data}) => {
+  React.useEffect(() => {
+    document.body.style.overflow = isOpened ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpened])
   return (
     <AnimatePresence>
       {isOpened ? (
