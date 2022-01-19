@@ -20,14 +20,14 @@ const Partnered = () => {
             <a
               key={index}
               className={classNames(
-                'p-4 xl:p-12 2xl:p-14 cell-with-border group',
+                'p-4 lg:p-8 xl:p-12 2xl:p-14 cell-with-border group',
                 logo.hideOnMobile ? 'hidden md:block' : 'block',
               )}
               href={logo.url}
               target="_blank"
               rel="noreferrer"
             >
-              <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-125">
+              <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-[1.15]">
                 <Image
                   src={logo.path}
                   layout="fill"
