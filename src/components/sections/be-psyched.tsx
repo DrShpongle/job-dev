@@ -81,6 +81,7 @@ const BePsyched = () => {
               <a
                 href="https://fareharbor.com/embeds/book/jobsurfexperience/items/?full-items=yes&back=https://www.jobsurfexperience.com/"
                 target="_blank"
+                rel="noreferrer"
                 className="px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]"
               >
                 Book your experience
@@ -88,6 +89,7 @@ const BePsyched = () => {
               <a
                 href="https://www.jobsurfexperience.com/"
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-center space-x-1 md:text-2xl lg:text-xl xl:text-[29px] text-pink font-headings whitespace-nowrap"
               >
                 <span>Learn more</span>
