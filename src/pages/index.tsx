@@ -7,6 +7,7 @@ import JamieInYourPocket from 'components/sections/jamie-in-your-pocket'
 import BePsyched from 'components/sections/be-psyched'
 import TotallyPsyched from 'components/sections/totally-psyched'
 import SeaTrees from 'components/sections/sea-trees'
+import FixedLabel from 'components/fixed-label'
 
 const Home: NextPage = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
@@ -20,6 +21,12 @@ const Home: NextPage = () => {
       <BePsyched />
       <TotallyPsyched />
       <SeaTrees />
+      <FixedLabel
+        title="Maldives"
+        subtitleTop="win a trip to the"
+        subtitleBottom="with Jamie"
+        className="fixed right-0 bottom-20"
+      />
     </PageLayout>
   ) : null
 }

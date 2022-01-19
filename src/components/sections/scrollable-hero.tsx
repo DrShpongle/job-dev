@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import {useWindowSize} from 'react-use'
 
 import VideoEmbed from 'components/video-embed'
-import FixedLabel from 'components/fixed-label'
 
 const ScrollableHero: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
@@ -123,12 +122,6 @@ const ScrollableHero: React.FC = () => {
               className="absolute right-0 object-center"
             />
           </div>
-          <FixedLabel
-            title="Maldives"
-            subtitleTop="win a trip to the"
-            subtitleBottom="with Jamie"
-            className="fixed right-0 bottom-20"
-          />
         </section>
       )}
     </>
