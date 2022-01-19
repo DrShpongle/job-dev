@@ -9,15 +9,15 @@ const FixedLabel: React.FC<{
 }> = ({className, title, subtitleTop, subtitleBottom}) => (
   <div
     className={classNames(
-      'z-20 flex flex-col items-center justify-center pr-6 pl-8 py-1 lg:pr-6 lg:pl-10 lg:py-3 lg:text-xl text-center text-white uppercase rounded-l-full bg-blue font-headings shadow-[5px_10px_6px_0px_rgba(0,0,0,0.5)]',
+      'z-20 flex flex-col items-center justify-center pr-4 pl-6 md:py-1 lg:pr-5 lg:pl-8 md:text-xl text-center text-white uppercase rounded-l-full bg-blue font-headings shadow-[5px_10px_6px_0px_rgba(0,0,0,0.5)]',
       className,
     )}
   >
-    <div>{subtitleTop}</div>
-    <div className="absolute text-4xl lg:text-6xl text-pink font-accented">
+    <div className="translate-y-2">{subtitleTop}</div>
+    <div className="relative z-10 text-3xl lg:text-4xl text-pink font-accented -rotate-3">
       {title}
     </div>
-    <div className="mt-5 lg:mt-10">{subtitleBottom}</div>
+    <div className="-translate-y-2">{subtitleBottom}</div>
   </div>
 )
 
