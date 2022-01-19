@@ -9,7 +9,11 @@ import TotallyPsyched from 'components/sections/totally-psyched'
 import SeaTrees from 'components/sections/sea-trees'
 
 const Home: NextPage = () => {
-  return (
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  return isMounted ? (
     <PageLayout>
       <ScrollableHero />
       <JamieInYourPocket />
@@ -17,7 +21,7 @@ const Home: NextPage = () => {
       <TotallyPsyched />
       <SeaTrees />
     </PageLayout>
-  )
+  ) : null
 }
 
 export default Home
