@@ -32,6 +32,11 @@
   --real100vh: 100vh;
 }
 
+#__next {
+  height: 100%;
+  overflow: scroll;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

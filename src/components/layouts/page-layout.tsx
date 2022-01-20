@@ -15,15 +15,15 @@ const handleResize = () => {
 }
 
 const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
-  React.useEffect(() => {
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    // window.addEventListener('touchmove', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      // window.removeEventListener('touchmove', handleResize)
-    }
-  }, [])
+  // React.useLayoutEffect(() => {
+  //   handleResize()
+  //   window.addEventListener('resize', handleResize)
+  //   // window.addEventListener('touchmove', handleResize)
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize)
+  //     // window.removeEventListener('touchmove', handleResize)
+  //   }
+  // }, [])
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
