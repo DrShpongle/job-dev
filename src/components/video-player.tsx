@@ -31,34 +31,32 @@ const VideoPlayer: React.FC<{
         url={url}
         width="100%"
         height="100%"
-        className="ololo"
-        style={{background: 'red'}}
       />
       {controls && (
         <div
           className={classNames(
-            'absolute z-10 flex items-center space-x-4',
+            'absolute z-10 flex items-center space-x-2 md:space-x-4',
             controlsClasses,
           )}
         >
           <button
             onClick={() => setplaying(!playing)}
-            className="flex items-center justify-center rounded-full text-black/70 w-14 h-14 bg-white/80"
+            className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
             {!playing ? (
-              <IconPlay className="w-10 h-10" />
+              <IconPlay className="w-6 h-6 md:w-10 md:h-10" />
             ) : (
-              <IconPause className="w-10 h-10" />
+              <IconPause className="w-6 h-6 md:w-10 md:h-10" />
             )}
           </button>
           <button
             onClick={() => setMuted(!muted)}
-            className="flex items-center justify-center rounded-full text-black/70 w-14 h-14 bg-white/80"
+            className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
             {!muted ? (
-              <IconVolumeOn className="w-10 h-10" />
+              <IconVolumeOn className="w-6 h-6 md:w-10 md:h-10" />
             ) : (
-              <IconVolumeOff className="w-10 h-10" />
+              <IconVolumeOff className="w-6 h-6 md:w-10 md:h-10" />
             )}
           </button>
         </div>

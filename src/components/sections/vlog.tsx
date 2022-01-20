@@ -13,7 +13,7 @@ const Vlog = () => {
             <VideoPlayer
               url="https://www.w3schools.com/html/mov_bbb.mp4"
               controls={true}
-              controlsClasses="bottom-32 right-16"
+              controlsClasses="bottom-10 right-6 md:bottom-20 md:right-10 lg:bottom-28 lg:right-16 xl:bottom-36 xl:right-20 2xl:bottom-40 2xl:right-24"
             />
           </div>
           <div className="relative flex">
