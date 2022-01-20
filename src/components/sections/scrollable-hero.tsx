@@ -8,6 +8,7 @@ import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const [clientY, setClientY] = React.useState(0)
   const {width, height} = useWindowSize()
   const [currentSize, setCurrentWidth] = React.useState<number>(33)
 
@@ -18,7 +19,13 @@ const ScrollableHero: React.FC = () => {
     setCurrentWidth(scale)
   }
 
-  let clientY: number = 0
+  const handlerOnTouchMove = (e: any) => {
+    const deltaY = e.targetTouches[0].clientY - clientY
+    let scale = currentSize
+    scale += deltaY * -0.1
+    let computedScale = Math.min(Math.max(33, scale), 100)
+    setCurrentWidth(computedScale)
+  }
 
   React.useEffect(() => {
     setIsMounted(true)
@@ -28,7 +35,7 @@ const ScrollableHero: React.FC = () => {
     if (currentSize < 100) {
       document.body.style.position = 'fixed'
     }
-    if (currentSize === 100) {
+    if (currentSize == 100) {
       document.body.style.position = ''
     }
     return () => {
@@ -64,15 +71,9 @@ const ScrollableHero: React.FC = () => {
           )}
           onWheel={debounce(handlerChangeWidth, 30)}
           onTouchStart={(e) => {
-            clientY = e.touches[0].clientY
+            setClientY(e.touches[0].clientY)
           }}
-          onTouchEnd={(e) => {
-            const deltaY = e.changedTouches[0].clientY - clientY
-            let scale = currentSize
-            scale += deltaY * -0.1
-            let computedScale = Math.min(Math.max(33, scale), 100)
-            setCurrentWidth(computedScale)
-          }}
+          onTouchMove={debounce(handlerOnTouchMove, 100)}
         >
           <div
             className={classNames(
