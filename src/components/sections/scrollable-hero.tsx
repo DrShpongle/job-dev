@@ -15,7 +15,7 @@ const ScrollableHero: React.FC = () => {
   const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
     let scale = currentSize
     scale += e.deltaY * 0.1
-    scale = Math.min(Math.max(33, scale), 50)
+    scale = Math.min(Math.max(33, scale), 100)
     setCurrentWidth(scale)
   }
 
