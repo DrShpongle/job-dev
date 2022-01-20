@@ -25,7 +25,9 @@ const ScrollableHero: React.FC = () => {
   }, [])
 
   React.useEffect(() => {
-    document.body.style.position = 'fixed'
+    if (currentSize < 100) {
+      document.body.style.position = 'fixed'
+    }
     if (currentSize === 100) {
       document.body.style.position = ''
     }
