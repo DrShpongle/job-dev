@@ -15,7 +15,7 @@ const ScrollableHero: React.FC = () => {
   const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
     let scale = currentSize
     scale += e.deltaY * 0.1
-    scale = Math.min(Math.max(33, scale), 100)
+    scale = Math.min(Math.max(33, scale), 50)
     setCurrentWidth(scale)
   }
 
@@ -73,7 +73,7 @@ const ScrollableHero: React.FC = () => {
           onTouchStart={(e) => {
             setClientY(e.touches[0].clientY)
           }}
-          onTouchMove={debounce(handlerOnTouchMove, 100)}
+          onTouchMove={debounce(handlerOnTouchMove, 5)}
         >
           <div
             className={classNames(
