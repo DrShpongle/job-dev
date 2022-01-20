@@ -1,6 +1,7 @@
 import React, {WheelEvent} from 'react'
 import classNames from 'classnames'
 import {useWindowSize} from 'react-use'
+import {debounce} from 'lodash'
 
 import VideoEmbed from 'components/video-embed'
 
@@ -60,7 +61,8 @@ const ScrollableHero: React.FC = () => {
             currentSize < 100 && 'touch-none',
             width >= height ? 'flex-row' : 'flex-col',
           )}
-          onWheel={handlerChangeWidth}
+          onWheel={debounce(handlerChangeWidth, 30)}
+          // onWheel={handlerChangeWidth}
           onTouchStart={(e) => {
             clientY = e.touches[0].clientY
           }}
@@ -85,7 +87,7 @@ const ScrollableHero: React.FC = () => {
           </div>
           <div
             className={classNames(
-              'absolute top-0 bottom-0 z-10 flex justify-center m-auto overflow-hidden',
+              'absolute top-0 bottom-0 z-10 flex justify-center m-auto overflow-hidden duration-100',
               width >= height ? 'h-full w-1/3' : 'w-full h-1/3',
             )}
             style={
