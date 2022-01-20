@@ -52,3 +52,55 @@ export const IconYoutube = ({className}) => (
     <path d="M34.287 5.665A5.23 5.23 0 0029.252.63C25.296.15 21.34-.09 17.383.03c-3.956-.12-8.032.12-11.988.6C2.637.87.599 3.028.36 5.665A35.56 35.56 0 000 10.7c0 1.918.12 3.837.36 5.635.12 2.757 2.397 4.915 5.035 5.035 3.956.48 7.912.6 11.988.6 3.957.12 7.913-.12 11.869-.6 2.637-.24 4.795-2.398 5.035-5.035.24-1.798.36-3.597.36-5.395 0-1.798-.12-3.596-.36-5.275zm-19.421 9.59v-8.75l7.672 4.435-7.672 4.316z" />
   </svg>
 )
+
+export const IconPause = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M18.688 6.688h5.313v18.625h-5.313V6.688zM8 25.313V6.688h5.313v18.625H8z" />
+  </svg>
+)
+
+export const IconPlay = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M10.688 6.688l14.625 9.313-14.625 9.313V6.689z" />
+  </svg>
+)
+
+export const IconVolumeOff = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M16 5.313v5.625l-2.813-2.813zM5.688 4l22.313 22.313-1.688 1.688-2.75-2.75c-1.438 1.125-3.063 2-4.875 2.438v-2.75c1.125-.313 2.125-.875 3-1.563L16 17.688v9L9.312 20H3.999v-8h6.313L3.999 5.687zm19.625 12c0-4.25-2.75-7.813-6.625-8.938v-2.75c5.375 1.188 9.313 6 9.313 11.688 0 2-.5 3.938-1.375 5.563l-2-2.063a9.188 9.188 0 00.688-3.5zM22 16c0 .313 0 .563-.063.813l-3.25-3.25v-2.938c2 1 3.313 3 3.313 5.375z" />
+  </svg>
+)
+
+export const IconVolumeOn = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M18.688 4.313c5.375 1.188 9.313 6 9.313 11.688s-3.938 10.5-9.313 11.688v-2.75c3.875-1.125 6.625-4.688 6.625-8.938s-2.75-7.813-6.625-8.938v-2.75zM22 16a5.936 5.936 0 01-3.313 5.375v-10.75c2 1 3.313 3 3.313 5.375zM4 12h5.313l6.688-6.688v21.375l-6.688-6.688H4v-8z" />
+  </svg>
+)

@@ -2,18 +2,20 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
-import VideoEmbed from 'components/video-embed'
+import VideoPlayer from 'components/video-player'
 
 const Vlog = () => {
   return (
     <div className="pt-12 xl:py-24">
       <div className="container">
-        <div className="relative">
-          <VideoEmbed
-            src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06B_Bali_1080p_013_preview.mp4"
-            className="absolute"
-          />
+        <div className="relative overflow-hidden">
+          <div className="absolute w-full">
+            <VideoPlayer
+              url="https://www.w3schools.com/html/mov_bbb.mp4"
+              controls={true}
+              controlsClasses="bottom-32 right-16"
+            />
+          </div>
           <div className="relative flex">
             <Image
               src="/images/iphone-frame-landscape.png"
