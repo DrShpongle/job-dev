@@ -2,6 +2,7 @@ import React, {WheelEvent} from 'react'
 import classNames from 'classnames'
 import {useWindowSize} from 'react-use'
 import {debounce} from 'lodash'
+import {motion} from 'framer-motion'
 
 import VideoEmbed from 'components/video-embed'
 
@@ -11,12 +12,10 @@ const ScrollableHero: React.FC = () => {
   const [currentSize, setCurrentWidth] = React.useState<number>(33)
 
   const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
-    // if (currentSize < 100) {
     let scale = currentSize
     scale += e.deltaY * 0.1
     scale = Math.min(Math.max(33, scale), 100)
     setCurrentWidth(scale)
-    // }
   }
 
   let clientY: number = 0
@@ -62,7 +61,6 @@ const ScrollableHero: React.FC = () => {
             width >= height ? 'flex-row' : 'flex-col',
           )}
           onWheel={debounce(handlerChangeWidth, 30)}
-          // onWheel={handlerChangeWidth}
           onTouchStart={(e) => {
             clientY = e.touches[0].clientY
           }}
@@ -100,13 +98,31 @@ const ScrollableHero: React.FC = () => {
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
               className="absolute object-center"
             />
-            <div className="absolute left-0 w-full space-y-4 text-center text-white lg:text-right whitespace-nowrap bottom-44 lg:top-48 lg:pr-16 xl:pr-20">
-              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented">
+            <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap bottom-44 lg:top-64 lg:pr-16 xl:pr-20">
+              <motion.h2
+                initial="hidden"
+                variants={{
+                  hidden: {x: '-100%', opacity: 0},
+                  shown: {x: 0, opacity: 1},
+                }}
+                transition={{type: 'spring', duration: 1.0, bounce: 0.3}}
+                animate={currentSize >= 100 ? 'shown' : 'hidden'}
+                className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented"
+              >
                 Totally psyched
-              </h2>
-              <h3 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings">
+              </motion.h2>
+              <motion.h3
+                initial="hidden"
+                variants={{
+                  hidden: {x: '100%', opacity: 0},
+                  shown: {x: '0', opacity: 1},
+                }}
+                transition={{type: 'spring', duration: 1.0, bounce: 0.3}}
+                animate={currentSize >= 100 ? 'shown' : 'hidden'}
+                className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings"
+              >
                 the world of Jamie O’Brien
-              </h3>
+              </motion.h3>
             </div>
             <div className="absolute bottom-0 flex flex-col items-center space-y-4 text-xl text-white">
               <span>scroll down</span>
