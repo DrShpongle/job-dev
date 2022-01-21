@@ -8,25 +8,25 @@ const Vlog = () => {
   return (
     <section className="py-12 xl:py-24">
       <div className="container">
-        <div className="relative overflow-hidden">
-          <div className="absolute w-full">
-            <VideoPlayer
-              url="https://www.w3schools.com/html/mov_bbb.mp4"
-              controls={true}
-              controlsClasses="bottom-10 right-6 md:bottom-20 md:right-10 lg:bottom-28 lg:right-16 xl:bottom-36 xl:right-20 2xl:bottom-40 2xl:right-24"
-            />
-          </div>
-          <div className="relative flex">
+        <div className="relative flex justify-center overflow-hidden">
+          <div className="relative max-w-xs md:max-w-none">
+            <div className="absolute bottom-9 w-[280px] md:bottom-[74px] md:w-[610px] lg:bottom-24 lg:w-[830px] xl:bottom-32 xl:w-[1040px] 2xl:bottom-32 2xl:w-[1110px]">
+              <VideoPlayer
+                url="https://www.w3schools.com/html/mov_bbb.mp4"
+                controls={true}
+                controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
+              />
+            </div>
             <Image
-              src="/images/iphone-frame-landscape.png"
-              width={1835}
-              height={909}
+              src="/images/tv-frame.png"
+              width={1283}
+              height={1118}
               alt="Jamie O'Brien"
               priority
             />
           </div>
         </div>
-        <div className="flex mt-12 flex-nowrap xl:mt-28">
+        <div className="flex mt-8 md:mt-12 flex-nowrap xl:mt-28">
           <div className="w-2/5 text-center">
             <h3 className="font-headings leading-none text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] ">
               vlog.
