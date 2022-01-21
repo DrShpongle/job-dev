@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const TotallyPsyched = () => {
   return (
-    <div className="w-full py-12 xl:py-32">
+    <section className="w-full pt-6 pb-12 xl:pt-20 xl:pb-32">
       <Image
         src="/images/iphone-animation.gif"
         width={1123}
@@ -45,7 +45,7 @@ const TotallyPsyched = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -55,7 +55,7 @@ const Header = () => {
               )
             })}
           </ul>
-          <button className="hidden h-10 px-4 py-2 text-white uppercase rounded-full bg-pink font-headings lg:block">
+          <button className="hidden h-10 px-6 py-2 text-white uppercase rounded-full bg-pink font-headings lg:block">
             Download app
           </button>
           <MobileMenuToggler

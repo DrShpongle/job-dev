@@ -6,7 +6,7 @@ import VideoPlayer from 'components/video-player'
 
 const Vlog = () => {
   return (
-    <div className="pt-12 xl:py-24">
+    <section className="py-12 xl:py-24">
       <div className="container">
         <div className="relative overflow-hidden">
           <div className="absolute w-full">
@@ -47,7 +47,7 @@ const Vlog = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

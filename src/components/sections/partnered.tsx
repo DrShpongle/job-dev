@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 const Partnered = () => {
   return (
-    <div>
+    <section>
       <style jsx>
         {`
           .cell-with-border {
@@ -39,7 +39,7 @@ const Partnered = () => {
           )
         })}
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -6,6 +6,7 @@ import ScrollableHero from 'components/sections/scrollable-hero'
 import JamieInYourPocket from 'components/sections/jamie-in-your-pocket'
 import BePsyched from 'components/sections/be-psyched'
 import Vlog from 'components/sections/vlog'
+import PsychMag from 'components/sections/psych-mag'
 import TotallyPsyched from 'components/sections/totally-psyched'
 import SeaTrees from 'components/sections/sea-trees'
 import FixedLabel from 'components/fixed-label'
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       <JamieInYourPocket />
       <BePsyched />
       <Vlog />
+      <PsychMag />
       <TotallyPsyched />
       <SeaTrees />
       <FixedLabel

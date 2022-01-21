@@ -54,7 +54,7 @@ const Description: React.FC<{
 
 const SeaTrees = () => {
   return (
-    <div className="relative">
+    <section className="relative">
       <div className="absolute inset-0 z-[-1]">
         <Image
           src="/images/sea-trees.png"
@@ -90,7 +90,7 @@ const SeaTrees = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

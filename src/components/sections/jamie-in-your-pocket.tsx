@@ -11,7 +11,7 @@ const JamieInYourPocket = () => {
   const {scrollYProgress} = useViewportScroll()
   const rangeY = useTransform(scrollYProgress, [start, end], ['100%', '35%'])
   return (
-    <div className="relative overflow-hidden pt-14 md:pt-20 lg:pt-32 xl:pt-40">
+    <section className="relative overflow-hidden pt-14 md:pt-20 lg:pt-32 xl:pt-40">
       <VideoEmbed
         src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
         className="absolute bottom-0 z-[-1] w-auto h-full"
@@ -93,7 +93,7 @@ const JamieInYourPocket = () => {
           />
         </div>
       </motion.div>
-    </div>
+    </section>
   )
 }
 
