@@ -41,7 +41,7 @@ const PsychMag = () => {
               return (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-end h-[260px] md:h-[470px] lg:h-[570px] relative px-4 py-6 lg:p-9 mag-item before:absolute before:inset-0 before:block before:z-[1] hover-hover:hover:before:opacity-0 before:duration-300 overflow-hidden group"
+                  className="flex flex-col items-center justify-end h-[260px] md:h-[280px] lg:h-[340px] xl:h-[420px] relative px-4 py-6 lg:p-6 xl:p-9 mag-item before:absolute before:inset-0 before:block before:z-[1] hover-hover:hover:before:opacity-0 before:duration-300 overflow-hidden group"
                 >
                   <div className="absolute inset-0 duration-500 ease-in origin-center group-hover:scale-110">
                     <Image
@@ -51,21 +51,21 @@ const PsychMag = () => {
                       alt={item.title}
                     />
                   </div>
-                  <div className="relative z-10 flex flex-col items-center space-y-2 text-center md:space-y-4">
-                    <h3 className="text-xl leading-none md:leading-none lg:leading-none xl:leading-none md:text-2xl lg:text-3xl xl:text-4xl font-headings">
+                  <div className="relative z-10 flex flex-col items-center space-y-2 text-center lg:space-y-3 xl:space-y-4">
+                    <h3 className="text-lg leading-none md:leading-none lg:leading-none xl:leading-none md:text-xl lg:text-2xl xl:text-4xl font-headings">
                       {item.title}
                     </h3>
-                    <p className="text-sm md:text-base">{item.description}</p>
+                    <p className="text-sm lg:text-base">{item.description}</p>
                     <div className="flex items-center space-x-4 lg:space-x-6">
                       <a
                         href="#"
-                        className="flex px-4 py-1 text-sm text-white uppercase rounded-full md:px-6 md:py-2 md:text-lg lg:text-xl bg-pink font-headings"
+                        className="flex px-4 py-1 text-sm text-white uppercase rounded-full md:px-6 md:py-2 md:text-base lg:text-lg xl:text-xl bg-pink font-headings"
                       >
                         Read more
                       </a>
                       <a
                         href="#"
-                        className="flex items-center space-x-1 text-sm md:text-lg lg:text-xl text-pink font-headings whitespace-nowrap"
+                        className="flex items-center space-x-1 text-sm md:text-base lg:text-lg xl:text-xl text-pink font-headings whitespace-nowrap"
                       >
                         <span>More {item.category}</span>
                         <span className="translate-y-0.5">&#62;</span>
