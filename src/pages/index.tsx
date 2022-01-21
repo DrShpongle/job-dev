@@ -7,7 +7,6 @@ import GetPsyched from 'components/sections/get-psyched'
 import BePsyched from 'components/sections/be-psyched'
 import Vlog from 'components/sections/vlog'
 import PsychMag from 'components/sections/psych-mag'
-// import TotallyPsyched from 'components/sections/totally-psyched'
 import SeaTrees from 'components/sections/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
@@ -23,7 +22,6 @@ const Home: NextPage = () => {
       <BePsyched />
       <Vlog />
       <PsychMag />
-      {/* <TotallyPsyched /> */}
       <SeaTrees />
       <FixedLabel
         title="Maldives"
