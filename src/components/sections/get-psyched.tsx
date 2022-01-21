@@ -5,7 +5,7 @@ import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
-const JamieInYourPocket = () => {
+const GetPsyched = () => {
   const refPhoneFrame = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refPhoneFrame, 200)
   const {scrollYProgress} = useViewportScroll()
@@ -97,4 +97,4 @@ const JamieInYourPocket = () => {
   )
 }
 
-export default JamieInYourPocket
+export default GetPsyched

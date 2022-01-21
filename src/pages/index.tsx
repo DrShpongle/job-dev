@@ -3,7 +3,7 @@ import type {NextPage} from 'next'
 
 import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/sections/scrollable-hero'
-import JamieInYourPocket from 'components/sections/jamie-in-your-pocket'
+import GetPsyched from 'components/sections/get-psyched'
 import BePsyched from 'components/sections/be-psyched'
 import Vlog from 'components/sections/vlog'
 import PsychMag from 'components/sections/psych-mag'
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return isMounted ? (
     <PageLayout>
       <ScrollableHero />
-      <JamieInYourPocket />
+      <GetPsyched />
       <BePsyched />
       <Vlog />
       <PsychMag />
