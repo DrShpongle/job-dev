@@ -26,7 +26,7 @@ const Vlog = () => {
             />
           </div>
         </div>
-        <div className="flex mt-8 md:mt-12 flex-nowrap xl:mt-28">
+        <div className="flex mt-3 md:mt-3 flex-nowrap lg:mt-4 xl:mt-10 2xl:mt-16">
           <div className="w-2/5 text-center">
             <h3 className="font-headings leading-none text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] ">
               vlog.
