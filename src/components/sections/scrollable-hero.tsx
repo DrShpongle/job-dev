@@ -127,10 +127,6 @@ const ScrollableHero: React.FC = () => {
                 the world of Jamie O’Brien
               </motion.h3>
             </div>
-            <div className="absolute bottom-0 flex flex-col items-center space-y-4 text-xl text-white">
-              <span>scroll down</span>
-              <div className="w-px h-10 bg-white" />
-            </div>
           </div>
           <div
             className={classNames(
@@ -142,6 +138,10 @@ const ScrollableHero: React.FC = () => {
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_13B_Bali_1080p_005_preview.mp4"
               className="absolute right-0 object-center"
             />
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center w-32 m-auto space-y-4 text-xl text-white">
+            <span>scroll down</span>
+            <div className="w-px h-10 bg-white" />
           </div>
         </section>
       )}
