@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col-reverse justify-between w-full text-sm text-center lg:text-left lg:pt-6 lg:border-t md:text-lg border-black/20 md:items-center lg:flex-row md:mt-14 2xl:text-2xl lg:space-between">
           <div className="w-full pt-4 border-t lg:border-none md:pt-6 lg:pt-0 mt-7 lg:mt-0 text-black/50 border-black/20">
-            Copyright © 2021 Jamie O’Brien. All rights reserved.
+            Copyright © 2021 Jamie O&#8217;Brien. All rights reserved.
           </div>
           <ul className="flex flex-col items-center mt-8 space-y-3 lg:mt-0 md:flex-row md:space-y-0 md:space-x-4 flex-nowrap">
             {auxiliaryLinks.map((item, index) => {

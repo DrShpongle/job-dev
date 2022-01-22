@@ -5,6 +5,7 @@ import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/sections/scrollable-hero'
 import GetPsyched from 'components/sections/get-psyched'
 import BePsyched from 'components/sections/be-psyched'
+import StayPsyched from 'components/sections/stay-psyched'
 import Vlog from 'components/sections/vlog'
 import PsychMag from 'components/sections/psych-mag'
 import SeaTrees from 'components/sections/sea-trees'
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <ScrollableHero />
       <GetPsyched />
       <BePsyched />
+      <StayPsyched />
       <Vlog />
       <PsychMag />
       <SeaTrees />

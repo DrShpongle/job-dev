@@ -42,7 +42,7 @@ const PsychMag = () => {
                   key={i}
                   className="flex flex-col items-center justify-end h-[260px] md:h-[280px] lg:h-[340px] xl:h-[420px] relative px-4 py-6 lg:p-6 xl:p-9 mag-item before:absolute before:inset-0 before:block before:z-[1] hover-hover:hover:before:opacity-0 before:duration-300 overflow-hidden group"
                 >
-                  <div className="absolute inset-0 duration-500 ease-in origin-center group-hover:scale-110">
+                  <div className="absolute inset-0 duration-500 ease-in origin-center hover-hover:group-hover:scale-110">
                     <Image
                       src={item.image}
                       layout="fill"
@@ -54,7 +54,7 @@ const PsychMag = () => {
                     <h3 className="text-lg leading-none md:leading-none lg:leading-none xl:leading-none md:text-xl lg:text-2xl xl:text-4xl font-headings">
                       {item.title}
                     </h3>
-                    <p className="text-sm lg:text-base">{item.description}</p>
+                    <p className="text-sm lg:text-lg">{item.description}</p>
                     <div className="flex items-center space-x-4 lg:space-x-6">
                       <a
                         href="#"
