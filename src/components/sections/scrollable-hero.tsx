@@ -87,7 +87,7 @@ const ScrollableHero: React.FC = () => {
             )}
           >
             <VideoEmbed
-              src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06B_Bali_1080p_013_preview.mp4"
+              src="/videos/left-side.mov"
               className="absolute left-0 object-center"
             />
           </div>
@@ -129,7 +129,7 @@ const ScrollableHero: React.FC = () => {
                 animate={currentSize >= 100 ? 'shown' : 'hidden'}
                 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings"
               >
-                the world of Jamie O’Brien
+                the world of Jamie O&#8217;Brien
               </motion.h3>
             </div>
           </div>
