@@ -19,7 +19,7 @@ const PsychMag = () => {
           }
         `}
       </style>
-      <section className="bg-slate-50 py-7">
+      <section className="pt-5 pb-5 md:pb-10 xl:pb-16 bg-slate-50 md:pt-7 xl:pt-8 2xl:pt-12 2xl:pb-20">
         <div className="container">
           <div className="flex flex-col items-center w-full px-5 py-8 space-y-5 text-center bg-white md:space-y-6 lg:space-y-7 xl:space-y-8 md:py-10 lg:py-12 xl:py-14">
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
@@ -35,7 +35,7 @@ const PsychMag = () => {
               </a>
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 md:gap-7 mt-7">
+          <div className="grid gap-5 mt-5 md:grid-cols-2 md:gap-7 md:mt-7">
             {fakeData.map((item, i) => {
               return (
                 <div
