@@ -10,7 +10,7 @@ const StayPsyched = () => {
         <div className="flex flex-col space-y-12 xl:flex-row xl:space-y-0">
           <div className="w-full xl:w-2/5 xl:pr-8 xl:pt-36">
             <h3 className="text-pink text-4xl xl:text-6xl 2xl:text-[70px] font-accented">
-              Get Psyched
+              Stay Psyched
             </h3>
             <div className="flex flex-col items-start space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
               <h2 className="text-4xl leading-none md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
