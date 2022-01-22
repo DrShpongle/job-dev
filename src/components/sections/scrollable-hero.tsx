@@ -13,6 +13,10 @@ const ScrollableHero: React.FC = () => {
   const [currentSize, setCurrentWidth] = React.useState<number>(33)
 
   const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    if (scrollTop > 0) {
+      return true
+    }
     let scale = currentSize
     scale += e.deltaY * 0.1
     scale = Math.min(Math.max(33, scale), 100)
@@ -32,7 +36,8 @@ const ScrollableHero: React.FC = () => {
   }, [])
 
   React.useEffect(() => {
-    if (currentSize < 100) {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    if (currentSize < 100 && scrollTop == 0) {
       document.body.style.position = 'fixed'
     }
     if (currentSize == 100) {
@@ -47,16 +52,16 @@ const ScrollableHero: React.FC = () => {
     <>
       <style jsx>
         {`
-          .full-screen-height {
+          .scrollable-hero-section {
             height: calc(var(--real100vh) - 40px);
           }
           @media (min-width: 768px) {
-            .full-screen-height {
+            .scrollable-hero-section {
               height: calc(var(--real100vh) - 56px);
             }
           }
           @media (min-width: 1024px) {
-            .full-screen-height {
+            .scrollable-hero-section {
               height: calc(var(--real100vh) - 80px);
             }
           }
@@ -65,7 +70,7 @@ const ScrollableHero: React.FC = () => {
       {isMounted && (
         <section
           className={classNames(
-            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-10 md:mt-14 lg:mt-20',
+            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-10 md:mt-14 lg:mt-20 scrollable-hero-section',
             currentSize < 100 && 'touch-none',
             width >= height ? 'flex-row' : 'flex-col',
           )}
@@ -108,7 +113,7 @@ const ScrollableHero: React.FC = () => {
                   hidden: {x: '-100%', opacity: 0},
                   shown: {x: 0, opacity: 1},
                 }}
-                transition={{type: 'spring', duration: 1.0, bounce: 0.3}}
+                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
                 animate={currentSize >= 100 ? 'shown' : 'hidden'}
                 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented"
               >
@@ -120,7 +125,7 @@ const ScrollableHero: React.FC = () => {
                   hidden: {x: '100%', opacity: 0},
                   shown: {x: '0', opacity: 1},
                 }}
-                transition={{type: 'spring', duration: 1.0, bounce: 0.3}}
+                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
                 animate={currentSize >= 100 ? 'shown' : 'hidden'}
                 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings"
               >
