@@ -5,8 +5,6 @@ import {
   motion,
   useViewportScroll,
   useTransform,
-  transform,
-  useMotionValue,
   useAnimation,
 } from 'framer-motion'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
