@@ -8,7 +8,7 @@ import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 const BePsyched = () => {
   const {width} = useWindowSize()
   const refBoards = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollProgress(refBoards, 300)
+  const {start, end} = useRefScrollProgress(refBoards)
   const {scrollYProgress} = useViewportScroll()
   const rangeX = useTransform(scrollYProgress, [start, end], ['-90%', '0%'])
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])

@@ -23,6 +23,8 @@ const ScrollableHero: React.FC = () => {
 
   React.useEffect(() => {
     setIsMounted(true)
+    const bodyRect = window.document.body.getBoundingClientRect()
+    console.log('www:', bodyRect)
   }, [])
 
   React.useEffect(() => {
@@ -66,7 +68,7 @@ const ScrollableHero: React.FC = () => {
           </div>
           <motion.div
             className={classNames(
-              'absolute top-0 bottom-0 z-10 flex justify-center m-auto overflow-hidden duration-100',
+              'absolute top-0 bottom-0 z-10 flex justify-center items-center m-auto overflow-hidden duration-100',
               width >= height ? '!h-full w-1/3' : '!w-full h-1/3',
             )}
             style={{width: scale, height: scale}}
@@ -75,7 +77,7 @@ const ScrollableHero: React.FC = () => {
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
               className="absolute object-center"
             />
-            <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap bottom-44 lg:top-64 lg:pr-16 xl:pr-20">
+            <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap lg:pr-16 xl:pr-20">
               <motion.h2
                 initial="hidden"
                 variants={{
