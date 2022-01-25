@@ -2,8 +2,8 @@ import * as React from 'react'
 
 export const useRefScrollProgress = (inputRef: any, offset: number = 0) => {
   const ref = inputRef || React.useRef()
-  const [start, setStart] = React.useState(null)
-  const [end, setEnd] = React.useState(null)
+  const [start, setStart] = React.useState(0)
+  const [end, setEnd] = React.useState(0)
   React.useLayoutEffect(() => {
     if (!ref.current) {
       return

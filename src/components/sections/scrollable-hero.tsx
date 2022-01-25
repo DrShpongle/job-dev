@@ -1,84 +1,69 @@
-import React, {WheelEvent} from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import {useWindowSize} from 'react-use'
-import {debounce} from 'lodash'
-import {motion} from 'framer-motion'
+import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
 import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  const [clientY, setClientY] = React.useState(0)
+  const refScrollableHero = React.useRef<HTMLDivElement>(null)
+  const {start, end} = useRefScrollProgress(refScrollableHero)
   const {width, height} = useWindowSize()
-  const [currentSize, setCurrentWidth] = React.useState<number>(33)
+  const {scrollYProgress} = useViewportScroll()
+  const scale = useTransform(scrollYProgress, [start, end], ['33%', '100%'])
+  // const [clientY, setClientY] = React.useState(0)
+  // const {width, height} = useWindowSize()
+  // const [currentSize, setCurrentWidth] = React.useState<number>(33)
 
-  const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    if (scrollTop > 0) {
-      return true
-    }
-    let scale = currentSize
-    scale += e.deltaY * 0.1
-    scale = Math.min(Math.max(33, scale), 100)
-    setCurrentWidth(scale)
-  }
+  // const handlerChangeWidth = (e: WheelEvent<HTMLDivElement>) => {
+  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  //   if (scrollTop > 0) {
+  //     return true
+  //   }
+  //   let scale = currentSize
+  //   scale += e.deltaY * 0.1
+  //   scale = Math.min(Math.max(33, scale), 100)
+  //   setCurrentWidth(scale)
+  // }
 
-  const handlerOnTouchMove = (e: any) => {
-    const deltaY = e.targetTouches[0].clientY - clientY
-    let scale = currentSize
-    scale += deltaY * -0.1
-    let computedScale = Math.min(Math.max(33, scale), 100)
-    setCurrentWidth(computedScale)
-  }
+  // const handlerOnTouchMove = (e: any) => {
+  //   const deltaY = e.targetTouches[0].clientY - clientY
+  //   let scale = currentSize
+  //   scale += deltaY * -0.1
+  //   let computedScale = Math.min(Math.max(33, scale), 100)
+  //   setCurrentWidth(computedScale)
+  // }
 
   React.useEffect(() => {
     setIsMounted(true)
   }, [])
 
-  React.useEffect(() => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    if (currentSize < 100 && scrollTop == 0) {
-      document.body.style.position = 'fixed'
-    }
-    if (currentSize == 100) {
-      document.body.style.position = ''
-    }
-    return () => {
-      document.body.style.position = ''
-    }
-  }, [currentSize])
+  // React.useEffect(() => {
+  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  //   if (currentSize < 100 && scrollTop == 0) {
+  //     document.body.style.position = 'fixed'
+  //   }
+  //   if (currentSize == 100) {
+  //     document.body.style.position = ''
+  //   }
+  //   return () => {
+  //     document.body.style.position = ''
+  //   }
+  // }, [currentSize])
 
   return (
-    <>
-      <style jsx>
-        {`
-          .scrollable-hero-section {
-            height: calc(var(--real100vh) - 40px);
-          }
-          @media (min-width: 768px) {
-            .scrollable-hero-section {
-              height: calc(var(--real100vh) - 56px);
-            }
-          }
-          @media (min-width: 1024px) {
-            .scrollable-hero-section {
-              height: calc(var(--real100vh) - 80px);
-            }
-          }
-        `}
-      </style>
-      {isMounted && (
+    <section
+      ref={refScrollableHero}
+      className="sticky top-0 flex items-center justify-center h-screen bg-blue"
+    >
+      {isMounted ? (
         <section
           className={classNames(
-            'relative flex justify-center w-full overflow-hidden flex-nowrap full-screen-height mt-10 md:mt-14 lg:mt-20 scrollable-hero-section',
-            currentSize < 100 && 'touch-none',
+            'relative flex justify-center w-full h-full overflow-hidden flex-nowrap',
             width >= height ? 'flex-row' : 'flex-col',
           )}
-          onWheel={debounce(handlerChangeWidth, 30)}
-          onTouchStart={(e) => {
-            setClientY(e.touches[0].clientY)
-          }}
-          onTouchMove={debounce(handlerOnTouchMove, 5)}
         >
           <div
             className={classNames(
@@ -91,48 +76,44 @@ const ScrollableHero: React.FC = () => {
               className="absolute left-0 object-center"
             />
           </div>
-          <div
+          <motion.div
             className={classNames(
               'absolute top-0 bottom-0 z-10 flex justify-center m-auto overflow-hidden duration-100',
-              width >= height ? 'h-full w-1/3' : 'w-full h-1/3',
+              width >= height ? '!h-full w-1/3' : '!w-full h-1/3',
             )}
-            style={
-              width >= height
-                ? {width: `${currentSize}%`}
-                : {height: `${currentSize}%`}
-            }
+            style={{width: scale, height: scale}}
           >
             <VideoEmbed
               src="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4"
               className="absolute object-center"
             />
-            <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap bottom-44 lg:top-64 lg:pr-16 xl:pr-20">
-              <motion.h2
-                initial="hidden"
-                variants={{
-                  hidden: {x: '-100%', opacity: 0},
-                  shown: {x: 0, opacity: 1},
-                }}
-                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
-                animate={currentSize >= 100 ? 'shown' : 'hidden'}
-                className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented"
-              >
-                Totally psyched
-              </motion.h2>
-              <motion.h3
-                initial="hidden"
-                variants={{
-                  hidden: {x: '100%', opacity: 0},
-                  shown: {x: '0', opacity: 1},
-                }}
-                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
-                animate={currentSize >= 100 ? 'shown' : 'hidden'}
-                className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings"
-              >
-                the world of Jamie O&#8217;Brien
-              </motion.h3>
-            </div>
-          </div>
+            {/* <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap bottom-44 lg:top-64 lg:pr-16 xl:pr-20">
+                <motion.h2
+                  initial="hidden"
+                  variants={{
+                    hidden: {x: '-100%', opacity: 0},
+                    shown: {x: 0, opacity: 1},
+                  }}
+                  transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
+                  animate={currentSize >= 100 ? 'shown' : 'hidden'}
+                  className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented"
+                >
+                  Totally psyched
+                </motion.h2>
+                <motion.h3
+                  initial="hidden"
+                  variants={{
+                    hidden: {x: '100%', opacity: 0},
+                    shown: {x: '0', opacity: 1},
+                  }}
+                  transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
+                  animate={currentSize >= 100 ? 'shown' : 'hidden'}
+                  className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings"
+                >
+                  the world of Jamie O&#8217;Brien
+                </motion.h3>
+              </div> */}
+          </motion.div>
           <div
             className={classNames(
               'relative overflow-hidden shrink-0',
@@ -149,8 +130,8 @@ const ScrollableHero: React.FC = () => {
             <div className="w-px h-10 bg-white" />
           </div>
         </section>
-      )}
-    </>
+      ) : null}
+    </section>
   )
 }
 
