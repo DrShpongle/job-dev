@@ -6,7 +6,7 @@ import VideoPlayer from 'components/video-player'
 
 const Vlog = () => {
   return (
-    <section className="relative py-12 bg-white xl:py-24">
+    <section className="relative z-10 py-12 bg-white xl:py-24">
       <div className="container">
         <div className="relative flex justify-center overflow-hidden">
           <div className="relative max-w-xs md:max-w-none">

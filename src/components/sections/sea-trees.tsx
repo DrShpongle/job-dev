@@ -33,6 +33,7 @@ const Description: React.FC<{
             width={75}
             height={89}
             alt="SeaTrees"
+            priority
           />
         </div>
         <h3 className="font-headings text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-center lg:text-left">
@@ -54,13 +55,14 @@ const Description: React.FC<{
 
 const SeaTrees = () => {
   return (
-    <section className="relative z-10">
+    <section className="relative z-10 bg-white">
       <div className="absolute inset-0 z-[-1]">
         <Image
           src="/images/sea-trees.png"
           layout="fill"
           objectFit="cover"
           alt="SeaTrees"
+          priority
         />
       </div>
       <div className="container">
@@ -77,6 +79,7 @@ const SeaTrees = () => {
                 width={75}
                 height={89}
                 alt="SeaTrees"
+                priority
               />
             </div>
             <EquationBlock

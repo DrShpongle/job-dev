@@ -17,12 +17,12 @@ const GetPsyched = () => {
   return (
     <section
       ref={refGetPsyched}
-      className="sticky top-0 h-screen overflow-hidden"
+      className="sticky top-0 z-[1] h-screen overflow-hidden"
     >
       <VideoEmbed
         // src="/videos/get-psyched.mp4"
         src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
-        className="absolute bottom-0 z-[-1] w-auto h-full"
+        className="absolute bottom-0 w-full h-full"
       />
       <motion.div
         style={{y: scale}}
@@ -43,6 +43,7 @@ const GetPsyched = () => {
             height={664}
             layout="responsive"
             alt="Jamie O'Brien"
+            priority
           />
         </div>
       </motion.div>

@@ -4,6 +4,7 @@ import type {NextPage} from 'next'
 import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/sections/scrollable-hero'
 import GetPsyched from 'components/sections/get-psyched'
+
 import BePsyched from 'components/sections/be-psyched'
 import StayPsyched from 'components/sections/stay-psyched'
 import Vlog from 'components/sections/vlog'
@@ -11,7 +12,7 @@ import PsychMag from 'components/sections/psych-mag'
 import SeaTrees from 'components/sections/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
-const Home: NextPage = () => {
+const Landing: NextPage = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   React.useEffect(() => {
     setIsMounted(true)
@@ -19,7 +20,9 @@ const Home: NextPage = () => {
   return isMounted ? (
     <PageLayout>
       <ScrollableHero />
+      <section className="h-screen"></section>
       <GetPsyched />
+      <section className="h-screen"></section>
       <BePsyched />
       <StayPsyched />
       <Vlog />
@@ -35,4 +38,4 @@ const Home: NextPage = () => {
   ) : null
 }
 
-export default Home
+export default Landing

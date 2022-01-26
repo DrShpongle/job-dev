@@ -17,7 +17,7 @@ const BePsyched = () => {
   return (
     <section
       ref={refBoards}
-      className="relative pt-8 overflow-hidden md:pt-10 bg-blue lg:py-20 xl:py-28 2xl:py-36"
+      className="relative z-10 pt-8 overflow-hidden md:pt-10 bg-blue lg:py-20 xl:py-28 2xl:py-36"
     >
       <motion.div
         className="absolute bottom-0 w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px] flex"

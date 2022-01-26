@@ -11,8 +11,8 @@ export const useRefScrollProgress = (inputRef: any, offset: number = 0) => {
     const rect = ref.current.getBoundingClientRect()
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     const offsetTop = rect.top + scrollTop
-    setStart(offsetTop / document.body.clientHeight)
-    setEnd((offsetTop + rect.height) / document.body.clientHeight)
+    setStart((offsetTop + offset) / document.body.clientHeight)
+    setEnd((offsetTop + rect.height + offset) / document.body.clientHeight)
   })
   return {ref, start, end}
 }

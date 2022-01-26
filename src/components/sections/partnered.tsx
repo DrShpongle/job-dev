@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 const Partnered = () => {
   return (
-    <section>
+    <section className="relative z-10 bg-white">
       <style jsx>
         {`
           .cell-with-border {
@@ -33,6 +33,7 @@ const Partnered = () => {
                   layout="fill"
                   objectFit="contain"
                   alt={logo.title}
+                  priority
                 />
               </div>
             </a>

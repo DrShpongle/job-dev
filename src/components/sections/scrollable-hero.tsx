@@ -23,8 +23,6 @@ const ScrollableHero: React.FC = () => {
 
   React.useEffect(() => {
     setIsMounted(true)
-    const bodyRect = window.document.body.getBoundingClientRect()
-    console.log('www:', bodyRect)
   }, [])
 
   React.useEffect(() => {
@@ -46,7 +44,7 @@ const ScrollableHero: React.FC = () => {
   return (
     <section
       ref={refScrollableHero}
-      className="sticky top-0 flex items-center justify-center h-screen bg-blue"
+      className="sticky z-[1] top-0 flex items-center justify-center h-screen bg-blue"
     >
       {isMounted ? (
         <section
@@ -81,10 +79,10 @@ const ScrollableHero: React.FC = () => {
               <motion.h2
                 initial="hidden"
                 variants={{
-                  hidden: {x: '100%', opacity: 0},
-                  shown: {x: 0, opacity: 1},
+                  hidden: {x: '200%'},
+                  shown: {x: 0},
                 }}
-                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
+                transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
                 animate={controlsTitle}
                 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented will-change-transform"
               >
@@ -93,10 +91,10 @@ const ScrollableHero: React.FC = () => {
               <motion.h3
                 initial="hidden"
                 variants={{
-                  hidden: {x: '100%', opacity: 0},
-                  shown: {x: '0', opacity: 1},
+                  hidden: {x: '200%'},
+                  shown: {x: '0'},
                 }}
-                transition={{type: 'spring', duration: 1.5, bounce: 0.3}}
+                transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
                 animate={controlsSubtitle}
                 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings will-change-transform"
               >

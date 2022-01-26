@@ -21,6 +21,7 @@ const Header = () => {
                 width={198}
                 height={40}
                 alt="Jamie O&#8217;Brien"
+                priority
               />
             </a>
           </Link>
