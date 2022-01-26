@@ -1,7 +1,10 @@
 import * as React from 'react'
 import type {NextPage} from 'next'
 
-import PageLayout from 'components/layouts/page-layout'
+import Header from 'components/app/header'
+import Footer from 'components/app/footer'
+import Partnered from 'components/sections/partnered'
+
 import ScrollableHero from 'components/sections/scrollable-hero'
 import GetPsyched from 'components/sections/get-psyched'
 
@@ -18,23 +21,28 @@ const Landing: NextPage = () => {
     setIsMounted(true)
   }, [])
   return isMounted ? (
-    <PageLayout>
+    <>
+      <Header />
       <ScrollableHero />
       <section className="h-screen"></section>
       <GetPsyched />
       <section className="h-screen"></section>
-      <BePsyched />
-      <StayPsyched />
-      <Vlog />
-      <PsychMag />
-      <SeaTrees />
+      <section className="relative z-10 bg-white">
+        <BePsyched />
+        <StayPsyched />
+        <Vlog />
+        <PsychMag />
+        <SeaTrees />
+        <Partnered />
+        <Footer />
+      </section>
       <FixedLabel
         title="Maldives"
         subtitleTop="win a trip to the"
         subtitleBottom="with Jamie"
         className="fixed right-0 bottom-20"
       />
-    </PageLayout>
+    </>
   ) : null
 }
 
