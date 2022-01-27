@@ -3,12 +3,29 @@ import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 
-import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
+const useRefScrollProgress = (inputRef: any) => {
+  const ref = inputRef || React.useRef()
+  const [start, setStart] = React.useState(0)
+  const [end, setEnd] = React.useState(0)
+  React.useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+    const rect = ref.current.getBoundingClientRect()
+    const offsetTop = rect.top
+    setStart(
+      (offsetTop - window.innerHeight) /
+        (document.body.clientHeight - window.innerHeight),
+    )
+    setEnd(offsetTop / (document.body.clientHeight - window.innerHeight))
+  }, [])
+  return {start, end}
+}
 
 const BePsyched = () => {
   const {width} = useWindowSize()
   const refBoards = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollProgress(refBoards, -600)
+  const {start, end} = useRefScrollProgress(refBoards)
   const {scrollYProgress} = useViewportScroll()
   const rangeX = useTransform(scrollYProgress, [start, end], ['-90%', '0%'])
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])
