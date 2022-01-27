@@ -27,7 +27,7 @@ const GetPsyched = () => {
   const scaleText = useTransform(
     scrollYProgress,
     [start, end],
-    ['50%', '-150%'],
+    ['30%', '-120%'],
   )
 
   React.useEffect(() => {
@@ -75,7 +75,7 @@ const GetPsyched = () => {
       </div>
 
       <motion.div
-        className="relative z-10 w-full px-12 top-72"
+        className="relative z-10 w-full px-12 top-80"
         style={{y: scaleText}}
       >
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
