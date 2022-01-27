@@ -27,7 +27,7 @@ const ScrollableHero: React.FC = () => {
 
   React.useEffect(() => {
     const triggerTextAnimation = () => {
-      if (parseInt(scale.get()) > 70) {
+      if (parseInt(scale.get()) > 95) {
         controlsTitle.start('shown')
         controlsSubtitle.start('shown')
       } else {
@@ -79,24 +79,24 @@ const ScrollableHero: React.FC = () => {
               <motion.h2
                 initial="hidden"
                 variants={{
-                  hidden: {x: '200%'},
+                  hidden: {x: '150%'},
                   shown: {x: 0},
                 }}
-                transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
+                transition={{type: 'spring', duration: 0.8, bounce: 0.2}}
                 animate={controlsTitle}
-                className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented will-change-transform"
+                className="w-full text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented will-change-transform"
               >
                 Totally psyched
               </motion.h2>
               <motion.h3
                 initial="hidden"
                 variants={{
-                  hidden: {x: '200%'},
+                  hidden: {x: '150%'},
                   shown: {x: '0'},
                 }}
-                transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
+                transition={{type: 'spring', duration: 0.6, bounce: 0.2}}
                 animate={controlsSubtitle}
-                className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings will-change-transform"
+                className="w-full text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings will-change-transform"
               >
                 the world of Jamie O&#8217;Brien
               </motion.h3>
