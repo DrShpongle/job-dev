@@ -11,10 +11,6 @@ import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const GetPsyched = () => {
-  // const refPhoneFrame = React.useRef<HTMLDivElement>(null)
-  // const {start, end} = useRefScrollProgress(refPhoneFrame, 200)
-  // const {scrollYProgress} = useViewportScroll()
-  // const rangeY = useTransform(scrollYProgress, [start, end], ['100%', '35%'])
   const refGetPsyched = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refGetPsyched)
   const {scrollYProgress} = useViewportScroll()
@@ -22,18 +18,17 @@ const GetPsyched = () => {
   const scaleIphone = useTransform(
     scrollYProgress,
     [start, end],
-    ['150%', '35%'],
+    ['150%', '40%'],
   )
   const scaleText = useTransform(
     scrollYProgress,
     [start, end],
-    ['30%', '-120%'],
+    ['30%', '-150%'],
   )
 
   React.useEffect(() => {
     const triggerLogoAnimation = () => {
-      // console.log('scaleIphone.get():', scaleIphone.get())
-      if (parseInt(scaleIphone.get()) < 40) {
+      if (parseInt(scaleIphone.get()) < 45) {
         controlsLogo.start('shown')
       } else {
         controlsLogo.start('hidden')
@@ -48,34 +43,68 @@ const GetPsyched = () => {
   return (
     <section
       ref={refGetPsyched}
-      className="sticky top-0 z-[1] h-screen overflow-hidden"
+      className="sticky top-0 z-[1] h-screen overflow-hidden bg-white"
     >
-      <VideoEmbed
-        // src="/videos/get-psyched.mp4"
-        src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
-        className="absolute bottom-0 w-full h-full"
-      />
-      <div className="absolute z-20 flex justify-center w-full space-x-3 md:items-end md:right-12 top-32 md:space-x-0 md:space-y-3 md:flex-col">
-        <a href="#" className="w-28 md:w-44 xl:w-auto">
-          <Image
-            src="/images/download-on-app-store.svg"
-            width={240}
-            height={80}
-            alt="Download on App Store"
-          />
-        </a>
-        <a href="#" className="w-28 md:w-44 xl:w-auto">
-          <Image
-            src="/images/get-it-on-google-play.svg"
-            width={240}
-            height={80}
-            alt="Get it on Google Play"
-          />
-        </a>
+      <div className="pt-16 pb-6 md:pb-8 lg:hidden h-1/2 md:h-[45%]">
+        <div className="container h-full">
+          <div className="flex flex-col h-full">
+            <h3 className="text-3xl md:text-4xl text-pink font-accented">
+              Get Psyched
+            </h3>
+            <div className="md:max-w-2xl grow">
+              <h2 className="text-4xl leading-none md:text-6xl">
+                with Jamie in
+                <br /> your pocket
+              </h2>
+              <p className="mt-4 md:text-xl">
+                Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
+                nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
+                optat quam nam nimagnis doloreh enistorro vendis voluptaqua.
+              </p>
+            </div>
+            <div className="flex items-center space-x-6 md:space-x-10">
+              <button className="px-6 md:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl xl:text-[29px]">
+                Download App
+              </button>
+              <a
+                href="#"
+                className="flex items-center space-x-1 md:text-[29px] text-pink font-headings"
+              >
+                <span>Learn more</span>
+                <span className="translate-y-0.5">&#62;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-0 w-full h-1/2 md:h-[55%] lg:h-full">
+        <VideoEmbed
+          // src="/videos/get-psyched.mp4"
+          src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
+          className="absolute bottom-0 w-full h-full"
+        />
+        <div className="absolute z-20 flex justify-center w-full space-x-3 lg:items-end lg:right-12 top-6 lg:top-32 lg:space-x-0 lg:space-y-3 lg:flex-col">
+          <a href="#" className="w-28 md:w-44 xl:w-auto">
+            <Image
+              src="/images/download-on-app-store.svg"
+              width={240}
+              height={80}
+              alt="Download on App Store"
+            />
+          </a>
+          <a href="#" className="w-28 md:w-44 xl:w-auto">
+            <Image
+              src="/images/get-it-on-google-play.svg"
+              width={240}
+              height={80}
+              alt="Get it on Google Play"
+            />
+          </a>
+        </div>
       </div>
 
       <motion.div
-        className="relative z-10 w-full px-12 top-80"
+        className="relative z-10 hidden w-full px-12 top-80 lg:block"
         style={{y: scaleText}}
       >
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
@@ -92,7 +121,7 @@ const GetPsyched = () => {
             nam nimagnis doloreh enistorro vendis voluptaqua.
           </p>
         </div>
-        <div className="flex items-center mt-8 space-x-6 md:space-x-10 pb-[400px] md:pb-[520px] lg:pb-[650px] xl:pb-[700px] 2xl:pb-[840px]">
+        <div className="flex items-center mt-8 space-x-6 md:space-x-10">
           <button className="px-6 md:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl xl:text-[29px]">
             Download App
           </button>
@@ -118,7 +147,7 @@ const GetPsyched = () => {
           alt="Jamie O'Brien"
           priority
         />
-        <div className="absolute w-4/5 top-[20%]">
+        <div className="absolute w-4/5 top-[15%]">
           <div className="w-full">
             <motion.div
               variants={{hidden: {opacity: 0}, shown: {opacity: 1}}}

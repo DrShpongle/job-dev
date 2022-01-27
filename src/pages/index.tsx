@@ -40,7 +40,7 @@ const Landing: NextPage = () => {
         title="Maldives"
         subtitleTop="win a trip to the"
         subtitleBottom="with Jamie"
-        className="fixed right-0 bottom-20"
+        className="fixed right-0 bottom-6 md:bottom-20"
       />
     </>
   ) : null
