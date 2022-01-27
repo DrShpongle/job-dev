@@ -1,6 +1,11 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useAnimation,
+} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
@@ -13,6 +18,7 @@ const GetPsyched = () => {
   const refGetPsyched = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refGetPsyched)
   const {scrollYProgress} = useViewportScroll()
+  const controlsLogo = useAnimation()
   const scaleIphone = useTransform(
     scrollYProgress,
     [start, end],
@@ -23,17 +29,33 @@ const GetPsyched = () => {
     [start, end],
     ['50%', '-150%'],
   )
+
+  React.useEffect(() => {
+    const triggerLogoAnimation = () => {
+      // console.log('scaleIphone.get():', scaleIphone.get())
+      if (parseInt(scaleIphone.get()) < 40) {
+        controlsLogo.start('shown')
+      } else {
+        controlsLogo.start('hidden')
+      }
+    }
+    const unsubscribeY = scaleIphone.onChange(triggerLogoAnimation)
+    return () => {
+      unsubscribeY()
+    }
+  }, [])
+
   return (
     <section
       ref={refGetPsyched}
       className="sticky top-0 z-[1] h-screen overflow-hidden"
     >
       <VideoEmbed
-        src="/videos/get-psyched.mp4"
-        // src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
+        // src="/videos/get-psyched.mp4"
+        src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
         className="absolute bottom-0 w-full h-full"
       />
-      <div className="absolute z-10 flex space-x-3 right-12 top-32 md:space-x-0 md:space-y-3 md:flex-col">
+      <div className="absolute z-10 flex justify-center w-full space-x-3 md:items-end md:right-12 top-32 md:space-x-0 md:space-y-3 md:flex-col">
         <a href="#" className="w-28 md:w-44 xl:w-auto">
           <Image
             src="/images/download-on-app-store.svg"
@@ -53,7 +75,7 @@ const GetPsyched = () => {
       </div>
 
       <motion.div
-        className="absolute w-full top-72 left-12 md:w-2/3"
+        className="relative w-full px-12 top-72"
         style={{y: scaleText}}
       >
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
@@ -97,14 +119,25 @@ const GetPsyched = () => {
           priority
         />
         <div className="absolute w-4/5 top-[20%]">
-          <Image
-            src="/images/job-app-logo.png"
-            width={867}
-            height={664}
-            layout="responsive"
-            alt="Jamie O'Brien"
-            priority
-          />
+          <div className="w-full">
+            <motion.div
+              variants={{hidden: {opacity: 0}, shown: {opacity: 1}}}
+              initial="hidden"
+              animate={controlsLogo}
+              transition={{
+                duration: 0.5,
+              }}
+            >
+              <Image
+                src="/images/job-app-logo.png"
+                width={867}
+                height={664}
+                layout="responsive"
+                alt="Jamie O'Brien"
+                priority
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>
