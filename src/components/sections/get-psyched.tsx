@@ -55,7 +55,7 @@ const GetPsyched = () => {
         src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
         className="absolute bottom-0 w-full h-full"
       />
-      <div className="absolute z-10 flex justify-center w-full space-x-3 md:items-end md:right-12 top-32 md:space-x-0 md:space-y-3 md:flex-col">
+      <div className="absolute z-20 flex justify-center w-full space-x-3 md:items-end md:right-12 top-32 md:space-x-0 md:space-y-3 md:flex-col">
         <a href="#" className="w-28 md:w-44 xl:w-auto">
           <Image
             src="/images/download-on-app-store.svg"
@@ -75,7 +75,7 @@ const GetPsyched = () => {
       </div>
 
       <motion.div
-        className="relative w-full px-12 top-72"
+        className="relative z-10 w-full px-12 top-72"
         style={{y: scaleText}}
       >
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
