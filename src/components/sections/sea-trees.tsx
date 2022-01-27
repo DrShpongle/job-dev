@@ -25,7 +25,7 @@ const Description: React.FC<{
   className?: string
 }> = () => {
   return (
-    <div className="flex flex-col items-center space-y-6 text-white md:space-y-10 lg:space-y-12 lg:items-start">
+    <div className="flex flex-col items-center space-y-6 lg:text-white md:space-y-10 lg:space-y-12 lg:items-start">
       <div className="flex justify-center lg:justify-start lg:items-center lg:space-x-4 flex-nowrap">
         <div className="hidden shrink-0 lg:block">
           <Image
@@ -40,13 +40,13 @@ const Description: React.FC<{
           SeaTrees
         </h3>
       </div>
-      <p className="text-lg md:text-xl lg:text-2xl xl:leading-relaxed xl:text-[28px] 2xl:text-[34px]">
+      <p className="md:text-xl lg:text-2xl xl:leading-relaxed xl:text-[28px] 2xl:text-[34px]">
         Jamie O’Brien has partnered with the SeaTrees initiative to directly
         support communities planting and protecting blue-carbon coastal
         ecosystems. The most effective way to suck carbon out of the atmosphere
         - period.
       </p>
-      <button className="px-10 py-3 text-white uppercase rounded-full bg-pink font-headings text-lg md:text-xl xl:text-[29px]">
+      <button className="px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl xl:text-[29px]">
         Find out more
       </button>
     </div>
@@ -56,41 +56,48 @@ const Description: React.FC<{
 const SeaTrees = () => {
   return (
     <section className="relative z-10 bg-white">
-      <div className="absolute inset-0 z-[-1]">
-        <Image
-          src="/images/sea-trees.png"
-          layout="fill"
-          objectFit="cover"
-          alt="SeaTrees"
-          priority
-        />
-      </div>
-      <div className="container">
-        <div className="flex flex-col py-10 lg:py-24 lg:flex-row xl:py-32 2xl:py-40 md:py-16">
-          <div className="flex items-center justify-between lg:justify-start lg:pr-16 lg:space-y-16 lg:w-1/2 lg:flex-col xl:pr-32 xl:w-3/5">
-            <EquationBlock
-              leftExpression="1 app download"
-              rightExpression="1 sea tree planted"
-              className="self-start"
-            />
-            <div className="w-10 mx-4 lg:hidden shrink-0 md:w-auto">
-              <Image
-                src="/images/sea-trees-logo.png"
-                width={75}
-                height={89}
-                alt="SeaTrees"
-                priority
+      <div className="relative">
+        <div className="absolute inset-0 z-[-1]">
+          <Image
+            src="/images/sea-trees.png"
+            layout="fill"
+            objectFit="cover"
+            alt="SeaTrees"
+            priority
+          />
+        </div>
+        <div className="container">
+          <div className="flex flex-col py-16 lg:py-24 lg:flex-row xl:py-32 2xl:py-40 md:py-16">
+            <div className="flex items-center justify-between lg:justify-start lg:pr-16 lg:space-y-16 lg:w-1/2 lg:flex-col xl:pr-32 xl:w-3/5">
+              <EquationBlock
+                leftExpression="1 app download"
+                rightExpression="1 sea tree planted"
+                className="self-start"
+              />
+              <div className="w-10 mx-4 lg:hidden shrink-0 md:w-auto">
+                <Image
+                  src="/images/sea-trees-logo.png"
+                  width={75}
+                  height={89}
+                  alt="SeaTrees"
+                  priority
+                />
+              </div>
+              <EquationBlock
+                leftExpression="1 booked experience"
+                rightExpression="1 sea tree planted"
+                className="self-end"
               />
             </div>
-            <EquationBlock
-              leftExpression="1 booked experience"
-              rightExpression="1 sea tree planted"
-              className="self-end"
-            />
+            <div className="hidden lg:block lg:w-1/2 xl:w-2/5">
+              <Description />
+            </div>
           </div>
-          <div className="mt-14 md:mt-20 lg:mt-0 lg:w-1/2 xl:w-2/5">
-            <Description />
-          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="w-full mt-10 lg:hidden md:mt-12">
+          <Description />
         </div>
       </div>
     </section>
