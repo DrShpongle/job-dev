@@ -6,19 +6,36 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
+import {useWindowSize} from 'react-use'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const GetPsyched = () => {
+  const {width, height} = useWindowSize()
   const refGetPsyched = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refGetPsyched)
   const {scrollYProgress} = useViewportScroll()
   const controlsLogo = useAnimation()
+
+  let valueToSwitch = '30%'
+  if (width < 768) {
+    valueToSwitch = '50%'
+  }
+  if (width >= 768 && width < 1024) {
+    valueToSwitch = '40%'
+  }
+  if (width >= 1024 && width / height >= 1) {
+    valueToSwitch = '30%'
+  }
+  if (width >= 1024 && width / height < 1) {
+    valueToSwitch = '10%'
+  }
+
   const scaleIphone = useTransform(
     scrollYProgress,
     [start, end],
-    ['150%', '40%'],
+    ['150%', valueToSwitch],
   )
   const scaleText = useTransform(
     scrollYProgress,
@@ -28,7 +45,7 @@ const GetPsyched = () => {
 
   React.useEffect(() => {
     const triggerLogoAnimation = () => {
-      if (parseInt(scaleIphone.get()) < 45) {
+      if (parseInt(scaleIphone.get()) < parseInt(valueToSwitch) + 5) {
         controlsLogo.start('shown')
       } else {
         controlsLogo.start('hidden')
@@ -45,7 +62,7 @@ const GetPsyched = () => {
       ref={refGetPsyched}
       className="sticky top-0 z-[1] h-screen overflow-hidden bg-white"
     >
-      <div className="pt-16 pb-6 md:pb-8 lg:hidden h-1/2 md:h-[45%]">
+      <div className="pt-10 pb-6 md:pb-8 lg:hidden h-1/2 md:h-[45%]">
         <div className="container h-full">
           <div className="flex flex-col h-full">
             <h3 className="text-3xl md:text-4xl text-pink font-accented">
