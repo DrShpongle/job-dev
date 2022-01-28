@@ -10,11 +10,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
       <Header />
       {children}
       <div className="relative z-10 bg-white">
-        <div className="relative z-10 py-8 bg-white md:py-16 xl:mt-24 xl:mb-16">
-          <div className="container">
-            <Partnered />
-          </div>
-        </div>
+        <Partnered />
         <Footer />
       </div>
     </div>
