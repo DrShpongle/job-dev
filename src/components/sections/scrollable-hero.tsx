@@ -59,7 +59,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://akamai-mytwynmediaservices-euno.streaming.media.azure.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <motion.div
             className={classNames(
@@ -68,7 +68,7 @@ const ScrollableHero: React.FC = () => {
             )}
             style={{width: scale, height: scale}}
           >
-            <VideoEmbed url="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_01B_Bali_1080p_014_preview.mp4" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/0c2c7bcb-35b0-4d2a-af43-c223242d5a0b/0c2c7bcb-35b0-4d2a-af43-c223242d.ism/manifest(format=m3u8-aapl).m3u8" />
             <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap lg:pr-16 xl:pr-20">
               <motion.h2
                 initial="hidden"
