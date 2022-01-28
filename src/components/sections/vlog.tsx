@@ -12,7 +12,7 @@ const Vlog = () => {
           <div className="relative max-w-xs md:max-w-none">
             <div className="absolute bottom-9 w-[280px] md:bottom-[74px] md:w-[610px] lg:bottom-24 lg:w-[830px] xl:bottom-32 xl:w-[1040px] 2xl:bottom-32 2xl:w-[1110px]">
               <VideoPlayer
-                url="https://www.w3schools.com/html/mov_bbb.mp4"
+                url="https://akamai-mytwynmediaservices-euno.streaming.media.azure.net/5eb305fa-6b14-4ebe-ad83-981f7a9c979e/5eb305fa-6b14-4ebe-ad83-981f7a9c.ism/manifest(format=m3u8-aapl).m3u8"
                 controls={true}
                 controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
               />
