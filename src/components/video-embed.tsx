@@ -2,8 +2,8 @@ import * as React from 'react'
 import classNames from 'classnames'
 import ReactPlayer from 'react-player'
 
-const VideoEmbed: React.FC<{src: string; className?: string}> = ({
-  src,
+const VideoEmbed: React.FC<{url: string; className?: string}> = ({
+  url,
   className,
 }) => (
   <>
@@ -13,20 +13,11 @@ const VideoEmbed: React.FC<{src: string; className?: string}> = ({
         playing
         muted
         loop
-        url={src}
+        url={url}
         width="100%"
         height="100%"
       />
     </div>
-    {/* <video
-      src={src}
-      controls={false}
-      autoPlay
-      loop
-      muted
-      playsInline
-      className={classNames('object-cover w-full h-full', className)}
-    /> */}
   </>
 )
 
