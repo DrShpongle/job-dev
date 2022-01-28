@@ -96,8 +96,7 @@ const GetPsyched = () => {
       </div>
       <div className="absolute bottom-0 w-full h-1/2 md:h-[55%] lg:h-full">
         <VideoEmbed
-          // src="/videos/get-psyched.mp4"
-          src="https://cdn.videvo.net/videvo_files/video/free/2017-08/large_watermarked/170724_15_Setangibeach_preview.mp4"
+          src="https://akamai-mytwynmediaservices-euno.streaming.media.azure.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8"
           className="absolute bottom-0 w-full h-full"
         />
         <div className="absolute z-20 flex justify-center w-full space-x-3 lg:items-end lg:right-12 top-6 lg:top-32 lg:space-x-0 lg:space-y-3 lg:flex-col">

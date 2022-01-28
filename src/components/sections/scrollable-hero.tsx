@@ -60,7 +60,7 @@ const ScrollableHero: React.FC = () => {
             )}
           >
             <VideoEmbed
-              src="/videos/left-side.mov"
+              src="https://akamai-mytwynmediaservices-euno.streaming.media.azure.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8"
               className="absolute left-0 object-center"
             />
           </div>

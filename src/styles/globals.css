@@ -37,6 +37,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.embed-video-wrapper video {
+  object-fit: cover;
+}
+
 .mobile-menu {
   height: calc(var(--real100vh) - 40px);
 }
