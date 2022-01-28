@@ -16,6 +16,13 @@ const VideoEmbed: React.FC<{url: string; className?: string}> = ({
         url={url}
         width="100%"
         height="100%"
+        config={{
+          file: {
+            hlsOptions: {
+              abrBandWidthUpFactor: 0.5,
+            },
+          },
+        }}
       />
     </div>
   </>
