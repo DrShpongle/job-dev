@@ -6,9 +6,15 @@ import HeroWithScrollableText from 'components/sections/surf-app/hero-with-scrol
 
 const SurfApp: NextPage = () => {
   return (
-    <PageLayout>
+    <>
       <HeroWithScrollableText />
-    </PageLayout>
+      <section className="h-[100vh]" />
+      <section className="h-[100vh] bg-green-500 relative" />
+    </>
+    // <PageLayout>
+    //   <HeroWithScrollableText />
+    //   <section className="h-[100vh]" />
+    // </PageLayout>
   )
 }
 

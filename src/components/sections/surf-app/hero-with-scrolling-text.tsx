@@ -6,99 +6,104 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
-import {useWindowSize} from 'react-use'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
+import {useRefScrollText} from 'hooks/useRefScrollText'
 import VideoEmbed from 'components/video-embed'
 
-const HeroWithScrollableText = () => {
-  const {width, height} = useWindowSize()
-  const refGetPsyched = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollProgress(refGetPsyched)
+const textVariants = {
+  nonActive: {
+    opacity: 0.2,
+  },
+  active: {
+    opacity: 1,
+  },
+}
+
+const TextItem: React.FC<{text: string}> = ({text}) => {
+  const refText = React.useRef<HTMLDivElement>(null)
+  const {start, end} = useRefScrollText(refText)
+  console.log('start:', start)
+  console.log('end:', end)
   const {scrollYProgress} = useViewportScroll()
-  const controlsLogo = useAnimation()
 
-  let valueToSwitch = '30%'
-  if (width < 768) {
-    valueToSwitch = '50%'
-  }
-  if (width >= 768 && width < 1024) {
-    valueToSwitch = '40%'
-  }
-  if (width >= 1024 && width / height >= 1) {
-    valueToSwitch = '30%'
-  }
-  if (width >= 1024 && width / height < 1) {
-    valueToSwitch = '10%'
-  }
-
-  const scaleIphone = useTransform(
+  const textOpacity = useTransform(
     scrollYProgress,
-    [start, end],
-    ['150%', valueToSwitch],
+    [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
+    [0.05, 0.1, 1, 0.1, 0.05],
   )
-  const scaleText = useTransform(
-    scrollYProgress,
-    [start * 1.25, end],
-    ['0%', '-150%'],
-  )
-
-  React.useEffect(() => {
-    const triggerLogoAnimation = () => {
-      if (parseInt(scaleIphone.get()) < parseInt(valueToSwitch) + 5) {
-        controlsLogo.start('shown')
-      } else {
-        controlsLogo.start('hidden')
-      }
-    }
-    const unsubscribeY = scaleIphone.onChange(triggerLogoAnimation)
-    return () => {
-      unsubscribeY()
-    }
-  }, [])
-
   return (
-    <section
-      ref={refGetPsyched}
-      className="sticky top-0 z-[1] h-screen overflow-hidden bg-white"
+    <motion.div
+      ref={refText}
+      // variants={textVariants}
+      // initial="nonActive"
+      // animate="nonActive"
+      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200"
+      style={{opacity: textOpacity}}
     >
-      <div className="pt-10 pb-6 md:pb-8 md:pt-16 lg:hidden h-1/2 md:h-[45%]">
-        <div className="container h-full">
-          <div className="flex flex-col h-full">
-            <h3 className="text-3xl md:text-4xl text-pink font-accented">
-              Get Psyched
-            </h3>
-            <div className="md:max-w-2xl grow">
-              <h2 className="text-4xl leading-none md:text-6xl">
-                with Jamie in
-                <br /> your pocket
-              </h2>
-              <p className="mt-4 md:text-xl">
-                Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
-                nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
-                optat quam nam nimagnis doloreh enistorro vendis voluptaqua.
-              </p>
-            </div>
-            <div className="flex items-center space-x-6 md:space-x-10">
-              <button className="px-6 md:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl xl:text-[29px]">
-                Download App
-              </button>
-              <a
-                href="#"
-                className="flex items-center space-x-1 md:text-[29px] text-pink font-headings"
-              >
-                <span>Learn more</span>
-                <span className="translate-y-0.5">&#62;</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute bottom-0 w-full h-1/2 md:h-[55%] lg:h-full">
-        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
-      </div>
-    </section>
+      {text}
+    </motion.div>
   )
 }
 
+const HeroWithScrollableText = () => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  // const refSection = React.useRef<HTMLDivElement>(null)
+  // const {start, end} = useRefScrollProgress(refSection)
+  // const {scrollYProgress} = useViewportScroll()
+
+  // const scaleText = useTransform(
+  //   scrollYProgress,
+  //   [start, end],
+  //   ['100%', '-100%'],
+  // )
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  const testHandler = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    console.log(
+      'scrollTop:',
+      scrollTop / (document.body.clientHeight - window.innerHeight),
+    )
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', testHandler)
+    // return window.removeEventListener('scroll', testHandler)
+  }, [])
+
+  return isMounted ? (
+    <section
+      // ref={refSection}
+      className="sticky top-0"
+    >
+      <div className="sticky top-0 h-screen">
+        <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
+          <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
+        </div>
+      </div>
+      <div>
+        <div className="container relative space-y-16">
+          {textArray.map((item, i) => {
+            return <TextItem key={i} text={item} />
+          })}
+        </div>
+        <section className="h-[100vh]" />
+      </div>
+    </section>
+  ) : null
+}
+
 export default HeroWithScrollableText
+
+const textArray = [
+  'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',
+  'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
+  'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
+  'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',
+  'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
+  'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
+]
