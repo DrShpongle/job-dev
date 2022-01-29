@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 const Partnered = () => {
   return (
-    <section className="relative z-10 pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16">
+    <section className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16">
       <div className="container">
         <style jsx>
           {`

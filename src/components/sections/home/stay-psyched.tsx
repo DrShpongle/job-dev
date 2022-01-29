@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 const StayPsyched = () => {
   return (
-    <section className="relative z-10 pt-12 pb-5 md:pb-7 bg-slate-50 xl:py-7">
+    <section className="pt-12 pb-5 md:pb-7 bg-slate-50 xl:py-7">
       <div className="container">
         <div className="flex flex-col space-y-12 xl:flex-row xl:space-y-0">
           <div className="w-full xl:w-2/5 xl:pr-8 xl:pt-36">
