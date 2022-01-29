@@ -25,6 +25,7 @@ const ScrollableHero: React.FC = () => {
   }, [])
 
   React.useEffect(() => {
+    // TODO: fix return for this useEffect
     const triggerTextAnimation = () => {
       if (parseInt(scale.get()) > 95) {
         controlsText.start('shown')
