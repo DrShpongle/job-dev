@@ -1,11 +1,7 @@
 import * as React from 'react'
-import classNames from 'classnames'
 import ReactPlayer from 'react-player'
 
-const VideoEmbed: React.FC<{url: string; className?: string}> = ({
-  url,
-  className,
-}) => (
+const VideoEmbed: React.FC<{url: string; className?: string}> = ({url}) => (
   <>
     <div className="w-full h-full embed-video-wrapper">
       <ReactPlayer
