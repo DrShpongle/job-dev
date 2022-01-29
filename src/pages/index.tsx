@@ -29,13 +29,18 @@ const Landing: NextPage = () => {
         <section className="h-[115vh]" />
         <GetPsyched />
         <section className="h-[115vh]" />
-        <section className="relative z-10 bg-white" />
         <section className="relative z-10 bg-white">
           <BePsyched />
           <StayPsyched />
           <Vlog />
           <PsychMag />
           <SeaTrees />
+          <FixedLabel
+            title="Maldives"
+            subtitleTop="win a trip to the"
+            subtitleBottom="with Jamie"
+            className="fixed right-0 bottom-6 md:bottom-20"
+          />
         </section>
       </PageLayout>
     </>
