@@ -18,8 +18,7 @@ const ScrollableHero: React.FC = () => {
   const {width, height} = useWindowSize()
   const {scrollYProgress} = useViewportScroll()
   const scale = useTransform(scrollYProgress, [start, end], ['33%', '100%'])
-  const controlsTitle = useAnimation()
-  const controlsSubtitle = useAnimation()
+  const controlsText = useAnimation()
 
   React.useEffect(() => {
     setIsMounted(true)
@@ -28,11 +27,9 @@ const ScrollableHero: React.FC = () => {
   React.useEffect(() => {
     const triggerTextAnimation = () => {
       if (parseInt(scale.get()) > 95) {
-        controlsTitle.start('shown')
-        controlsSubtitle.start('shown')
+        controlsText.start('shown')
       } else {
-        controlsTitle.start('hidden')
-        controlsSubtitle.start('hidden')
+        controlsText.start('hidden')
       }
     }
     const unsubscribeY = scale.onChange(triggerTextAnimation)
@@ -77,7 +74,7 @@ const ScrollableHero: React.FC = () => {
                   shown: {x: 0},
                 }}
                 transition={{type: 'spring', duration: 0.8, bounce: 0.2}}
-                animate={controlsTitle}
+                animate={controlsText}
                 className="w-full text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented will-change-transform"
               >
                 Totally psyched
@@ -89,7 +86,7 @@ const ScrollableHero: React.FC = () => {
                   shown: {x: '0'},
                 }}
                 transition={{type: 'spring', duration: 0.6, bounce: 0.2}}
-                animate={controlsSubtitle}
+                animate={controlsText}
                 className="w-full text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings will-change-transform"
               >
                 the world of Jamie O&#8217;Brien
