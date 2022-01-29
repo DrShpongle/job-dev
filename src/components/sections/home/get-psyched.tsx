@@ -13,8 +13,8 @@ import VideoEmbed from 'components/video-embed'
 
 const GetPsyched = () => {
   const {width, height} = useWindowSize()
-  const refGetPsyched = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollProgress(refGetPsyched)
+  const refSection = React.useRef<HTMLDivElement>(null)
+  const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
   const controlsLogo = useAnimation()
 
@@ -59,7 +59,7 @@ const GetPsyched = () => {
 
   return (
     <section
-      ref={refGetPsyched}
+      ref={refSection}
       className="sticky top-0 h-screen overflow-hidden bg-white"
     >
       <div className="pt-10 pb-6 md:pb-8 md:pt-16 lg:hidden h-1/2 md:h-[45%]">
