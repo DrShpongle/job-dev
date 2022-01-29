@@ -42,7 +42,7 @@ const ScrollableHero: React.FC = () => {
   return (
     <section
       ref={refSection}
-      className="sticky z-[1] top-0 flex items-center justify-center h-screen bg-blue"
+      className="sticky top-0 flex items-center justify-center h-screen bg-blue"
     >
       {isMounted ? (
         <section

@@ -60,7 +60,7 @@ const GetPsyched = () => {
   return (
     <section
       ref={refGetPsyched}
-      className="sticky top-0 z-[1] h-screen overflow-hidden bg-white"
+      className="sticky top-0 h-screen overflow-hidden bg-white"
     >
       <div className="pt-10 pb-6 md:pb-8 md:pt-16 lg:hidden h-1/2 md:h-[45%]">
         <div className="container h-full">

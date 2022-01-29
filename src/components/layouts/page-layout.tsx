@@ -8,8 +8,8 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
   return (
     <div className="">
       <Header />
-      {children}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-[1]">{children}</div>
+      <div className="relative z-10">
         <Partnered />
         <Footer />
       </div>

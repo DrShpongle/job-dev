@@ -1,6 +1,8 @@
 import * as React from 'react'
 import type {NextPage} from 'next'
 
+import PageLayout from 'components/layouts/page-layout'
+
 import Header from 'components/app/header'
 import Footer from 'components/app/footer'
 import Partnered from 'components/sections/partnered'
@@ -22,26 +24,20 @@ const Landing: NextPage = () => {
   }, [])
   return isMounted ? (
     <>
-      <Header />
-      <ScrollableHero />
-      <section className="h-[115vh]"></section>
-      <GetPsyched />
-      <section className="h-[115vh]"></section>
-      <section className="relative z-10 bg-white">
-        <BePsyched />
-        <StayPsyched />
-        <Vlog />
-        <PsychMag />
-        <SeaTrees />
-        <Partnered />
-        <Footer />
-      </section>
-      <FixedLabel
-        title="Maldives"
-        subtitleTop="win a trip to the"
-        subtitleBottom="with Jamie"
-        className="fixed right-0 bottom-6 md:bottom-20"
-      />
+      <PageLayout>
+        <ScrollableHero />
+        <section className="h-[115vh]" />
+        <GetPsyched />
+        <section className="h-[115vh]" />
+        <section className="relative z-10 bg-white" />
+        <section className="relative z-10 bg-white">
+          <BePsyched />
+          <StayPsyched />
+          <Vlog />
+          <PsychMag />
+          <SeaTrees />
+        </section>
+      </PageLayout>
     </>
   ) : null
 }
