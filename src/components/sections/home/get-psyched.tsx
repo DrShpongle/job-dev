@@ -123,12 +123,12 @@ const GetPsyched = () => {
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
           Get Psyched
         </h3>
-        <div className="max-w-[44rem] text-white">
+        <div className="max-w-[44rem]">
           <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none bg-gradient-to-r from-pink to-blue bg-clip-text text-transparent">
             with Jamie in
             <br /> your pocket
           </h2>
-          <p className="mt-12 md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
+          <p className="mt-12 md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal bg-gradient-to-r from-pink to-blue bg-clip-text text-transparent">
             Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
             nonsedit, utestiam, sus quia quis doluptio illatem et aut optat quam
             nam nimagnis doloreh enistorro vendis voluptaqua.
