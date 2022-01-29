@@ -13,8 +13,8 @@ import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  const refScrollableHero = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollProgress(refScrollableHero)
+  const refSection = React.useRef<HTMLDivElement>(null)
+  const {start, end} = useRefScrollProgress(refSection)
   const {width, height} = useWindowSize()
   const {scrollYProgress} = useViewportScroll()
   const scale = useTransform(scrollYProgress, [start, end], ['33%', '100%'])
@@ -43,7 +43,7 @@ const ScrollableHero: React.FC = () => {
 
   return (
     <section
-      ref={refScrollableHero}
+      ref={refSection}
       className="sticky z-[1] top-0 flex items-center justify-center h-screen bg-blue"
     >
       {isMounted ? (
@@ -102,7 +102,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://cdn.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_13B_Bali_1080p_005_preview.mp4" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center w-32 m-auto space-y-4 text-xl text-white">
             <span>scroll down</span>

@@ -18,8 +18,10 @@ const VideoEmbed: React.FC<{url: string; className?: string}> = ({
         height="100%"
         config={{
           file: {
+            forceHLS: true,
             hlsOptions: {
               abrBandWidthUpFactor: 0.5,
+              startLevel: 3,
             },
           },
         }}

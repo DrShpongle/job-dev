@@ -5,14 +5,14 @@ import Header from 'components/app/header'
 import Footer from 'components/app/footer'
 import Partnered from 'components/sections/partnered'
 
-import ScrollableHero from 'components/sections/scrollable-hero'
-import GetPsyched from 'components/sections/get-psyched'
+import ScrollableHero from 'components/sections/home/scrollable-hero'
+import GetPsyched from 'components/sections/home/get-psyched'
 
-import BePsyched from 'components/sections/be-psyched'
-import StayPsyched from 'components/sections/stay-psyched'
-import Vlog from 'components/sections/vlog'
-import PsychMag from 'components/sections/psych-mag'
-import SeaTrees from 'components/sections/sea-trees'
+import BePsyched from 'components/sections/home/be-psyched'
+import StayPsyched from 'components/sections/home/stay-psyched'
+import Vlog from 'components/sections/home/vlog'
+import PsychMag from 'components/sections/home/psych-mag'
+import SeaTrees from 'components/sections/home/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
 const Landing: NextPage = () => {
