@@ -124,7 +124,7 @@ const GetPsyched = () => {
           Get Psyched
         </h3>
         <div className="max-w-[44rem] text-white">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none bg-gradient-to-r from-pink to-blue bg-clip-text text-fill-transparent">
             with Jamie in
             <br /> your pocket
           </h2>

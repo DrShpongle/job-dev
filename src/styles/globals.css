@@ -41,6 +41,10 @@ body {
   object-fit: cover;
 }
 
+.text-fill-transparent {
+  text-fill-color: transparent;
+}
+
 .mobile-menu {
   height: calc(var(--real100vh) - 40px);
 }
