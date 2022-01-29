@@ -94,7 +94,7 @@ const GetPsyched = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full h-1/2 md:h-[55%] lg:h-full">
+      <div className="absolute bottom-0 w-full h-1/2 md:h-[55%] lg:h-full before:absolute before:bg-black/20 before:inset-0">
         <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
         <div className="absolute z-20 flex justify-center w-full space-x-3 lg:items-end lg:right-12 top-6 lg:top-32 lg:space-x-0 lg:space-y-3 lg:flex-col">
           <a href="#" className="w-28 md:w-44 xl:w-auto">
@@ -123,12 +123,12 @@ const GetPsyched = () => {
         <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
           Get Psyched
         </h3>
-        <div className="max-w-[44rem]">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none bg-gradient-to-r from-pink to-blue bg-clip-text text-transparent">
+        <div className="max-w-[44rem] text-white">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
             with Jamie in
             <br /> your pocket
           </h2>
-          <p className="mt-12 md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal bg-gradient-to-r from-pink to-blue bg-clip-text text-transparent">
+          <p className="mt-12 md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
             Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
             nonsedit, utestiam, sus quia quis doluptio illatem et aut optat quam
             nam nimagnis doloreh enistorro vendis voluptaqua.
