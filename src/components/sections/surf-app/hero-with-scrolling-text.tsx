@@ -6,6 +6,7 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
+import {useWindowSize, useMeasure} from 'react-use'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import {useRefScrollText} from 'hooks/useRefScrollText'
@@ -23,15 +24,26 @@ const textVariants = {
 const TextItem: React.FC<{text: string}> = ({text}) => {
   const refText = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollText(refText)
-  console.log('start:', start)
-  console.log('end:', end)
   const {scrollYProgress} = useViewportScroll()
 
   const textOpacity = useTransform(
     scrollYProgress,
-    [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
-    [0.05, 0.1, 1, 0.1, 0.05],
+    // [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
+    // [0.05, 0.1, 1, 0.1, 0.05],
+    [start, (start + end) / 2, end],
+    [0.5, 1, 0.5],
   )
+
+  // const testHandler = () => {
+  //   const rect = refText.current.getBoundingClientRect()
+  //   console.log('rectTop', rect.top)
+  //   console.log('window scroll', document.documentElement.scrollTop)
+  // }
+
+  // React.useEffect(() => {
+  //   window.addEventListener('scroll', testHandler)
+  // })
+
   return (
     <motion.div
       ref={refText}
@@ -47,54 +59,80 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
 }
 
 const HeroWithScrollableText = () => {
-  const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  // const refSection = React.useRef<HTMLDivElement>(null)
-  // const {start, end} = useRefScrollProgress(refSection)
-  // const {scrollYProgress} = useViewportScroll()
+  const refSection = React.useRef<HTMLDivElement>(null)
+  const refTextHolder = React.useRef<HTMLDivElement>(null)
 
-  // const scaleText = useTransform(
-  //   scrollYProgress,
-  //   [start, end],
-  //   ['100%', '-100%'],
-  // )
+  const {height: windowHeight} = useWindowSize()
+  const [textBlockRef, {height: textBlockHeight}] = useMeasure()
 
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const {start, end} = useRefScrollProgress(refSection)
+  const {scrollYProgress} = useViewportScroll()
 
-  const testHandler = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    console.log(
-      'scrollTop:',
-      scrollTop / (document.body.clientHeight - window.innerHeight),
-    )
-  }
+  const scaleText = useTransform(
+    scrollYProgress,
+    [start, end],
+    [textBlockHeight, -windowHeight],
+  )
 
-  React.useEffect(() => {
-    window.addEventListener('scroll', testHandler)
-    // return window.removeEventListener('scroll', testHandler)
-  }, [])
+  // let textHolderHeight = 0
+  // let windowHeight = 0
+  // let scaleText
 
-  return isMounted ? (
-    <section
-      // ref={refSection}
-      className="sticky top-0"
-    >
-      <div className="sticky top-0 h-screen">
-        <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
-          <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
-        </div>
+  // React.useEffect(() => {
+  //   textHolderHeight = refTextHolder.current?.getBoundingClientRect().height
+  //   windowHeight = window.innerHeight
+  //   // console.log('windowHeight:', windowHeight)
+  //   // console.log('textHolderHeight:', textHolderHeight)
+  // })
+
+  // React.useEffect(() => {
+  //   if (currentRef?.current) {
+  //     setCurrentRef(currentRef.current)
+  //   }
+  // }, [currentRef?.current])
+
+  // React.useEffect(() => {
+  //   const triggerLogoAnimation = () => {
+  //     console.log('scaleIphone.get():', scaleText.get())
+  //   }
+  //   const unsubscribeY = scaleText.onChange(triggerLogoAnimation)
+  //   return () => {
+  //     unsubscribeY()
+  //   }
+  // }, [])
+
+  // const testHandler = () => {
+  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  //   console.log(
+  //     'scrollTop:',
+  //     scrollTop / (document.body.clientHeight - window.innerHeight),
+  //   )
+  //   // console.log('scrollTop:', scrollTop)
+  // }
+
+  // React.useEffect(() => {
+  //   window.addEventListener('scroll', testHandler)
+  //   // return window.removeEventListener('scroll', testHandler)
+  // }, [])
+
+  return (
+    <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
+      <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
+        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
       </div>
-      <div>
-        <div className="container relative space-y-16">
+      <motion.div
+        ref={refTextHolder}
+        className="absolute bottom-0 z-10"
+        style={{y: scaleText}}
+      >
+        <div ref={textBlockRef} className="container space-y-24 bg-red-500/20">
           {textArray.map((item, i) => {
             return <TextItem key={i} text={item} />
           })}
         </div>
-        <section className="h-[100vh]" />
-      </div>
+      </motion.div>
     </section>
-  ) : null
+  )
 }
 
 export default HeroWithScrollableText

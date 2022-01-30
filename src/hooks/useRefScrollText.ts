@@ -9,12 +9,13 @@ export const useRefScrollText = (inputRef: any) => {
       return
     }
     const rect = ref.current.getBoundingClientRect()
+    // console.log('rect:', rect.top)
     setStart(
-      (rect.top - window.innerHeight * 0.65) /
+      (rect.top - window.innerHeight / 2) /
         (document.body.clientHeight - window.innerHeight),
     )
     setEnd(
-      (rect.top + rect.height - window.innerHeight * 0.35) /
+      (rect.top + rect.height - window.innerHeight / 2) /
         (document.body.clientHeight - window.innerHeight),
     )
   }, [])
