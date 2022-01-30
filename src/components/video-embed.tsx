@@ -17,7 +17,7 @@ const VideoEmbed: React.FC<{url: string; className?: string}> = ({url}) => (
             // forceHLS: true,
             hlsOptions: {
               abrBandWidthUpFactor: 0.5,
-              startLevel: 2,
+              startLevel: 3,
             },
           },
         }}
