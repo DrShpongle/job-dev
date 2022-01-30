@@ -25,7 +25,7 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollHandler)
-  })
+  }, [])
 
   return (
     <motion.div
@@ -53,6 +53,8 @@ const HeroWithScrollableText = () => {
   const {height: windowHeight} = useWindowSize()
   const [textBlockRef, {height: textBlockHeight}] = useMeasure<any>()
 
+  const controlsPhone = useAnimation()
+
   const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
 
@@ -62,6 +64,20 @@ const HeroWithScrollableText = () => {
     [start, end],
     [textBlockHeight, -windowHeight],
   )
+
+  React.useEffect(() => {
+    const triggerPhoneAnimation = () => {
+      if (scaleText.get() < -windowHeight * 0.6) {
+        controlsPhone.start('shown')
+      } else {
+        controlsPhone.start('hidden')
+      }
+    }
+    const unsubscribeY = scaleText.onChange(triggerPhoneAnimation)
+    return () => {
+      unsubscribeY()
+    }
+  }, [])
 
   return (
     <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
@@ -80,6 +96,35 @@ const HeroWithScrollableText = () => {
           })}
         </div>
       </motion.div>
+      <div className="absolute inset-0 flex items-center justify-center pt-20">
+        <motion.div
+          className="w-[300px]"
+          variants={{
+            hidden: {
+              opacity: 0,
+              scale: 0.5,
+            },
+            shown: {
+              opacity: 1,
+              scale: 1,
+            },
+          }}
+          initial="hidden"
+          transition={{
+            type: 'spring',
+            damping: 10,
+            mass: 0.75,
+            stiffness: 100,
+          }}
+          animate={controlsPhone}
+        >
+          <Image
+            src="/images/iphone-frame-portrait.png"
+            width={580}
+            height={1171}
+          />
+        </motion.div>
+      </div>
     </section>
   )
 }
