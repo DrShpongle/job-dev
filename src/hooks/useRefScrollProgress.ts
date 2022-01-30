@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export const useRefScrollProgress = (inputRef: any, offset: number = 0) => {
+export const useRefScrollProgress = (inputRef: any) => {
   const ref = inputRef || React.useRef()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(0)
@@ -11,8 +11,11 @@ export const useRefScrollProgress = (inputRef: any, offset: number = 0) => {
     const rect = ref.current.getBoundingClientRect()
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     const offsetTop = rect.top + scrollTop
-    setStart((offsetTop + offset) / document.body.clientHeight)
-    setEnd((offsetTop + rect.height + offset) / document.body.clientHeight)
+    setStart(rect.top / (document.body.clientHeight - window.innerHeight))
+    setEnd(
+      (rect.top + rect.height) /
+        (document.body.clientHeight - window.innerHeight),
+    )
   }, [])
   return {ref, start, end}
 }
