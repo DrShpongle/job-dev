@@ -7,15 +7,13 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {useWindowSize, useMeasure} from 'react-use'
-import {isBrowser} from 'utils/isBrowser'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
-import {useRefScrollText} from 'hooks/useRefScrollText'
 import VideoEmbed from 'components/video-embed'
 
 const textVariants = {
   nonActive: {
-    opacity: 0.2,
+    opacity: 0.15,
   },
   active: {
     opacity: 1,
@@ -24,28 +22,26 @@ const textVariants = {
 
 const TextItem: React.FC<{text: string}> = ({text}) => {
   const refText = React.useRef<HTMLDivElement>(null)
-  const {start, end} = useRefScrollText(refText)
-  const {scrollYProgress} = useViewportScroll()
+  const [active, setActive] = React.useState(false)
 
-  const textOpacity = useTransform(
-    scrollYProgress,
-    [start, (start + end) / 2, end],
-    [0.5, 1, 0.5],
-  )
+  const scrollHandler = () => {
+    const rect = refText.current.getBoundingClientRect()
+    const point = window.innerHeight / 2
+    setActive(rect.top < point && rect.bottom > point)
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', scrollHandler)
+  })
 
   return (
     <motion.div
-      // variants={textVariants}
-      // initial="nonActive"
-      // animate="nonActive"
-      style={{opacity: textOpacity}}
+      ref={refText}
+      variants={textVariants}
+      animate={active ? 'active' : 'nonActive'}
+      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200 py-6 md:py-8 first:pt-0 last:pb-0"
     >
-      <div
-        ref={refText}
-        className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200"
-      >
-        {text}1
-      </div>
+      {text}
     </motion.div>
   )
 }
@@ -57,7 +53,7 @@ const HeroWithScrollableText = () => {
   const {height: windowHeight} = useWindowSize()
   const [textBlockRef, {height: textBlockHeight}] = useMeasure()
 
-  const {start, end} = useRefScrollProgress(refSection)
+  const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
 
   // TODO: Warning: Prop `style` did not match.
@@ -77,7 +73,7 @@ const HeroWithScrollableText = () => {
         className="absolute bottom-0 z-10"
         style={{y: scaleText}}
       >
-        <div ref={textBlockRef} className="container space-y-12 md:space-y-24">
+        <div ref={textBlockRef} className="container">
           {textArray.map((item, i) => {
             return <TextItem key={i} text={item} />
           })}
@@ -94,19 +90,4 @@ const textArray = [
   'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
   'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
   'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',
-  'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
-  'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
 ]
-
-// const testHandler = () => {
-//   const rect = refText.current.getBoundingClientRect()
-//   console.log('rectTop', rect.top)
-//   console.log('window scroll', document.documentElement.scrollTop)
-// }
-
-// React.useEffect(() => {
-//   window.addEventListener('scroll', testHandler)
-// })
-
-// [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
-// [0.05, 0.1, 1, 0.1, 0.05],
