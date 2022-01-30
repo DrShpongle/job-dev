@@ -29,32 +29,23 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
 
   const textOpacity = useTransform(
     scrollYProgress,
-    // [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
-    // [0.05, 0.1, 1, 0.1, 0.05],
     [start, (start + end) / 2, end],
     [0.5, 1, 0.5],
   )
 
-  // const testHandler = () => {
-  //   const rect = refText.current.getBoundingClientRect()
-  //   console.log('rectTop', rect.top)
-  //   console.log('window scroll', document.documentElement.scrollTop)
-  // }
-
-  // React.useEffect(() => {
-  //   window.addEventListener('scroll', testHandler)
-  // })
-
   return (
     <motion.div
-      ref={refText}
       // variants={textVariants}
       // initial="nonActive"
       // animate="nonActive"
-      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200"
       style={{opacity: textOpacity}}
     >
-      {text}
+      <div
+        ref={refText}
+        className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200"
+      >
+        {text}1
+      </div>
     </motion.div>
   )
 }
@@ -86,7 +77,7 @@ const HeroWithScrollableText = () => {
         className="absolute bottom-0 z-10"
         style={{y: scaleText}}
       >
-        <div ref={textBlockRef} className="container space-y-24 bg-red-500/20">
+        <div ref={textBlockRef} className="container space-y-12 md:space-y-24">
           {textArray.map((item, i) => {
             return <TextItem key={i} text={item} />
           })}
@@ -106,3 +97,16 @@ const textArray = [
   'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
   'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
 ]
+
+// const testHandler = () => {
+//   const rect = refText.current.getBoundingClientRect()
+//   console.log('rectTop', rect.top)
+//   console.log('window scroll', document.documentElement.scrollTop)
+// }
+
+// React.useEffect(() => {
+//   window.addEventListener('scroll', testHandler)
+// })
+
+// [start, (start + end) * 0.4, (start + end) / 2, (start + end) * 0.6, end],
+// [0.05, 0.1, 1, 0.1, 0.05],
