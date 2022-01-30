@@ -11,15 +11,6 @@ import {useWindowSize, useMeasure} from 'react-use'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
-const textVariants = {
-  nonActive: {
-    opacity: 0.15,
-  },
-  active: {
-    opacity: 1,
-  },
-}
-
 const TextItem: React.FC<{text: string}> = ({text}) => {
   const refText = React.useRef<HTMLDivElement>(null)
   const [active, setActive] = React.useState(false)
@@ -39,9 +30,16 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   return (
     <motion.div
       ref={refText}
-      variants={textVariants}
+      variants={{
+        nonActive: {
+          opacity: 0.15,
+        },
+        active: {
+          opacity: 1,
+        },
+      }}
       animate={active ? 'active' : 'nonActive'}
-      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-200 py-6 md:py-8 first:pt-0 last:pb-0"
+      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 opacity-0"
     >
       {text}
     </motion.div>
@@ -72,7 +70,8 @@ const HeroWithScrollableText = () => {
       </div>
       <motion.div
         ref={refTextHolder}
-        className="absolute bottom-0 z-10"
+        className="absolute bottom-0 z-10 w-full duration-200 will-change-transform"
+        initial={{y: textBlockHeight}}
         style={{y: scaleText}}
       >
         <div ref={textBlockRef} className="container">
