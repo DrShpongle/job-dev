@@ -25,9 +25,11 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   const [active, setActive] = React.useState(false)
 
   const scrollHandler = () => {
-    const rect = refText.current.getBoundingClientRect()
+    const rect = refText.current?.getBoundingClientRect()
     const point = window.innerHeight / 2
-    setActive(rect.top < point && rect.bottom > point)
+    if (rect?.top && rect?.bottom) {
+      setActive(rect.top < point && rect.bottom > point)
+    }
   }
 
   React.useEffect(() => {
@@ -51,7 +53,7 @@ const HeroWithScrollableText = () => {
   const refTextHolder = React.useRef<HTMLDivElement>(null)
 
   const {height: windowHeight} = useWindowSize()
-  const [textBlockRef, {height: textBlockHeight}] = useMeasure()
+  const [textBlockRef, {height: textBlockHeight}] = useMeasure<any>()
 
   const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
