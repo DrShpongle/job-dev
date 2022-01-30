@@ -7,6 +7,7 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {useWindowSize, useMeasure} from 'react-use'
+import {isBrowser} from 'utils/isBrowser'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import {useRefScrollText} from 'hooks/useRefScrollText'
@@ -68,52 +69,12 @@ const HeroWithScrollableText = () => {
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
 
+  // TODO: Warning: Prop `style` did not match.
   const scaleText = useTransform(
     scrollYProgress,
     [start, end],
     [textBlockHeight, -windowHeight],
   )
-
-  // let textHolderHeight = 0
-  // let windowHeight = 0
-  // let scaleText
-
-  // React.useEffect(() => {
-  //   textHolderHeight = refTextHolder.current?.getBoundingClientRect().height
-  //   windowHeight = window.innerHeight
-  //   // console.log('windowHeight:', windowHeight)
-  //   // console.log('textHolderHeight:', textHolderHeight)
-  // })
-
-  // React.useEffect(() => {
-  //   if (currentRef?.current) {
-  //     setCurrentRef(currentRef.current)
-  //   }
-  // }, [currentRef?.current])
-
-  // React.useEffect(() => {
-  //   const triggerLogoAnimation = () => {
-  //     console.log('scaleIphone.get():', scaleText.get())
-  //   }
-  //   const unsubscribeY = scaleText.onChange(triggerLogoAnimation)
-  //   return () => {
-  //     unsubscribeY()
-  //   }
-  // }, [])
-
-  // const testHandler = () => {
-  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  //   console.log(
-  //     'scrollTop:',
-  //     scrollTop / (document.body.clientHeight - window.innerHeight),
-  //   )
-  //   // console.log('scrollTop:', scrollTop)
-  // }
-
-  // React.useEffect(() => {
-  //   window.addEventListener('scroll', testHandler)
-  //   // return window.removeEventListener('scroll', testHandler)
-  // }, [])
 
   return (
     <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
