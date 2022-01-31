@@ -11,6 +11,7 @@ import StayPsyched from 'components/sections/home/stay-psyched'
 import Vlog from 'components/sections/home/vlog'
 import PsychMag from 'components/sections/home/psych-mag'
 import SeaTrees from 'components/sections/home/sea-trees'
+import FixedLabel from 'components/fixed-label'
 
 const Landing: NextPage = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
@@ -31,6 +32,12 @@ const Landing: NextPage = () => {
           <PsychMag />
           <SeaTrees />
         </section>
+        <FixedLabel
+          title="Maldives"
+          subtitleTop="win a trip to the"
+          subtitleBottom="with Jamie"
+          className="fixed right-0 bottom-6 md:bottom-20"
+        />
       </PageLayout>
     </>
   ) : null
