@@ -59,7 +59,7 @@ const SeaTrees = () => {
       <div className="relative">
         <div className="absolute inset-0 z-[-1]">
           <Image
-            src="/images/sea-trees.png"
+            src="/images/sea-trees.jpg"
             layout="fill"
             objectFit="cover"
             alt="SeaTrees"
