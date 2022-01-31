@@ -119,6 +119,7 @@ const HeroWithScrollableText = () => {
             width={580}
             height={1171}
             priority
+            alt="App"
             className="absolute"
           />
         </motion.div>
