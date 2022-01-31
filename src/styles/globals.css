@@ -37,7 +37,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.embed-video-wrapper video {
+.embed-video-wrapper video,
+.video-player video {
   object-fit: cover;
 }
 

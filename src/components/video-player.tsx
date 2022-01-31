@@ -22,7 +22,7 @@ const VideoPlayer: React.FC<{
   const [playing, setplaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
   return (
-    <div className="relative">
+    <div className="relative h-full video-player">
       <ReactPlayer
         playsinline={playsInline}
         playing={playing}

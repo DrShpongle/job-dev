@@ -3,7 +3,7 @@ import type {NextPage} from 'next'
 
 import PageLayout from 'components/layouts/page-layout'
 import HeroWithScrollableText from 'components/sections/surf-app/hero-with-scrolling-text'
-import Vlog from 'components/sections/home/vlog'
+import AskJamie from 'components/sections/surf-app/ask-jamie'
 
 const SurfApp: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const SurfApp: NextPage = () => {
       <HeroWithScrollableText />
       <section className="h-[200vh] relative" />
       <section className="relative z-10 bg-white">
-        <Vlog />
+        <AskJamie />
       </section>
     </PageLayout>
   )
