@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import classNames from 'classnames'
 import {
   motion,
   useViewportScroll,
@@ -28,21 +29,15 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   }, [])
 
   return (
-    <motion.div
+    <div
       ref={refText}
-      variants={{
-        nonActive: {
-          opacity: 0.15,
-        },
-        active: {
-          opacity: 1,
-        },
-      }}
-      animate={active ? 'active' : 'nonActive'}
-      className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 opacity-0"
+      className={classNames(
+        'text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 will-change-[opacity]',
+        active ? 'opacity-100' : 'opacity-[0.15]',
+      )}
     >
       {text}
-    </motion.div>
+    </div>
   )
 }
 
@@ -59,7 +54,7 @@ const HeroWithScrollableText = () => {
   const {scrollYProgress} = useViewportScroll()
 
   // TODO: Warning: Prop `style` did not match.
-  const scaleText = useTransform(
+  const scrollText = useTransform(
     scrollYProgress,
     [start, end],
     [textBlockHeight, -windowHeight],
@@ -67,13 +62,13 @@ const HeroWithScrollableText = () => {
 
   React.useEffect(() => {
     const triggerPhoneAnimation = () => {
-      if (scaleText.get() < -windowHeight * 0.6) {
+      if (scrollText.get() < -windowHeight * 0.6) {
         controlsPhone.start('shown')
       } else {
         controlsPhone.start('hidden')
       }
     }
-    const unsubscribeY = scaleText.onChange(triggerPhoneAnimation)
+    const unsubscribeY = scrollText.onChange(triggerPhoneAnimation)
     return () => {
       unsubscribeY()
     }
@@ -86,9 +81,12 @@ const HeroWithScrollableText = () => {
       </div>
       <motion.div
         ref={refTextHolder}
-        className="absolute bottom-0 z-10 w-full duration-200 will-change-transform"
+        className="absolute bottom-0 z-10 w-full"
         initial={{y: textBlockHeight}}
-        style={{y: scaleText}}
+        transition={{
+          duration: 0.2,
+        }}
+        style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">
           {textArray.map((item, i) => {
@@ -96,9 +94,9 @@ const HeroWithScrollableText = () => {
           })}
         </div>
       </motion.div>
-      <div className="absolute inset-0 flex items-center justify-center pt-20">
+      <div className="flex items-center justify-center w-full h-full pt-20">
         <motion.div
-          className="w-[300px]"
+          className="w-64 md:w-[300px] relative z-10 will"
           variants={{
             hidden: {
               opacity: 0,
@@ -112,9 +110,7 @@ const HeroWithScrollableText = () => {
           initial="hidden"
           transition={{
             type: 'spring',
-            damping: 10,
-            mass: 0.75,
-            stiffness: 100,
+            duration: 0.3,
           }}
           animate={controlsPhone}
         >
@@ -122,6 +118,8 @@ const HeroWithScrollableText = () => {
             src="/images/iphone-frame-portrait.png"
             width={580}
             height={1171}
+            priority
+            className="absolute"
           />
         </motion.div>
       </div>
