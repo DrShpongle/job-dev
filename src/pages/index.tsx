@@ -21,9 +21,9 @@ const Landing: NextPage = () => {
     <>
       <PageLayout>
         <ScrollableHero />
-        <section className="h-[115vh]" />
+        <section className="h-[150vh]" />
         <GetPsyched />
-        <section className="h-[115vh]" />
+        <section className="h-[150vh]" />
         <section className="relative z-10 bg-white">
           <BePsyched />
           <StayPsyched />

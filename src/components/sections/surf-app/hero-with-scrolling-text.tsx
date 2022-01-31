@@ -50,7 +50,7 @@ const HeroWithScrollableText = () => {
 
   const controlsPhone = useAnimation()
 
-  const {start, end} = useRefScrollProgress(refSection, 2)
+  const {start, end} = useRefScrollProgress(refSection, 3)
   const {scrollYProgress} = useViewportScroll()
 
   // TODO: Warning: Prop `style` did not match.

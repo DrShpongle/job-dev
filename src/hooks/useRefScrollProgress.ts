@@ -15,7 +15,7 @@ export const useRefScrollProgress = (
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     setStart(rect.top / (document.body.clientHeight - window.innerHeight))
     setEnd(
-      (rect.bottom * multiplicator) /
+      (rect.bottom + window.innerHeight * (multiplicator - 1)) /
         (document.body.clientHeight - window.innerHeight),
     )
   }, [])
