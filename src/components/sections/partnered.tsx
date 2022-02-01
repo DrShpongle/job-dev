@@ -3,46 +3,48 @@ import classNames from 'classnames'
 
 const Partnered = () => {
   return (
-    <section className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16">
-      <div className="container">
-        <style jsx>
-          {`
-            .cell-with-border {
-              box-shadow: 0 0 0 1px black;
-            }
-          `}
-        </style>
-        <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
-          Proud to be partnered with&hellip;
-        </h3>
-        <div className="grid grid-cols-3 md:grid-cols-5 mt-4 md:mt-8 gap-[1px] p-[1px] overflow-hidden">
-          {partneredLogos.map((logo, index) => {
-            return (
-              <a
-                key={index}
-                className={classNames(
-                  'p-4 lg:p-8 xl:p-12 2xl:p-14 cell-with-border group',
-                  logo.hideOnMobile ? 'hidden md:block' : 'block',
-                )}
-                href={logo.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-[1.15]">
-                  <Image
-                    src={logo.path}
-                    layout="fill"
-                    objectFit="contain"
-                    alt={logo.title}
-                    priority
-                  />
-                </div>
-              </a>
-            )
-          })}
+    <>
+      <style jsx>
+        {`
+          .cell-with-border {
+            box-shadow: 0 0 0 1px black;
+          }
+        `}
+      </style>
+      <section className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16">
+        <div className="container">
+          <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
+            Proud to be partnered with&hellip;
+          </h3>
+          <div className="grid grid-cols-3 md:grid-cols-5 mt-4 md:mt-8 gap-[1px] p-[1px] overflow-hidden">
+            {partneredLogos.map((logo, index) => {
+              return (
+                <a
+                  key={index}
+                  className={classNames(
+                    'p-4 lg:p-8 xl:p-12 2xl:p-14 cell-with-border group',
+                    logo.hideOnMobile ? 'hidden md:block' : 'block',
+                  )}
+                  href={logo.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-[1.15]">
+                    <Image
+                      src={logo.path}
+                      layout="fill"
+                      objectFit="contain"
+                      alt={logo.title}
+                      priority
+                    />
+                  </div>
+                </a>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
