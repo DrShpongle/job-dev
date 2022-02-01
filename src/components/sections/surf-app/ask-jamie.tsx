@@ -21,7 +21,7 @@ const AskJamie = () => {
           need to do to create loads of spray with my top turn? ASK AWAY. You
           literally have Jamie in your pocket!
         </p>
-        <div className="relative flex flex-col items-center pb-16 mt-8 md:block md:mt-10 xl:pl-20 md:pb-16 lg:pb-14 xl:pb-16 2xl:pb-20 lg:mt-12 xl:mt-16">
+        <div className="relative flex flex-col items-center mt-8 md:block md:mt-10 xl:pl-20 md:pb-16 lg:pb-14 xl:pb-16 2xl:pb-20 lg:mt-12 xl:mt-16">
           <div className="hidden md:block w-[80%] xl:w-[996px] 2xl:w-[1220px] mt-6 xl:mt-0">
             <Image
               src="/images/ask-jamie.jpg"
