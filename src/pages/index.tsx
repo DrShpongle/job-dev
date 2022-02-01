@@ -25,7 +25,7 @@ const Landing: NextPage = () => {
         <section className="h-[150vh]" />
         <GetPsyched />
         <section className="h-[150vh]" />
-        <section className="relative z-10 bg-white">
+        <section style={{transform: 'translate3d(0,0,0)'}}>
           <BePsyched />
           <StayPsyched />
           <Vlog />

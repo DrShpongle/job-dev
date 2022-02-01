@@ -76,55 +76,53 @@ const HeroWithScrollableText = () => {
 
   return (
     <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
-      <div className="relative w-full h-full">
-        <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
-          <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
+      <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
+        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
+      </div>
+      <motion.div
+        ref={refTextHolder}
+        className="absolute bottom-0 z-10 w-full xl:px-20"
+        initial={{y: textBlockHeight}}
+        transition={{
+          duration: 0.2,
+        }}
+        style={{y: scrollText}}
+      >
+        <div ref={textBlockRef} className="container">
+          {textArray.map((item, i) => {
+            return <TextItem key={i} text={item} />
+          })}
         </div>
+      </motion.div>
+      <div className="flex items-center justify-center w-full h-full pt-20">
         <motion.div
-          ref={refTextHolder}
-          className="absolute bottom-0 z-10 w-full xl:px-20"
-          initial={{y: textBlockHeight}}
-          transition={{
-            duration: 0.2,
+          className="w-64 md:w-[300px] relative z-10 will"
+          variants={{
+            hidden: {
+              opacity: 0,
+              scale: 0.5,
+            },
+            shown: {
+              opacity: 1,
+              scale: 1,
+            },
           }}
-          style={{y: scrollText}}
+          initial="hidden"
+          transition={{
+            type: 'spring',
+            duration: 0.3,
+          }}
+          animate={controlsPhone}
         >
-          <div ref={textBlockRef} className="container">
-            {textArray.map((item, i) => {
-              return <TextItem key={i} text={item} />
-            })}
-          </div>
+          <Image
+            src="/images/iphone-frame-portrait.png"
+            width={580}
+            height={1171}
+            priority
+            alt="App"
+            className="absolute"
+          />
         </motion.div>
-        <div className="flex items-center justify-center w-full h-full pt-20">
-          <motion.div
-            className="w-64 md:w-[300px] relative z-10 will"
-            variants={{
-              hidden: {
-                opacity: 0,
-                scale: 0.5,
-              },
-              shown: {
-                opacity: 1,
-                scale: 1,
-              },
-            }}
-            initial="hidden"
-            transition={{
-              type: 'spring',
-              duration: 0.3,
-            }}
-            animate={controlsPhone}
-          >
-            <Image
-              src="/images/iphone-frame-portrait.png"
-              width={580}
-              height={1171}
-              priority
-              alt="App"
-              className="absolute"
-            />
-          </motion.div>
-        </div>
       </div>
     </section>
   )
