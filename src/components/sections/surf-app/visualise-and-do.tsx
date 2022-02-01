@@ -7,7 +7,7 @@ import VideoEmbed from 'components/video-embed'
 const VisualiseAndDo = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
 
-  const {start, end} = useRefScrollProgress(refSection, 2)
+  const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
 
   const scrollText = useTransform(
@@ -19,7 +19,7 @@ const VisualiseAndDo = () => {
   return (
     <section
       ref={refSection}
-      className="sticky top-0 h-screen pt-12 overflow-hidden bg-white xl:pt-24"
+      className="sticky top-0 h-screen py-12 overflow-hidden bg-white xl:py-16"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container flex flex-col h-full">

@@ -16,7 +16,7 @@ const SurfApp: NextPage = () => {
       <LearnFromTheBest />
       <section className="h-[200vh]" />
       <VisualiseAndDo />
-      <section className="h-[250vh]" />
+      <section className="h-[150vh]" />
     </PageLayout>
   )
 }
