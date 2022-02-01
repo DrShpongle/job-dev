@@ -5,28 +5,32 @@ import ReactPlayer from 'react-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const VideoPlayer: React.FC<{
-  url: string
-  playsInline?: boolean
   playing?: boolean
   muted?: boolean
+  externalControls?: boolean
+  url: string
+  playsInline?: boolean
   loop?: boolean
   controls?: boolean
   controlsClasses?: string
 }> = ({
+  playing,
+  muted,
+  externalControls,
   url,
   playsInline = true,
   loop = true,
   controls = false,
   controlsClasses = 'top-10 right-10',
 }) => {
-  const [playing, setplaying] = React.useState(true)
-  const [muted, setMuted] = React.useState(true)
+  const [innerPlaying, setInnerPlaying] = React.useState(true)
+  const [innerMuted, setInnerMuted] = React.useState(true)
   return (
     <div className="relative h-full video-player">
       <ReactPlayer
         playsinline={playsInline}
-        playing={playing}
-        muted={muted}
+        playing={externalControls ? playing : innerPlaying}
+        muted={externalControls ? muted : innerMuted}
         loop={loop}
         url={url}
         width="100%"
@@ -48,20 +52,20 @@ const VideoPlayer: React.FC<{
           )}
         >
           <button
-            onClick={() => setplaying(!playing)}
+            onClick={() => setInnerPlaying(!innerPlaying)}
             className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
-            {playing ? (
+            {innerPlaying ? (
               <IconPause className="w-6 h-6 md:w-10 md:h-10" />
             ) : (
               <IconPlay className="w-6 h-6 md:w-10 md:h-10" />
             )}
           </button>
           <button
-            onClick={() => setMuted(!muted)}
+            onClick={() => setInnerMuted(!innerMuted)}
             className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
-            {muted ? (
+            {innerMuted ? (
               <IconVolumeOff className="w-6 h-6 md:w-10 md:h-10" />
             ) : (
               <IconVolumeOn className="w-6 h-6 md:w-10 md:h-10" />

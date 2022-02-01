@@ -1,10 +1,14 @@
 import * as React from 'react'
 import Image from 'next/image'
+import classNames from 'classnames'
 import Link from 'next/link'
 
 import VideoPlayer from 'components/video-player'
+import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = () => {
+  const [playing, setPlaying] = React.useState(true)
+  const [muted, setMuted] = React.useState(true)
   return (
     <section className="py-12 bg-white xl:py-24">
       <div className="container">
@@ -28,23 +32,46 @@ const AskJamie = () => {
             />
           </div>
           <div className="w-[220px] md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px] relative md:absolute md:right-0 md:bottom-0 flex">
+            <div
+              className="absolute overflow-hidden inset-1 md:inset-2 rounded-[30px] md:rounded-[10%] xl:inset-3 2xl:inset-4 lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px]"
+              style={{transform: 'translateZ(0)'}}
+            >
+              <VideoPlayer
+                url="/videos/ask-jamie-test-video.mp4"
+                controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
+                externalControls={true}
+                playing={playing}
+                muted={muted}
+              />
+            </div>
             <Image
               src="/images/iphone-frame-portrait.png"
               width={580}
               height={1171}
               alt="Ask Jamie"
-              className="relative z-10"
             />
-            <div
-              className="absolute overflow-hidden inset-1 md:inset-2 rounded-[30px] md:rounded-[10%] xl:inset-3 2xl:inset-4 lg:rounded-[15%] 2xl:rounded-[40px]"
-              style={{transform: 'translateZ(0)'}}
+          </div>
+          <div className="z-10 flex items-center mt-4 space-x-2 md:mt-0 md:absolute md:bottom-3 lg:bottom-2 md:space-x-4 md:right-56 lg:right-72 xl:right-80 2xl:right-96">
+            <button
+              onClick={() => setPlaying(!playing)}
+              className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 lg:w-10 lg:h-10 2xl:w-14 2xl:h-14 bg-black/10"
             >
-              <VideoPlayer
-                url="/videos/ask-jamie-test-video.mp4"
-                // controls={true}
-                controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
-              />
-            </div>
+              {playing ? (
+                <IconPause className="w-6 h-6 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+              ) : (
+                <IconPlay className="w-6 h-6 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+              )}
+            </button>
+            <button
+              onClick={() => setMuted(!muted)}
+              className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 lg:w-10 lg:h-10 2xl:w-14 2xl:h-14 bg-black/10"
+            >
+              {muted ? (
+                <IconVolumeOff className="w-6 h-6 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+              ) : (
+                <IconVolumeOn className="w-6 h-6 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10" />
+              )}
+            </button>
           </div>
         </div>
       </div>
