@@ -32,7 +32,7 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
     <div
       ref={refText}
       className={classNames(
-        'text-3xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 will-change-[opacity]',
+        'text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 will-change-[opacity]',
         active ? 'opacity-100' : 'opacity-[0.15]',
       )}
     >
@@ -50,7 +50,7 @@ const HeroWithScrollableText = () => {
 
   const controlsPhone = useAnimation()
 
-  const {start, end} = useRefScrollProgress(refSection, 3)
+  const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
 
   // TODO: Warning: Prop `style` did not match.
@@ -81,11 +81,11 @@ const HeroWithScrollableText = () => {
       </div>
       <motion.div
         ref={refTextHolder}
-        className="absolute bottom-0 z-10 w-full xl:px-20"
+        className="absolute bottom-0 z-10 w-full duration-100 xl:px-20"
         initial={{y: textBlockHeight}}
-        transition={{
-          duration: 0.2,
-        }}
+        // transition={{
+        //   duration: 0.2,
+        // }}
         style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">

@@ -9,7 +9,7 @@ const SurfApp: NextPage = () => {
   return (
     <PageLayout>
       <HeroWithScrollableText />
-      <section className="h-[300vh] relative" />
+      <section className="h-[250vh] relative" />
       <section style={{transform: 'translate3d(0,0,0)'}}>
         <AskJamie />
       </section>
