@@ -23,11 +23,10 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
     }
   }
 
-  setTimeout(() => {
-    scrollHandler()
-  }, 50)
-
   React.useEffect(() => {
+    setTimeout(() => {
+      scrollHandler()
+    }, 50)
     window.addEventListener('scroll', scrollHandler)
   }, [])
 
