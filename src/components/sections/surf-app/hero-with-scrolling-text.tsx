@@ -24,6 +24,9 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   }
 
   React.useEffect(() => {
+    setTimeout(() => {
+      scrollHandler()
+    }, 50)
     window.addEventListener('scroll', scrollHandler)
   }, [])
 
@@ -53,7 +56,7 @@ const HeroWithScrollableText = () => {
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    [textBlockHeight, -windowHeight],
+    [textBlockHeight - windowHeight / 2 - 200, -windowHeight],
   )
 
   React.useEffect(() => {
@@ -78,7 +81,7 @@ const HeroWithScrollableText = () => {
       <motion.div
         ref={refTextHolder}
         className="absolute bottom-0 z-10 w-full duration-50 xl:px-20"
-        initial={{y: textBlockHeight - windowHeight / 2}}
+        initial={{y: textBlockHeight}}
         style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">
