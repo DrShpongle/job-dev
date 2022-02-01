@@ -51,20 +51,20 @@ const VideoPlayer: React.FC<{
             onClick={() => setplaying(!playing)}
             className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
-            {!playing ? (
-              <IconPlay className="w-6 h-6 md:w-10 md:h-10" />
-            ) : (
+            {playing ? (
               <IconPause className="w-6 h-6 md:w-10 md:h-10" />
+            ) : (
+              <IconPlay className="w-6 h-6 md:w-10 md:h-10" />
             )}
           </button>
           <button
             onClick={() => setMuted(!muted)}
             className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
           >
-            {!muted ? (
-              <IconVolumeOn className="w-6 h-6 md:w-10 md:h-10" />
-            ) : (
+            {muted ? (
               <IconVolumeOff className="w-6 h-6 md:w-10 md:h-10" />
+            ) : (
+              <IconVolumeOn className="w-6 h-6 md:w-10 md:h-10" />
             )}
           </button>
         </div>
