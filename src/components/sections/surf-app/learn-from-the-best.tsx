@@ -1,19 +1,13 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
-import {useWindowSize, useMeasure} from 'react-use'
+import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
 const LearnFromTheBest = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
 
-  const {start, end} = useRefScrollProgress(refSection)
+  const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
 
   const scrollText = useTransform(

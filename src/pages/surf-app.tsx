@@ -10,11 +10,11 @@ const SurfApp: NextPage = () => {
   return (
     <PageLayout>
       <HeroWithScrollableText />
-      <section className="h-[350vh]" />
+      <section className="h-[250vh]" />
       <section style={{transform: 'translate3d(0,0,0)'}}>
         <AskJamie />
         <LearnFromTheBest />
-        <section className="h-[120vh]" />
+        <section className="h-[200vh]" />
       </section>
     </PageLayout>
   )
