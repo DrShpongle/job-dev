@@ -2,7 +2,10 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10 bg-gray">
+    <footer
+      className="pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10 bg-gray"
+      style={{transform: 'translate3d(0,0,0)'}}
+    >
       <div className="container">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-3/5">

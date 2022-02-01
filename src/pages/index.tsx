@@ -25,13 +25,11 @@ const Landing: NextPage = () => {
         <section className="h-[150vh]" />
         <GetPsyched />
         <section className="h-[150vh]" />
-        <section style={{transform: 'translate3d(0,0,0)'}}>
-          <BePsyched />
-          <StayPsyched />
-          <Vlog />
-          <PsychMag />
-          <SeaTrees />
-        </section>
+        <BePsyched />
+        <StayPsyched />
+        <Vlog />
+        <PsychMag />
+        <SeaTrees />
         <FixedLabel
           title="Maldives"
           subtitleTop="win a trip to the"

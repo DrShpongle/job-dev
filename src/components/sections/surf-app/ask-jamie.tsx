@@ -10,7 +10,10 @@ const AskJamie = () => {
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
   return (
-    <section className="py-12 bg-white xl:py-24">
+    <section
+      className="py-12 bg-white xl:py-24"
+      style={{transform: 'translate3d(0,0,0)'}}
+    >
       <div className="container">
         <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
           Ask Jamie

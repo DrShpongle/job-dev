@@ -5,17 +5,18 @@ import PageLayout from 'components/layouts/page-layout'
 import HeroWithScrollableText from 'components/sections/surf-app/hero-with-scrolling-text'
 import AskJamie from 'components/sections/surf-app/ask-jamie'
 import LearnFromTheBest from 'components/sections/surf-app/learn-from-the-best'
+import VisualiseAndDo from 'components/sections/surf-app/visualise-and-do'
 
 const SurfApp: NextPage = () => {
   return (
     <PageLayout>
       <HeroWithScrollableText />
       <section className="h-[250vh]" />
-      <section style={{transform: 'translate3d(0,0,0)'}}>
-        <AskJamie />
-        <LearnFromTheBest />
-        <section className="h-[200vh]" />
-      </section>
+      <AskJamie />
+      <LearnFromTheBest />
+      <section className="h-[200vh]" />
+      <VisualiseAndDo />
+      <section className="h-[200vh]" />
     </PageLayout>
   )
 }

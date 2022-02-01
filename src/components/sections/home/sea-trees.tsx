@@ -55,7 +55,10 @@ const Description: React.FC<{
 
 const SeaTrees = () => {
   return (
-    <section className="relative z-10 bg-white">
+    <section
+      className="relative z-10 bg-white"
+      style={{transform: 'translate3d(0,0,0)'}}
+    >
       <div className="relative">
         <div className="absolute inset-0 z-[-1]">
           <Image

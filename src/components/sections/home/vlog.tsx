@@ -6,7 +6,10 @@ import VideoPlayer from 'components/video-player'
 
 const Vlog = () => {
   return (
-    <section className="py-12 bg-white xl:py-24">
+    <section
+      className="py-12 bg-white xl:py-24"
+      style={{transform: 'translate3d(0,0,0)'}}
+    >
       <div className="container">
         <div className="relative flex justify-center overflow-hidden">
           <div className="relative max-w-xs md:max-w-none">

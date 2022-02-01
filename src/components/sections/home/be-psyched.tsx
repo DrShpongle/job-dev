@@ -18,6 +18,7 @@ const BePsyched = () => {
     <section
       ref={refBoards}
       className="relative min-h-screen pt-8 overflow-hidden md:pt-10 bg-blue lg:py-20 xl:py-28 2xl:py-36"
+      style={{transform: 'translate3d(0,0,0)'}}
     >
       <motion.div
         className="absolute bottom-0 w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px] flex"

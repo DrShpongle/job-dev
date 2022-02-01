@@ -11,7 +11,10 @@ const Partnered = () => {
           }
         `}
       </style>
-      <section className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16">
+      <section
+        className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16"
+        style={{transform: 'translate3d(0,0,0)'}}
+      >
         <div className="container">
           <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
             Proud to be partnered with&hellip;

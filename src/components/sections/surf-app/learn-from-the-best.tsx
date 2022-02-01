@@ -13,7 +13,7 @@ const LearnFromTheBest = () => {
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    ['0%', '-200%'],
+    ['30%', '-200%'],
   )
 
   return (
