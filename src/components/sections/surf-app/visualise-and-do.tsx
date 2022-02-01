@@ -7,13 +7,13 @@ import VideoEmbed from 'components/video-embed'
 const VisualiseAndDo = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
 
-  const {start, end} = useRefScrollProgress(refSection)
+  const {start, end} = useRefScrollProgress(refSection, 1.5)
   const {scrollYProgress} = useViewportScroll()
 
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    ['0%', '-100%'],
+    ['50%', '-100%'],
   )
 
   return (
