@@ -19,7 +19,7 @@ const LearnFromTheBest = () => {
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    ['0%', '-100%'],
+    ['0%', '-200%'],
   )
 
   return (
@@ -39,13 +39,14 @@ const LearnFromTheBest = () => {
           className="absolute bottom-0 z-10 w-full"
           style={{y: scrollText}}
         >
-          <div className="container flex flex-col justify-end h-screen">
+          <div className="container flex flex-col justify-end">
             <h2 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
-              Learn from the
-              <br />
-              best not the
-              <br />
-              lineup kook
+              Learn from
+              <br className="block md:hidden" /> the
+              <br className="hidden md:block" /> best
+              <br className="block md:hidden" /> not the
+              <br /> lineup
+              <br className="block md:hidden" /> kook
             </h2>
             <p className="mt-4 md:mt-8 md:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal md:max-w-xl xl:max-w-3xl text-white">
               When it comes to surfers, everyone loves to play the guru. We all
