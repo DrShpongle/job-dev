@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Image from 'next/image'
-import classNames from 'classnames'
 import {
   motion,
   useViewportScroll,
@@ -14,13 +13,13 @@ import VideoEmbed from 'components/video-embed'
 
 const TextItem: React.FC<{text: string}> = ({text}) => {
   const refText = React.useRef<HTMLDivElement>(null)
-  const [active, setActive] = React.useState(false)
 
   const scrollHandler = () => {
     const rect = refText.current?.getBoundingClientRect()
     const point = window.innerHeight / 2
-    if (rect?.top && rect?.bottom) {
-      setActive(rect.top < point && rect.bottom > point)
+    if (rect && refText?.current) {
+      refText.current.style.opacity =
+        rect.top < point && rect.bottom > point ? '1' : '0.15'
     }
   }
 
@@ -31,10 +30,7 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   return (
     <div
       ref={refText}
-      className={classNames(
-        'text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 will-change-[opacity]',
-        active ? 'opacity-100' : 'opacity-[0.15]',
-      )}
+      className="text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 opacity-[0.15]"
     >
       {text}
     </div>
@@ -50,7 +46,7 @@ const HeroWithScrollableText = () => {
 
   const controlsPhone = useAnimation()
 
-  const {start, end} = useRefScrollProgress(refSection, 2)
+  const {start, end} = useRefScrollProgress(refSection, 3)
   const {scrollYProgress} = useViewportScroll()
 
   // TODO: Warning: Prop `style` did not match.
@@ -81,11 +77,8 @@ const HeroWithScrollableText = () => {
       </div>
       <motion.div
         ref={refTextHolder}
-        className="absolute bottom-0 z-10 w-full duration-100 xl:px-20"
-        initial={{y: textBlockHeight}}
-        // transition={{
-        //   duration: 0.2,
-        // }}
+        className="absolute bottom-0 z-10 w-full duration-50 xl:px-20"
+        initial={{y: textBlockHeight - windowHeight / 2}}
         style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">

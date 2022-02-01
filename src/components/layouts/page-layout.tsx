@@ -8,8 +8,8 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
   return (
     <div className="">
       <Header />
-      <div className="relative z-[1]">{children}</div>
-      <div className="relative z-10">
+      {children}
+      <div style={{transform: 'translate3d(0,0,0)'}}>
         <Partnered />
         <Footer />
       </div>
