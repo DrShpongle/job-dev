@@ -112,7 +112,7 @@ const HeroWithScrollableText = () => {
         >
           <div className="w-64 md:w-[300px]">
             <div
-              className="absolute overflow-hidden inset-1 md:inset-2 rounded-[30px] md:rounded-[10%] xl:inset-3 2xl:inset-4 lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px]"
+              className="absolute overflow-hidden inset-2 rounded-[30px] md:inset-3"
               style={{transform: 'translateZ(0)'}}
             >
               <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
