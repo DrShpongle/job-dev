@@ -40,13 +40,13 @@ const VisualiseAndDo = () => {
               <div className="grid w-full h-full md:grid-cols-2">
                 <div className="relative h-full bg-teal-500">
                   <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
-                  <h3 className="absolute left-0 z-10 w-full text-5xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
+                  <h3 className="absolute left-0 z-10 w-full text-4xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
                     Bottom turn
                   </h3>
                 </div>
                 <div className="relative h-full bg-purple-500">
                   <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
-                  <h3 className="absolute left-0 z-10 w-full text-5xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
+                  <h3 className="absolute left-0 z-10 w-full text-4xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
                     Top turn
                   </h3>
                 </div>
@@ -59,13 +59,13 @@ const VisualiseAndDo = () => {
               <div className="grid w-full h-full md:grid-cols-2">
                 <div className="relative h-full bg-green-500">
                   <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
-                  <h3 className="absolute left-0 z-10 w-full text-5xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
+                  <h3 className="absolute left-0 z-10 w-full text-4xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
                     Cut back
                   </h3>
                 </div>
                 <div className="relative h-full bg-orange-500">
                   <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
-                  <h3 className="absolute left-0 z-10 w-full text-5xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
+                  <h3 className="absolute left-0 z-10 w-full text-4xl leading-none text-center text-white bottom-10 md:text-5xl lg:text-6xl xl:text-7xl">
                     Backside barrel
                   </h3>
                 </div>
