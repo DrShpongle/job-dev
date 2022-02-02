@@ -20,6 +20,7 @@ const LearnFromTheBest = () => {
     <section
       ref={refSection}
       className="sticky top-0 h-screen overflow-hidden bg-cover learn-from-the-best"
+      style={{transform: 'translate3d(0,0,0)'}}
     >
       <Image
         layout="fill"
