@@ -92,7 +92,7 @@ const HeroWithScrollableText = () => {
       </motion.div>
       <div className="flex items-center justify-center w-full h-full pt-20">
         <motion.div
-          className="w-64 md:w-[300px] relative z-10 will"
+          className="relative z-10"
           variants={{
             hidden: {
               opacity: 0,
@@ -110,14 +110,20 @@ const HeroWithScrollableText = () => {
           }}
           animate={controlsPhone}
         >
-          <Image
-            src="/images/iphone-frame-portrait.png"
-            width={580}
-            height={1171}
-            priority
-            alt="App"
-            className="absolute"
-          />
+          <div className="w-64 md:w-[300px]">
+            <div
+              className="absolute overflow-hidden inset-1 md:inset-2 rounded-[30px] md:rounded-[10%] xl:inset-3 2xl:inset-4 lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px]"
+              style={{transform: 'translateZ(0)'}}
+            >
+              <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
+            </div>
+            <Image
+              src="/images/iphone-frame-portrait.png"
+              width={580}
+              height={1171}
+              alt="Ask Jamie"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
