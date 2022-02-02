@@ -40,7 +40,7 @@ const AskJamie = () => {
               style={{transform: 'translateZ(0)'}}
             >
               <VideoPlayer
-                url="/videos/ask-jamie-test-video.mp4"
+                url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8"
                 controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
                 externalControls={true}
                 playing={playing}
