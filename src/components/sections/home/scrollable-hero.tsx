@@ -66,7 +66,7 @@ const ScrollableHero: React.FC = () => {
             )}
             style={{width: scale, height: scale}}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/0c2c7bcb-35b0-4d2a-af43-c223242d5a0b/0c2c7bcb-35b0-4d2a-af43-c223242d.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/6fa8aea0-f71d-417a-b36f-7b1b27c8f88d/6fa8aea0-f71d-417a-b36f-7b1b27c8.ism/manifest(format=m3u8-aapl).m3u8" />
             <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap lg:pr-16 xl:pr-20">
               <motion.h2
                 initial="hidden"
@@ -100,7 +100,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/8e6b0635-692a-4da8-8703-8175ba1e470b/8e6b0635-692a-4da8-8703-8175ba1e.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center w-32 m-auto space-y-4 text-xl text-white">
             <span>scroll down</span>
