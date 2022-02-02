@@ -61,7 +61,7 @@ const HeroWithScrollableText = () => {
 
   React.useEffect(() => {
     const triggerPhoneAnimation = () => {
-      if (scrollText.get() < -windowHeight * 0.6) {
+      if (scrollText.get() < -windowHeight * 0.5) {
         controlsPhone.start('shown')
       } else {
         controlsPhone.start('hidden')
