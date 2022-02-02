@@ -120,7 +120,7 @@ const GetPsyched = () => {
         className="relative z-10 hidden w-full px-12 top-40 lg:block"
         style={{y: scaleText}}
       >
-        <h3 className="text-pink text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
+        <h3 className="text-pink text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
           Get Psyched
         </h3>
         <div className="max-w-[44rem] text-white">

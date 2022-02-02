@@ -63,7 +63,7 @@ const BePsyched = () => {
             </motion.div>
           </div>
           <div className="lg:w-2/5 xl:w-[45%] pt-12 md:pt-16 lg:pt-0">
-            <h3 className="font-accented text-pink text-4xl md:text-5xl xl:text-6xl 2xl:text-[70px]">
+            <h3 className="font-accented text-pink text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
               Be Psyched
             </h3>
             <h2 className="text-white text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] leading-none">
