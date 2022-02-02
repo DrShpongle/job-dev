@@ -20,7 +20,7 @@ const PsychMag = () => {
         `}
       </style>
       <section
-        className="pt-5 pb-5 md:pb-10 xl:pb-16 bg-slate-50 md:pt-7 xl:pt-8 2xl:pt-12 2xl:pb-20"
+        className="pt-5 pb-5 md:pb-10 xl:pb-16 bg-slate-100 md:pt-7 xl:pt-8 2xl:pt-12 2xl:pb-20"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">

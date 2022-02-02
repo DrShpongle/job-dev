@@ -6,7 +6,7 @@ import classNames from 'classnames'
 const StayPsyched = () => {
   return (
     <section
-      className="pt-12 pb-5 md:pb-7 bg-slate-50 xl:py-7"
+      className="pt-12 pb-5 md:pb-7 bg-slate-100 xl:py-7"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">

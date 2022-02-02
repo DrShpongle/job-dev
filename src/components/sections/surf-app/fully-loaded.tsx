@@ -19,7 +19,7 @@ const FullyLoaded = () => {
   return (
     <section
       ref={refSection}
-      className="sticky top-0 h-screen overflow-hidden bg-white bg-cover learn-from-the-best"
+      className="min-h-screen py-12 bg-slate-100 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
