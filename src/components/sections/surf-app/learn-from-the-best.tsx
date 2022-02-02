@@ -19,7 +19,7 @@ const LearnFromTheBest = () => {
   return (
     <section
       ref={refSection}
-      className="sticky top-0 h-screen overflow-hidden bg-cover learn-from-the-best"
+      className="sticky top-0 h-screen overflow-hidden bg-white bg-cover learn-from-the-best"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <Image
@@ -27,6 +27,7 @@ const LearnFromTheBest = () => {
         className="object-cover object-center pointer-events-none"
         src="/images/learn-from-the-best.jpg"
         alt="Learn from the best"
+        priority
       />
       <motion.div
         className="absolute bottom-0 z-10 flex flex-col justify-end w-full h-full"
