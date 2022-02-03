@@ -11,7 +11,7 @@ const AskJamie = () => {
   const [muted, setMuted] = React.useState(true)
   return (
     <section
-      className="min-h-screen bg-white py-12 xl:py-24"
+      className="bg-white py-12 lg:min-h-screen xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
@@ -34,9 +34,9 @@ const AskJamie = () => {
               layout="responsive"
             />
           </div>
-          <div className="relative flex w-[220px] md:absolute md:right-0 md:bottom-0 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]">
+          <div className="relative flex w-64 md:absolute md:right-0 md:bottom-0 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]">
             <div
-              className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[10%] lg:rounded-[25px] xl:inset-3 xl:rounded-[30px] 2xl:inset-4 2xl:rounded-[40px]"
+              className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[25px] xl:inset-3 xl:rounded-[30px] 2xl:inset-4 2xl:rounded-[40px]"
               style={{transform: 'translateZ(0)'}}
             >
               <VideoPlayer
