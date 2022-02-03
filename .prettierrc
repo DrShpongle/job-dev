@@ -7,5 +7,6 @@
   "tabWidth": 2,
   "useTabs": false,
   "bracketSpacing": false,
-  "jsxBracketSameLine": false
+  "jsxBracketSameLine": false,
+  "tailwindConfig": "./tailwind.config.js"
 }
