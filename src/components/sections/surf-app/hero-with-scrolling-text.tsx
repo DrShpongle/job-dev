@@ -23,11 +23,12 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
         rect.top < point && rect.bottom > point ? '1' : '0.15'
     }
   }
+  setTimeout(() => {
+    scrollHandler()
+  }, 1000)
 
   React.useEffect(() => {
-    setTimeout(() => {
-      scrollHandler()
-    }, 600)
+    // console.log('useeffect')
     window.addEventListener('scroll', scrollHandler)
   }, [])
 
@@ -60,8 +61,6 @@ const HeroWithScrollableText = () => {
     [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
   )
 
-  const animateScrollText = useSpring(scrollText, {stiffness: 200, damping: 70})
-
   React.useEffect(() => {
     const triggerPhoneAnimation = () => {
       if (scrollText.get() < -windowHeight * 0.5) {
@@ -86,8 +85,7 @@ const HeroWithScrollableText = () => {
         animate={{opacity: 1, transition: {delay: 1}}}
         className="absolute bottom-0 z-10 w-full xl:px-20"
         initial={{y: textBlockHeight, opacity: 0}}
-        style={{y: animateScrollText}}
-        // style={{y: scrollText}}
+        style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">
           {textArray.map((item, i) => {
