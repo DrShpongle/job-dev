@@ -117,7 +117,7 @@ const HeroWithScrollableText = () => {
           }}
           animate={controlsPhone}
         >
-          <div className="w-64 md:w-[300px]">
+          <div className="w-64 md:w-[300px] 2xl:w-[360px]">
             <div
               className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3"
               style={{transform: 'translateZ(0)'}}
