@@ -9,6 +9,7 @@ import {
 } from 'framer-motion'
 import {useWindowSize, useMeasure} from 'react-use'
 
+import {isBrowser} from 'utils/isBrowser'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
@@ -23,9 +24,12 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
         rect.top < point && rect.bottom > point ? '1' : '0.15'
     }
   }
-  setTimeout(() => {
-    scrollHandler()
-  }, 1000)
+
+  if (isBrowser) {
+    setTimeout(() => {
+      scrollHandler()
+    }, 1000)
+  }
 
   React.useEffect(() => {
     // console.log('useeffect')
