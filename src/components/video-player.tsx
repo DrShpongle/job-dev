@@ -26,7 +26,7 @@ const VideoPlayer: React.FC<{
   const [innerPlaying, setInnerPlaying] = React.useState(true)
   const [innerMuted, setInnerMuted] = React.useState(true)
   return (
-    <div className="relative h-full video-player">
+    <div className="video-player relative h-full">
       <ReactPlayer
         playsinline={playsInline}
         playing={externalControls ? playing : innerPlaying}
@@ -53,22 +53,22 @@ const VideoPlayer: React.FC<{
         >
           <button
             onClick={() => setInnerPlaying(!innerPlaying)}
-            className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
           >
             {innerPlaying ? (
-              <IconPause className="w-6 h-6 md:w-10 md:h-10" />
+              <IconPause className="h-6 w-6 md:h-10 md:w-10" />
             ) : (
-              <IconPlay className="w-6 h-6 md:w-10 md:h-10" />
+              <IconPlay className="h-6 w-6 md:h-10 md:w-10" />
             )}
           </button>
           <button
             onClick={() => setInnerMuted(!innerMuted)}
-            className="flex items-center justify-center w-8 h-8 rounded-full text-black/70 md:w-14 md:h-14 bg-white/80"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
           >
             {innerMuted ? (
-              <IconVolumeOff className="w-6 h-6 md:w-10 md:h-10" />
+              <IconVolumeOff className="h-6 w-6 md:h-10 md:w-10" />
             ) : (
-              <IconVolumeOn className="w-6 h-6 md:w-10 md:h-10" />
+              <IconVolumeOn className="h-6 w-6 md:h-10 md:w-10" />
             )}
           </button>
         </div>

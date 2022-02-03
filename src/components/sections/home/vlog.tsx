@@ -7,7 +7,7 @@ import VideoPlayer from 'components/video-player'
 const Vlog = () => {
   return (
     <section
-      className="py-12 bg-white xl:py-24"
+      className="bg-white py-12 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
@@ -29,20 +29,20 @@ const Vlog = () => {
             />
           </div>
         </div>
-        <div className="flex mt-3 md:mt-3 flex-nowrap lg:mt-4 xl:mt-10 2xl:mt-16">
+        <div className="mt-3 flex flex-nowrap md:mt-3 lg:mt-4 xl:mt-10 2xl:mt-16">
           <div className="w-2/5 text-center">
-            <h3 className="font-headings leading-none text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] ">
+            <h3 className="font-headings text-5xl leading-none md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] ">
               vlog.
             </h3>
           </div>
-          <div className="flex justify-center w-3/5">
-            <div className="flex flex-col w-10/12 space-y-8">
-              <p className="md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
+          <div className="flex w-3/5 justify-center">
+            <div className="flex w-10/12 flex-col space-y-8">
+              <p className="md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
                 The latest updated direct from Jamie. Vel escipsamusae nem
                 nonsedit, utestiam, sus quia quis doluptio illatem et aut.
               </p>
               <Link href="/surf-mag">
-                <a className="self-start px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]">
+                <a className="self-start rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
                   More with Jamie
                 </a>
               </Link>

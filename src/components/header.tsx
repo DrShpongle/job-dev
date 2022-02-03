@@ -11,11 +11,11 @@ const Header = () => {
   const [mobileMenuIsOpened, setMobileMenuIsOpened] =
     React.useState<boolean>(false)
   return (
-    <header className="fixed top-0 left-0 z-30 w-full h-10 py-2 bg-white md:py-3 md:h-14 lg:py-5 lg:h-20">
+    <header className="fixed top-0 left-0 z-30 h-10 w-full bg-white py-2 md:h-14 md:py-3 lg:h-20 lg:py-5">
       <div className="container">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex justify-start w-[120px] h-6 shrink-0 md:w-40 md:h-8 xl:w-[198px] xl:h-10">
+            <a className="flex h-6 w-[120px] shrink-0 justify-start md:h-8 md:w-40 xl:h-10 xl:w-[198px]">
               <Image
                 src="/images/logo.svg"
                 width={198}
@@ -25,13 +25,13 @@ const Header = () => {
               />
             </a>
           </Link>
-          <ul className="hidden lg:flex shrink-0 lg:space-x-6 xl:space-x-10 2xl:space-x-16 flex-nowrap">
+          <ul className="hidden shrink-0 flex-nowrap lg:flex lg:space-x-6 xl:space-x-10 2xl:space-x-16">
             {navLinks.map((item, index) => {
               return (
                 <li key={index}>
                   {item.external ? (
                     <a
-                      className="uppercase duration-150 text-pink hover-hover:hover:text-blue font-headings lg:text-lg"
+                      className="font-headings uppercase text-pink duration-150 lg:text-lg hover-hover:hover:text-blue"
                       href={item.path}
                       target="_blank"
                       rel="noreferrer"
@@ -42,7 +42,7 @@ const Header = () => {
                     <Link href={item.path}>
                       <a
                         className={classNames(
-                          'hover-hover:hover:text-blue duration-150 font-headings uppercase lg:text-lg',
+                          'font-headings uppercase duration-150 lg:text-lg hover-hover:hover:text-blue',
                           router.pathname === item.path
                             ? ' text-blue'
                             : 'text-pink',
@@ -56,7 +56,7 @@ const Header = () => {
               )
             })}
           </ul>
-          <button className="hidden h-10 px-6 py-2 text-white uppercase rounded-full bg-pink font-headings lg:block">
+          <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white lg:block">
             Download app
           </button>
           <MobileMenuToggler

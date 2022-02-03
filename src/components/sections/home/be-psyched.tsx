@@ -17,11 +17,11 @@ const BePsyched = () => {
   return (
     <section
       ref={refBoards}
-      className="relative min-h-screen pt-8 overflow-hidden md:pt-10 bg-blue lg:py-20 xl:py-28 2xl:py-36"
+      className="relative min-h-screen overflow-hidden bg-blue pt-8 md:pt-10 lg:py-20 xl:py-28 2xl:py-36"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <motion.div
-        className="absolute bottom-0 w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px] flex"
+        className="absolute bottom-0 flex w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"
         initial={width >= 1024 ? {x: '-90%'} : {}}
         style={width >= 1024 ? {x: rangeX} : {}}
         transition={{
@@ -48,10 +48,10 @@ const BePsyched = () => {
         )}
       </motion.div>
       <div className="container">
-        <div className="flex flex-col lg:flex-row pb-[250px] md:pb-[500px] lg:pb-0">
-          <div className="relative flex items-start justify-end lg:pt-48 lg:pr-8 xl:pr-16 2xl:pr-24 grow">
+        <div className="flex flex-col pb-[250px] md:pb-[500px] lg:flex-row lg:pb-0">
+          <div className="relative flex grow items-start justify-end lg:pt-48 lg:pr-8 xl:pr-16 2xl:pr-24">
             <motion.div
-              className="absolute origin-center shrink-0 w-32 md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
+              className="absolute w-32 shrink-0 origin-center md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
               style={width >= 1024 ? {opacity, rotate} : {}}
             >
               <Image
@@ -62,28 +62,28 @@ const BePsyched = () => {
               />
             </motion.div>
           </div>
-          <div className="lg:w-2/5 xl:w-[45%] pt-12 md:pt-16 lg:pt-0">
-            <h3 className="font-accented text-pink text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
+          <div className="pt-12 md:pt-16 lg:w-2/5 lg:pt-0 xl:w-[45%]">
+            <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
               Be Psyched
             </h3>
-            <h2 className="text-white text-5xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px] leading-none">
+            <h2 className="text-5xl leading-none text-white md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px]">
               with The
               <br />
               Jamie O’Brien
               <br />
               Experience
             </h2>
-            <p className="mt-8 md:mt-12 md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal text-white">
+            <p className="mt-8 text-white md:mt-12 md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
               Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
               optat quam nam nimagnis doloreh enistorro.
             </p>
-            <div className="relative flex items-center mt-8 space-x-6 xl:space-x-10">
+            <div className="relative mt-8 flex items-center space-x-6 xl:space-x-10">
               <a
                 href="https://fareharbor.com/embeds/book/jobsurfexperience/items/?full-items=yes&back=https://www.jobsurfexperience.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]"
+                className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]"
               >
                 Book your experience
               </a>
@@ -91,7 +91,7 @@ const BePsyched = () => {
                 href="https://www.jobsurfexperience.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center space-x-1 md:text-2xl lg:text-xl xl:text-[29px] text-pink font-headings whitespace-nowrap"
+                className="flex items-center space-x-1 whitespace-nowrap font-headings text-pink md:text-2xl lg:text-xl xl:text-[29px]"
               >
                 <span>Learn more</span>
                 <span className="translate-y-0.5">&#62;</span>

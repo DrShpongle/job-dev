@@ -20,32 +20,32 @@ const PsychMag = () => {
         `}
       </style>
       <section
-        className="pt-5 pb-5 md:pb-10 xl:pb-16 bg-slate-100 md:pt-7 xl:pt-8 2xl:pt-12 2xl:pb-20"
+        className="bg-slate-100 pt-5 pb-5 md:pb-10 md:pt-7 xl:pb-16 xl:pt-8 2xl:pt-12 2xl:pb-20"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
-          <div className="flex flex-col items-center w-full px-5 py-8 space-y-5 text-center bg-white md:space-y-6 lg:space-y-7 xl:space-y-8 md:py-10 lg:py-12 xl:py-14">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none">
+          <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
+            <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
               Psych Mag
             </h2>
-            <p className="mt-12 md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal 2xl:text-[34px] 2xl:leading-normal max-w-6xl">
+            <p className="mt-12 max-w-6xl md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
               Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam, sus quia quis doluptio illatem et aut.
             </p>
             <Link href="/surf-mag">
-              <a className="px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]">
+              <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
                 Read the mag
               </a>
             </Link>
           </div>
-          <div className="grid gap-5 mt-5 md:grid-cols-2 md:gap-7 md:mt-7">
+          <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
             {fakeData.map((item, i) => {
               return (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-end h-[260px] md:h-[280px] lg:h-[340px] xl:h-[420px] relative px-4 py-6 lg:p-6 xl:p-9 mag-item before:absolute before:inset-0 before:block before:z-[1] hover-hover:hover:before:opacity-0 before:duration-300 overflow-hidden group"
+                  className="mag-item group relative flex h-[260px] flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 md:h-[280px] lg:h-[340px] lg:p-6 xl:h-[420px] xl:p-9 hover-hover:hover:before:opacity-0"
                 >
-                  <div className="absolute inset-0 duration-500 ease-in origin-center hover-hover:group-hover:scale-110">
+                  <div className="absolute inset-0 origin-center duration-500 ease-in hover-hover:group-hover:scale-110">
                     <Image
                       src={item.image}
                       layout="fill"
@@ -55,20 +55,20 @@ const PsychMag = () => {
                     />
                   </div>
                   <div className="relative z-10 flex flex-col items-center space-y-2 text-center lg:space-y-3 xl:space-y-4">
-                    <h3 className="text-lg leading-none md:leading-none lg:leading-none xl:leading-none md:text-xl lg:text-2xl xl:text-4xl font-headings">
+                    <h3 className="font-headings text-lg leading-none md:text-xl md:leading-none lg:text-2xl lg:leading-none xl:text-4xl xl:leading-none">
                       {item.title}
                     </h3>
                     <p className="text-sm lg:text-lg">{item.description}</p>
                     <div className="flex items-center space-x-4 lg:space-x-6">
                       <a
                         href="#"
-                        className="flex px-4 py-1 text-sm text-white uppercase rounded-full md:px-6 md:py-2 md:text-base lg:text-lg xl:text-xl bg-pink font-headings"
+                        className="flex rounded-full bg-pink px-4 py-1 font-headings text-sm uppercase text-white md:px-6 md:py-2 md:text-base lg:text-lg xl:text-xl"
                       >
                         Read more
                       </a>
                       <a
                         href="#"
-                        className="flex items-center space-x-1 text-sm md:text-base lg:text-lg xl:text-xl text-pink font-headings whitespace-nowrap"
+                        className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl"
                       >
                         <span>More {item.category}</span>
                         <span className="translate-y-0.5">&#62;</span>

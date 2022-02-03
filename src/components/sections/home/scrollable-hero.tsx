@@ -42,32 +42,32 @@ const ScrollableHero: React.FC = () => {
   return (
     <section
       ref={refSection}
-      className="sticky top-0 flex items-center justify-center h-screen bg-blue"
+      className="sticky top-0 flex h-screen items-center justify-center bg-blue"
     >
       {isMounted ? (
         <section
           className={classNames(
-            'relative flex justify-center w-full h-full overflow-hidden flex-nowrap',
+            'relative flex h-full w-full flex-nowrap justify-center overflow-hidden',
             width >= height ? 'flex-row' : 'flex-col',
           )}
         >
           <div
             className={classNames(
-              'relative overflow-hidden shrink-0',
-              width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
+              'relative shrink-0 overflow-hidden',
+              width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
             )}
           >
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <motion.div
             className={classNames(
-              'absolute top-0 bottom-0 z-10 flex justify-center items-center m-auto overflow-hidden duration-100 before:absolute before:bg-black/20 before:inset-0',
-              width >= height ? '!h-full w-1/3' : '!w-full h-1/3',
+              'absolute top-0 bottom-0 z-10 m-auto flex items-center justify-center overflow-hidden duration-100 before:absolute before:inset-0 before:bg-black/20',
+              width >= height ? '!h-full w-1/3' : 'h-1/3 !w-full',
             )}
             style={{width: scale, height: scale}}
           >
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/6fa8aea0-f71d-417a-b36f-7b1b27c8f88d/6fa8aea0-f71d-417a-b36f-7b1b27c8.ism/manifest(format=m3u8-aapl).m3u8" />
-            <div className="absolute left-0 w-full space-y-4 overflow-hidden text-center text-white lg:text-right whitespace-nowrap lg:pr-16 xl:pr-20">
+            <div className="absolute left-0 w-full space-y-4 overflow-hidden whitespace-nowrap text-center text-white lg:pr-16 lg:text-right xl:pr-20">
               <motion.h2
                 initial="hidden"
                 variants={{
@@ -76,7 +76,7 @@ const ScrollableHero: React.FC = () => {
                 }}
                 transition={{type: 'spring', duration: 0.8, bounce: 0.2}}
                 animate={controlsText}
-                className="w-full text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-accented will-change-transform"
+                className="w-full font-accented text-5xl will-change-transform md:text-7xl lg:text-8xl xl:text-9xl"
               >
                 Totally psyched
               </motion.h2>
@@ -88,7 +88,7 @@ const ScrollableHero: React.FC = () => {
                 }}
                 transition={{type: 'spring', duration: 0.6, bounce: 0.2}}
                 animate={controlsText}
-                className="w-full text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-headings will-change-transform"
+                className="w-full font-headings text-2xl will-change-transform md:text-4xl lg:text-5xl xl:text-6xl"
               >
                 the world of Jamie O&#8217;Brien
               </motion.h3>
@@ -96,15 +96,15 @@ const ScrollableHero: React.FC = () => {
           </motion.div>
           <div
             className={classNames(
-              'relative overflow-hidden shrink-0',
-              width >= height ? 'w-1/2 h-full' : 'h-1/2 w-full',
+              'relative shrink-0 overflow-hidden',
+              width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
             )}
           >
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/8e6b0635-692a-4da8-8703-8175ba1e470b/8e6b0635-692a-4da8-8703-8175ba1e.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center w-32 m-auto space-y-4 text-xl text-white">
+          <div className="absolute bottom-0 left-0 right-0 z-10 m-auto flex w-32 flex-col items-center space-y-4 text-xl text-white">
             <span>scroll down</span>
-            <div className="w-px h-10 bg-white" />
+            <div className="h-10 w-px bg-white" />
           </div>
         </section>
       ) : null}

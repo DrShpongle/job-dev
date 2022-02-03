@@ -12,27 +12,27 @@ const Partnered = () => {
         `}
       </style>
       <section
-        className="pt-12 pb-8 bg-white md:py-16 xl:pt-24 xl:pb-16"
+        className="bg-white pt-12 pb-8 md:py-16 xl:pt-24 xl:pb-16"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
           <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
             Proud to be partnered with&hellip;
           </h3>
-          <div className="grid grid-cols-3 md:grid-cols-5 mt-4 md:mt-8 gap-[1px] p-[1px] overflow-hidden">
+          <div className="mt-4 grid grid-cols-3 gap-[1px] overflow-hidden p-[1px] md:mt-8 md:grid-cols-5">
             {partneredLogos.map((logo, index) => {
               return (
                 <a
                   key={index}
                   className={classNames(
-                    'p-4 lg:p-8 xl:p-12 2xl:p-14 cell-with-border group',
+                    'cell-with-border group p-4 lg:p-8 xl:p-12 2xl:p-14',
                     logo.hideOnMobile ? 'hidden md:block' : 'block',
                   )}
                   href={logo.url}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="relative duration-300 ease-in aspect-square hover-hover:group-hover:scale-[1.15]">
+                  <div className="relative aspect-square duration-300 ease-in hover-hover:group-hover:scale-[1.15]">
                     <Image
                       src={logo.path}
                       layout="fill"

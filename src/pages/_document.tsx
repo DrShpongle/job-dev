@@ -70,7 +70,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
-        <body className="w-full leading-normal font-body">
+        <body className="w-full font-body leading-normal">
           <Main />
           <NextScript />
         </body>

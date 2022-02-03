@@ -12,7 +12,6 @@ export const useRefScrollProgress = (
       return
     }
     const rect = ref.current.getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     setStart(rect.top / (document.body.clientHeight - window.innerHeight))
     setEnd(
       (rect.bottom + window.innerHeight * (multiplicator - 1)) /

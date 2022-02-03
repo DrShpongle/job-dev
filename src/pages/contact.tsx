@@ -5,7 +5,7 @@ import PageLayout from 'components/layouts/page-layout'
 const Contact: NextPage = () => {
   return (
     <PageLayout>
-      <h1 className="my-48 text-6xl text-center">Contact</h1>
+      <h1 className="my-48 text-center text-6xl">Contact</h1>
     </PageLayout>
   )
 }

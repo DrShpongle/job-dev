@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <footer
-      className="pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10 bg-gray"
+      className="bg-gray pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
@@ -11,10 +11,10 @@ const Footer = () => {
           <div className="w-full md:w-3/5">
             <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
               <div>
-                <h4 className="text-pink text-xl md:text-[1.625rem]">
+                <h4 className="text-xl text-pink md:text-[1.625rem]">
                   Explore
                 </h4>
-                <ul className="mt-3 space-y-3 md:space-y-4 md:mt-7">
+                <ul className="mt-3 space-y-3 md:mt-7 md:space-y-4">
                   {navLinks.map((item, index) => {
                     return (
                       <li key={index}>
@@ -29,10 +29,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-pink text-xl md:text-[1.625rem]">
+                <h4 className="text-xl text-pink md:text-[1.625rem]">
                   Socials
                 </h4>
-                <ul className="mt-3 space-y-3 md:space-y-4 md:mt-7">
+                <ul className="mt-3 space-y-3 md:mt-7 md:space-y-4">
                   {socialLinks.map((item, index) => {
                     return (
                       <li key={index}>
@@ -51,39 +51,39 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-full mt-10 md:w-2/5 md:mt-0">
-            <h4 className="text-pink text-xl md:text-[1.625rem] md:h-8 md:text-right">
+          <div className="mt-10 w-full md:mt-0 md:w-2/5">
+            <h4 className="text-xl text-pink md:h-8 md:text-right md:text-[1.625rem]">
               Stay in touch
             </h4>
-            <p className="mt-3 text-lg md:text-xl md:leading-relaxed md:text-right 2xl:leading-relaxed md:mt-7 2xl:text-2xl">
+            <p className="mt-3 text-lg md:mt-7 md:text-right md:text-xl md:leading-relaxed 2xl:text-2xl 2xl:leading-relaxed">
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
-            <form className="flex flex-col mt-6 space-y-4">
+            <form className="mt-6 flex flex-col space-y-4">
               <input
                 type="text"
-                className="h-[48px] md:h-[60px] lg:h-[70px] px-4 md:px-5 rounded-none md:text-xl 2xl:text-2xl border"
+                className="h-[48px] rounded-none border px-4 md:h-[60px] md:px-5 md:text-xl lg:h-[70px] 2xl:text-2xl"
                 placeholder="Enter your email address"
               />
               <button
                 type="button"
-                className="font-headings h-[48px] md:h-[60px] lg:h-[70px] bg-pink text-white text-center text-lg md:text-xl xl:text-[1.625rem] uppercase"
+                className="h-[48px] bg-pink text-center font-headings text-lg uppercase text-white md:h-[60px] md:text-xl lg:h-[70px] xl:text-[1.625rem]"
               >
                 Submit
               </button>
             </form>
           </div>
         </div>
-        <div className="flex flex-col-reverse justify-between w-full text-sm text-center lg:text-left lg:pt-6 lg:border-t md:text-lg border-black/20 md:items-center lg:flex-row md:mt-14 2xl:text-2xl lg:space-between">
-          <div className="w-full pt-4 border-t lg:border-none md:pt-6 lg:pt-0 mt-7 lg:mt-0 text-black/50 border-black/20">
+        <div className="lg:space-between flex w-full flex-col-reverse justify-between border-black/20 text-center text-sm md:mt-14 md:items-center md:text-lg lg:flex-row lg:border-t lg:pt-6 lg:text-left 2xl:text-2xl">
+          <div className="mt-7 w-full border-t border-black/20 pt-4 text-black/50 md:pt-6 lg:mt-0 lg:border-none lg:pt-0">
             Copyright © 2021 Jamie O&#8217;Brien. All rights reserved.
           </div>
-          <ul className="flex flex-col items-center mt-8 space-y-3 lg:mt-0 md:flex-row md:space-y-0 md:space-x-4 flex-nowrap">
+          <ul className="mt-8 flex flex-col flex-nowrap items-center space-y-3 md:flex-row md:space-y-0 md:space-x-4 lg:mt-0">
             {auxiliaryLinks.map((item, index) => {
               return (
                 <li
                   key={index}
-                  className="flex items-center md:before:w-px md:before:h-3 md:before:bg-black/20 md:before:block md:before:mr-4 first:before:hidden"
+                  className="flex items-center first:before:hidden md:before:mr-4 md:before:block md:before:h-3 md:before:w-px md:before:bg-black/20"
                 >
                   <Link href={item.path}>
                     <a className="whitespace-nowrap">{item.title}</a>

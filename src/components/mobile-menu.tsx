@@ -25,7 +25,7 @@ export const MobileMenuToggler: React.FC<{
 }> = ({onClick, isOpened}) => {
   return (
     <div
-      className="relative flex items-center justify-center w-6 h-6 lg:hidden"
+      className="relative flex h-6 w-6 items-center justify-center lg:hidden"
       onClick={onClick}
     >
       <motion.div
@@ -33,14 +33,14 @@ export const MobileMenuToggler: React.FC<{
         initial="closed"
         animate={isOpened ? 'opened' : 'closed'}
         transition={{duration: 0.25}}
-        className="absolute w-6 h-1 rounded-full bg-pink"
+        className="absolute h-1 w-6 rounded-full bg-pink"
       />
       <motion.div
         variants={variantsTogglerBottom}
         initial="closed"
         animate={isOpened ? 'opened' : 'closed'}
         transition={{duration: 0.25}}
-        className="absolute w-6 h-1 rounded-full bg-pink"
+        className="absolute h-1 w-6 rounded-full bg-pink"
       />
     </div>
   )
@@ -65,7 +65,7 @@ const MobileMenu: React.FC<{
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="fixed top-0 left-0 z-30 flex flex-col items-center justify-between w-full pt-16 pb-10 mt-10 bg-pink lg:hidden mobile-menu md:mt-14 touch-none"
+          className="mobile-menu fixed top-0 left-0 z-30 mt-10 flex w-full touch-none flex-col items-center justify-between bg-pink pt-16 pb-10 md:mt-14 lg:hidden"
         >
           <div>
             <ul className="flex flex-col items-center space-y-3">
@@ -73,7 +73,7 @@ const MobileMenu: React.FC<{
                 return (
                   <li key={index}>
                     <Link href={item.path}>
-                      <a className="text-2xl text-white uppercase font-headings">
+                      <a className="font-headings text-2xl uppercase text-white">
                         {item.title}
                       </a>
                     </Link>

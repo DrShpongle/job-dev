@@ -6,13 +6,13 @@ import classNames from 'classnames'
 const StayPsyched = () => {
   return (
     <section
-      className="pt-12 pb-5 md:pb-7 bg-slate-100 xl:py-7"
+      className="bg-slate-100 pt-12 pb-5 md:pb-7 xl:py-7"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
         <div className="flex flex-col space-y-12 xl:flex-row xl:space-y-0">
           <div className="w-full xl:w-2/5 xl:pr-8 xl:pt-36">
-            <h3 className="text-pink text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px] font-accented">
+            <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
               Stay Psyched
             </h3>
             <div className="flex flex-col items-start space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
@@ -21,19 +21,19 @@ const StayPsyched = () => {
                 Jamie O&#8217;Brien <br />
                 Collection
               </h2>
-              <p className="md:text-xl lg:text-2xl xl:text-3xl lg:leading-normal xl:leading-normal">
+              <p className="md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal">
                 Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
                 nem nonsedit, utestiam, sus quia quis doluptio illatem et aut.
               </p>
               <Link href="/surf-mag">
-                <a className="px-6 xl:px-10 py-2 md:py-4 text-white uppercase rounded-full bg-pink font-headings md:text-xl lg:text-lg xl:text-2xl 2xl:text-[29px]">
+                <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
                   Visit the shop
                 </a>
               </Link>
             </div>
           </div>
           <div className="w-full xl:w-3/5">
-            <div className="grid w-full grid-cols-2 gap-5 lg:grid-cols-3 md:gap-7">
+            <div className="grid w-full grid-cols-2 gap-5 md:gap-7 lg:grid-cols-3">
               {fakeData.map((item, i) => {
                 return (
                   <a
@@ -42,11 +42,11 @@ const StayPsyched = () => {
                     target="_blank"
                     rel="noreferrer"
                     className={classNames(
-                      'pt-4 pb-2 md:pt-7 md:pb-4 px-2 flex flex-col items-center h-[400px] md:h-[498px] bg-white space-y-7 group overflow-hidden',
+                      'group flex h-[400px] flex-col items-center space-y-7 overflow-hidden bg-white px-2 pt-4 pb-2 md:h-[498px] md:pt-7 md:pb-4',
                       i === 0 && 'col-span-2',
                     )}
                   >
-                    <div className="relative w-full duration-300 grow hover-hover:group-hover:scale-110">
+                    <div className="relative w-full grow duration-300 hover-hover:group-hover:scale-110">
                       <Image
                         src={item.image}
                         layout="fill"
@@ -55,13 +55,13 @@ const StayPsyched = () => {
                         priority
                       />
                     </div>
-                    <div className="flex flex-col items-center shrink-0 min-h-[122px]">
+                    <div className="flex min-h-[122px] shrink-0 flex-col items-center">
                       {item.isNew && (
-                        <h4 className="text-pink font-accented text-[26px] mb-2">
+                        <h4 className="mb-2 font-accented text-[26px] text-pink">
                           New
                         </h4>
                       )}
-                      <div className="space-y-1 leading-normal text-center md:text-lg">
+                      <div className="space-y-1 text-center leading-normal md:text-lg">
                         <div>
                           <p className="line-clamp-2">{item.title}</p>
                           {item?.option && <p>({item.option})</p>}

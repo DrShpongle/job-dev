@@ -33,7 +33,7 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   return (
     <div
       ref={refText}
-      className="text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px] leading-none text-white font-headings duration-300 py-6 md:py-8 first:pt-0 last:pb-0 opacity-[0.15]"
+      className="py-6 font-headings text-5xl leading-none text-white opacity-[0.15] duration-300 first:pt-0 last:pb-0 md:py-8 md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px]"
     >
       {text}
     </div>
@@ -75,7 +75,7 @@ const HeroWithScrollableText = () => {
 
   return (
     <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
-      <div className="absolute inset-0 before:absolute before:bg-black/40 before:inset-0">
+      <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
         <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
       </div>
       <motion.div
@@ -90,7 +90,7 @@ const HeroWithScrollableText = () => {
           })}
         </div>
       </motion.div>
-      <div className="flex items-center justify-center w-full h-full pt-20">
+      <div className="flex h-full w-full items-center justify-center pt-20">
         <motion.div
           className="relative z-10"
           variants={{
@@ -112,7 +112,7 @@ const HeroWithScrollableText = () => {
         >
           <div className="w-64 md:w-[300px]">
             <div
-              className="absolute overflow-hidden inset-2 rounded-[30px] md:inset-3"
+              className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3"
               style={{transform: 'translateZ(0)'}}
             >
               <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
