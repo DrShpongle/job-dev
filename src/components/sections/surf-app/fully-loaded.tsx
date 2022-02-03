@@ -29,7 +29,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
           className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[10%] lg:rounded-[40px] xl:inset-3 xl:rounded-[40px] 2xl:inset-4"
           style={{transform: 'translateZ(0)'}}
         >
-          <VideoEmbed url={url} />
+          {/* <VideoEmbed url={url} /> */}
         </div>
         <Image
           src="/images/iphone-frame-portrait.png"
