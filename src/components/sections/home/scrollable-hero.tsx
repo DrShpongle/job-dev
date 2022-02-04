@@ -57,7 +57,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e703b314-1fbc-40c8-8055-e7bc86a78436/e703b314-1fbc-40c8-8055-e7bc86a7.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/1681c7f2-28e8-4a8b-944a-ed0b4de89588/1681c7f2-28e8-4a8b-944a-ed0b4de8.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <motion.div
             className={classNames(
@@ -66,7 +66,7 @@ const ScrollableHero: React.FC = () => {
             )}
             style={{width: scale, height: scale}}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/6fa8aea0-f71d-417a-b36f-7b1b27c8f88d/6fa8aea0-f71d-417a-b36f-7b1b27c8.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/c65b0ddb-9bf4-4941-965f-f5bcfa86cc7b/c65b0ddb-9bf4-4941-965f-f5bcfa86.ism/manifest(format=m3u8-aapl).m3u8" />
             <div className="absolute left-0 w-full space-y-4 overflow-hidden whitespace-nowrap text-center text-white lg:pr-16 lg:text-right xl:pr-20">
               <motion.h2
                 initial="hidden"
@@ -100,7 +100,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/8e6b0635-692a-4da8-8703-8175ba1e470b/8e6b0635-692a-4da8-8703-8175ba1e.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/68f42c1e-1cff-449e-976f-801f2b8baf25/68f42c1e-1cff-449e-976f-801f2b8b.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 z-10 m-auto flex w-32 flex-col items-center space-y-4 text-xl text-white">
             <span>scroll down</span>

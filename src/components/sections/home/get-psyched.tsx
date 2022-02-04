@@ -95,7 +95,7 @@ const GetPsyched = () => {
         </div>
       </div>
       <div className="absolute bottom-0 h-1/2 w-full before:absolute before:inset-0 before:bg-black/20 md:h-[55%] lg:h-full">
-        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
+        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/cd6b1fd0-371d-4331-8bc8-4ba52442e0ed/cd6b1fd0-371d-4331-8bc8-4ba52442.ism/manifest(format=m3u8-aapl).m3u8" />
         <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
           <a href="#" className="w-28 md:w-44 xl:w-auto">
             <Image
