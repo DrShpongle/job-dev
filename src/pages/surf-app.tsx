@@ -21,7 +21,7 @@ const SurfApp: NextPage = () => {
       <section className="h-[200vh]" />
       <FullyLoaded />
       <SuccessPoints />
-      <section className="h-[250vh]" />
+      <section className="h-[350vh]" />
     </PageLayout>
   )
 }

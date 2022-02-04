@@ -34,8 +34,8 @@ const BePsyched = () => {
         {width >= 1024 ? (
           <Image
             src="/images/windsurfing-boards-vertical.png"
-            width={630}
-            height={1190}
+            width={640}
+            height={949}
             priority
           />
         ) : (
