@@ -79,7 +79,12 @@ const SuccessPoints = () => {
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           {/* <Image src="/images/success-points.png" width={2560} height={1598} /> */}
-          <Image src="/images/success-points.png" width={3000} height={1873} />
+          <Image
+            src="/images/success-points.png"
+            width={3000}
+            height={1873}
+            priority
+          />
         </motion.div>
         <div className="absolute bottom-6 max-w-[400px] text-center md:text-xl lg:-translate-x-2 lg:text-2xl lg:leading-normal xl:-translate-x-3 portrait:bottom-auto portrait:top-56 landscape:bottom-6">
           There are always key things to remember, for every maneuver, that are

@@ -32,6 +32,7 @@ const AskJamie = () => {
               height={674}
               alt="Ask Jamie"
               layout="responsive"
+              priority
             />
           </div>
           <div className="relative flex w-64 md:absolute md:right-0 md:bottom-0 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]">
@@ -52,6 +53,7 @@ const AskJamie = () => {
               width={580}
               height={1171}
               alt="Ask Jamie"
+              priority
             />
           </div>
           <div className="z-10 mt-4 flex items-center space-x-2 md:absolute md:bottom-3 md:right-56 md:mt-0 md:space-x-4 lg:bottom-2 lg:right-72 xl:right-80 2xl:right-96">

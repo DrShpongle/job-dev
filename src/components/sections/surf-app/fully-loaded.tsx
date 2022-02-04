@@ -36,6 +36,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
           width={580}
           height={1171}
           alt="Ask Jamie"
+          priority
         />
       </div>
     </motion.div>
