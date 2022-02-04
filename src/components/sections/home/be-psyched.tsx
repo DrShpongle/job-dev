@@ -33,16 +33,16 @@ const BePsyched = () => {
       >
         {width >= 1024 ? (
           <Image
-            src="/images/windsurfing-boards-vertical.png"
-            width={640}
+            src="/images/surfboards-vertical.png"
+            width={569}
             height={949}
             priority
           />
         ) : (
           <Image
-            src="/images/windsurfing-boards-horizontal.png"
-            width={1536}
-            height={813}
+            src="/images/surfboards-horizontal.png"
+            width={949}
+            height={569}
             priority
           />
         )}
