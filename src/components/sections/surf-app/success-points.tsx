@@ -1,15 +1,39 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {motion, useViewportScroll, useTransform, useSpring} from 'framer-motion'
+import {useWindowSize} from 'react-use'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const SuccessPoints = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
-
+  const {width, height} = useWindowSize()
   const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
+
+  let topShift = 100
+  if (width < 768) {
+    topShift = 100
+  }
+  if (width >= 768) {
+    topShift = 100
+  }
+  if (width >= 1024) {
+    topShift = 80
+  }
+  if (width >= 1280) {
+    topShift = 377
+  }
+  if (width >= 1536) {
+    topShift = 480
+  }
+  //   if (width >= 1024 && width / height >= 1) {
+  //     topShift = '30%'
+  //   }
+  //   if (width >= 1024 && width / height < 1) {
+  //     topShift = '10%'
+  //   }
 
   const scaleHandsWithPhone = useTransform(
     scrollYProgress,
@@ -20,7 +44,7 @@ const SuccessPoints = () => {
   const shiftHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
-    [550, 0],
+    [topShift, 0],
   )
 
   const animateShiftHandsWithPhone = useSpring(shiftHandsWithPhone, {
@@ -51,7 +75,7 @@ const SuccessPoints = () => {
           //   style={{scale: scaleHandsWithPhone}}
           className="relative z-10 flex shrink-0 origin-center justify-center"
         >
-          <div className="trans absolute bg-red-600 md:h-[150px] md:w-[316px] md:-translate-x-1 md:translate-y-14 lg:h-[206px] lg:w-[430px] lg:translate-y-20 lg:-translate-x-2 xl:h-[270px] xl:w-[546px] xl:-translate-x-3 xl:translate-y-24 2xl:h-[326px] 2xl:w-[670px] 2xl:translate-y-28">
+          <div className="trans absolute md:h-[150px] md:w-[316px] md:-translate-x-1 md:translate-y-14 lg:h-[206px] lg:w-[430px] lg:translate-y-20 lg:-translate-x-2 xl:h-[270px] xl:w-[546px] xl:-translate-x-3 xl:translate-y-24 2xl:h-[326px] 2xl:w-[670px] 2xl:translate-y-28">
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <Image src="/images/success-points.png" width={2560} height={1598} />
