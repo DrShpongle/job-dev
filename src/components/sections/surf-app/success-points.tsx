@@ -9,7 +9,7 @@ import VideoEmbed from 'components/video-embed'
 const SuccessPoints = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
   const {width, height} = useWindowSize()
-  const {start, end} = useRefScrollProgress(refSection, 2)
+  const {start, end} = useRefScrollProgress(refSection, 1.5)
   const {scrollYProgress} = useViewportScroll()
 
   let topShift = 100
@@ -17,10 +17,10 @@ const SuccessPoints = () => {
     topShift = 100
   }
   if (width >= 768) {
-    topShift = 100
+    topShift = -100
   }
   if (width >= 1024) {
-    topShift = 80
+    topShift = 300
   }
   if (width >= 1280) {
     topShift = 377
@@ -28,26 +28,26 @@ const SuccessPoints = () => {
   if (width >= 1536) {
     topShift = 380
   }
-  //   if (width >= 1024 && width / height >= 1) {
-  //     topShift = '30%'
-  //   }
-  //   if (width >= 1024 && width / height < 1) {
-  //     topShift = '10%'
-  //   }
 
   const scaleHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
-    [4, 1],
+    [4.5, 1],
   )
 
-  const shiftHandsWithPhone = useTransform(
+  const slideHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
     [topShift, 0],
   )
 
-  const animateShiftHandsWithPhone = useSpring(shiftHandsWithPhone, {
+  const portraitSlideHandsWithPhone = useTransform(
+    scrollYProgress,
+    [start, end],
+    ['100%', '-100px'],
+  )
+
+  const animateSlideHandsWithPhone = useSpring(slideHandsWithPhone, {
     stiffness: 400,
     damping: 90,
   })
@@ -60,7 +60,7 @@ const SuccessPoints = () => {
   return (
     <section
       ref={refSection}
-      className="learn-from-the-best sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-24"
+      className="learn-from-the-best sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-24 portrait:pt-24 md:portrait:pt-32"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container flex grow flex-col items-center 2xl:max-w-[1180px]">
@@ -69,13 +69,15 @@ const SuccessPoints = () => {
         </h2>
         <motion.div
           style={{
-            scale: animateScaleHandsWithPhone,
-            y: animateShiftHandsWithPhone,
+            scale: width / height < 1 ? 1 : animateScaleHandsWithPhone,
+            y:
+              width / height < 1
+                ? portraitSlideHandsWithPhone
+                : animateSlideHandsWithPhone,
           }}
-          //   style={{scale: scaleHandsWithPhone}}
-          className="relative z-10 flex shrink-0 origin-center justify-center"
+          className="relative z-10 flex w-[300px] shrink-0 origin-center justify-center"
         >
-          <div className="trans absolute md:h-[150px] md:w-[316px] md:-translate-x-1 md:translate-y-14 lg:h-[206px] lg:w-[430px] lg:translate-y-20 lg:-translate-x-2 xl:h-[270px] xl:w-[546px] xl:-translate-x-3 xl:translate-y-24 2xl:h-[240px] 2xl:w-[500px]">
+          <div className="absolute h-[70px] w-[136px] translate-y-6 -translate-x-0.5 md:h-[150px] md:w-[316px] md:-translate-x-1 md:translate-y-14 lg:h-[206px] lg:w-[430px] lg:translate-y-20 lg:-translate-x-2 xl:h-[270px] xl:w-[546px] xl:-translate-x-3 xl:translate-y-24 2xl:h-[240px] 2xl:w-[500px]">
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           {/* <Image src="/images/success-points.png" width={2560} height={1598} /> */}
@@ -86,7 +88,7 @@ const SuccessPoints = () => {
             priority
           />
         </motion.div>
-        <div className="absolute bottom-6 text-center md:text-xl lg:max-w-[376px] lg:-translate-x-2 lg:text-xl lg:leading-normal xl:max-w-[400px] xl:-translate-x-3 portrait:bottom-auto portrait:top-56 landscape:bottom-6">
+        <div className="absolute bottom-6 text-center md:max-w-[376px] md:text-xl lg:-translate-x-2 lg:text-xl xl:max-w-[400px] xl:-translate-x-3 portrait:bottom-auto portrait:px-6 portrait:pt-24 md:portrait:top-48 md:portrait:max-w-[500px] md:portrait:text-2xl lg:portrait:max-w-[700px] lg:portrait:text-3xl landscape:bottom-12">
           There are always key things to remember, for every maneuver, that are
           so crucial to success you should tape them to your board. At the end
           of each session in the app, you can save these key points in a super

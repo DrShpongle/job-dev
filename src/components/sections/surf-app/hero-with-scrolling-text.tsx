@@ -5,7 +5,6 @@ import {
   useViewportScroll,
   useTransform,
   useAnimation,
-  // useSpring,
 } from 'framer-motion'
 import {useMeasure} from 'react-use'
 import classNames from 'classnames'
@@ -72,11 +71,6 @@ const HeroWithScrollableText = () => {
     [textBlockHeight - windowHeight / 2 - 50, -windowHeight],
   )
 
-  // const animateScrollText = useSpring(scrollText, {
-  //   stiffness: 400,
-  //   damping: 90,
-  // })
-
   React.useEffect(() => {
     const triggerPhoneAnimation = () => {
       if (scrollText.get() < -windowHeight * 0.5) {
@@ -101,7 +95,6 @@ const HeroWithScrollableText = () => {
         animate={{opacity: 1, transition: {delay: 1}}}
         className="absolute bottom-0 z-10 w-full xl:px-20"
         initial={{y: textBlockHeight, opacity: 0}}
-        // style={{y: animateScrollText}}
         style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">

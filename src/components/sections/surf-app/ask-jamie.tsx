@@ -9,7 +9,7 @@ const AskJamie = () => {
   const [muted, setMuted] = React.useState(true)
   return (
     <section
-      className="bg-white py-12 lg:min-h-screen xl:py-24"
+      className="bg-white py-12 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
