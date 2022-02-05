@@ -24,12 +24,12 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
       initial="hidden"
       animate={inView ? 'shown' : 'hidden'}
     >
-      <div className="relative w-64 lg:w-80 xl:w-96 2xl:w-[400px]">
+      <div className="relative flex h-[516px] w-64 lg:h-[646px] lg:w-80 xl:h-[776px] xl:w-96 2xl:h-[808px] 2xl:w-[400px]">
         <div
-          className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[10%] lg:rounded-[40px] xl:inset-3 xl:rounded-[40px] 2xl:inset-4"
+          className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[40px] xl:inset-3 xl:rounded-[40px] 2xl:inset-4"
           style={{transform: 'translateZ(0)'}}
         >
-          {/* <VideoEmbed url={url} /> */}
+          <VideoEmbed url={url} />
         </div>
         <Image
           src="/images/iphone-frame-portrait.png"
