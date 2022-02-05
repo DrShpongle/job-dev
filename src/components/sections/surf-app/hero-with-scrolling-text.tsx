@@ -5,41 +5,48 @@ import {
   useViewportScroll,
   useTransform,
   useAnimation,
+  // useSpring,
 } from 'framer-motion'
 import {useMeasure} from 'react-use'
+import classNames from 'classnames'
 
 import {isBrowser} from 'utils/isBrowser'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
-const TextItem: React.FC<{text: string}> = ({text}) => {
+const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
+  text,
+  firstItem,
+}) => {
+  const [isActive, setIsActive] = React.useState<boolean>(false)
   const refText = React.useRef<HTMLDivElement>(null)
 
   const scrollHandler = () => {
-    setTimeout(() => {
-      const rect = refText.current?.getBoundingClientRect()
-      const point = window.innerHeight / 2
-      if (rect && refText?.current) {
-        refText.current.style.opacity =
-          rect.top < point && rect.bottom > point ? '1' : '0.15'
-      }
-    }, 0)
+    const rect = refText.current?.getBoundingClientRect()
+    const point = window.innerHeight / 2
+    if (rect && refText?.current && rect.top < point && rect.bottom > point) {
+      setIsActive(true)
+    } else {
+      setIsActive((window.scrollY === 0 && firstItem) || false)
+    }
   }
 
   if (isBrowser) {
-    setTimeout(() => {
-      scrollHandler()
-    }, 0)
+    setTimeout(scrollHandler, 1000)
   }
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollHandler)
+    return () => window.addEventListener('scroll', scrollHandler)
   }, [])
 
   return (
     <div
       ref={refText}
-      className="py-6 font-headings text-5xl leading-none text-white opacity-[0.15] duration-300 first:pt-0 last:pb-0 md:py-8 md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px]"
+      className={classNames(
+        'py-6 font-headings text-5xl leading-none text-white opacity-[0.15] duration-300 first:pt-0 last:pb-0 md:py-8 md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px]',
+        isActive ? 'opacity-100' : 'opacity-10',
+      )}
     >
       {text}
     </div>
@@ -62,8 +69,13 @@ const HeroWithScrollableText = () => {
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
+    [textBlockHeight - windowHeight / 2 - 50, -windowHeight],
   )
+
+  // const animateScrollText = useSpring(scrollText, {
+  //   stiffness: 400,
+  //   damping: 90,
+  // })
 
   React.useEffect(() => {
     const triggerPhoneAnimation = () => {
@@ -89,11 +101,12 @@ const HeroWithScrollableText = () => {
         animate={{opacity: 1, transition: {delay: 1}}}
         className="absolute bottom-0 z-10 w-full xl:px-20"
         initial={{y: textBlockHeight, opacity: 0}}
+        // style={{y: animateScrollText}}
         style={{y: scrollText}}
       >
         <div ref={textBlockRef} className="container">
           {textArray.map((item, i) => {
-            return <TextItem key={i} text={item} />
+            return <TextItem key={i} text={item} firstItem={i === 0} />
           })}
         </div>
       </motion.div>
