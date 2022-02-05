@@ -5,7 +5,6 @@ import {
   useViewportScroll,
   useTransform,
   useAnimation,
-  useSpring,
 } from 'framer-motion'
 import {useWindowSize, useMeasure} from 'react-use'
 
@@ -32,7 +31,6 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   }
 
   React.useEffect(() => {
-    // console.log('useeffect')
     window.addEventListener('scroll', scrollHandler)
   }, [])
 

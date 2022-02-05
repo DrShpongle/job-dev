@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Image from 'next/image'
-import classNames from 'classnames'
-import Link from 'next/link'
 
 import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'

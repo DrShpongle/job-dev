@@ -14,11 +14,7 @@ import SeaTrees from 'components/sections/home/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
 const Landing: NextPage = () => {
-  const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  return isMounted ? (
+  return (
     <>
       <PageLayout>
         <ScrollableHero />
@@ -38,7 +34,7 @@ const Landing: NextPage = () => {
         />
       </PageLayout>
     </>
-  ) : null
+  )
 }
 
 export default Landing
