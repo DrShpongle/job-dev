@@ -8,6 +8,7 @@ import LearnFromTheBest from 'components/sections/surf-app/learn-from-the-best'
 import VisualiseAndDo from 'components/sections/surf-app/visualise-and-do'
 import FullyLoaded from 'components/sections/surf-app/fully-loaded'
 import SuccessPoints from 'components/sections/surf-app/success-points'
+import NewContent from 'components/sections/surf-app/new-content'
 
 const SurfApp: NextPage = () => {
   return (
@@ -22,6 +23,8 @@ const SurfApp: NextPage = () => {
       <FullyLoaded />
       <SuccessPoints />
       <section className="h-[250vh]" />
+      <NewContent />
+      <section className="h-[300vh]" />
     </PageLayout>
   )
 }

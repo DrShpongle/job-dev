@@ -18,24 +18,24 @@ const GetPsyched = () => {
   const {scrollYProgress} = useViewportScroll()
   const controlsLogo = useAnimation()
 
-  let valueToSwitch = '30%'
+  let variableOffset = '30%'
   if (width < 768) {
-    valueToSwitch = '50%'
+    variableOffset = '50%'
   }
   if (width >= 768 && width < 1024) {
-    valueToSwitch = '40%'
+    variableOffset = '40%'
   }
   if (width >= 1024 && width / height >= 1) {
-    valueToSwitch = '30%'
+    variableOffset = '30%'
   }
   if (width >= 1024 && width / height < 1) {
-    valueToSwitch = '10%'
+    variableOffset = '10%'
   }
 
   const scaleIphone = useTransform(
     scrollYProgress,
     [start, end],
-    ['150%', valueToSwitch],
+    ['150%', variableOffset],
   )
   const scaleText = useTransform(
     scrollYProgress,
@@ -45,7 +45,7 @@ const GetPsyched = () => {
 
   React.useEffect(() => {
     const triggerLogoAnimation = () => {
-      if (parseInt(scaleIphone.get()) < parseInt(valueToSwitch) + 5) {
+      if (parseInt(scaleIphone.get()) < parseInt(variableOffset) + 5) {
         controlsLogo.start('shown')
       } else {
         controlsLogo.start('hidden')
