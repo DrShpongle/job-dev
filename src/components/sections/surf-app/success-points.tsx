@@ -41,6 +41,12 @@ const SuccessPoints = () => {
     [topShift, 0],
   )
 
+  const portraitScaleHandsWithPhone = useTransform(
+    scrollYProgress,
+    [start, end],
+    [0.3, 1],
+  )
+
   const portraitSlideHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
@@ -69,7 +75,10 @@ const SuccessPoints = () => {
         </h2>
         <motion.div
           style={{
-            scale: width / height < 1 ? 1 : animateScaleHandsWithPhone,
+            scale:
+              width / height < 1
+                ? portraitScaleHandsWithPhone
+                : animateScaleHandsWithPhone,
             y:
               width / height < 1
                 ? portraitSlideHandsWithPhone
