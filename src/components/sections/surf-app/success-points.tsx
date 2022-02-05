@@ -86,7 +86,7 @@ const SuccessPoints = () => {
             priority
           />
         </motion.div>
-        <div className="absolute bottom-6 max-w-[400px] text-center md:text-xl lg:-translate-x-2 lg:text-2xl lg:leading-normal xl:-translate-x-3 portrait:bottom-auto portrait:top-56 landscape:bottom-6">
+        <div className="absolute bottom-6 text-center md:text-xl lg:max-w-[376px] lg:-translate-x-2 lg:text-xl lg:leading-normal xl:max-w-[400px] xl:-translate-x-3 portrait:bottom-auto portrait:top-56 landscape:bottom-6">
           There are always key things to remember, for every maneuver, that are
           so crucial to success you should tape them to your board. At the end
           of each session in the app, you can save these key points in a super
