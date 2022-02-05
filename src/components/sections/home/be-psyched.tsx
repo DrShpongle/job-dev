@@ -8,11 +8,16 @@ import {useRefScrollProgressFromTop} from 'hooks/useRefScrollProgressFromTop'
 const BePsyched = () => {
   const {width} = useWindowSize()
   const refBoards = React.useRef<HTMLDivElement>(null)
+  const [showImage, setShowImage] = React.useState<boolean>(false)
   const {start, end} = useRefScrollProgressFromTop(refBoards)
   const {scrollYProgress} = useViewportScroll()
   const rangeX = useTransform(scrollYProgress, [start, end], ['-90%', '0%'])
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])
   const rotate = useTransform(scrollYProgress, [start, end], [0, 720])
+
+  React.useEffect(() => {
+    setShowImage(true)
+  }, [width])
 
   return (
     <section
@@ -22,8 +27,8 @@ const BePsyched = () => {
     >
       <motion.div
         className="absolute bottom-0 flex w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"
-        initial={width >= 1024 ? {x: '-90%'} : {}}
-        style={width >= 1024 ? {x: rangeX} : {}}
+        initial={showImage && width >= 1024 ? {x: '-90%'} : {}}
+        style={showImage && width >= 1024 ? {x: rangeX} : {}}
         transition={{
           type: 'spring',
           damping: 10,
@@ -31,7 +36,7 @@ const BePsyched = () => {
           stiffness: 100,
         }}
       >
-        {width >= 1024 ? (
+        {showImage && width >= 1024 ? (
           <Image
             src="/images/surfboards-vertical.png"
             width={569}
@@ -52,7 +57,7 @@ const BePsyched = () => {
           <div className="relative flex grow items-start justify-end lg:pt-48 lg:pr-8 xl:pr-16 2xl:pr-24">
             <motion.div
               className="absolute w-32 shrink-0 origin-center md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
-              style={width >= 1024 ? {opacity, rotate} : {}}
+              style={showImage && width >= 1024 ? {opacity, rotate} : {}}
             >
               <Image
                 src="/images/job-surf-experience-logo.png"

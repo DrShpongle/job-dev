@@ -38,7 +38,6 @@ const Partnered = () => {
                       layout="fill"
                       objectFit="contain"
                       alt={logo.title}
-                      priority
                     />
                   </div>
                 </a>

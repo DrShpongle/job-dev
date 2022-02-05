@@ -30,7 +30,6 @@ const AskJamie = () => {
               height={674}
               alt="Ask Jamie"
               layout="responsive"
-              priority
             />
           </div>
           <div className="relative flex w-64 md:absolute md:right-0 md:bottom-0 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]">

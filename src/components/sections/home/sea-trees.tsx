@@ -61,13 +61,15 @@ const SeaTrees = () => {
     >
       <div className="relative">
         <div className="absolute inset-0 z-[-1]">
-          <Image
-            src="/images/sea-trees.jpg"
-            layout="fill"
-            objectFit="cover"
-            alt="SeaTrees"
-            priority
-          />
+          <div className="relative h-full w-full">
+            <Image
+              src="/images/sea-trees.jpg"
+              layout="fill"
+              objectFit="cover"
+              alt="SeaTrees"
+              priority
+            />
+          </div>
         </div>
         <div className="container">
           <div className="flex flex-col py-16 md:py-16 lg:flex-row lg:py-24 xl:py-32 2xl:py-40">

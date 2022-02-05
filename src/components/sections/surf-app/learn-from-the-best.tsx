@@ -22,13 +22,14 @@ const LearnFromTheBest = () => {
       className="learn-from-the-best sticky top-0 h-screen overflow-hidden bg-white bg-cover"
       style={{transform: 'translate3d(0,0,0)'}}
     >
-      <Image
-        layout="fill"
-        className="pointer-events-none object-cover object-center"
-        src="/images/learn-from-the-best.jpg"
-        alt="Learn from the best"
-        priority
-      />
+      <div className="relative h-full w-full">
+        <Image
+          layout="fill"
+          className="pointer-events-none object-cover object-center"
+          src="/images/learn-from-the-best.jpg"
+          alt="Learn from the best"
+        />
+      </div>
       <motion.div
         className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end"
         style={{y: scrollText}}
