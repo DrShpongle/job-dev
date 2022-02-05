@@ -7,7 +7,7 @@ export const useRefScrollProgress = (
   const ref = inputRef || React.useRef()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(0)
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (!ref.current) {
       return
     }
