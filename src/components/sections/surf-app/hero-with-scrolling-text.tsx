@@ -6,7 +6,7 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
-import {useWindowSize, useMeasure} from 'react-use'
+import {useMeasure} from 'react-use'
 
 import {isBrowser} from 'utils/isBrowser'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -16,18 +16,20 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
   const refText = React.useRef<HTMLDivElement>(null)
 
   const scrollHandler = () => {
-    const rect = refText.current?.getBoundingClientRect()
-    const point = window.innerHeight / 2
-    if (rect && refText?.current) {
-      refText.current.style.opacity =
-        rect.top < point && rect.bottom > point ? '1' : '0.15'
-    }
+    setTimeout(() => {
+      const rect = refText.current?.getBoundingClientRect()
+      const point = window.innerHeight / 2
+      if (rect && refText?.current) {
+        refText.current.style.opacity =
+          rect.top < point && rect.bottom > point ? '1' : '0.15'
+      }
+    }, 0)
   }
 
   if (isBrowser) {
     setTimeout(() => {
       scrollHandler()
-    }, 1000)
+    }, 0)
   }
 
   React.useEffect(() => {
@@ -47,14 +49,14 @@ const TextItem: React.FC<{text: string}> = ({text}) => {
 const HeroWithScrollableText = () => {
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
-
-  const {height: windowHeight} = useWindowSize()
   const [textBlockRef, {height: textBlockHeight}] = useMeasure<any>()
 
   const controlsPhone = useAnimation()
 
   const {start, end} = useRefScrollProgress(refSection, 2)
   const {scrollYProgress} = useViewportScroll()
+
+  const windowHeight = (isBrowser && window.innerHeight) || 0
 
   // TODO: Warning: Prop `style` did not match.
   const scrollText = useTransform(
