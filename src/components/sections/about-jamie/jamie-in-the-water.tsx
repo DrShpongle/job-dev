@@ -26,7 +26,7 @@ const JamieInTheWater = () => {
             nam nimagnis doloreh enistorro vendis voluptaqua.
           </p>
         </div>
-        <div className="mt-8 flex">
+        <div className="mt-8 flex md:mt-16 xl:mt-20 2xl:mt-24">
           <Image
             src="/images/jamie-in-the-water.jpg"
             width={1920}
