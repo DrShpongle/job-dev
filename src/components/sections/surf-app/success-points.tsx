@@ -33,7 +33,7 @@ const SuccessPoints = () => {
   const scaleHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
-    [4.5, 1],
+    [4.5, 1.1],
   )
 
   const slideHandsWithPhone = useTransform(
@@ -67,7 +67,7 @@ const SuccessPoints = () => {
   return (
     <section
       ref={refSection}
-      className="learn-from-the-best sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-24 portrait:pt-24 md:portrait:pt-28 lg:portrait:pt-32"
+      className="learn-from-the-best sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-20 portrait:pt-24 md:portrait:pt-28 lg:portrait:pt-32"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container flex grow flex-col items-center 2xl:max-w-[1180px]">
@@ -101,7 +101,7 @@ const SuccessPoints = () => {
             priority
           />
         </motion.div>
-        <div className="absolute bottom-6 text-center md:max-w-[376px] md:text-xl lg:-translate-x-2 lg:text-xl xl:max-w-[400px] xl:-translate-x-3 portrait:bottom-auto portrait:px-6 portrait:pt-24 md:portrait:top-28 md:portrait:max-w-[500px] md:portrait:text-2xl lg:portrait:top-36 lg:portrait:max-w-[700px] lg:portrait:text-3xl landscape:bottom-12">
+        <div className="absolute bottom-6 text-center md:max-w-[376px] md:text-xl lg:-translate-x-2 lg:text-xl xl:max-w-[450px] xl:-translate-x-3 portrait:bottom-auto portrait:px-6 portrait:pt-24 md:portrait:top-28 md:portrait:max-w-[500px] md:portrait:text-2xl lg:portrait:top-36 lg:portrait:max-w-[700px] lg:portrait:text-3xl landscape:bottom-8">
           There are always key things to remember, for every maneuver, that are
           so crucial to success you should tape them to your board. At the end
           of each session in the app, you can save these key points in a super
