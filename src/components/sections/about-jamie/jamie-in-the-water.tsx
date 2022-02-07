@@ -16,10 +16,14 @@ const JamieInTheWater = () => {
             sus quia quis doluptio
           </h2>
           <p className="mt-4 md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl">
-            Jamie improved by watching clips of his favourite surfers over and
-            over and over again. The JOB Surf app has technique specific clip
-            rolls. You want to watch Jamie land his signature backside barrels
-            on repeat so YOU can replicate? We have got you covered!
+            Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
+            nonsedit, utestiam, sus quia quis doluptio illatem et aut optat quam
+            nam nimagnis doloreh enistorro vendis voluptaqua.
+            <br />
+            <br />
+            Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
+            nonsedit, utestiam, sus quia quis doluptio illatem et aut optat quam
+            nam nimagnis doloreh enistorro vendis voluptaqua.
           </p>
         </div>
         <div className="mt-8 flex">
