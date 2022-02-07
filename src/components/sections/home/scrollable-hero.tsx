@@ -101,7 +101,7 @@ const ScrollableHero: React.FC = () => {
               width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
             )}
           >
-            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/68f42c1e-1cff-449e-976f-801f2b8baf25/68f42c1e-1cff-449e-976f-801f2b8b.ism/manifest(format=m3u8-aapl).m3u8" />
+            <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/b94a400b-6229-4117-94cf-99baa15f467a/b94a400b-6229-4117-94cf-99baa15f.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 z-10 m-auto flex w-32 flex-col items-center space-y-4 text-xl text-white">
             <span>scroll down</span>
