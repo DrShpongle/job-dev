@@ -65,9 +65,9 @@ const MobileMenu: React.FC<{
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="mobile-menu fixed top-0 left-0 z-30 mt-10 flex w-full touch-none flex-col items-center justify-between bg-pink pt-16 pb-10 md:mt-14 lg:hidden"
+          className="mobile-menu fixed top-0 left-0 z-30 mt-10 flex w-full touch-none flex-col items-center justify-between bg-pink pt-16 pb-24 md:mt-14 lg:hidden"
         >
-          <div>
+          <div className="flex flex-col items-center">
             <ul className="flex flex-col items-center space-y-3">
               {data.map((item, index) => {
                 return (
@@ -81,6 +81,12 @@ const MobileMenu: React.FC<{
                 )
               })}
             </ul>
+            <a
+              href="/"
+              className="mt-20 block rounded-full bg-white py-2 px-4 font-headings text-base uppercase text-pink"
+            >
+              Download app
+            </a>
           </div>
           <div className="flex items-center justify-center space-x-3">
             <a href="https://www.instagram.com/whoisjob/'">

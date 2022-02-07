@@ -12,7 +12,7 @@ const Header = () => {
     React.useState<boolean>(false)
   return (
     <header className="fixed top-0 left-0 z-30 h-10 w-full bg-white py-2 md:h-14 md:py-3 lg:h-20 lg:py-5">
-      <div className="container">
+      <div className="container max-w-none lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex h-6 w-[120px] shrink-0 justify-start md:h-8 md:w-40 xl:h-10 xl:w-[198px]">
