@@ -24,7 +24,7 @@ const PromoVideos = () => {
           nonsedit, utestiam, sus quia quis doluptio illatem et aut optat quam
           nam nimagnis doloreh enistorro vendis voluptaqua.
         </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16">
+        <div className="mt-8 grid gap-6 md:mt-16 md:grid-cols-2 md:gap-8 lg:gap-10 xl:mt-20 xl:gap-12 2xl:mt-24 2xl:gap-16">
           <div className="aspect-square">
             <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/1681c7f2-28e8-4a8b-944a-ed0b4de89588/1681c7f2-28e8-4a8b-944a-ed0b4de8.ism/manifest(format=m3u8-aapl).m3u8" />
           </div>
