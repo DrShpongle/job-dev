@@ -21,7 +21,10 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [start, end / 2], [1, 0])
 
   return (
-    <section ref={refSection} className="min-h-screen pt-12 md:pt-20 xl:pt-24">
+    <section
+      ref={refSection}
+      className="flex min-h-screen flex-col pt-12 md:pt-20 xl:pt-24"
+    >
       <motion.div
         className="fixed top-40 w-full duration-200"
         style={{opacity: opacityText}}
@@ -36,7 +39,7 @@ const Hero = () => {
           Content Creator
         </h2>
       </motion.div>
-      <div className="container pt-72">
+      <div className="container flex grow flex-col justify-end pt-72">
         <Image src="/images/job.png" width={1686} height={1124} priority />
       </div>
     </section>
