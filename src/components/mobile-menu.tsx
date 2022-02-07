@@ -82,7 +82,7 @@ const MobileMenu: React.FC<{
               })}
             </ul>
             <a
-              href="/"
+              href="#"
               className="mt-20 block rounded-full bg-white py-2 px-4 font-headings text-base uppercase text-pink"
             >
               Download app
