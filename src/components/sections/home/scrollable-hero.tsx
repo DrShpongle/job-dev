@@ -7,8 +7,9 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
-import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
+import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
+import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const ScrollableHero: React.FC = () => {
@@ -24,7 +25,7 @@ const ScrollableHero: React.FC = () => {
     setIsMounted(true)
   }, [])
 
-  React.useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // TODO: fix return for this useEffect
     const triggerTextAnimation = () => {
       if (parseInt(scale.get()) > 95) {
