@@ -10,6 +10,7 @@ import {useMeasure} from 'react-use'
 import classNames from 'classnames'
 
 import {isBrowser} from 'utils/isBrowser'
+import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
@@ -71,7 +72,7 @@ const HeroWithScrollableText = () => {
     [textBlockHeight - windowHeight / 2 - 50, -windowHeight],
   )
 
-  React.useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const triggerPhoneAnimation = () => {
       if (scrollText.get() < -windowHeight * 0.5) {
         controlsPhone.start('shown')
