@@ -68,18 +68,14 @@ const NewContent = () => {
       opacity: 0,
       scale: 0.3,
       transition: {
-        duration: 0.1,
+        ease: [0.17, 0.67, 0.83, 0.67],
       },
     },
     shown: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.3,
-        // type: 'spring',
-        // damping: 10,
-        // mass: 0.75,
-        // stiffness: 100,
+        ease: [0.17, 0.67, 0.83, 0.67],
       },
     },
   }
@@ -94,21 +90,21 @@ const NewContent = () => {
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage01}
-        className="absolute left-0 top-24 z-[1] flex w-[438px] duration-200 will-change-transform"
+        className="absolute left-0 z-[1] flex w-[438px] will-change-transform md:top-20 lg:top-24"
       >
         <Image src="/images/new-content/01.jpg" width={438} height={273} />
       </motion.div>
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage02}
-        className="absolute right-0 top-20 z-[2] flex w-[542px]"
+        className="absolute right-0 z-[2] flex will-change-transform md:top-14 md:w-[390px] lg:top-20 lg:w-[542px]"
       >
         <Image src="/images/new-content/02.jpg" width={542} height={332} />
       </motion.div>
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage03}
-        className="absolute inset-0 z-[6] m-auto flex h-1 w-[919px] max-w-[50%] items-center"
+        className="absolute inset-0 z-[6] m-auto flex h-1 w-[919px] max-w-[75%] items-center will-change-transform"
       >
         <div className="relative">
           <Image src="/images/new-content/03.jpg" width={919} height={525} />
@@ -117,47 +113,41 @@ const NewContent = () => {
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage04}
-        className="absolute left-8 bottom-20 z-[3] flex w-[295px]"
+        className="absolute bottom-20 z-[3] flex w-[295px] will-change-transform md:left-6 lg:left-8"
       >
         <Image src="/images/new-content/04.jpg" width={295} height={295} />
       </motion.div>
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage05}
-        className="absolute right-8 bottom-16 z-[4] flex w-[362px]"
+        className="absolute bottom-16 z-[4] flex will-change-transform md:right-6 md:w-[300px] lg:right-8 lg:w-[362px]"
       >
         <Image src="/images/new-content/05.jpg" width={362} height={490} />
       </motion.div>
       <motion.div
         variants={variantsFadeinImages}
         animate={controlsFadeInImage06}
-        className="absolute bottom-0 left-64 z-[5] flex w-[502px]"
+        className="absolute bottom-0 left-64 z-[5] flex will-change-transform md:w-[430px] lg:w-[502px]"
       >
         <Image src="/images/new-content/06.jpg" width={502} height={176} />
       </motion.div>
-
-      {/* <motion.div
-        className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end"
-        style={{y: scrollText}}
-      >
-        <div className="container">
-          <h2 className="text-5xl leading-none text-white md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
-            Learn from
-            <br className="block md:hidden" /> the
-            <br className="hidden md:block" /> best
-            <br className="block md:hidden" /> not the
-            <br /> lineup
-            <br className="block md:hidden" /> kook
-          </h2>
-          <p className="mt-4 text-white md:mt-8 md:max-w-xl md:text-2xl lg:leading-normal xl:max-w-3xl xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
-            When it comes to surfers, everyone loves to play the guru. We all
-            get advice in the line up, but how do we know what actually works?
-            Get yourself a PROVEN PRO to give you advice in the line up. Start
-            improving your bottom turn so you can actually smash the lip, or,
-            what about creating so much spray it looks like this:{' '}
-          </p>
+      <div className="relative z-10 flex h-full w-full items-center text-center">
+        <div className="w-full overflow-hidden text-white">
+          <div className="container flex flex-col items-center">
+            <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
+              New Content
+            </h2>
+            <p className="mt-4 md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
+              Jamie and friends will be dropping throughout the year, everything
+              from specific lessons right through to new answers to the most
+              asked questions. We are constantly working to help you improve,
+              stay psyched and get more out of your surfing.
+              <br />
+              Beautifully shot in ultra high def.
+            </p>
+          </div>
         </div>
-      </motion.div> */}
+      </div>
     </section>
   )
 }
