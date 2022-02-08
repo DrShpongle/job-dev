@@ -86,7 +86,7 @@ const navLinks = [
     path: 'https://www.jamieobrienshop.com/',
     external: true,
   },
-  {title: 'Psych Mag', path: '/surf-mag'},
+  {title: 'Psych Mag', path: '/psych-mag'},
   {title: 'About Jamie', path: '/about'},
   {title: 'Contact', path: '/contact'},
 ]
