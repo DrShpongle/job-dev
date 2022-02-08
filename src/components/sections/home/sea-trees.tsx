@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import classNames from 'classnames'
 
 const EquationBlock: React.FC<{
@@ -46,9 +47,11 @@ const Description: React.FC<{
         ecosystems. The most effective way to suck carbon out of the atmosphere
         - period.
       </p>
-      <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl xl:px-10 xl:text-[29px]">
-        Find out more
-      </button>
+      <Link href="/sea-trees">
+        <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl xl:px-10 xl:text-[29px]">
+          Find out more
+        </a>
+      </Link>
     </div>
   )
 }
