@@ -68,13 +68,14 @@ const SeaTrees: NextPage = () => {
             <a
               href="https://sea-trees.org/"
               target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-pink py-2 px-6 font-headings text-lg uppercase text-white md:py-3 md:text-xl lg:px-8 lg:text-2xl xl:px-10 xl:text-3xl"
             >
               visit the seatrees website
             </a>
           </div>
         </div>
-        <div className="relative mt-8 flex h-[85vh] w-full md:mt-12 xl:mt-16 2xl:mt-20">
+        <div className="relative mt-8 flex h-[65vh] w-full md:mt-12 md:h-[85vh] xl:mt-16 2xl:mt-20">
           <Image
             src="/images/sea-trees-palms.jpg"
             width={1920}
