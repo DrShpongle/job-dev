@@ -1,18 +1,11 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
-import classNames from 'classnames'
+import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
 const Hero = () => {
   const refSection = React.useRef(null)
-  const refTextHolder = React.useRef(null)
 
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()

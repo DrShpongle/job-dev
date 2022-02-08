@@ -32,7 +32,7 @@ const SeaTrees: NextPage = () => {
           <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
             Sustainable surf
           </h3>
-          <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
+          <h2 className="mt-1 text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
             SeaTrees regenerates
             <br /> ocean health globally
           </h2>

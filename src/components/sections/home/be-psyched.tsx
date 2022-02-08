@@ -71,7 +71,7 @@ const BePsyched = () => {
             <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
               Be Psyched
             </h3>
-            <h2 className="text-5xl leading-none text-white md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px]">
+            <h2 className="mt-1 text-5xl leading-none text-white md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px]">
               with The
               <br />
               Jamie O’Brien
