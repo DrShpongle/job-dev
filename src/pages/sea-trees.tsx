@@ -51,7 +51,7 @@ const SeaTrees: NextPage = () => {
             <VideoPlayer url="https://www.youtube.com/watch?v=I0KgGtwaudQ&t=20s" />
           </div>
 
-          <div className="mt-8 flex flex-col items-end text-right md:mt-16 xl:mt-20 2xl:mt-24">
+          <div className="mt-8 flex flex-col items-end space-y-8 text-right md:mt-16 md:space-y-12 lg:space-y-12 xl:mt-20 xl:space-y-16 2xl:mt-24">
             <p className="mt-4 md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl">
               SeaTrees creates connections between people and brands that are
               ready to meet this challenge, and the social entrepreneurs and
@@ -65,9 +65,16 @@ const SeaTrees: NextPage = () => {
               jobs and livelihoods that maintain healthy ecosystems for the
               future.
             </p>
+            <a
+              href="https://sea-trees.org/"
+              target="_blank"
+              className="rounded-full bg-pink py-2 px-6 font-headings text-lg uppercase text-white md:py-3 md:text-xl lg:px-8 lg:text-2xl xl:px-10 xl:text-3xl"
+            >
+              visit the seatrees website
+            </a>
           </div>
         </div>
-        <div className="relative mt-8 flex h-[85vh] w-full md:mt-16 xl:mt-20 2xl:mt-24">
+        <div className="relative mt-8 flex h-[85vh] w-full md:mt-12 xl:mt-16 2xl:mt-20">
           <Image
             src="/images/sea-trees-palms.jpg"
             width={1920}
