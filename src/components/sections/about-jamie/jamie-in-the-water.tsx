@@ -8,7 +8,7 @@ const JamieInTheWater = () => {
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end text-right">
           <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
             Get Psyched
           </h3>

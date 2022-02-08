@@ -30,7 +30,7 @@ const Description: React.FC<{
       <div className="flex flex-nowrap justify-center lg:items-center lg:justify-start lg:space-x-4">
         <div className="hidden shrink-0 lg:block">
           <Image
-            src="/images/sea-trees-logo.png"
+            src="/images/sea-trees-logo-small.png"
             width={75}
             height={89}
             alt="SeaTrees"
@@ -84,7 +84,7 @@ const SeaTrees = () => {
               />
               <div className="mx-4 w-10 shrink-0 md:w-auto lg:hidden">
                 <Image
-                  src="/images/sea-trees-logo.png"
+                  src="/images/sea-trees-logo-small.png"
                   width={75}
                   height={89}
                   alt="SeaTrees"

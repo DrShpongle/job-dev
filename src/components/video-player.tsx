@@ -36,6 +36,12 @@ const VideoPlayer: React.FC<{
         width="100%"
         height="100%"
         config={{
+          youtube: {
+            playerVars: {
+              controls: 0,
+              modestbranding: 1,
+            },
+          },
           file: {
             hlsOptions: {
               abrBandWidthUpFactor: 0.5,
