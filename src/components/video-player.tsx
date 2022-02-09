@@ -58,7 +58,10 @@ const VideoPlayer: React.FC<{
           youtube: {
             playerVars: {
               controls: 0,
+              disablekb: 1,
+              iv_load_policy: 3,
               modestbranding: 1,
+              rel: 0,
             },
           },
           file: {
