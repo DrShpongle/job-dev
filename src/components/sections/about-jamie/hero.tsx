@@ -12,7 +12,6 @@ const Hero = () => {
 
   // TODO: Warning: Prop `style` did not match.
   const opacityText = useTransform(scrollYProgress, [start, end / 2], [1, 0])
-
   return (
     <section
       ref={refSection}
@@ -20,7 +19,6 @@ const Hero = () => {
     >
       <motion.div
         className="fixed top-40 w-full duration-200"
-        initial={{opacity: 1}}
         style={{opacity: opacityText}}
       >
         <h2 className="text-center text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">

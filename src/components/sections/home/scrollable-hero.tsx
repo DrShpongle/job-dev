@@ -66,24 +66,24 @@ const ScrollableHero: React.FC = () => {
             <motion.h2
               initial="hidden"
               variants={{
-                hidden: {x: '150%'},
-                shown: {x: 0},
+                hidden: {x: '150%', opacity: 0},
+                shown: {x: 0, opacity: 1},
               }}
               transition={{type: 'spring', duration: 0.8, bounce: 0.2}}
               animate={controlsText}
-              className="w-full font-accented text-5xl will-change-transform md:text-7xl lg:text-8xl xl:text-9xl"
+              className="w-full font-accented text-5xl opacity-0 will-change-transform md:text-7xl lg:text-8xl  xl:text-9xl"
             >
               Totally psyched
             </motion.h2>
             <motion.h3
               initial="hidden"
               variants={{
-                hidden: {x: '150%'},
-                shown: {x: '0'},
+                hidden: {x: '150%', opacity: 0},
+                shown: {x: 0, opacity: 1},
               }}
               transition={{type: 'spring', duration: 0.6, bounce: 0.2}}
               animate={controlsText}
-              className="w-full font-headings text-2xl will-change-transform md:text-4xl lg:text-5xl xl:text-6xl"
+              className="w-full font-headings text-2xl opacity-0 will-change-transform md:text-4xl lg:text-5xl  xl:text-6xl"
             >
               the world of Jamie O&#8217;Brien
             </motion.h3>
