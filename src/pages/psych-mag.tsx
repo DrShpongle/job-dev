@@ -5,11 +5,15 @@ import PageLayout from 'components/layouts/page-layout'
 import Hero from 'components/sections/psych-mag/hero'
 
 const SurfMag: NextPage = () => {
-  return (
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  return isMounted ? (
     <PageLayout>
       <Hero />
     </PageLayout>
-  )
+  ) : null
 }
 
 export default SurfMag
