@@ -13,6 +13,7 @@ import {isBrowser} from 'utils/isBrowser'
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
+import {throttle} from 'lodash'
 
 const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
   text,
@@ -31,13 +32,14 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
     }
   }
 
-  if (isBrowser) {
-    setTimeout(scrollHandler, 1000)
-  }
-
   React.useEffect(() => {
-    window.addEventListener('scroll', scrollHandler)
-    return () => window.removeEventListener('scroll', scrollHandler)
+    let scrollHandlerTimeout = setTimeout(scrollHandler, 100)
+    const throttledScrollHandler = throttle(scrollHandler, 50)
+    window.addEventListener('scroll', throttledScrollHandler)
+    return () => {
+      window.removeEventListener('scroll', throttledScrollHandler)
+      clearTimeout(scrollHandlerTimeout)
+    }
   }, [])
 
   return (
