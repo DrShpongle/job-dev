@@ -13,10 +13,9 @@ const SeaTrees: NextPage = () => {
           <div className="relative h-full w-full">
             <Image
               src="/images/sea-trees-hero.jpg"
-              width={1920}
-              height={999}
               layout="fill"
               objectFit="cover"
+              alt="SeaTrees"
             />
           </div>
         </div>
@@ -78,10 +77,9 @@ const SeaTrees: NextPage = () => {
         <div className="relative mt-8 flex h-[65vh] w-full md:mt-12 md:h-[85vh] xl:mt-16 2xl:mt-20">
           <Image
             src="/images/sea-trees-palms.jpg"
-            width={1920}
-            height={1078}
             layout="fill"
             objectFit="cover"
+            alt="SeaTrees"
           />
         </div>
       </section>
