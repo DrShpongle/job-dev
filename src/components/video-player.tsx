@@ -33,23 +33,15 @@ const VideoPlayer: React.FC<{
 }) => {
   const [innerPlaying, setInnerPlaying] = React.useState(true)
   const [innerMuted, setInnerMuted] = React.useState(true)
-  const [isFullscreenAllowed, setIsFullscreenAllowed] =
-    React.useState<boolean>(false)
   const [isFullscreen, setIsFullscreen] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    // @ts-ignore
-    const fullscreenAllowed =
-      document.fullscreenEnabled ||
-      document.mozFullScreenEnabled ||
-      document.documentElement.webkitRequestFullScreen
-
-    setIsFullscreenAllowed(fullscreenAllowed)
-
-    // @ts-ignore
-    screenfull.on('change', () => {
-      setIsFullscreen(screenfull.isFullscreen)
-    })
+    if (screenfull.isEnabled) {
+      screenfull.on('change', () => {
+        // @ts-ignore
+        setIsFullscreen(screenfull.isFullscreen)
+      })
+    }
   }, [])
 
   return (
@@ -84,11 +76,12 @@ const VideoPlayer: React.FC<{
             controlsClasses,
           )}
         >
-          {isFullscreenAllowed && (
+          {screenfull.isEnabled && (
             <button
               onClick={() => {
                 const elem = document.getElementById('video-player')
                 if (elem) {
+                  // @ts-ignore
                   screenfull.toggle(elem)
                 }
               }}
