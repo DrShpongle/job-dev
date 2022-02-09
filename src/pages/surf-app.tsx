@@ -11,11 +11,7 @@ import SuccessPoints from 'components/sections/surf-app/success-points'
 import NewContent from 'components/sections/surf-app/new-content'
 
 const SurfApp: NextPage = () => {
-  const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  return isMounted ? (
+  return (
     <PageLayout>
       <HeroWithScrollableText />
       <section className="h-[250vh]" />
@@ -30,7 +26,7 @@ const SurfApp: NextPage = () => {
       <NewContent />
       <section className="h-[300vh]" />
     </PageLayout>
-  ) : null
+  )
 }
 
 export default SurfApp
