@@ -20,6 +20,7 @@ const VideoPlayer: React.FC<{
   playsInline?: boolean
   loop?: boolean
   controls?: boolean
+  fullscreenControl?: boolean
   controlsClasses?: string
 }> = ({
   playing,
@@ -29,6 +30,7 @@ const VideoPlayer: React.FC<{
   playsInline = true,
   loop = true,
   controls = false,
+  fullscreenControl = false,
   controlsClasses = 'top-10 right-10',
 }) => {
   const [innerPlaying, setInnerPlaying] = React.useState(true)
@@ -36,7 +38,7 @@ const VideoPlayer: React.FC<{
   const [isFullscreen, setIsFullscreen] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    if (screenfull.isEnabled) {
+    if (fullscreenControl && screenfull.isEnabled) {
       screenfull.on('change', () => {
         // @ts-ignore
         setIsFullscreen(screenfull.isFullscreen)
@@ -79,7 +81,7 @@ const VideoPlayer: React.FC<{
             controlsClasses,
           )}
         >
-          {screenfull.isEnabled && (
+          {fullscreenControl && screenfull.isEnabled && (
             <button
               onClick={() => {
                 const elem = document.getElementById('video-player')
