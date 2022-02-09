@@ -14,27 +14,29 @@ import SeaTrees from 'components/sections/home/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
 const Landing: NextPage = () => {
-  return (
-    <>
-      <PageLayout>
-        <ScrollableHero />
-        <section className="h-[150vh]" />
-        <GetPsyched />
-        <section className="h-[150vh]" />
-        <BePsyched />
-        <StayPsyched />
-        <Vlog />
-        <PsychMag />
-        <SeaTrees />
-        <FixedLabel
-          title="Maldives"
-          subtitleTop="win a trip to the"
-          subtitleBottom="with Jamie"
-          className="fixed right-0 bottom-6 md:bottom-20"
-        />
-      </PageLayout>
-    </>
-  )
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  return isMounted ? (
+    <PageLayout>
+      <ScrollableHero />
+      <section className="h-[150vh]" />
+      <GetPsyched />
+      <section className="h-[150vh]" />
+      <BePsyched />
+      <StayPsyched />
+      <Vlog />
+      <PsychMag />
+      <SeaTrees />
+      <FixedLabel
+        title="Maldives"
+        subtitleTop="win a trip to the"
+        subtitleBottom="with Jamie"
+        className="fixed right-0 bottom-6 md:bottom-20"
+      />
+    </PageLayout>
+  ) : null
 }
 
 export default Landing
