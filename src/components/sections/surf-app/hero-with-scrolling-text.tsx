@@ -37,7 +37,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollHandler)
-    return () => window.addEventListener('scroll', scrollHandler)
+    return () => window.removeEventListener('scroll', scrollHandler)
   }, [])
 
   return (
