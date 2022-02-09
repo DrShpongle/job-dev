@@ -104,3 +104,29 @@ export const IconVolumeOn = ({className}) => (
     <path d="M18.688 4.313c5.375 1.188 9.313 6 9.313 11.688s-3.938 10.5-9.313 11.688v-2.75c3.875-1.125 6.625-4.688 6.625-8.938s-2.75-7.813-6.625-8.938v-2.75zM22 16a5.936 5.936 0 01-3.313 5.375v-10.75c2 1 3.313 3 3.313 5.375zM4 12h5.313l6.688-6.688v21.375l-6.688-6.688H4v-8z" />
   </svg>
 )
+
+export const IconFullscreenOn = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M18.688 6.688h6.625v6.625h-2.625v-4h-4V6.688zm4 16v-4h2.625v6.625h-6.625v-2.625h4zm-16-9.375V6.688h6.625v2.625h-4v4H6.688zm2.625 5.375v4h4v2.625H6.688v-6.625h2.625z" />
+  </svg>
+)
+
+export const IconFullscreenOff = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="currentColor"
+    viewBox="0 0 32 32"
+    className={classNames(className)}
+  >
+    <path d="M21.313 10.688h4v2.625h-6.625V6.688h2.625v4zm-2.625 14.625v-6.625h6.625v2.625h-4v4h-2.625zm-8-14.625v-4h2.625v6.625H6.688v-2.625h4zm-4 10.625v-2.625h6.625v6.625h-2.625v-4h-4z" />
+  </svg>
+)

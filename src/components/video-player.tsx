@@ -1,8 +1,16 @@
 import * as React from 'react'
 import classNames from 'classnames'
 import ReactPlayer from 'react-player'
+import screenfull from 'screenfull'
 
-import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
+import {
+  IconPlay,
+  IconPause,
+  IconVolumeOn,
+  IconVolumeOff,
+  IconFullscreenOn,
+  IconFullscreenOff,
+} from 'lib/icons'
 
 const VideoPlayer: React.FC<{
   playing?: boolean
@@ -25,8 +33,27 @@ const VideoPlayer: React.FC<{
 }) => {
   const [innerPlaying, setInnerPlaying] = React.useState(true)
   const [innerMuted, setInnerMuted] = React.useState(true)
+  const [isFullscreenAllowed, setIsFullscreenAllowed] =
+    React.useState<boolean>(false)
+  const [isFullscreen, setIsFullscreen] = React.useState<boolean>(false)
+
+  React.useEffect(() => {
+    // @ts-ignore
+    const fullscreenAllowed =
+      document.fullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.documentElement.webkitRequestFullScreen
+
+    setIsFullscreenAllowed(fullscreenAllowed)
+
+    // @ts-ignore
+    screenfull.on('change', () => {
+      setIsFullscreen(screenfull.isFullscreen)
+    })
+  }, [])
+
   return (
-    <div className="video-player relative h-full">
+    <div className="video-player relative h-full" id="video-player">
       <ReactPlayer
         playsinline={playsInline}
         playing={externalControls ? playing : innerPlaying}
@@ -57,6 +84,23 @@ const VideoPlayer: React.FC<{
             controlsClasses,
           )}
         >
+          {isFullscreenAllowed && (
+            <button
+              onClick={() => {
+                const elem = document.getElementById('video-player')
+                if (elem) {
+                  screenfull.toggle(elem)
+                }
+              }}
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
+            >
+              {isFullscreen ? (
+                <IconFullscreenOff className="h-6 w-6 md:h-10 md:w-10" />
+              ) : (
+                <IconFullscreenOn className="h-6 w-6 md:h-10 md:w-10" />
+              )}
+            </button>
+          )}
           <button
             onClick={() => setInnerPlaying(!innerPlaying)}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
