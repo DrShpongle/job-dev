@@ -71,7 +71,7 @@ const HeroWithScrollableText = () => {
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
-    [textBlockHeight - windowHeight / 2 - 50, -windowHeight],
+    [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
   )
 
   useIsomorphicLayoutEffect(() => {
