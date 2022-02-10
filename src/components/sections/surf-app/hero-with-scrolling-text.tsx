@@ -77,7 +77,7 @@ const HeroWithScrollableText = () => {
 
   React.useEffect(() => {
     setIsMounted(true)
-  })
+  }, [])
 
   useIsomorphicLayoutEffect(() => {
     const triggerPhoneAnimation = () => {
