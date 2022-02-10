@@ -3,8 +3,6 @@ import Image from 'next/image'
 import {motion} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 
-import VideoEmbed from 'components/video-embed'
-
 const MotionItem: React.FC<{url: string}> = ({url}) => {
   const [ref, inView] = useInView({
     threshold: 0.35,
