@@ -33,9 +33,14 @@ const VideoPlayer: React.FC<{
   fullscreenControl = false,
   controlsClasses = 'top-10 right-10',
 }) => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const [innerPlaying, setInnerPlaying] = React.useState(true)
   const [innerMuted, setInnerMuted] = React.useState(true)
   const [isFullscreen, setIsFullscreen] = React.useState<boolean>(false)
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   React.useEffect(() => {
     if (fullscreenControl && screenfull.isEnabled) {
@@ -46,7 +51,7 @@ const VideoPlayer: React.FC<{
     }
   }, [])
 
-  return (
+  return isMounted ? (
     <div className="video-player relative h-full" id="video-player">
       <ReactPlayer
         playsinline={playsInline}
@@ -122,7 +127,7 @@ const VideoPlayer: React.FC<{
         </div>
       )}
     </div>
-  )
+  ) : null
 }
 
 export default VideoPlayer
