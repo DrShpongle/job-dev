@@ -95,33 +95,33 @@ const VideoPlayer: React.FC<{
                   screenfull.toggle(elem)
                 }
               }}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
             >
               {isFullscreen ? (
-                <IconFullscreenOff className="h-6 w-6 md:h-10 md:w-10" />
+                <IconFullscreenOff className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
               ) : (
-                <IconFullscreenOn className="h-6 w-6 md:h-10 md:w-10" />
+                <IconFullscreenOn className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
               )}
             </button>
           )}
           <button
             onClick={() => setInnerPlaying(!innerPlaying)}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
           >
             {innerPlaying ? (
-              <IconPause className="h-6 w-6 md:h-10 md:w-10" />
+              <IconPause className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
             ) : (
-              <IconPlay className="h-6 w-6 md:h-10 md:w-10" />
+              <IconPlay className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
             )}
           </button>
           <button
             onClick={() => setInnerMuted(!innerMuted)}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-14 md:w-14"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
           >
             {innerMuted ? (
-              <IconVolumeOff className="h-6 w-6 md:h-10 md:w-10" />
+              <IconVolumeOff className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
             ) : (
-              <IconVolumeOn className="h-6 w-6 md:h-10 md:w-10" />
+              <IconVolumeOn className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
             )}
           </button>
         </div>
