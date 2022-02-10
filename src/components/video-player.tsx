@@ -49,7 +49,7 @@ const VideoPlayer: React.FC<{
         setIsFullscreen(screenfull.isFullscreen)
       })
     }
-  }, [])
+  })
 
   return isMounted ? (
     <div className="video-player relative h-full" id="video-player">

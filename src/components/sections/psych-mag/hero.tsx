@@ -56,7 +56,7 @@ const Hero = () => {
           >
             {fakeYoutubeVideosArr.map((item, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <div className="select-none">
                     <a
                       href={`https://www.youtube.com/watch?v=${item.id}`}

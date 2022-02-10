@@ -42,6 +42,7 @@ const BePsyched = () => {
             width={569}
             height={949}
             priority
+            alt="Surfboards"
           />
         ) : (
           <Image
@@ -49,6 +50,7 @@ const BePsyched = () => {
             width={949}
             height={569}
             priority
+            alt="Surfboards"
           />
         )}
       </motion.div>
@@ -64,6 +66,7 @@ const BePsyched = () => {
                 width={487}
                 height={492}
                 priority
+                alt="Surf Experience"
               />
             </motion.div>
           </div>

@@ -61,7 +61,7 @@ const NewContent = () => {
     return () => {
       unsubscribeY()
     }
-  }, [])
+  })
 
   const variantsFadeinImages = {
     hidden: {
@@ -112,14 +112,24 @@ const NewContent = () => {
             animate={controlsFadeInImage01}
             className="absolute left-4 top-8 z-[1] flex w-[154px] will-change-transform md:left-0 md:top-20 md:w-[438px] lg:top-24"
           >
-            <Image src="/images/new-content/01.jpg" width={438} height={273} />
+            <Image
+              src="/images/new-content/01.jpg"
+              width={438}
+              height={273}
+              alt="New Content"
+            />
           </motion.div>
           <motion.div
             variants={variantsFadeinImages}
             animate={controlsFadeInImage02}
             className="absolute right-0 z-[2] flex w-[154px] will-change-transform md:top-14 md:w-[390px] lg:top-20  lg:w-[542px]"
           >
-            <Image src="/images/new-content/02.jpg" width={542} height={332} />
+            <Image
+              src="/images/new-content/02.jpg"
+              width={542}
+              height={332}
+              alt="New Content"
+            />
           </motion.div>
           <motion.div
             variants={variantsFadeinImages}
@@ -131,6 +141,7 @@ const NewContent = () => {
                 src="/images/new-content/03.jpg"
                 width={919}
                 height={525}
+                alt="New Content"
               />
             </div>
           </motion.div>
@@ -139,21 +150,36 @@ const NewContent = () => {
             animate={controlsFadeInImage04}
             className="absolute bottom-8 left-8 z-[3] flex w-[110px] will-change-transform md:bottom-20 md:left-6 md:w-[295px] lg:left-8"
           >
-            <Image src="/images/new-content/04.jpg" width={295} height={295} />
+            <Image
+              src="/images/new-content/04.jpg"
+              width={295}
+              height={295}
+              alt="New Content"
+            />
           </motion.div>
           <motion.div
             variants={variantsFadeinImages}
             animate={controlsFadeInImage05}
             className="absolute bottom-16 right-4 z-[4] flex w-[110px] will-change-transform md:bottom-16 md:right-6 md:w-[300px] lg:right-8 lg:w-[362px]"
           >
-            <Image src="/images/new-content/05.jpg" width={362} height={490} />
+            <Image
+              src="/images/new-content/05.jpg"
+              width={362}
+              height={490}
+              alt="New Content"
+            />
           </motion.div>
           <motion.div
             variants={variantsFadeinImages}
             animate={controlsFadeInImage06}
             className="absolute bottom-0 left-24 z-[5] flex w-[160px] will-change-transform md:left-64 md:w-[430px] lg:w-[502px]"
           >
-            <Image src="/images/new-content/06.jpg" width={502} height={176} />
+            <Image
+              src="/images/new-content/06.jpg"
+              width={502}
+              height={176}
+              alt="New Content"
+            />
           </motion.div>
         </div>
       </div>

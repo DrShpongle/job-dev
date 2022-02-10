@@ -60,7 +60,7 @@ const GetPsyched = () => {
     return () => {
       unsubscribeY()
     }
-  }, [])
+  })
 
   return (
     <section

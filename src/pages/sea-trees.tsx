@@ -20,7 +20,12 @@ const SeaTrees: NextPage = () => {
           </div>
         </div>
         <div className="flex 2xl:h-[329px] 2xl:w-[372px]">
-          <Image src="/images/sea-trees-logo.png" width={372} height={329} />
+          <Image
+            src="/images/sea-trees-logo.png"
+            width={372}
+            height={329}
+            alt="SeaTrees"
+          />
         </div>
       </section>
       <section

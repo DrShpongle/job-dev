@@ -40,7 +40,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
       window.removeEventListener('scroll', throttledScrollHandler)
       clearTimeout(scrollHandlerTimeout)
     }
-  }, [])
+  }, [scrollHandler])
 
   return (
     <div

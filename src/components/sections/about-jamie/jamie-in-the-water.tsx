@@ -31,6 +31,7 @@ const JamieInTheWater = () => {
             src="/images/jamie-in-the-water.jpg"
             width={1920}
             height={1078}
+            alt="Jamie O’Brien"
           />
         </div>
       </div>

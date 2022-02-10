@@ -32,7 +32,13 @@ const Hero = () => {
         </h2>
       </motion.div>
       <div className="container flex grow flex-col justify-end pt-72">
-        <Image src="/images/job.png" width={1686} height={1124} priority />
+        <Image
+          src="/images/job.png"
+          width={1686}
+          height={1124}
+          priority
+          alt="Jamie O’Brien"
+        />
       </div>
     </section>
   )
