@@ -30,7 +30,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
     } else {
       setIsActive((window.scrollY === 0 && firstItem) || false)
     }
-  }, [isActive, firstItem])
+  }, [firstItem])
 
   React.useEffect(() => {
     let scrollHandlerTimeout = setTimeout(scrollHandler, 100)
