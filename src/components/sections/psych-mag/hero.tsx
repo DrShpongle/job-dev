@@ -38,8 +38,6 @@ const Hero = () => {
           <Swiper
             spaceBetween={16}
             slidesPerView={2}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
             breakpoints={{
               768: {
                 slidesPerView: 3,
