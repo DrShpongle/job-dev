@@ -59,7 +59,7 @@ const VideoPlayer: React.FC<{
         config={{
           youtube: {
             playerVars: {
-              controls: 0,
+              controls: 1,
               disablekb: 1,
               iv_load_policy: 3,
               modestbranding: 1,
