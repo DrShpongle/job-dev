@@ -22,7 +22,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
   const [isActive, setIsActive] = React.useState<boolean>(false)
   const refText = React.useRef<HTMLDivElement>(null)
 
-  const scrollHandler = () => {
+  const scrollHandler = React.useCallback(() => {
     const rect = refText.current?.getBoundingClientRect()
     const point = window.innerHeight / 2
     if (rect && refText?.current && rect.top < point && rect.bottom > point) {
@@ -30,7 +30,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
     } else {
       setIsActive((window.scrollY === 0 && firstItem) || false)
     }
-  }
+  }, [])
 
   React.useEffect(() => {
     let scrollHandlerTimeout = setTimeout(scrollHandler, 100)
@@ -56,6 +56,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
 }
 
 const HeroWithScrollableText = () => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
   const [textBlockRef, {height: textBlockHeight}] = useMeasure<any>()
@@ -73,6 +74,10 @@ const HeroWithScrollableText = () => {
     [start, end],
     [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
   )
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  })
 
   useIsomorphicLayoutEffect(() => {
     const triggerPhoneAnimation = () => {
@@ -93,19 +98,21 @@ const HeroWithScrollableText = () => {
       <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
         <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
       </div>
-      <motion.div
-        ref={refTextHolder}
-        animate={{opacity: 1, transition: {delay: 1}}}
-        className="absolute bottom-0 z-10 w-full xl:px-20"
-        initial={{y: textBlockHeight, opacity: 0}}
-        style={{y: scrollText}}
-      >
-        <div ref={textBlockRef} className="container">
-          {textArray.map((item, i) => {
-            return <TextItem key={i} text={item} firstItem={i === 0} />
-          })}
-        </div>
-      </motion.div>
+      {isMounted ? (
+        <motion.div
+          ref={refTextHolder}
+          animate={{opacity: 1, transition: {delay: 1}}}
+          className="absolute bottom-0 z-10 w-full xl:px-20"
+          initial={{y: textBlockHeight, opacity: 0}}
+          style={{y: scrollText}}
+        >
+          <div ref={textBlockRef} className="container">
+            {textArray.map((item, i) => {
+              return <TextItem key={i} text={item} firstItem={i === 0} />
+            })}
+          </div>
+        </motion.div>
+      ) : null}
       <div className="flex h-full w-full items-center justify-center pt-20">
         <motion.div
           className="relative z-10"

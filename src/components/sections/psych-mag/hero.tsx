@@ -132,6 +132,6 @@ const fakeYoutubeVideosArr = [
     id: '7rXyTRsqSbA',
     title: 'THIS IS PARADISE (HAWAII)',
     date: 'May 25, 2020',
-    duration: '',
+    duration: '19:10',
   },
 ]
