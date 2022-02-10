@@ -12,7 +12,7 @@ const Vlog = () => {
     >
       <div className="container">
         <div className="relative flex justify-center overflow-hidden">
-          <div className="relative max-w-xs md:max-w-none">
+          <div className="relative h-[285px] max-w-xs md:h-[606px] md:max-w-none lg:h-[830px] xl:h-[1053px] 2xl:h-[1124px]">
             <div className="absolute bottom-9 w-[280px] md:bottom-[74px] md:w-[610px] lg:bottom-24 lg:w-[830px] xl:bottom-32 xl:w-[1040px] 2xl:bottom-32 2xl:w-[1110px]">
               <VideoPlayer
                 url="https://mytwynmediaservices-euno.akamaized.net/5eb305fa-6b14-4ebe-ad83-981f7a9c979e/5eb305fa-6b14-4ebe-ad83-981f7a9c.ism/manifest(format=m3u8-aapl).m3u8"
