@@ -20,7 +20,8 @@ const Card: React.FC<{
         }
       `}
     </style>
-    <div className="mag-item group relative flex h-[260px] flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 md:h-[280px] lg:h-[340px] lg:p-6 xl:h-[420px] xl:p-9 hover-hover:hover:before:opacity-0">
+    {/* <div className="mag-item group relative flex h-[260px] flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 md:h-[280px] lg:h-[340px] lg:p-6 xl:h-[420px] xl:p-9 hover-hover:hover:before:opacity-0"> */}
+    <div className="mag-item group relative flex aspect-video flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 md:aspect-[4/3] lg:aspect-[4/2.8] lg:p-6  xl:p-9 hover-hover:hover:before:opacity-0">
       <div className="absolute inset-0 origin-center duration-500 ease-in hover-hover:group-hover:scale-110">
         <div className="relative h-full w-full">
           <Image
@@ -33,7 +34,7 @@ const Card: React.FC<{
         </div>
       </div>
       <div className="relative z-10 flex flex-col items-center space-y-2 text-center lg:space-y-3 xl:space-y-4">
-        <h3 className="font-headings text-lg leading-none md:text-xl md:leading-none lg:text-2xl lg:leading-none xl:text-4xl xl:leading-none">
+        <h3 className="font-headings text-lg leading-none lg:text-2xl lg:leading-none xl:text-4xl xl:leading-none">
           {data.title}
         </h3>
         <p className="text-sm lg:text-lg">{data.description}</p>
