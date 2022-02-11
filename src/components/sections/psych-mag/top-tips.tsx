@@ -41,6 +41,7 @@ const TopTips = () => {
                                     alt={item.title}
                                     layout="fill"
                                     objectFit="cover"
+                                    priority
                                   />
                                 </div>
                               </div>
