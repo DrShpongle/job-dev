@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import '../../node_modules/swiper/swiper.min.css';
 @layer base {
   h1,
   h2,
