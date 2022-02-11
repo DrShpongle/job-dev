@@ -3,7 +3,6 @@ import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
 
 import VideoPlayer from 'components/video-player'
-import 'swiper/css'
 
 const Hero = () => {
   return (

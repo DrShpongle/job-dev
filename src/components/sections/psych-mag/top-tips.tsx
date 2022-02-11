@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {Swiper, SwiperSlide} from 'swiper/react'
 
 import Card from 'components/card'
 
@@ -13,10 +14,39 @@ const TopTips = () => {
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
             Top Tips
           </h2>
-          <p className="max-w-4xl md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
+          <p className="max-w-4xl md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
             Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
             nonsedit, utestiam, sus quia quis doluptio illatem et aut.
           </p>
+        </div>
+        <div className="mt-4 md:mt-6 2xl:mt-8">
+          <Swiper
+            spaceBetween={16}
+            slidesPerView={2}
+            breakpoints={{
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+              1280: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+              },
+            }}
+            loop
+          >
+            {fakeData.map((item, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <Card key={i} data={item} />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
         </div>
       </div>
     </section>
