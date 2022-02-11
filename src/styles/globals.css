@@ -42,6 +42,17 @@ body {
   object-fit: cover;
 }
 
+.card-gradient:before {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.7) 10%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
 .mobile-menu {
   height: calc(var(--real100vh) - 40px);
 }
