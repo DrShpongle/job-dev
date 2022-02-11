@@ -5,6 +5,10 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import VideoPlayer from 'components/video-player'
 
 const Hero = () => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
   return (
     <section
       className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8"
@@ -35,66 +39,69 @@ const Hero = () => {
         </div>
         <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
           <div className="w-[150%] -translate-x-[16.66%] md:w-[133.33%] md:-translate-x-[12.5%]">
-            <Swiper
-              spaceBetween={16}
-              slidesPerView={3}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 20,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 24,
-                },
-                1280: {
-                  slidesPerView: 5,
-                  spaceBetween: 32,
-                },
-              }}
-              loop
-            >
-              {fakeYoutubeVideosArr.map((item, i) => {
-                return (
-                  <SwiperSlide key={i}>
-                    <div className="select-none">
-                      <a
-                        href={`https://www.youtube.com/watch?v=${item.id}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative block aspect-video"
-                      >
-                        <div className="absolute inset-0 overflow-hidden">
-                          <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
-                            <Image
-                              src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
-                              alt={item.title}
-                              layout="fill"
-                              objectFit="cover"
-                            />
-                          </div>
-                        </div>
-                      </a>
-                      <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3 2xl:mt-4 2xl:space-y-2">
+            {isMounted ? (
+              <Swiper
+                spaceBetween={16}
+                slidesPerView={3}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 24,
+                  },
+                  1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 32,
+                  },
+                }}
+                loop
+              >
+                {fakeYoutubeVideosArr.map((item, i) => {
+                  return (
+                    <SwiperSlide key={i}>
+                      <div className="select-none">
                         <a
                           href={`https://www.youtube.com/watch?v=${item.id}`}
                           target="_blank"
                           rel="noreferrer"
-                          className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                          className="relative block aspect-video"
                         >
-                          {item.title}
+                          <div className="absolute inset-0 overflow-hidden">
+                            <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
+                              <Image
+                                src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
+                                alt={item.title}
+                                layout="fill"
+                                objectFit="cover"
+                                priority
+                              />
+                            </div>
+                          </div>
                         </a>
-                        <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
-                          {item.date}
-                          <div className="mx-1 md:mx-2">|</div>
-                          {item.duration}
+                        <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3 2xl:mt-4 2xl:space-y-2">
+                          <a
+                            href={`https://www.youtube.com/watch?v=${item.id}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                          >
+                            {item.title}
+                          </a>
+                          <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
+                            {item.date}
+                            <div className="mx-1 md:mx-2">|</div>
+                            {item.duration}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                )
-              })}
-            </Swiper>
+                    </SwiperSlide>
+                  )
+                })}
+              </Swiper>
+            ) : null}
           </div>
         </div>
       </div>

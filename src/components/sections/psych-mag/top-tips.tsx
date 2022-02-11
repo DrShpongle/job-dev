@@ -4,6 +4,10 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import Card from 'components/card'
 
 const TopTips = () => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
   return (
     <section
       className="bg-white py-5 md:py-7 xl:py-8 2xl:py-12"
@@ -21,25 +25,27 @@ const TopTips = () => {
         </div>
         <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
           <div className="md:w-[150%] md:-translate-x-[16.66%]">
-            <Swiper
-              slidesPerView={2}
-              spaceBetween={16}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 16,
-                },
-              }}
-              loop
-            >
-              {fakeData.map((item, i) => {
-                return (
-                  <SwiperSlide key={i}>
-                    <Card key={i} data={item} />
-                  </SwiperSlide>
-                )
-              })}
-            </Swiper>
+            {isMounted ? (
+              <Swiper
+                slidesPerView={2}
+                spaceBetween={16}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                  },
+                }}
+                loop
+              >
+                {fakeData.map((item, i) => {
+                  return (
+                    <SwiperSlide key={i}>
+                      <Card key={i} data={item} />
+                    </SwiperSlide>
+                  )
+                })}
+              </Swiper>
+            ) : null}
           </div>
         </div>
       </div>
