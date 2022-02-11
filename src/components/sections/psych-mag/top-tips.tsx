@@ -19,34 +19,28 @@ const TopTips = () => {
             nonsedit, utestiam, sus quia quis doluptio illatem et aut.
           </p>
         </div>
-        <div className="mt-4 md:mt-6 2xl:mt-8">
-          <Swiper
-            spaceBetween={16}
-            slidesPerView={2}
-            breakpoints={{
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-              1280: {
-                slidesPerView: 3,
-                spaceBetween: 32,
-              },
-            }}
-            loop
-          >
-            {fakeData.map((item, i) => {
-              return (
-                <SwiperSlide key={i}>
-                  <Card key={i} data={item} />
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
+        <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
+          <div className="md:w-[150%] md:-translate-x-[16.66%]">
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={16}
+              breakpoints={{
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 16,
+                },
+              }}
+              loop
+            >
+              {fakeData.map((item, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <Card key={i} data={item} />
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          </div>
         </div>
       </div>
     </section>
