@@ -8,7 +8,7 @@ const Gear = () => {
   return (
     <>
       <section
-        className="bg-slate-100 py-10 md:bg-white md:py-10 xl:py-8 2xl:py-12"
+        className="bg-slate-100 pb-5 pt-16 md:bg-white md:pb-5 md:pt-16 lg:pt-20 xl:pb-8 xl:pt-20 2xl:pb-12"
         id="gear"
         style={{transform: 'translate3d(0,0,0)'}}
       >
