@@ -5,10 +5,16 @@ import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
 const Hero = () => {
+  const [_, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef(null)
-
-  const {start, end} = useRefScrollProgress(refSection)
+  const {start, end} = useRefScrollProgress(refSection, 0)
   const {scrollYProgress} = useViewportScroll()
+  console.log('start:', start)
+  console.log('end:', end)
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [end])
 
   // TODO: Warning: Prop `style` did not match.
   const opacityText = useTransform(scrollYProgress, [start, end / 2], [1, 0])
