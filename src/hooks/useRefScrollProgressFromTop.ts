@@ -10,13 +10,17 @@ export const useRefScrollProgressFromTop = (inputRef: any) => {
     if (!ref.current) {
       return
     }
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     const rect = ref.current.getBoundingClientRect()
     const offsetTop = rect.top
     setStart(
-      (offsetTop - window.innerHeight) /
+      (offsetTop + scrollTop - window.innerHeight) /
         (document.body.clientHeight - window.innerHeight),
     )
-    setEnd(offsetTop / (document.body.clientHeight - window.innerHeight))
+    setEnd(
+      (offsetTop + scrollTop) /
+        (document.body.clientHeight - window.innerHeight),
+    )
   }, [])
   return {start, end}
 }
