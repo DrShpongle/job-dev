@@ -5,7 +5,7 @@ const Card: React.FC<{
   data: any
   readMore?: boolean
 }> = ({data, readMore}) => (
-  <div className="card-gradient group relative flex aspect-video flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:hover:before:opacity-0">
+  <div className="card-gradient group relative flex aspect-video select-none flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:hover:before:opacity-0">
     <div className="absolute inset-0 origin-center duration-500 ease-in hover-hover:group-hover:scale-110">
       <div className="relative h-full w-full">
         <Image
