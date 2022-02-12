@@ -6,6 +6,7 @@ const Features = () => {
   return (
     <section
       className="bg-slate-100 py-5 md:py-7 xl:py-8 2xl:py-12"
+      id="features"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">

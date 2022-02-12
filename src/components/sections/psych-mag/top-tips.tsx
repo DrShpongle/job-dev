@@ -12,6 +12,7 @@ const TopTips = () => {
     <>
       <section
         className="bg-white py-5 md:py-7 xl:py-8 2xl:py-12"
+        id="top-tips"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
