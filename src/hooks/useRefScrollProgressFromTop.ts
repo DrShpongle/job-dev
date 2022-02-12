@@ -1,8 +1,10 @@
 import * as React from 'react'
+import {useWindowSize} from 'react-use'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 
 export const useRefScrollProgressFromTop = (inputRef: any) => {
+  const {width} = useWindowSize()
   const ref = inputRef || React.useRef()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(0)
@@ -21,6 +23,6 @@ export const useRefScrollProgressFromTop = (inputRef: any) => {
       (offsetTop + scrollTop) /
         (document.body.clientHeight - window.innerHeight),
     )
-  }, [])
+  }, [width])
   return {start, end}
 }
