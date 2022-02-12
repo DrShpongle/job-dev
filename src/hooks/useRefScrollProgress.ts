@@ -2,10 +2,7 @@ import * as React from 'react'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 
-export const useRefScrollProgress = (
-  inputRef: any,
-  multiplicator: number = 1,
-) => {
+export const useRefScrollProgress = (inputRef: any) => {
   const ref = inputRef || React.useRef()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(0)
@@ -20,7 +17,7 @@ export const useRefScrollProgress = (
         (document.body.clientHeight - window.innerHeight),
     )
     setEnd(
-      (rect.bottom + scrollTop + window.innerHeight * (multiplicator - 1)) /
+      (rect.bottom + scrollTop - window.innerHeight * 1.5) /
         (document.body.clientHeight - window.innerHeight),
     )
   }, [])

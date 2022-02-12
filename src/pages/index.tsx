@@ -17,9 +17,7 @@ const Landing: NextPage = () => {
   return (
     <PageLayout>
       <ScrollableHero />
-      <section className="h-[150vh]" />
       <GetPsyched />
-      <section className="h-[150vh]" />
       <BePsyched />
       <StayPsyched />
       <Vlog />

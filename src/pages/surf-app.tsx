@@ -14,17 +14,12 @@ const SurfApp: NextPage = () => {
   return (
     <PageLayout>
       <HeroWithScrollableText />
-      <section className="h-[250vh]" />
       <AskJamie />
       <LearnFromTheBest />
-      <section className="h-[200vh]" />
       <VisualiseAndDo />
-      <section className="h-[200vh]" />
       <FullyLoaded />
       <SuccessPoints />
-      <section className="h-[250vh]" />
       <NewContent />
-      <section className="h-[300vh]" />
     </PageLayout>
   )
 }

@@ -63,7 +63,7 @@ const HeroWithScrollableText = () => {
 
   const controlsPhone = useAnimation()
 
-  const {start, end} = useRefScrollProgress(refSection, 2)
+  const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
 
   const windowHeight = (isBrowser && window.innerHeight) || 0
@@ -94,62 +94,65 @@ const HeroWithScrollableText = () => {
   }, [])
 
   return (
-    <section ref={refSection} className="sticky top-0 h-screen overflow-hidden">
-      <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
-        <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
-      </div>
-      {isMounted ? (
-        <motion.div
-          ref={refTextHolder}
-          animate={{opacity: 1, transition: {delay: 1}}}
-          className="absolute bottom-0 z-10 w-full xl:px-20"
-          initial={{y: textBlockHeight, opacity: 0}}
-          style={{y: scrollText}}
-        >
-          <div ref={textBlockRef} className="container">
-            {textArray.map((item, i) => {
-              return <TextItem key={i} text={item} firstItem={i === 0} />
-            })}
-          </div>
-        </motion.div>
-      ) : null}
-      <div className="flex h-full w-full items-center justify-center pt-20">
-        <motion.div
-          className="relative z-10"
-          variants={{
-            hidden: {
-              opacity: 0,
-              scale: 0.5,
-            },
-            shown: {
-              opacity: 1,
-              scale: 1,
-            },
-          }}
-          initial="hidden"
-          transition={{
-            type: 'spring',
-            duration: 0.3,
-          }}
-          animate={controlsPhone}
-        >
-          <div className="w-64 md:w-[300px] 2xl:w-[360px]">
-            <div
-              className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3"
-              style={{transform: 'translateZ(0)'}}
-            >
-              <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
+    <section ref={refSection}>
+      <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
+          <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
+        </div>
+        {isMounted ? (
+          <motion.div
+            ref={refTextHolder}
+            animate={{opacity: 1, transition: {delay: 1}}}
+            className="absolute bottom-0 z-10 w-full xl:px-20"
+            initial={{y: textBlockHeight, opacity: 0}}
+            style={{y: scrollText}}
+          >
+            <div ref={textBlockRef} className="container">
+              {textArray.map((item, i) => {
+                return <TextItem key={i} text={item} firstItem={i === 0} />
+              })}
             </div>
-            <Image
-              src="/images/iphone-frame-portrait.png"
-              width={580}
-              height={1171}
-              alt="Ask Jamie"
-              priority
-            />
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : null}
+        <div className="flex h-full w-full items-center justify-center pt-20">
+          <motion.div
+            className="relative z-10"
+            variants={{
+              hidden: {
+                opacity: 0,
+                scale: 0.5,
+              },
+              shown: {
+                opacity: 1,
+                scale: 1,
+              },
+            }}
+            initial="hidden"
+            transition={{
+              type: 'spring',
+              duration: 0.3,
+            }}
+            animate={controlsPhone}
+          >
+            <div className="w-64 md:w-[300px] 2xl:w-[360px]">
+              <div
+                className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3"
+                style={{transform: 'translateZ(0)'}}
+              >
+                <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
+              </div>
+              <Image
+                src="/images/iphone-frame-portrait.png"
+                width={580}
+                height={1171}
+                alt="Ask Jamie"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
+      <div className="h-[250vh]" />
     </section>
   )
 }
