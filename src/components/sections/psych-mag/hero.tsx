@@ -10,10 +10,7 @@ const Hero = () => {
     setIsMounted(true)
   }, [])
   return (
-    <section
-      className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8"
-      style={{transform: 'translate3d(0,0,0)'}}
-    >
+    <section className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8">
       <div className="container">
         <div className="space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
           <h2 className="text-center text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">

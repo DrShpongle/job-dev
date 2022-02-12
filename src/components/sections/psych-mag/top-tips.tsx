@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import {Swiper, SwiperSlide} from 'swiper/react'
+
+import Card from 'components/card'
 
 const TopTips = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
@@ -13,7 +13,6 @@ const TopTips = () => {
       <section
         className="bg-white py-5 md:py-7 xl:py-8 2xl:py-12"
         id="top-tips"
-        style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
           <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
@@ -32,43 +31,7 @@ const TopTips = () => {
                   {fakeData.map((item, i) => {
                     return (
                       <SwiperSlide key={i}>
-                        <div className="relative">
-                          <Link href={item.href}>
-                            <a className="card-gradient relative block aspect-video before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:hover:before:opacity-0">
-                              <div className="absolute inset-0">
-                                <div className="relative h-full w-full">
-                                  <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    priority
-                                  />
-                                </div>
-                              </div>
-                            </a>
-                          </Link>
-                          <div className="mt-6 flex select-none flex-col justify-end md:pointer-events-none md:absolute md:inset-0 md:top-0 md:pb-6">
-                            <div className="relative z-10 flex flex-col items-center space-y-2 text-center lg:space-y-3 xl:space-y-4">
-                              <h3 className="jsx-5c20e419c03354cd font-headings text-lg leading-none lg:text-2xl lg:leading-none xl:text-3xl xl:leading-none">
-                                {item.title}
-                              </h3>
-                              <p className="jsx-5c20e419c03354cd text-sm lg:text-lg">
-                                {item.description}
-                              </p>
-                              <Link href={item.href}>
-                                <a className="jsx-5c20e419c03354cd flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
-                                  <span className="jsx-5c20e419c03354cd">
-                                    Read more
-                                  </span>
-                                  <span className="jsx-5c20e419c03354cd translate-y-0.5">
-                                    &gt;
-                                  </span>
-                                </a>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
+                        <Card key={i} data={item} forCarousel />
                       </SwiperSlide>
                     )
                   })}
