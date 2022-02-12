@@ -26,7 +26,7 @@ const PsychMag = () => {
         </div>
         <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
           {fakeData.map((item, i) => {
-            return <Card key={i} data={item} readMore />
+            return <Card key={i} data={item} withAnchor />
           })}
         </div>
       </div>
@@ -43,35 +43,41 @@ const fakeData = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     category: 'features',
     image: '/images/fake-data-images/psych-mag/1.png',
+    sectionAnchor: '/psych-mag/#features',
   },
   {
     title: 'the deep blue bag',
     description: 'Great everyday bag that you can feel good about using',
     category: 'gear',
     image: '/images/fake-data-images/psych-mag/2.png',
+    sectionAnchor: '/psych-mag/#gear',
   },
   {
     title: '5 all female surf films you need to watch',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     category: 'features',
     image: '/images/fake-data-images/psych-mag/3.png',
+    sectionAnchor: '/psych-mag/#features',
   },
   {
     title: 'top 5 eco-friendly wetsuits',
     description: 'Great everyday bag that you can feel good about using',
     category: 'gear',
     image: '/images/fake-data-images/psych-mag/4.png',
+    sectionAnchor: '/psych-mag/#gear',
   },
   {
     title: 'best presents for surfers',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     category: 'gear',
     image: '/images/fake-data-images/psych-mag/5.png',
+    sectionAnchor: '/psych-mag/#gear',
   },
   {
     title: 'health benefits of surfing',
     description: 'Great everyday bag that you can feel good about using',
     category: 'features',
     image: '/images/fake-data-images/psych-mag/6.png',
+    sectionAnchor: '/psych-mag/#features',
   },
 ]

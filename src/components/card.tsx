@@ -1,10 +1,11 @@
 import * as React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Card: React.FC<{
   data: any
-  readMore?: boolean
-}> = ({data, readMore}) => (
+  withAnchor?: boolean
+}> = ({data, withAnchor}) => (
   <div className="card-gradient group relative flex aspect-video select-none flex-col items-center justify-end overflow-hidden px-4 py-6 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:hover:before:opacity-0">
     <div className="absolute inset-0 origin-center duration-500 ease-in hover-hover:group-hover:scale-110">
       <div className="relative h-full w-full">
@@ -22,7 +23,7 @@ const Card: React.FC<{
         {data.title}
       </h3>
       <p className="text-sm lg:text-lg">{data.description}</p>
-      {readMore ? (
+      {withAnchor ? (
         <div className="flex items-center space-x-4 lg:space-x-6">
           <a
             href="#"
@@ -30,13 +31,12 @@ const Card: React.FC<{
           >
             Read more
           </a>
-          <a
-            href="#"
-            className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl"
-          >
-            <span>More {data.category}</span>
-            <span className="translate-y-0.5">&#62;</span>
-          </a>
+          <Link href={data.sectionAnchor}>
+            <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
+              <span>More {data.category}</span>
+              <span className="translate-y-0.5">&#62;</span>
+            </a>
+          </Link>
         </div>
       ) : (
         <a
