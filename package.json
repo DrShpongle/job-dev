@@ -18,7 +18,7 @@
     "react-player": "^2.9.0",
     "react-use": "^17.3.2",
     "screenfull": "5.1.0",
-    "swiper": "^8.0.3"
+    "swiper": "^8.0.5"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
