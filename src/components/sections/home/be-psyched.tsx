@@ -5,7 +5,7 @@ import {useWindowSize} from 'react-use'
 
 import {useRefScrollProgressFromTop} from 'hooks/useRefScrollProgressFromTop'
 
-const BePsyched = () => {
+const BePsyched: React.FC<any> = ({blok}) => {
   const {width} = useWindowSize()
   const refBoards = React.useRef<HTMLDivElement>(null)
   const [showImage, setShowImage] = React.useState<boolean>(false)
@@ -72,23 +72,27 @@ const BePsyched = () => {
           </div>
           <div className="pt-12 md:pt-16 lg:w-2/5 lg:pt-0 xl:w-[45%]">
             <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
-              Be Psyched
+              {blok.title}
+              {/* Be Psyched */}
             </h3>
-            <h2 className="mt-1 text-5xl leading-none text-white md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-[111px]">
-              with The
+            <h2 className="mt-1 max-w-[17rem] text-5xl leading-none text-white md:max-w-[25rem] md:text-7xl lg:text-6xl xl:max-w-2xl xl:text-7xl 2xl:text-[111px]">
+              {blok.subtitle}
+              {/* with The
               <br />
               Jamie O’Brien
               <br />
-              Experience
+              Experience */}
             </h2>
             <p className="mt-8 text-white md:mt-12 md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
-              Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
+              {blok.description}
+              {/* Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
               nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
-              optat quam nam nimagnis doloreh enistorro.
+              optat quam nam nimagnis doloreh enistorro. */}
             </p>
             <div className="relative mt-8 flex items-center space-x-6 xl:space-x-10">
               <a
-                href="https://fareharbor.com/embeds/book/jobsurfexperience/items/?full-items=yes&back=https://www.jobsurfexperience.com/"
+                href={blok.book_your_experience_url.url}
+                // href="https://fareharbor.com/embeds/book/jobsurfexperience/items/?full-items=yes&back=https://www.jobsurfexperience.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]"
@@ -96,7 +100,8 @@ const BePsyched = () => {
                 Book your experience
               </a>
               <a
-                href="https://www.jobsurfexperience.com/"
+                href={blok.learn_more_url.url}
+                // href="https://www.jobsurfexperience.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center space-x-1 whitespace-nowrap font-headings text-pink md:text-2xl lg:text-xl xl:text-[29px]"

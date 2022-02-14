@@ -11,7 +11,7 @@ import Page from './page'
 const Components = {
   scrollableHero: ScrollableHero,
   getPsyched: GetPsyched,
-  // gePsyched: BePsyched,
+  bePsyched: BePsyched,
   // stayPsyched: StayPsyched,
   // vlog: Vlog,
   // psychMag: PsychMag,
