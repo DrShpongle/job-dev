@@ -6,6 +6,7 @@ import Hero from 'components/sections/psych-mag/hero'
 import Features from 'components/sections/psych-mag/features'
 import TopTips from 'components/sections/psych-mag/top-tips'
 import Gear from 'components/sections/psych-mag/gear'
+import TravelGuides from 'components/sections/psych-mag/travel-guides'
 
 const SurfMag: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const SurfMag: NextPage = () => {
       <Features />
       <TopTips />
       <Gear />
+      <TravelGuides />
     </PageLayout>
   )
 }
