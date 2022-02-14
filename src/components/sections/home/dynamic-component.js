@@ -1,9 +1,21 @@
 import ScrollableHero from './scrollable-hero'
+import GetPsyched from './get-psyched'
+import BePsyched from './be-psyched'
+import StayPsyched from './stay-psyched'
+import Vlog from './vlog'
+import PsychMag from './psych-mag'
+import SeaTrees from './sea-trees'
 import Page from './page'
 
 // resolve Storyblok components to Next.js components
 const Components = {
   scrollableHero: ScrollableHero,
+  getPsyched: GetPsyched,
+  // gePsyched: BePsyched,
+  // stayPsyched: StayPsyched,
+  // vlog: Vlog,
+  // psychMag: PsychMag,
+  // seaTrees: SeaTrees,
   page: Page,
 }
 

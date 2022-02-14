@@ -12,8 +12,7 @@ import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
-const ScrollableHero: React.FC = ({blok}) => {
-  console.log('blok:', blok)
+const ScrollableHero: React.FC<any> = ({blok}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refSection)
