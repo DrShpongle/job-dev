@@ -48,6 +48,7 @@ export async function getStaticProps({preview = false}) {
   if (preview) {
     // load the draft version inside of the preview mode
     sbParams.version = 'draft'
+    // @ts-ignore
     sbParams.cv = Date.now()
   }
 
