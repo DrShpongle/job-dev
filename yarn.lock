@@ -172,6 +172,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
+"@storyblok/storyblok-editable@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/storyblok-editable/-/storyblok-editable-1.1.0.tgz#a355a9ea149d862db262e41514efaf260fbdfb28"
+  integrity sha512-D/OtU2O2pjK+dZaTnWqyhlpz8jGnzZ+8DkZg7O+FTf/r5612RyO7jzRyEkS/opOyYuyFHtw1NwkSVCvnYURf1A==
+
 "@tailwindcss/line-clamp@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.3.1.tgz#4d8441b509b87ece84e94f28a4aa9998413ab849"
@@ -409,6 +414,13 @@ axe-core@^4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.5.tgz#78d6911ba317a8262bfee292aeafcc1e04b49cc5"
   integrity sha512-WKTW1+xAzhMS5dJsxWkliixlO/PqC4VhmO9T4juNYcaTg9jzWiJsou6m5pxWYGfigWbwzJWeFY6z47a+4neRXA==
+
+axios@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.0.tgz#9a318f1c69ec108f8cd5f3c3d390366635e13928"
+  integrity sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==
+  dependencies:
+    follow-redirects "^1.14.8"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -1067,6 +1079,11 @@ flatted@^3.1.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.4.tgz#28d9969ea90661b5134259f312ab6aa7929ac5e2"
   integrity sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==
+
+follow-redirects@^1.14.8:
+  version "1.14.8"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
+  integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
 
 fraction.js@^4.1.2:
   version "4.1.2"
@@ -2172,6 +2189,11 @@ stacktrace-js@^2.0.2:
     error-stack-parser "^2.0.6"
     stack-generator "^2.0.5"
     stacktrace-gps "^3.0.4"
+
+storyblok-js-client@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.2.1.tgz#6d8d2e16807b4a9ae1ee0d6c1a7ef7bad42b5f48"
+  integrity sha512-TQfsyBJ6WcjpHFGKYXHy5kef4jXOI/j54wrJmw4Ld13e76dr81EvqZIrwehKPTcRID9+a4rbA0ykn3r3aBpArw==
 
 string.prototype.matchall@^4.0.6:
   version "4.0.6"
