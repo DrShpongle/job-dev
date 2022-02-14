@@ -12,7 +12,6 @@ import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const GetPsyched: React.FC<any> = ({blok}) => {
-  console.log('blok11:', blok)
   const {width, height} = useWindowSize()
   const refSection = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refSection)

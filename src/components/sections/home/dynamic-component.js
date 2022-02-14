@@ -12,7 +12,7 @@ const Components = {
   scrollableHero: ScrollableHero,
   getPsyched: GetPsyched,
   bePsyched: BePsyched,
-  // stayPsyched: StayPsyched,
+  stayPsyched: StayPsyched,
   // vlog: Vlog,
   // psychMag: PsychMag,
   // seaTrees: SeaTrees,

@@ -13,8 +13,7 @@ import PageLayout from 'components/layouts/page-layout'
 // import SeaTrees from 'components/sections/home/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
-const Landing: NextPage = (props) => {
-  console.log('props:', props)
+const Landing: NextPage = (props: any) => {
   const story = props.story
   return (
     <PageLayout>
