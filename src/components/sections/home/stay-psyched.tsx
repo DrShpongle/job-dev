@@ -4,7 +4,6 @@ import Link from 'next/link'
 import classNames from 'classnames'
 
 const StayPsyched: React.FC<any> = ({blok}) => {
-  console.log('blok:', blok)
   return (
     <section
       className="bg-slate-100 pt-12 pb-5 md:pb-7 xl:py-7"
