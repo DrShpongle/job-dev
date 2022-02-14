@@ -2,6 +2,7 @@ import * as React from 'react'
 import type {NextPage} from 'next'
 import Storyblok from 'utils/storyblok-service'
 
+import DynamicComponent from 'components/sections/home/dynamic-component'
 import PageLayout from 'components/layouts/page-layout'
 import ScrollableHero from 'components/sections/home/scrollable-hero'
 import GetPsyched from 'components/sections/home/get-psyched'
@@ -14,15 +15,17 @@ import FixedLabel from 'components/fixed-label'
 
 const Landing: NextPage = (props) => {
   console.log('props:', props)
+  const story = props.story
   return (
     <PageLayout>
-      <ScrollableHero />
+      {/* <ScrollableHero />
       <GetPsyched />
       <BePsyched />
       <StayPsyched />
       <Vlog />
       <PsychMag />
-      <SeaTrees />
+      <SeaTrees /> */}
+      <DynamicComponent blok={story.content} />
       <FixedLabel
         title="Maldives"
         subtitleTop="win a trip to the"
