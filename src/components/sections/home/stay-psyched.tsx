@@ -6,17 +6,17 @@ import classNames from 'classnames'
 const StayPsyched: React.FC<any> = ({blok}) => {
   return (
     <section
-      className="bg-slate-100 pt-12 pb-5 md:pb-7 xl:py-7"
+      className="bg-gradient-to-b from-pink to-pink/50 pt-12 pb-5 md:pb-7 xl:py-7"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
         <div className="flex flex-col space-y-12 xl:flex-row xl:space-y-0">
           <div className="w-full xl:w-2/5 xl:pr-8 xl:pt-36">
-            <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
+            <h3 className="font-accented text-3xl text-blue md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
               {blok.title}
               {/* Stay Psyched */}
             </h3>
-            <div className="flex flex-col items-start space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
+            <div className="flex flex-col items-start space-y-5 text-white md:space-y-6 lg:space-y-7 xl:space-y-8">
               <h2 className="text-4xl leading-none md:max-w-[18rem] md:text-5xl lg:max-w-xl lg:text-6xl xl:max-w-none xl:text-7xl 2xl:text-8xl">
                 {blok.subtitle}
                 {/* with The <br className="block lg:hidden xl:block" />
@@ -29,7 +29,7 @@ const StayPsyched: React.FC<any> = ({blok}) => {
                 nem nonsedit, utestiam, sus quia quis doluptio illatem et aut. */}
               </p>
               <Link href="/psych-mag">
-                <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
+                <a className="rounded-full bg-blue px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
                   Visit the shop
                 </a>
               </Link>
