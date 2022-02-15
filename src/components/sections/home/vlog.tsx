@@ -7,7 +7,7 @@ import VideoPlayer from 'components/video-player'
 const Vlog: React.FC<any> = ({blok}) => {
   return (
     <section
-      className="bg-white py-12 xl:py-24"
+      className="bg-white py-12 md:py-20 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">

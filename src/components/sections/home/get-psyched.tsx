@@ -103,7 +103,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           <VideoEmbed url={blok.video_url.url} />
           {/* <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/cd6b1fd0-371d-4331-8bc8-4ba52442e0ed/cd6b1fd0-371d-4331-8bc8-4ba52442.ism/manifest(format=m3u8-aapl).m3u8" /> */}
           <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
-            <a href="#" className="w-28 md:w-44 xl:w-auto">
+            <a href="#" className="flex w-28 md:w-44 xl:w-auto">
               <Image
                 src="/images/download-on-app-store.svg"
                 width={240}
@@ -111,7 +111,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 alt="Download on App Store"
               />
             </a>
-            <a href="#" className="w-28 md:w-44 xl:w-auto">
+            <a href="#" className="flex w-28 md:w-44 xl:w-auto">
               <Image
                 src="/images/get-it-on-google-play.svg"
                 width={240}

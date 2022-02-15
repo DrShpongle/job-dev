@@ -1,4 +1,5 @@
 import ScrollableHero from './scrollable-hero'
+import GetSurfApp from './get-surf-app'
 import GetPsyched from './get-psyched'
 import BePsyched from './be-psyched'
 import StayPsyched from './stay-psyched'
@@ -10,6 +11,7 @@ import Page from './page'
 // resolve Storyblok components to Next.js components
 const Components = {
   scrollableHero: ScrollableHero,
+  getSurfApp: GetSurfApp,
   getPsyched: GetPsyched,
   bePsyched: BePsyched,
   stayPsyched: StayPsyched,
