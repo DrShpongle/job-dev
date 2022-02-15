@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <footer
-      className="bg-gray pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10"
+      className="bg-blue pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
@@ -19,7 +19,7 @@ const Footer = () => {
                     return (
                       <li key={index}>
                         <Link href={item.path}>
-                          <a className="text-lg duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-blue">
+                          <a className="text-lg text-white duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-pink">
                             {item.title}
                           </a>
                         </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
                           target="_blank"
                           rel="noreferrer"
                           href={item.path}
-                          className="text-lg duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-blue"
+                          className="text-lg text-white duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-pink"
                         >
                           {item.title}
                         </a>
@@ -55,7 +55,7 @@ const Footer = () => {
             <h4 className="text-xl text-pink md:h-8 md:text-right md:text-[1.625rem]">
               Stay in touch
             </h4>
-            <p className="mt-3 text-lg md:mt-7 md:text-right md:text-xl md:leading-relaxed 2xl:text-2xl 2xl:leading-relaxed">
+            <p className="mt-3 text-lg text-white md:mt-7 md:text-right md:text-xl md:leading-relaxed 2xl:text-2xl 2xl:leading-relaxed">
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
@@ -74,8 +74,8 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="lg:space-between flex w-full flex-col-reverse justify-between border-black/20 text-center text-sm md:mt-14 md:items-center md:text-lg lg:flex-row lg:border-t lg:pt-6 lg:text-left 2xl:text-2xl">
-          <div className="mt-7 w-full border-t border-black/20 pt-4 text-black/50 md:pt-6 lg:mt-0 lg:border-none lg:pt-0">
+        <div className="lg:space-between flex w-full flex-col-reverse justify-between border-white/80 text-center text-sm md:mt-14 md:items-center md:text-lg lg:flex-row lg:border-t lg:pt-6 lg:text-left 2xl:text-2xl">
+          <div className="mt-7 w-full border-t border-white/80 pt-4 text-white md:pt-6 lg:mt-0 lg:border-none lg:pt-0">
             Copyright © 2021 Jamie O&#8217;Brien. All rights reserved.
           </div>
           <ul className="mt-8 flex flex-col flex-nowrap items-center space-y-3 md:flex-row md:space-y-0 md:space-x-4 lg:mt-0">
@@ -83,10 +83,12 @@ const Footer = () => {
               return (
                 <li
                   key={index}
-                  className="flex items-center first:before:hidden md:before:mr-4 md:before:block md:before:h-3 md:before:w-px md:before:bg-black/20"
+                  className="flex items-center first:before:hidden md:before:mr-4 md:before:block md:before:h-3 md:before:w-px md:before:bg-white/80"
                 >
                   <Link href={item.path}>
-                    <a className="whitespace-nowrap">{item.title}</a>
+                    <a className="whitespace-nowrap text-white hover-hover:hover:text-pink">
+                      {item.title}
+                    </a>
                   </Link>
                 </li>
               )
