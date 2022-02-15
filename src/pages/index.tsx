@@ -39,7 +39,7 @@ export default Landing
 
 export async function getStaticProps({preview = false}) {
   // home is the default slug for the homepage in Storyblok
-  let slug = 'home'
+  let slug = 'landing'
   // load the published content outside of the preview mode
   let sbParams = {
     version: 'draft', // or 'published'

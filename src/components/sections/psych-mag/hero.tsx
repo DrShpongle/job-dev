@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
+import {getYoutubeDetails} from 'utils/get-youtube-details'
 
 import VideoPlayer from 'components/video-player'
 
