@@ -16,7 +16,7 @@ const Components = {
   bePsyched: BePsyched,
   stayPsyched: StayPsyched,
   vlog: Vlog,
-  // psychMag: PsychMag,
+  psychMag: PsychMag,
   // seaTrees: SeaTrees,
   page: Page,
 }

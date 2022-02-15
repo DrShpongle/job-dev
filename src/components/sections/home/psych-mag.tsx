@@ -6,7 +6,7 @@ import Card from 'components/card'
 const PsychMag = () => {
   return (
     <section
-      className="bg-slate-100 pt-5 pb-5 md:pb-10 md:pt-7 xl:pb-16 xl:pt-8 2xl:pt-12 2xl:pb-20"
+      className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
