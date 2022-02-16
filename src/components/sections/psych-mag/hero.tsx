@@ -119,35 +119,35 @@ const Hero: React.FC<any> = ({blok}) => {
 
 export default Hero
 
-const fakeYoutubeVideosArr = [
-  {
-    id: 'mRHG2lWvF4A',
-    title: 'THE MOST CROWDED PIPELINE EVER! (ITS GETTING WORSE)',
-    date: 'Jan 24, 2022',
-    duration: '16:51',
-  },
-  {
-    id: 'I6U6DmLJLB8',
-    title: 'MY WORST WIPE OUT AT PIPELINE!!! (LUCKY TO BE ALIVE)',
-    date: 'Jan 17, 2022',
-    duration: '16:43',
-  },
-  {
-    id: '23-5OsFdO9s',
-    title: 'GIRLS ATTEMPT DANGEROUS SLIP ‘N‘ SLIDE',
-    date: 'Dec 13, 2021',
-    duration: '12:57',
-  },
-  {
-    id: 'Uid6k5wPY68',
-    title: "JAMIE O'BRIEN PIPELINE HOUSE TOUR",
-    date: 'Apr 5, 2021',
-    duration: '24:18',
-  },
-  {
-    id: '7rXyTRsqSbA',
-    title: 'THIS IS PARADISE (HAWAII)',
-    date: 'May 25, 2020',
-    duration: '19:10',
-  },
-]
+// const fakeYoutubeVideosArr = [
+//   {
+//     id: 'mRHG2lWvF4A',
+//     title: 'THE MOST CROWDED PIPELINE EVER! (ITS GETTING WORSE)',
+//     date: 'Jan 24, 2022',
+//     duration: '16:51',
+//   },
+//   {
+//     id: 'I6U6DmLJLB8',
+//     title: 'MY WORST WIPE OUT AT PIPELINE!!! (LUCKY TO BE ALIVE)',
+//     date: 'Jan 17, 2022',
+//     duration: '16:43',
+//   },
+//   {
+//     id: '23-5OsFdO9s',
+//     title: 'GIRLS ATTEMPT DANGEROUS SLIP ‘N‘ SLIDE',
+//     date: 'Dec 13, 2021',
+//     duration: '12:57',
+//   },
+//   {
+//     id: 'Uid6k5wPY68',
+//     title: "JAMIE O'BRIEN PIPELINE HOUSE TOUR",
+//     date: 'Apr 5, 2021',
+//     duration: '24:18',
+//   },
+//   {
+//     id: '7rXyTRsqSbA',
+//     title: 'THIS IS PARADISE (HAWAII)',
+//     date: 'May 25, 2020',
+//     duration: '19:10',
+//   },
+// ]
