@@ -27,20 +27,22 @@ export const getYoutubeDetails = async () => {
     const {
       data: {items: channelData = []},
     } = await axios.get(requestChannelData)
-    const intermediateDetails = channelData.map((item) => {
+    const intermediateDetails = channelData.map((item: any) => {
       return {
         id: item.id.videoId,
         url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
       }
     })
-    const ids = channelData.map(({id: {videoId}}) => videoId).join(',')
+    const ids = channelData.map(({id: {videoId}}: any) => videoId).join(',')
     const requestVideosData: string = `${API_ROOT}/videos?part=snippet,contentDetails&id=${ids}&key=${YT_API_KEY}`
     const {
       data: {items: videosData = []},
     } = await axios.get(requestVideosData)
-    const finalDetails = videosData.map((item) => {
+    const finalDetails = videosData.map((item: any) => {
       return {
-        ...intermediateDetails.find((itemToFind) => itemToFind.id === item.id),
+        ...intermediateDetails.find(
+          (itemToFind: any) => itemToFind.id === item.id,
+        ),
         thumb: item.snippet.thumbnails.standard.url,
         title: item.snippet.title,
         // duration: durationToSeconds(item.contentDetails.duration),
