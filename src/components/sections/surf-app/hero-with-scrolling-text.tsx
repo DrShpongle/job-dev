@@ -134,20 +134,31 @@ const HeroWithScrollableText = () => {
             }}
             animate={controlsPhone}
           >
-            <div className="w-64 md:w-[300px] 2xl:w-[360px]">
+            <div className="md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
               <div
-                className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3"
+                className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]"
                 style={{transform: 'translateZ(0)'}}
               >
-                <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
+                <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/b94a400b-6229-4117-94cf-99baa15f467a/b94a400b-6229-4117-94cf-99baa15f.ism/manifest(format=m3u8-aapl).m3u8" />
               </div>
-              <Image
-                src="/images/iphone-frame-portrait.png"
-                width={580}
-                height={1171}
-                alt="Ask Jamie"
-                priority
-              />
+              <div className="portrait:hidden md:portrait:block">
+                <Image
+                  src="/images/iphone-frame-landscape.png"
+                  width={1171}
+                  height={580}
+                  alt="Ask Jamie"
+                  priority
+                />
+              </div>
+              <div className="md:hidden landscape:hidden">
+                <Image
+                  src="/images/iphone-frame-portrait.png"
+                  width={580}
+                  height={1171}
+                  alt="Ask Jamie"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
         </div>
