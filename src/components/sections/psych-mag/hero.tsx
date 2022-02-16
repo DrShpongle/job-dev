@@ -5,11 +5,18 @@ import {getYoutubeDetails} from 'utils/get-youtube-details'
 
 import VideoPlayer from 'components/video-player'
 
-const Hero = () => {
+const Hero: React.FC<any> = ({blok}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const [youtubeDetails, setYoutubeDetails] = React.useState<any>([])
   React.useEffect(() => {
     setIsMounted(true)
   }, [])
+
+  React.useEffect(() => {
+    getYoutubeDetails().then((data) => setYoutubeDetails(data))
+  }, [])
+
+  console.log('youtubeDetails:', youtubeDetails)
   return (
     <section className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8">
       <div className="container">
@@ -29,7 +36,8 @@ const Hero = () => {
             </h3>
           </div>
           <VideoPlayer
-            url="https://mytwynmediaservices-euno.akamaized.net/5eb305fa-6b14-4ebe-ad83-981f7a9c979e/5eb305fa-6b14-4ebe-ad83-981f7a9c.ism/manifest(format=m3u8-aapl).m3u8"
+            url={blok.main_frame_video_url}
+            // url="https://mytwynmediaservices-euno.akamaized.net/5eb305fa-6b14-4ebe-ad83-981f7a9c979e/5eb305fa-6b14-4ebe-ad83-981f7a9c.ism/manifest(format=m3u8-aapl).m3u8"
             controls={true}
             fullscreenControl={true}
             controlsClasses="bottom-3 right-3 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 xl:bottom-12 xl:right-12"
