@@ -4,7 +4,7 @@
 
 const nextConfig = {
   images: {
-    domains: ['img.youtube.com', 'a.storyblok.com'],
+    domains: ['img.youtube.com', 'i.ytimg.com', 'a.storyblok.com'],
   },
 }
 

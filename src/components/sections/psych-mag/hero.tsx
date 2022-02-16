@@ -2,6 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {getYoutubeDetails} from 'utils/get-youtube-details'
+import {isEmpty} from 'lodash'
 
 import VideoPlayer from 'components/video-player'
 
@@ -65,47 +66,48 @@ const Hero: React.FC<any> = ({blok}) => {
                 }}
                 loop
               >
-                {fakeYoutubeVideosArr.map((item, i) => {
-                  return (
-                    <SwiperSlide key={i}>
-                      <div className="select-none">
-                        <a
-                          href={`https://www.youtube.com/watch?v=${item.id}`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="relative block aspect-video"
-                        >
-                          <div className="absolute inset-0 overflow-hidden">
-                            <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
-                              <Image
-                                src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
-                                alt={item.title}
-                                layout="fill"
-                                objectFit="cover"
-                                priority
-                              />
-                            </div>
-                          </div>
-                        </a>
-                        <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3 2xl:mt-4 2xl:space-y-2">
+                {!isEmpty(youtubeDetails) &&
+                  youtubeDetails.map((item: any, i: number) => {
+                    return (
+                      <SwiperSlide key={i}>
+                        <div className="select-none">
                           <a
-                            href={`https://www.youtube.com/watch?v=${item.id}`}
+                            href={item.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                            className="relative block aspect-video"
                           >
-                            {item.title}
+                            <div className="absolute inset-0 overflow-hidden">
+                              <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
+                                <Image
+                                  src={item.thumb}
+                                  alt={item.title}
+                                  layout="fill"
+                                  objectFit="cover"
+                                  priority
+                                />
+                              </div>
+                            </div>
                           </a>
-                          <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
-                            {item.date}
-                            <div className="mx-1 md:mx-2">|</div>
-                            {item.duration}
+                          <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3 2xl:mt-4 2xl:space-y-2">
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                            >
+                              {item.title}
+                            </a>
+                            <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
+                              {item.date}
+                              <div className="mx-1 md:mx-2">|</div>
+                              {item.duration}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })}
+                      </SwiperSlide>
+                    )
+                  })}
               </Swiper>
             ) : null}
           </div>
