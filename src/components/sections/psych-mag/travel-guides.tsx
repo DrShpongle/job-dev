@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import Card from 'components/card'
 
-const Features = () => {
+const TravelGuides = () => {
   return (
     <section
-      className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
+      className="bg-blue pb-5 pt-12 md:pb-7 md:pt-20 xl:pb-8 xl:pt-24 2xl:pb-12"
       id="travel-guides"
     >
       <div className="container">
@@ -31,7 +31,7 @@ const Features = () => {
   )
 }
 
-export default Features
+export default TravelGuides
 
 // TODO: substitute the array below with real data
 const fakeData = [
