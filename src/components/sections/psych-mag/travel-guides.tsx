@@ -5,7 +5,7 @@ import Card from 'components/card'
 const Features = () => {
   return (
     <section
-      className="bg-slate-100 py-5 md:py-7 xl:py-8 2xl:py-12"
+      className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
       id="travel-guides"
     >
       <div className="container">
