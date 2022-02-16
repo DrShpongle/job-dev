@@ -18,7 +18,7 @@ const TravelGuides = () => {
             nonsedit, utestiam, sus quia quis doluptio illatem et aut.
           </p>
         </div>
-        <div className="mt-5 space-y-5 md:mt-7 md:space-y-7">
+        <div className="mt-10 space-y-5 md:mt-16 md:space-y-7 xl:mt-20">
           {fakeData.map((item, i) => {
             return <Card key={i} data={item} />
           })}

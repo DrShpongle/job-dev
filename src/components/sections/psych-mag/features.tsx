@@ -4,10 +4,7 @@ import Card from 'components/card'
 
 const Features = () => {
   return (
-    <section
-      className="bg-slate-100 py-5 md:py-7 xl:py-8 2xl:py-12"
-      id="features"
-    >
+    <section className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12" id="features">
       <div className="container">
         <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
