@@ -9,7 +9,7 @@ const TravelGuides = () => {
       id="travel-guides"
     >
       <div className="container">
-        <div className="flex w-full flex-col items-center space-y-5 text-center md:space-y-6 lg:space-y-7 xl:space-y-8">
+        <div className="flex w-full flex-col items-center space-y-5 text-center text-white md:space-y-6 lg:space-y-7 xl:space-y-8">
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
             Travel Guides
           </h2>
