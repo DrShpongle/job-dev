@@ -27,6 +27,50 @@ const formatDate = (apiDate: any) => {
   return `${realMonth} ${day}, ${year}`
 }
 
+const formatDuration = (duration: any) => {
+  var a = duration.match(/\d+/g)
+  if (
+    duration.indexOf('M') >= 0 &&
+    duration.indexOf('H') == -1 &&
+    duration.indexOf('S') == -1
+  ) {
+    a = [0, a[0], 0]
+  }
+  if (duration.indexOf('H') >= 0 && duration.indexOf('M') == -1) {
+    a = [a[0], 0, a[1]]
+  }
+  if (
+    duration.indexOf('H') >= 0 &&
+    duration.indexOf('M') == -1 &&
+    duration.indexOf('S') == -1
+  ) {
+    a = [a[0], 0, 0]
+  }
+  duration = 0
+  if (a.length == 3) {
+    duration = duration + parseInt(a[0]) * 3600
+    duration = duration + parseInt(a[1]) * 60
+    duration = duration + parseInt(a[2])
+  }
+
+  if (a.length == 2) {
+    duration = duration + parseInt(a[0]) * 60
+    duration = duration + parseInt(a[1])
+  }
+
+  if (a.length == 1) {
+    duration = duration + parseInt(a[0])
+  }
+  const hours = Math.floor(duration / 3600)
+  const mins = hours
+    ? Math.floor((duration - hours * 3600) / 60)
+    : Math.floor(duration / 60)
+  const seconds = duration - hours * 3600 - mins * 60
+  return `${hours > 0 ? hours + ':' : ''}${mins ? mins + ':' : '0:'}${
+    seconds < 10 ? '0' + seconds : seconds
+  }`.trim()
+}
+
 export const getYoutubeDetails = async () => {
   try {
     const requestChannelData: string = `${API_ROOT}/search?part=snippet&channelId=${YT_CHANNEL_ID}&maxResults=${MAX_VIDEOS}&order=date&type=video&key=${YT_API_KEY}`
@@ -51,8 +95,7 @@ export const getYoutubeDetails = async () => {
         ),
         thumb: item.snippet.thumbnails.standard.url,
         title: item.snippet.title,
-        // duration: durationToSeconds(item.contentDetails.duration),
-        duration: item.contentDetails.duration,
+        duration: formatDuration(item.contentDetails.duration),
         date: formatDate(item.snippet.publishedAt),
       }
     })
