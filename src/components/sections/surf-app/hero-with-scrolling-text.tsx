@@ -9,7 +9,7 @@ import {
 import {useMeasure} from 'react-use'
 import classNames from 'classnames'
 
-import {isBrowser} from 'utils/isBrowser'
+import {isBrowser} from 'utils/is-browser'
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
