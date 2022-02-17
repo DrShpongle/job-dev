@@ -5,21 +5,27 @@ const YT_CHANNEL_ID = 'UCo_q6aOlvPH7M-j_XGWVgXg'
 const MAX_VIDEOS = 5
 const API_ROOT = 'https://youtube.googleapis.com/youtube/v3'
 
-// const durationToSeconds = (duration) => {
-//   var match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/)
-
-//   match = match.slice(1).map(function (x) {
-//     if (x != null) {
-//       return x.replace(/\D/, '')
-//     }
-//   })
-
-//   var hours = parseInt(match[0]) || 0
-//   var minutes = parseInt(match[1]) || 0
-//   var seconds = parseInt(match[2]) || 0
-
-//   return hours * 3600 + minutes * 60 + seconds
-// }
+const formatDate = (apiDate: any) => {
+  const monthsArr = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+  const day = new Date(apiDate).getDate()
+  const month = new Date(apiDate).getMonth()
+  const year = new Date(apiDate).getFullYear()
+  const realMonth = monthsArr[month]
+  return `${realMonth} ${day}, ${year}`
+}
 
 export const getYoutubeDetails = async () => {
   try {
@@ -47,7 +53,7 @@ export const getYoutubeDetails = async () => {
         title: item.snippet.title,
         // duration: durationToSeconds(item.contentDetails.duration),
         duration: item.contentDetails.duration,
-        date: item.snippet.publishedAt,
+        date: formatDate(item.snippet.publishedAt),
       }
     })
     return finalDetails
