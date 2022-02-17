@@ -16,8 +16,6 @@ const Hero: React.FC<any> = ({blok}) => {
   React.useEffect(() => {
     getYoutubeDetails().then((data) => setYoutubeDetails(data))
   }, [])
-
-  console.log('youtubeDetails:', youtubeDetails)
   return (
     <section className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8">
       <div className="container">
