@@ -57,7 +57,7 @@ const Description: React.FC<{
   )
 }
 
-const SeaTrees = ({blok}) => {
+const SeaTrees = ({blok}: any) => {
   return (
     <section
       className="relative z-10 bg-white"
