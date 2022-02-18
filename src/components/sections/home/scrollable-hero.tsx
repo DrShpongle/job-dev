@@ -7,6 +7,7 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -44,7 +45,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
   }, [end])
 
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div className="sticky top-0 flex h-screen items-center justify-center bg-blue">
         {isMounted ? (
           <section

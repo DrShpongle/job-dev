@@ -1,13 +1,16 @@
 import * as React from 'react'
 import Link from 'next/link'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import Card from 'components/card'
 
-const PsychMag = () => {
+const PsychMag = ({blok}) => {
   return (
     <section
       className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
       style={{transform: 'translate3d(0,0,0)'}}
+      {...sbEditable(blok)}
+      key={blok._uid}
     >
       <div className="container">
         <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">

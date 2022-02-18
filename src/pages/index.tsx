@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type {NextPage} from 'next'
-import Storyblok from 'utils/storyblok-service'
+import Storyblok, {useStoryblok} from 'utils/storyblok-service'
 
 import DynamicComponent from 'components/sections/home/dynamic-component'
 import PageLayout from 'components/layouts/page-layout'
@@ -13,8 +13,10 @@ import PageLayout from 'components/layouts/page-layout'
 // import SeaTrees from 'components/sections/home/sea-trees'
 import FixedLabel from 'components/fixed-label'
 
-const Landing: NextPage = (props: any) => {
-  const story = props.story
+const Landing: NextPage = ({story}: any) => {
+  const enableBridge = true
+  story = useStoryblok(story, enableBridge)
+  // const story = props.story
   return (
     <PageLayout>
       {/* <ScrollableHero />

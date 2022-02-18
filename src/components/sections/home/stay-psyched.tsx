@@ -2,12 +2,15 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 const StayPsyched: React.FC<any> = ({blok}) => {
   return (
     <section
       className="bg-gradient-to-b from-pink to-pink/50 pt-12 pb-5 md:pb-7 xl:py-7"
       style={{transform: 'translate3d(0,0,0)'}}
+      {...sbEditable(blok)}
+      key={blok._uid}
     >
       <div className="container">
         <div className="flex flex-col space-y-12 xl:flex-row xl:space-y-0">
