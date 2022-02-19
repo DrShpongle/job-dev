@@ -1,25 +1,30 @@
 import React from 'react'
+import Image from 'next/image'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 const Article = ({blok}: any) => {
+  console.log('blok:', blok)
   return (
-    <div {...sbEditable(blok)} key={blok._uid}>
-      <div className="bg-white-half w-full">
-        <div className="mx-auto flex max-w-3xl flex-col items-center pt-20 text-center">
-          <h1 className="font-serif text-primary text-5xl font-bold tracking-wide">
-            {blok.title}
-          </h1>
-          {/* <p className="text-gray-500 max-w-lg text-lg">{blok.intro}</p>
-          <img className="bg-gray-300 my-16 w-full" src={blok.image} /> */}
+    <section {...sbEditable(blok)} key={blok._uid}>
+      <div className="relative flex h-[60vh] flex-col justify-end px-44 py-28">
+        <div className="absolute inset-0">
+          <Image
+            layout="fill"
+            className="object-cover object-center"
+            src={blok.hero_image.filename}
+            alt={blok.title}
+          />
         </div>
+        <h2 className="relative whitespace-pre-wrap text-5xl leading-none text-white md:text-6xl lg:max-w-md lg:text-7xl xl:max-w-lg xl:text-8xl 2xl:max-w-2xl 2xl:text-[111px]">
+          {blok.title}
+        </h2>
       </div>
-      <div className="mx-auto flex max-w-3xl flex-col items-center pt-20 text-center">
-        <div className="text-gray-800 drop-cap text-left text-xl leading-relaxed">
-          {/* {render(blok.long_text)} */}
-        </div>
+      <div className="bg-blue px-44 py-28 text-4xl text-white">
+        {blok.description}
       </div>
-    </div>
+      <div className="columns-2 gap-32 px-44 py-28">{render(blok.content)}</div>
+    </section>
   )
 }
 
