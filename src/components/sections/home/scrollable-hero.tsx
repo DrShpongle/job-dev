@@ -61,7 +61,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
               )}
             >
               <VideoEmbed url={blok.video_left_url.url} />
-              {/* <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/1681c7f2-28e8-4a8b-944a-ed0b4de89588/1681c7f2-28e8-4a8b-944a-ed0b4de8.ism/manifest(format=m3u8-aapl).m3u8" /> */}
             </div>
             <motion.div
               className={classNames(
@@ -71,7 +70,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
               style={{width: scale, height: scale}}
             >
               <VideoEmbed url={blok.video_middle_url.url} />
-              {/* <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/c65b0ddb-9bf4-4941-965f-f5bcfa86cc7b/c65b0ddb-9bf4-4941-965f-f5bcfa86.ism/manifest(format=m3u8-aapl).m3u8" /> */}
               <div className="absolute left-0 w-full space-y-4 overflow-hidden whitespace-nowrap text-center text-white lg:pr-16 lg:text-right xl:pr-20">
                 <motion.h2
                   initial="hidden"
@@ -83,7 +81,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
                   animate={controlsText}
                   className="w-full font-accented text-5xl opacity-0 will-change-transform md:text-7xl lg:text-8xl  xl:text-9xl"
                 >
-                  {/* Totally psyched */}
                   {blok.title}
                 </motion.h2>
                 <motion.h3
@@ -97,7 +94,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
                   className="w-full font-headings text-2xl opacity-0 will-change-transform md:text-4xl lg:text-5xl  xl:text-6xl"
                 >
                   {blok.subtitle}
-                  {/* the world of Jamie O&#8217;Brien */}
                 </motion.h3>
               </div>
             </motion.div>
@@ -108,7 +104,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
               )}
             >
               <VideoEmbed url={blok.video_right_url.url} />
-              {/* <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/b94a400b-6229-4117-94cf-99baa15f467a/b94a400b-6229-4117-94cf-99baa15f.ism/manifest(format=m3u8-aapl).m3u8" /> */}
             </div>
             <div className="absolute bottom-0 left-0 right-0 z-10 m-auto flex w-32 flex-col items-center space-y-4 text-xl text-white">
               <span>scroll down</span>

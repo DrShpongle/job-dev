@@ -69,21 +69,12 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             <div className="flex h-full flex-col">
               <h3 className="font-accented text-3xl text-pink md:text-4xl">
                 {blok.title}
-                {/* Get Psyched */}
               </h3>
               <div className="grow md:max-w-2xl">
                 <h2 className="max-w-[14rem] text-4xl leading-none md:max-w-sm md:text-6xl">
                   {blok.subtitle}
-                  {/* with Jamie in
-                  <br /> your pocket */}
                 </h2>
-                <p className="mt-4 md:text-xl">
-                  {blok.description}
-                  {/* Expliqua sitibusa pe nullest, velitiust porerum vel
-                  escipsamusae nem nonsedit, utestiam, sus quia quis doluptio
-                  illatem et aut optat quam nam nimagnis doloreh enistorro
-                  vendis voluptaqua. */}
-                </p>
+                <p className="mt-4 md:text-xl">{blok.description}</p>
               </div>
               <div className="flex items-center space-x-6 md:space-x-10">
                 <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:px-10 md:py-4 md:text-xl xl:text-[29px]">
@@ -102,7 +93,6 @@ const GetPsyched: React.FC<any> = ({blok}) => {
         </div>
         <div className="absolute bottom-0 h-1/2 w-full before:absolute before:inset-0 before:bg-black/20 md:h-[55%] lg:h-full">
           <VideoEmbed url={blok.video_url.url} />
-          {/* <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/cd6b1fd0-371d-4331-8bc8-4ba52442e0ed/cd6b1fd0-371d-4331-8bc8-4ba52442.ism/manifest(format=m3u8-aapl).m3u8" /> */}
           <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
             <a href="#" className="flex w-28 md:w-44 xl:w-auto">
               <Image
@@ -128,19 +118,13 @@ const GetPsyched: React.FC<any> = ({blok}) => {
         >
           <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
             {blok.title}
-            {/* Get Psyched */}
           </h3>
           <div className="max-w-[44rem] text-white">
             <h2 className="mt-1 text-5xl leading-none md:text-6xl lg:max-w-md lg:text-7xl xl:max-w-lg xl:text-8xl 2xl:max-w-2xl 2xl:text-[111px]">
               {blok.subtitle}
-              {/* with Jamie in
-              <br /> your pocket */}
             </h2>
             <p className="mt-12 md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
               {blok.description}
-              {/* Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae
-              nem nonsedit, utestiam, sus quia quis doluptio illatem et aut
-              optat quam nam nimagnis doloreh enistorro vendis voluptaqua. */}
             </p>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:space-x-10">
