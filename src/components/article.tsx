@@ -4,7 +4,6 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 const Article = ({blok}: any) => {
-  console.log('blok:', blok)
   return (
     <section {...sbEditable(blok)} key={blok._uid}>
       <div className="relative flex h-screen flex-col justify-end px-44 py-28">
@@ -23,7 +22,9 @@ const Article = ({blok}: any) => {
       <div className="bg-blue px-44 py-28 text-4xl text-white">
         <div className="max-w-6xl">{blok.description}</div>
       </div>
-      <div className="columns-2 gap-32 px-44 py-28">{render(blok.content)}</div>
+      <div className="prose max-w-none columns-2 gap-32 px-44 py-28">
+        {render(blok.content)}
+      </div>
     </section>
   )
 }

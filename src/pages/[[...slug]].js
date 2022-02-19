@@ -1,24 +1,14 @@
-import React from 'react'
-// import Layout from "../components/Layout";
 import DynamicComponent from 'components/dynamic-component'
-
 import Storyblok, {useStoryblok} from 'utils/storyblok-service'
 
 export default function Page({story, preview}) {
-  const enableBridge = true // load the storyblok bridge everywhere
-  // use the preview variable to enable the bridge only in preview mode
-  // const enableBridge = preview;
+  const enableBridge = true
   story = useStoryblok(story, enableBridge)
 
-  return (
-    // <Layout locale={locale} locales={locales} defaultLocale={defaultLocale}>
-    <DynamicComponent blok={story.content} />
-    // </Layout>
-  )
+  return <DynamicComponent blok={story.content} />
 }
 
 export async function getStaticProps({params, preview = false}) {
-  console.log('params:', params)
   let slug = params.slug ? params.slug.join('/') : 'home'
 
   let sbParams = {
@@ -42,7 +32,7 @@ export async function getStaticProps({params, preview = false}) {
   }
 }
 
-export async function getStaticPaths({locales}) {
+export async function getStaticPaths() {
   let {data} = await Storyblok.get('cdn/links/')
 
   let paths = []
@@ -51,15 +41,11 @@ export async function getStaticPaths({locales}) {
       return
     }
 
-    // get array for slug because of catch all
     const slug = data.links[linkKey].slug
     let splittedSlug = slug.split('/')
     if (slug === 'home') splittedSlug = false
 
-    // create additional languages
-    // for (const locale of locales) {
     paths.push({params: {slug: splittedSlug}})
-    // }
   })
 
   return {
