@@ -5,6 +5,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 import Card from 'components/card'
 
 const PsychMag = ({blok}: any) => {
+  console.log('blok:', blok)
   return (
     <section
       className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
