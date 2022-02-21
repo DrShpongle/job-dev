@@ -88,7 +88,7 @@ const Card: React.FC<{
                     Read more
                   </a>
                 </Link>
-                <Link href={`/psych-mag/#${data.content.category_tag}`}>
+                <Link href={`/psych-mag/#${data.content.category[0].slug}`}>
                   <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
                     <span>More {data.content.category_tag}</span>
                     <span className="translate-y-0.5">&#62;</span>

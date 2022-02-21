@@ -1,8 +1,12 @@
 import * as React from 'react'
 
+import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
 import Card from 'components/card'
 
 const Features = () => {
+  React.useEffect(() => {
+    getScrolledToAnchor()
+  })
   return (
     <section className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12" id="features">
       <div className="container">
@@ -16,9 +20,10 @@ const Features = () => {
           </p>
         </div>
         <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
-          {fakeData.map((item, i) => {
+          test
+          {/* {fakeData.map((item, i) => {
             return <Card key={i} data={item} />
-          })}
+          })} */}
         </div>
         <button className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl">
           More features

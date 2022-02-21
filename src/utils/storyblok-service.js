@@ -19,10 +19,10 @@ export function useStoryblok(originalStory, preview) {
   function initEventListeners() {
     const {StoryblokBridge} = window
     if (typeof StoryblokBridge !== 'undefined') {
-      const storyblokInstance = new StoryblokBridge()
-      // const storyblokInstance = new StoryblokBridge({
-      //   resolveRelations: ['psychMag.featured_articles'],
-      // })
+      // const storyblokInstance = new StoryblokBridge()
+      const storyblokInstance = new StoryblokBridge({
+        resolveRelations: ['psychMag.featured_articles', 'article.category'],
+      })
 
       // reload on Next.js page on save or publish event in the Visual Editor
       storyblokInstance.on(['change', 'published'], () => location.reload(true))
@@ -38,6 +38,7 @@ export function useStoryblok(originalStory, preview) {
         // loading the draft version on initial enter of editor
         Storyblok.get(`cdn/stories/${event.storyId}`, {
           version: 'draft',
+          resolveRelations: ['psychMag.featured_articles', 'article.category'],
           // resolve_relations: ['featured-posts.posts', 'selected-posts.posts'],
         })
           .then(({data}) => {

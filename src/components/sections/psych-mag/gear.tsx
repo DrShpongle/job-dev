@@ -2,9 +2,13 @@ import * as React from 'react'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Navigation} from 'swiper'
 
+import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
 import Card from 'components/card'
 
 const Gear = () => {
+  React.useEffect(() => {
+    getScrolledToAnchor()
+  })
   return (
     <>
       <section
@@ -27,7 +31,8 @@ const Gear = () => {
               <button className="gear-swiper-button-prev swiper-button-prev pointer absolute left-0 top-14 z-10 h-0 w-0 border-solid md:top-auto" />
               <button className="gear-swiper-button-next swiper-button-next pointer absolute right-0 top-14 z-10 h-0 w-0 border-solid md:top-auto" />
               <div className="h-full w-full">
-                <Swiper
+                test
+                {/* <Swiper
                   spaceBetween={16}
                   slidesPerView={1}
                   navigation={{
@@ -49,7 +54,7 @@ const Gear = () => {
                       </SwiperSlide>
                     )
                   })}
-                </Swiper>
+                </Swiper> */}
               </div>
             </div>
           </div>

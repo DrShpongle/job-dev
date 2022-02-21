@@ -1,10 +1,14 @@
 import * as React from 'react'
 import {Swiper, SwiperSlide} from 'swiper/react'
 
+import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
 import Card from 'components/card'
 
 const TopTips = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    getScrolledToAnchor()
+  })
   React.useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -26,7 +30,8 @@ const TopTips = () => {
           </div>
           <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
             <div className="w-[150%] -translate-x-[16.66%]">
-              {isMounted ? (
+              test
+              {/* {isMounted ? (
                 <Swiper slidesPerView={3} spaceBetween={16} loop>
                   {fakeData.map((item, i) => {
                     return (
@@ -36,7 +41,7 @@ const TopTips = () => {
                     )
                   })}
                 </Swiper>
-              ) : null}
+              ) : null} */}
             </div>
           </div>
         </div>
