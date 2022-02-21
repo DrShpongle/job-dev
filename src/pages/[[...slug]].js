@@ -1,11 +1,12 @@
 import DynamicComponent from 'components/dynamic-component'
 import Storyblok, {useStoryblok} from 'utils/storyblok-service'
 
-export default function Page({story, preview}) {
+export default function Page(props) {
+  const {story, preview} = props
   const enableBridge = true
-  story = useStoryblok(story, enableBridge)
+  const actualStory = useStoryblok(story, enableBridge)
 
-  return <DynamicComponent blok={story.content} />
+  return <DynamicComponent blok={actualStory.content} />
 }
 
 export async function getStaticProps({params, preview = false}) {
@@ -13,7 +14,7 @@ export async function getStaticProps({params, preview = false}) {
 
   let sbParams = {
     version: 'draft', // or "published"
-    resolve_relations: ['featured-posts.articles', 'selected-posts.articles'],
+    // resolve_relations: ['featured-posts.articles', 'selected-posts.articles'],
   }
 
   if (preview) {

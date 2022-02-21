@@ -41,7 +41,7 @@ const Hero: React.FC<any> = ({blok}) => {
             controlsClasses="bottom-3 right-3 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 xl:bottom-12 xl:right-12"
           />
         </div>
-        <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
+        <div className="mt-4 min-h-[140px] w-full overflow-hidden md:mt-6 md:min-h-[214px] lg:min-h-[230px] xl:min-h-[236px] 2xl:mt-8 2xl:min-h-[288px]">
           <div className="w-[150%] -translate-x-[16.66%] md:w-[133.33%] md:-translate-x-[12.5%]">
             {isMounted ? (
               <Swiper
@@ -86,7 +86,7 @@ const Hero: React.FC<any> = ({blok}) => {
                               </div>
                             </div>
                           </a>
-                          <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3 2xl:mt-4 2xl:space-y-2">
+                          <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3  2xl:mt-4 2xl:space-y-2">
                             <a
                               href={item.url}
                               target="_blank"
