@@ -8,21 +8,16 @@ import Card from 'components/card'
 
 const PsychMag = (props: any) => {
   const {blok} = props
-  // console.log('blok:', blok)
-  const [featuredStories, setFeaturedStories] = React.useState<any>([
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-  ])
+  const [featuredStories, setFeaturedStories] = React.useState<any>(
+    [...Array(6).keys()].map(() => {
+      return {}
+    }),
+  )
   React.useEffect(() => {
     getFeaturedArticles(blok.featured_articles).then((data) =>
       setFeaturedStories(data),
     )
   }, [])
-  console.log('featuredStories:', featuredStories)
   return (
     <section
       className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
@@ -50,9 +45,6 @@ const PsychMag = (props: any) => {
             featuredStories.map((item: any, i: number) => {
               return <Card key={item.uuid || i} data={item} withAnchor />
             })}
-          {/* {fakeData.map((item, i) => {
-            return <Card key={i} data={item} withAnchor />
-          })} */}
         </div>
       </div>
     </section>
@@ -60,49 +52,3 @@ const PsychMag = (props: any) => {
 }
 
 export default PsychMag
-
-// TODO: substitute the array below with real data
-// const fakeData = [
-//   {
-//     title: 'best tube riders of all time',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//     category: 'features',
-//     image: '/images/fake-data-images/psych-mag/1.png',
-//     sectionAnchor: '/psych-mag/#features',
-//   },
-//   {
-//     title: 'the deep blue bag',
-//     description: 'Great everyday bag that you can feel good about using',
-//     category: 'gear',
-//     image: '/images/fake-data-images/psych-mag/2.png',
-//     sectionAnchor: '/psych-mag/#gear',
-//   },
-//   {
-//     title: '5 all female surf films you need to watch',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//     category: 'features',
-//     image: '/images/fake-data-images/psych-mag/3.png',
-//     sectionAnchor: '/psych-mag/#features',
-//   },
-//   {
-//     title: 'top 5 eco-friendly wetsuits',
-//     description: 'Great everyday bag that you can feel good about using',
-//     category: 'gear',
-//     image: '/images/fake-data-images/psych-mag/4.png',
-//     sectionAnchor: '/psych-mag/#gear',
-//   },
-//   {
-//     title: 'best presents for surfers',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//     category: 'gear',
-//     image: '/images/fake-data-images/psych-mag/5.png',
-//     sectionAnchor: '/psych-mag/#gear',
-//   },
-//   {
-//     title: 'health benefits of surfing',
-//     description: 'Great everyday bag that you can feel good about using',
-//     category: 'features',
-//     image: '/images/fake-data-images/psych-mag/6.png',
-//     sectionAnchor: '/psych-mag/#features',
-//   },
-// ]
