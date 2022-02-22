@@ -15,7 +15,7 @@ const Gear = () => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor()
+    getScrolledToAnchor('gear')
   }, [])
   return (
     <>

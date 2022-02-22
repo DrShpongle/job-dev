@@ -15,7 +15,7 @@ const TopTips = () => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor()
+    getScrolledToAnchor('top-tips')
   }, [])
   React.useEffect(() => {
     setIsMounted(true)

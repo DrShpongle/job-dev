@@ -1,12 +1,12 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import {getYoutubeDetails} from 'utils/get-youtube-details'
 import {isEmpty} from 'lodash'
 
+import {getYoutubeDetails} from 'utils/get-youtube-details'
 import VideoPlayer from 'components/video-player'
 
-const Hero: React.FC<any> = ({blok}) => {
+const PsychMagHero: React.FC<any> = ({blok}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const [youtubeDetails, setYoutubeDetails] = React.useState<any>([])
   React.useEffect(() => {
@@ -16,6 +16,7 @@ const Hero: React.FC<any> = ({blok}) => {
   React.useEffect(() => {
     getYoutubeDetails().then((data) => setYoutubeDetails(data))
   }, [])
+
   return (
     <section className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8">
       <div className="container">
@@ -114,4 +115,4 @@ const Hero: React.FC<any> = ({blok}) => {
   )
 }
 
-export default Hero
+export default PsychMagHero

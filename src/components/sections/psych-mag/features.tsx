@@ -14,7 +14,7 @@ const Features = () => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor()
+    getScrolledToAnchor('features')
   }, [])
   return (
     <section className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12" id="features">

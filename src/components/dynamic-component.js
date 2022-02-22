@@ -6,7 +6,7 @@ import StayPsyched from 'components/sections/home/stay-psyched'
 import Vlog from 'components/sections/home/vlog'
 import PsychMag from 'components/sections/home/psych-mag'
 import SeaTrees from 'components/sections/home/sea-trees'
-import Hero from 'components/sections/psych-mag/hero'
+import PsychMagHero from 'components/sections/psych-mag/psych-mag-hero'
 import Features from 'components/sections/psych-mag/features'
 import TopTips from 'components/sections/psych-mag/top-tips'
 import Gear from 'components/sections/psych-mag/gear'
@@ -23,7 +23,7 @@ const Components = {
   vlog: Vlog,
   psychMag: PsychMag,
   seaTrees: SeaTrees,
-  hero: Hero,
+  psychMagHero: PsychMagHero,
   features: Features,
   topTips: TopTips,
   gear: Gear,

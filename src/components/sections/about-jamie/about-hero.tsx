@@ -4,7 +4,7 @@ import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
-const Hero = () => {
+const AboutHero = () => {
   const [_, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef(null)
   const {start, end} = useRefScrollProgress(refSection, 0)
@@ -47,7 +47,7 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default AboutHero
 
 const textArray = [
   'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',

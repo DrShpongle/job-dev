@@ -14,7 +14,7 @@ const TravelGuides = () => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor()
+    getScrolledToAnchor('travel-guides')
   }, [])
   return (
     <section
