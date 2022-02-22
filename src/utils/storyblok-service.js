@@ -38,7 +38,7 @@ export function useStoryblok(originalStory, preview) {
         // loading the draft version on initial enter of editor
         Storyblok.get(`cdn/stories/${event.storyId}`, {
           version: 'draft',
-          resolveRelations: ['psychMag.featured_articles', 'article.category'],
+          // resolveRelations: ['psychMag.featured_articles', 'article.category'],
           // resolve_relations: ['featured-posts.posts', 'selected-posts.posts'],
         })
           .then(({data}) => {

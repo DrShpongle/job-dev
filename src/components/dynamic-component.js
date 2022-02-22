@@ -11,6 +11,9 @@ import Features from 'components/sections/psych-mag/features'
 import TopTips from 'components/sections/psych-mag/top-tips'
 import Gear from 'components/sections/psych-mag/gear'
 import TravelGuides from 'components/sections/psych-mag/travel-guides'
+import AboutHero from 'components/sections/about/about-hero'
+import PromoVideos from 'components/sections/about/promo-videos'
+import JamieInTheWater from 'components/sections/about/jamie-in-the-water'
 import Article from './article'
 import Page from './page'
 
@@ -28,6 +31,9 @@ const Components = {
   topTips: TopTips,
   gear: Gear,
   travelGuides: TravelGuides,
+  aboutHero: AboutHero,
+  section_1: PromoVideos,
+  section_2: JamieInTheWater,
   article: Article,
   page: Page,
 }

@@ -4,11 +4,15 @@ import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
-const AboutHero = () => {
+const AboutHero = ({blok}: any) => {
   const [_, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef(null)
   const {start, end} = useRefScrollProgress(refSection, 0)
   const {scrollYProgress} = useViewportScroll()
+
+  const descriptionsList = blok.descriptions_list.map((item: any) => {
+    return item.description_line
+  })
 
   React.useEffect(() => {
     setIsMounted(true)
@@ -24,15 +28,11 @@ const AboutHero = () => {
         className="fixed top-40 w-full duration-200"
         style={{opacity: opacityText}}
       >
-        <h2 className="text-center text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
-          Jamie O’Brien
-          <br />
-          Surf Pro
-          <br />
-          Pipeline Master
-          <br />
-          Content Creator
-        </h2>
+        <div className="text-center font-headings text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
+          {descriptionsList.map((item: string, i: number) => {
+            return <div>{item}</div>
+          })}
+        </div>
       </motion.div>
       <div className="container flex grow flex-col justify-end pt-72">
         <Image
