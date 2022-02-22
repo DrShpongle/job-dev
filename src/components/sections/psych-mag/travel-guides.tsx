@@ -1,12 +1,20 @@
 import * as React from 'react'
+import {isEmpty} from 'lodash'
 
-import Card from 'components/card'
 import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {getArticlesByCategory} from 'utils/get-articles-by-category'
+import Card from 'components/card'
 
 const TravelGuides = () => {
+  const [articles, setArticles] = React.useState<any>([])
+  React.useEffect(() => {
+    getArticlesByCategory('44efe4b4-1add-435c-bb18-16fdb7823dfb').then((data) =>
+      setArticles(data),
+    )
+  }, [])
   React.useEffect(() => {
     getScrolledToAnchor()
-  })
+  }, [])
   return (
     <section
       className="bg-blue pb-5 pt-12 md:pb-7 md:pt-20 xl:pb-8 xl:pt-24 2xl:pb-12"
@@ -23,10 +31,10 @@ const TravelGuides = () => {
           </p>
         </div>
         <div className="mt-10 space-y-5 md:mt-16 md:space-y-7 xl:mt-20">
-          test
-          {/* {fakeData.map((item, i) => {
-            return <Card key={i} data={item} />
-          })} */}
+          {!isEmpty(articles) &&
+            articles.map((item: any, i: number) => {
+              return <Card key={item.uuid || i} data={item} />
+            })}
         </div>
         <button className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl">
           More features
@@ -37,19 +45,3 @@ const TravelGuides = () => {
 }
 
 export default TravelGuides
-
-// TODO: substitute the array below with real data
-const fakeData = [
-  {
-    title: 'Biggest waves around the world',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'travel-guides',
-    image: '/images/fake-data-images/travel-guides/1.jpg',
-  },
-  {
-    title: '20 best longboarding waves around the world',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'travel-guides',
-    image: '/images/fake-data-images/travel-guides/2.jpg',
-  },
-]

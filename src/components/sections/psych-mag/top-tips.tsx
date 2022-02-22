@@ -48,26 +48,8 @@ const TopTips = () => {
                       </SwiperSlide>
                     )
                   })}
-                  {/* {articles.map((item, i) => {
-                    return (
-                      <SwiperSlide key={i}>
-                        <Card key={i} data={item} forCarousel />
-                      </SwiperSlide>
-                    )
-                  })} */}
                 </Swiper>
               ) : null}
-              {/* {isMounted ? (
-                <Swiper slidesPerView={3} spaceBetween={16} loop>
-                  {fakeData.map((item, i) => {
-                    return (
-                      <SwiperSlide key={i}>
-                        <Card key={i} data={item} forCarousel />
-                      </SwiperSlide>
-                    )
-                  })}
-                </Swiper>
-              ) : null} */}
             </div>
           </div>
         </div>
@@ -77,25 +59,3 @@ const TopTips = () => {
 }
 
 export default TopTips
-
-// TODO: substitute the array below with real data
-const fakeData = [
-  {
-    title: 'Jamie’s top tips for beginners',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    image: '/images/fake-data-images/top-tip/1.jpg',
-    href: '/',
-  },
-  {
-    title: 'Jamie’s top tips for itermediate surfers',
-    description: 'Great everyday bag that you can feel good about using',
-    image: '/images/fake-data-images/top-tip/2.jpg',
-    href: '/',
-  },
-  {
-    title: 'Jamie’s top tips for advanced surfers',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    image: '/images/fake-data-images/top-tip/3.jpg',
-    href: '/',
-  },
-]

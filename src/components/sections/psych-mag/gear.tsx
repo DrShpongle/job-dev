@@ -1,14 +1,22 @@
 import * as React from 'react'
+import {isEmpty} from 'lodash'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Navigation} from 'swiper'
 
 import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {getArticlesByCategory} from 'utils/get-articles-by-category'
 import Card from 'components/card'
 
 const Gear = () => {
+  const [articles, setArticles] = React.useState<any>([])
+  React.useEffect(() => {
+    getArticlesByCategory('a95f141f-d357-43c2-94ae-93dea86ec306').then((data) =>
+      setArticles(data),
+    )
+  }, [])
   React.useEffect(() => {
     getScrolledToAnchor()
-  })
+  }, [])
   return (
     <>
       <section
@@ -31,8 +39,7 @@ const Gear = () => {
               <button className="gear-swiper-button-prev swiper-button-prev pointer absolute left-0 top-14 z-10 h-0 w-0 border-solid md:top-auto" />
               <button className="gear-swiper-button-next swiper-button-next pointer absolute right-0 top-14 z-10 h-0 w-0 border-solid md:top-auto" />
               <div className="h-full w-full">
-                test
-                {/* <Swiper
+                <Swiper
                   spaceBetween={16}
                   slidesPerView={1}
                   navigation={{
@@ -42,19 +49,19 @@ const Gear = () => {
                   modules={[Navigation]}
                   loop
                 >
-                  {fakeData.map((item, i) => {
-                    return (
-                      <SwiperSlide key={i}>
-                        <Card
-                          key={i}
-                          data={item}
-                          forCarousel
-                          aspectRatio="aspect-video lg:aspect-[4/3]"
-                        />
-                      </SwiperSlide>
-                    )
-                  })}
-                </Swiper> */}
+                  {!isEmpty(articles) &&
+                    articles.map((item: any, i: number) => {
+                      return (
+                        <SwiperSlide key={item.uuid || i}>
+                          <Card
+                            data={item}
+                            forCarousel
+                            aspectRatio="aspect-video lg:aspect-[4/3]"
+                          />
+                        </SwiperSlide>
+                      )
+                    })}
+                </Swiper>
               </div>
             </div>
           </div>
@@ -65,50 +72,3 @@ const Gear = () => {
 }
 
 export default Gear
-
-// TODO: substitute the array below with real data
-
-const fakeData = [
-  {
-    title: 'best tube riders of all time',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/1.png',
-    href: '/',
-  },
-  {
-    title: 'the deep blue bag',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/2.png',
-    href: '/',
-  },
-  {
-    title: '5 all female surf films you need to watch',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/3.png',
-    href: '/',
-  },
-  {
-    title: 'top 5 eco-friendly wetsuits',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/4.png',
-    href: '/',
-  },
-  {
-    title: 'best presents for surfers',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/5.png',
-    href: '/',
-  },
-  {
-    title: 'health benefits of surfing',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/6.png',
-    href: '/',
-  },
-]
