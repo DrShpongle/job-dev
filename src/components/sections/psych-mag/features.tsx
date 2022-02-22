@@ -1,12 +1,21 @@
 import * as React from 'react'
+import {isEmpty} from 'lodash'
 
 import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {getArticlesByCategory} from 'utils/get-articles-by-category'
 import Card from 'components/card'
 
 const Features = () => {
+  const [articles, setArticles] = React.useState<any>([])
+  React.useEffect(() => {
+    getArticlesByCategory('3a74027d-ae5a-49ca-82aa-a4a13a017d9c').then((data) =>
+      setArticles(data),
+    )
+  }, [])
   React.useEffect(() => {
     getScrolledToAnchor()
-  })
+  }, [])
+  console.log('articles:', articles)
   return (
     <section className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12" id="features">
       <div className="container">
@@ -20,10 +29,10 @@ const Features = () => {
           </p>
         </div>
         <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
-          test
-          {/* {fakeData.map((item, i) => {
-            return <Card key={i} data={item} />
-          })} */}
+          {!isEmpty(articles) &&
+            articles.map((item: any, i: number) => {
+              return <Card key={item.uuid || i} data={item} />
+            })}
         </div>
         <button className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl">
           More features
@@ -34,43 +43,3 @@ const Features = () => {
 }
 
 export default Features
-
-// TODO: substitute the array below with real data
-const fakeData = [
-  {
-    title: 'best tube riders of all time',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/1.png',
-  },
-  {
-    title: 'the deep blue bag',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/2.png',
-  },
-  {
-    title: '5 all female surf films you need to watch',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/3.png',
-  },
-  {
-    title: 'top 5 eco-friendly wetsuits',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/4.png',
-  },
-  {
-    title: 'best presents for surfers',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'gear',
-    image: '/images/fake-data-images/psych-mag/5.png',
-  },
-  {
-    title: 'health benefits of surfing',
-    description: 'Great everyday bag that you can feel good about using',
-    category: 'features',
-    image: '/images/fake-data-images/psych-mag/6.png',
-  },
-]

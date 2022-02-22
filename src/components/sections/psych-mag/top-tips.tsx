@@ -1,14 +1,22 @@
 import * as React from 'react'
+import {isEmpty} from 'lodash'
 import {Swiper, SwiperSlide} from 'swiper/react'
 
 import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {getArticlesByCategory} from 'utils/get-articles-by-category'
 import Card from 'components/card'
 
 const TopTips = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const [articles, setArticles] = React.useState<any>([])
+  React.useEffect(() => {
+    getArticlesByCategory('960103db-81c4-4100-a374-27f1785fed32').then((data) =>
+      setArticles(data),
+    )
+  }, [])
   React.useEffect(() => {
     getScrolledToAnchor()
-  })
+  }, [])
   React.useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -31,6 +39,24 @@ const TopTips = () => {
           <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
             <div className="w-[150%] -translate-x-[16.66%]">
               test
+              {isMounted && !isEmpty(articles) ? (
+                <Swiper slidesPerView={3} spaceBetween={16} loop>
+                  {articles.map((item: any, i: number) => {
+                    return (
+                      <SwiperSlide key={item.uuid || i}>
+                        <Card data={item} forCarousel />
+                      </SwiperSlide>
+                    )
+                  })}
+                  {/* {articles.map((item, i) => {
+                    return (
+                      <SwiperSlide key={i}>
+                        <Card key={i} data={item} forCarousel />
+                      </SwiperSlide>
+                    )
+                  })} */}
+                </Swiper>
+              ) : null}
               {/* {isMounted ? (
                 <Swiper slidesPerView={3} spaceBetween={16} loop>
                   {fakeData.map((item, i) => {

@@ -16,12 +16,12 @@ const Card: React.FC<{
   aspectRatio = 'aspect-[4/3] md:aspect-video',
 }) => {
   return forCarousel ? (
-    <div className="relative">
+    <div className="group relative overflow-hidden">
       {!isEmpty(data) ? (
         <>
           <div
             className={classNames(
-              'card-gradient relative block before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:hover:before:opacity-0',
+              'card-gradient relative block duration-500 before:absolute before:inset-0 before:z-[1] before:block before:duration-300 hover-hover:group-hover:scale-110 hover-hover:group-hover:before:opacity-0',
               aspectRatio,
             )}
           >
@@ -37,7 +37,7 @@ const Card: React.FC<{
               </div>
             </div>
           </div>
-          <div className="mt-6 flex select-none flex-col justify-end md:pointer-events-none md:absolute md:inset-0 md:top-0 md:pb-6">
+          <div className="relative z-10 mt-6 flex select-none flex-col justify-end md:absolute md:inset-0 md:top-0 md:pb-6">
             <div className="relative z-10 flex flex-col items-center space-y-2 px-2 text-center lg:space-y-3 xl:space-y-4">
               <h3 className="font-headings text-lg leading-none lg:text-2xl lg:leading-none xl:text-3xl xl:leading-none">
                 {data.content.title}
@@ -80,7 +80,9 @@ const Card: React.FC<{
             <h3 className="font-headings text-lg leading-none lg:text-2xl lg:leading-none xl:text-3xl xl:leading-none">
               {data.content.title}
             </h3>
-            <p className="text-sm lg:text-lg">{data.content.description}</p>
+            <p className="text-sm lg:text-lg">
+              {data.content.brief_description}
+            </p>
             {withAnchor ? (
               <div className="flex items-center space-x-4 lg:space-x-6">
                 <Link href={data.full_slug}>
