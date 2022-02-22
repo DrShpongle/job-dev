@@ -7,6 +7,7 @@ import Card from 'components/card'
 
 const TravelGuides = () => {
   const [articles, setArticles] = React.useState<any>([])
+  const [itemsToShow, setItemsToShow] = React.useState<number>(2)
   React.useEffect(() => {
     getArticlesByCategory('44efe4b4-1add-435c-bb18-16fdb7823dfb').then((data) =>
       setArticles(data),
@@ -32,13 +33,18 @@ const TravelGuides = () => {
         </div>
         <div className="mt-10 space-y-5 md:mt-16 md:space-y-7 xl:mt-20">
           {!isEmpty(articles) &&
-            articles.map((item: any, i: number) => {
+            articles.slice(0, itemsToShow).map((item: any, i: number) => {
               return <Card key={item.uuid || i} data={item} />
             })}
         </div>
-        <button className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl">
-          More features
-        </button>
+        {itemsToShow < articles.length && (
+          <button
+            onClick={() => setItemsToShow(itemsToShow + 2)}
+            className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl"
+          >
+            More features
+          </button>
+        )}
       </div>
     </section>
   )

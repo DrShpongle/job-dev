@@ -7,6 +7,7 @@ import Card from 'components/card'
 
 const Features = () => {
   const [articles, setArticles] = React.useState<any>([])
+  const [itemsToShow, setItemsToShow] = React.useState<number>(4)
   React.useEffect(() => {
     getArticlesByCategory('3a74027d-ae5a-49ca-82aa-a4a13a017d9c').then((data) =>
       setArticles(data),
@@ -15,7 +16,6 @@ const Features = () => {
   React.useEffect(() => {
     getScrolledToAnchor()
   }, [])
-  console.log('articles:', articles)
   return (
     <section className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12" id="features">
       <div className="container">
@@ -30,13 +30,18 @@ const Features = () => {
         </div>
         <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
           {!isEmpty(articles) &&
-            articles.map((item: any, i: number) => {
+            articles.slice(0, itemsToShow).map((item: any, i: number) => {
               return <Card key={item.uuid || i} data={item} />
             })}
         </div>
-        <button className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl">
-          More features
-        </button>
+        {itemsToShow < articles.length && (
+          <button
+            onClick={() => setItemsToShow(itemsToShow + 4)}
+            className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl"
+          >
+            More features
+          </button>
+        )}
       </div>
     </section>
   )
