@@ -14,6 +14,13 @@ import TravelGuides from 'components/sections/psych-mag/travel-guides'
 import AboutHero from 'components/sections/about/about-hero'
 import PromoVideos from 'components/sections/about/promo-videos'
 import JamieInTheWater from 'components/sections/about/jamie-in-the-water'
+import HeroWithScrollingText from 'components/sections/surf-app/hero-with-scrolling-text'
+import AskJamie from 'components/sections/surf-app/ask-jamie'
+import LearnFromTheBest from 'components/sections/surf-app/learn-from-the-best'
+import VisualiseAndDo from 'components/sections/surf-app/visualise-and-do'
+import FullyLoaded from 'components/sections/surf-app/fully-loaded'
+import SuccessPoints from 'components/sections/surf-app/success-points'
+import NewContent from 'components/sections/surf-app/new-content'
 import Article from './article'
 import Page from './page'
 
@@ -34,6 +41,13 @@ const Components = {
   aboutHero: AboutHero,
   section_1: PromoVideos,
   section_2: JamieInTheWater,
+  heroWithScrollingText: HeroWithScrollingText,
+  askJamie: AskJamie,
+  learnFromTheBest: LearnFromTheBest,
+  visualiseAndDo: VisualiseAndDo,
+  fullyLoaded: FullyLoaded,
+  successPoints: SuccessPoints,
+  newContent: NewContent,
   article: Article,
   page: Page,
 }

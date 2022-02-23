@@ -55,7 +55,8 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
   )
 }
 
-const HeroWithScrollableText = () => {
+const HeroWithScrollableText = ({blok}: any) => {
+  console.log('blok:', blok)
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
@@ -68,12 +69,15 @@ const HeroWithScrollableText = () => {
 
   const windowHeight = (isBrowser && window.innerHeight) || 0
 
-  // TODO: Warning: Prop `style` did not match.
   const scrollText = useTransform(
     scrollYProgress,
     [start, end],
     [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
   )
+
+  const scrollingTextArr = blok.scrollingTextBlock.map((item: any) => {
+    return item.text_line
+  })
 
   React.useEffect(() => {
     setIsMounted(true)
@@ -97,7 +101,7 @@ const HeroWithScrollableText = () => {
     <section ref={refSection}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
-          <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/45f6339a-4429-44d6-a297-ef025d31558b/45f6339a-4429-44d6-a297-ef025d31.ism/manifest(format=m3u8-aapl).m3u8" />
+          <VideoEmbed url={blok.background_video.url} />
         </div>
         {isMounted ? (
           <motion.div
@@ -108,7 +112,7 @@ const HeroWithScrollableText = () => {
             style={{y: scrollText}}
           >
             <div ref={textBlockRef} className="container">
-              {textArray.map((item, i) => {
+              {scrollingTextArr.map((item: string, i: number) => {
                 return <TextItem key={i} text={item} firstItem={i === 0} />
               })}
             </div>
@@ -139,7 +143,7 @@ const HeroWithScrollableText = () => {
                 className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]"
                 style={{transform: 'translateZ(0)'}}
               >
-                <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/b94a400b-6229-4117-94cf-99baa15f467a/b94a400b-6229-4117-94cf-99baa15f.ism/manifest(format=m3u8-aapl).m3u8" />
+                <VideoEmbed url={blok.video_in_the_frame.url} />
               </div>
               <div className="portrait:hidden md:portrait:block">
                 <Image
@@ -169,9 +173,3 @@ const HeroWithScrollableText = () => {
 }
 
 export default HeroWithScrollableText
-
-const textArray = [
-  'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',
-  'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
-  'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
-]
