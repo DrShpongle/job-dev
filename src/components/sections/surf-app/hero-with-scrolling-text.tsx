@@ -56,7 +56,6 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
 }
 
 const HeroWithScrollableText = ({blok}: any) => {
-  console.log('blok:', blok)
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
