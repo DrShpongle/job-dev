@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
-const SuccessPoints = () => {
+const SuccessPoints = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
   const {width, height} = useWindowSize()
   const {start, end} = useRefScrollProgress(refSection)
@@ -72,7 +72,7 @@ const SuccessPoints = () => {
       >
         <div className="container flex grow flex-col items-center 2xl:max-w-[1180px]">
           <h2 className="grow text-center text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
-            Success points
+            {blok.title}
           </h2>
           <motion.div
             style={{
@@ -91,7 +91,7 @@ const SuccessPoints = () => {
             )}
           >
             <div className="absolute h-[70px] w-[136px] translate-y-6 -translate-x-0.5 md:h-[150px] md:w-[316px] md:-translate-x-1 md:translate-y-14 lg:h-[206px] lg:w-[430px] lg:translate-y-20 lg:-translate-x-2 xl:h-[270px] xl:w-[546px] xl:-translate-x-3 xl:translate-y-24 2xl:h-[240px] 2xl:w-[500px]">
-              <VideoEmbed url="https://mytwynmediaservices-euno.akamaized.net/a095e6ac-0c83-4146-88d8-94305d057bd6/a095e6ac-0c83-4146-88d8-94305d05.ism/manifest(format=m3u8-aapl).m3u8" />
+              <VideoEmbed url={blok.video.url} />
             </div>
             <Image
               src="/images/success-points.png"
@@ -102,10 +102,7 @@ const SuccessPoints = () => {
             />
           </motion.div>
           <div className="absolute bottom-6 text-center md:max-w-[376px] md:text-xl lg:-translate-x-2 lg:text-xl xl:max-w-[450px] xl:-translate-x-3 portrait:bottom-auto portrait:px-6 portrait:pt-24 md:portrait:top-16 md:portrait:max-w-[500px] md:portrait:text-2xl lg:portrait:top-36 lg:portrait:max-w-[700px] lg:portrait:text-3xl lg:landscape:bottom-8 xl:landscape:bottom-16 xl:landscape:text-2xl">
-            There are always key things to remember, for every maneuver, that
-            are so crucial to success you should tape them to your board. At the
-            end of each session in the app, you can save these key points in a
-            super digestible format that you can take anywhere.
+            {blok.description}
           </div>
         </div>
       </div>
