@@ -38,7 +38,6 @@ const TopTips = () => {
           </div>
           <div className="mt-4 w-full overflow-hidden md:mt-6 2xl:mt-8">
             <div className="w-[150%] -translate-x-[16.66%]">
-              test
               {isMounted && !isEmpty(articles) ? (
                 <Swiper slidesPerView={3} spaceBetween={16} loop>
                   {articles.map((item: any, i: number) => {
