@@ -33,6 +33,51 @@ module.exports = {
       screens: {
         'hover-hover': {raw: '(hover: hover)'},
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.black'),
+            fontSize: theme('fontSize.lg'),
+            h3: {
+              fontSize: theme('fontSize.xl'),
+              lineHeight: theme('lineHeight.normal'),
+              fontWeight: theme('fontWeight.normal'),
+            },
+          },
+        },
+        'prose-sm': {
+          css: {
+            fontSize: theme('fontSize.sm'),
+            h3: {
+              fontSize: theme('fontSize.lg'),
+            },
+          },
+        },
+        'prose-lg': {
+          css: {
+            fontSize: theme('fontSize.xl'),
+            h3: {
+              fontSize: theme('fontSize.2xl'),
+            },
+          },
+        },
+        'prose-xl': {
+          css: {
+            fontSize: theme('fontSize.2xl'),
+            h3: {
+              fontSize: theme('fontSize.3xl'),
+            },
+          },
+        },
+        'prose-2xl': {
+          css: {
+            fontSize: theme('fontSize.2xl'),
+            h3: {
+              fontSize: theme('fontSize.4xl'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [

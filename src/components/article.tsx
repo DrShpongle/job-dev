@@ -9,7 +9,7 @@ const Article = ({blok}: any) => {
   return (
     <PageLayout>
       <section {...sbEditable(blok)} key={blok._uid}>
-        <div className="relative flex h-[65vh] flex-col justify-end px-6 pb-10 md:pl-16 md:pb-20 lg:h-screen lg:pl-28 lg:pb-20 xl:pl-36 xl:pb-24 2xl:pl-44 2xl:pb-28">
+        <div className="relative flex h-[65vh] flex-col justify-end pb-10 md:pb-20 lg:h-screen lg:pb-20 xl:pb-24 2xl:pb-28">
           <div className="absolute inset-0">
             <Image
               layout="fill"
@@ -18,15 +18,21 @@ const Article = ({blok}: any) => {
               alt={blok.title}
             />
           </div>
-          <h2 className="relative text-5xl leading-none text-white md:max-w-xl md:text-6xl lg:max-w-3xl lg:text-7xl xl:ml-36 xl:mb-24 xl:max-w-4xl xl:text-8xl 2xl:max-w-5xl 2xl:text-[111px]">
-            {blok.title}
-          </h2>
+          <div className="container">
+            <h2 className="relative text-5xl leading-none text-white md:max-w-xl md:text-6xl lg:max-w-3xl lg:text-7xl xl:max-w-4xl xl:text-8xl 2xl:max-w-5xl 2xl:text-[111px]">
+              {blok.title}
+            </h2>
+          </div>
         </div>
-        <div className="bg-blue px-6 py-8 text-white md:pl-16 md:text-xl lg:text-4xl 2xl:px-44 2xl:py-28">
-          <div className="max-w-6xl">{blok.description}</div>
+        <div className="bg-blue py-8 text-white md:py-10 md:text-xl lg:py-12 lg:text-4xl xl:py-16 2xl:py-20">
+          <div className="container">
+            <div className="max-w-6xl">{blok.description}</div>
+          </div>
         </div>
-        <div className="prose max-w-none columns-2 gap-32 px-44 py-28">
-          {render(blok.content)}
+        <div className="container">
+          <div className="prose-sm py-8 md:prose md:columns-2 md:gap-8 md:py-10 lg:prose-lg lg:gap-12 lg:py-12 xl:prose-xl xl:gap-16 xl:py-16 2xl:prose-2xl 2xl:gap-20 2xl:py-20">
+            {render(blok.content)}
+          </div>
         </div>
       </section>
     </PageLayout>
