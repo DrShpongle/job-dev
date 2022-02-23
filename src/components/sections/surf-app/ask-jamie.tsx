@@ -5,7 +5,6 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
-  console.log('blok:', blok)
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
   return (
