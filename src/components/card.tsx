@@ -43,7 +43,7 @@ const Card: React.FC<{
                 {data.content.title}
               </h3>
               <p className="text-sm lg:text-lg">
-                {data.content.brief_description}
+                {data.content.short_description}
               </p>
               <Link href={data.full_slug}>
                 <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
@@ -81,7 +81,7 @@ const Card: React.FC<{
               {data.content.title}
             </h3>
             <p className="text-sm lg:text-lg">
-              {data.content.brief_description}
+              {data.content.short_description}
             </p>
             {withAnchor ? (
               <div className="flex items-center space-x-4 lg:space-x-6">
