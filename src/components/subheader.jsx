@@ -9,9 +9,9 @@ const Subheader = () => {
     <nav className="sticky top-10 left-0 z-30 hidden h-11 w-full bg-pink md:top-14 md:block lg:top-20">
       <div className="container flex h-full items-center justify-center">
         <ul className="flex items-center space-x-16 font-headings text-lg uppercase text-white">
-          {subheaderLinks.map((item) => {
+          {subheaderLinks.map((item, i) => {
             return (
-              <li>
+              <li key={i}>
                 <Link href={`/psych-mag/#${item.anchor}`}>
                   <a>{item.title}</a>
                 </Link>
