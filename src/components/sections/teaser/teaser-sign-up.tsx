@@ -18,23 +18,23 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
           <p className="text-2xl text-white pt-4">Pre-register and get in early on Jamie&apos;s epic Surf App.</p>
         </div>
           <form>
-        <div className="grid md:grid-cols-3 pt-4">
-            <div><input
+        <div className="grid grid-cols-1 md:grid-cols-3 pt-4">
+            <div clasdName="w-full"><input
               type="text"
               className="h-[48px] rounded-none w-full md:px-5 md:text-xl 2xl:text-2xl"
               placeholder="Jamie"
             /></div>
-            <div className="pl-4"><input
+            <div className="pt-4 md:pt-0 md:pl-4"><input
               type="text"
               className="h-[48px] rounded-none w-full md:px-5 md:text-xl 2xl:text-2xl"
               placeholder="O'Brien"
             /></div>
-            <div className="pl-4"><input
+            <div className="pt-4 md:pt-0 md:pl-4"><input
               type="text"
               className="h-[48px] rounded-none w-full md:px-5 md:text-xl 2xl:text-2xl"
               placeholder="legend@job.com"
             /></div>
-            <div className="col-span-2 pt-4 flex">
+            <div className="md:col-span-2 pt-4 flex">
                <div>
 <label className="text-white text-lg">Add a check to agree to us storing your details. We need this to be able to tell you when the app is ready and we&apos;ll occasionally hit your inbox with the latest on JOB.</label>
                </div>
@@ -42,7 +42,7 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
             <input className="w-[48px] h-[48px] opacity-0 absolute" type="checkbox" />
             <div className="w-full h-full bg-white text-center"><p className="text-blue text-5xl">✓</p></div>
 </div></div>
-            <div className="pt-4 pl-4" ><button
+            <div className="pt-4 md:pl-4" ><button
               type="button"
               className="h-[48px] w-full bg-blue text-center font-headings text-lg uppercase text-white md:text-xl xl:text-[1.625rem]"
             >
