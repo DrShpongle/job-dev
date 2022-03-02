@@ -22,6 +22,8 @@ import FullyLoaded from 'components/sections/surf-app/fully-loaded'
 import SuccessPoints from 'components/sections/surf-app/success-points'
 import NewContent from 'components/sections/surf-app/new-content'
 import SeaTreesContent from 'components/sections/sea-trees/sea-trees-content'
+import TeaserHero from 'components/sections/teaser/teaser-hero'
+import TeaserSignUp from 'components/sections/teaser/teaser-sign-up'
 import Article from './article'
 import Page from './page'
 
@@ -50,6 +52,8 @@ const Components = {
   successPoints: SuccessPoints,
   newContent: NewContent,
   seaTreesContent: SeaTreesContent,
+  teaserHero: TeaserHero,
+  teaserSignUp: TeaserSignUp,
   article: Article,
   page: Page,
 }
