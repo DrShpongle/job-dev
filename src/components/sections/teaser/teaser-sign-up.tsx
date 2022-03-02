@@ -15,7 +15,7 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
           <h2 className="mt-1 text-7xl leading-none text-white max-w-4xl">
             drop us your deets
           </h2>
-          <p className="text-2xl text-white pt-4">Pre-register and get in early on Jamie's epic Surf App.</p>
+          <p className="text-2xl text-white pt-4">Pre-register and get in early on Jamie&apos;s epic Surf App.</p>
         </div>
           <form>
         <div className="grid md:grid-cols-3 pt-4">
@@ -36,7 +36,7 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
             /></div>
             <div className="col-span-2 pt-4 flex">
                <div>
-<label className="text-white text-lg">Add a check to agree to us storing your details. We need this to be able to tell you when the app is ready and we'll occasionally hit your inbox with the latest on JOB.</label>
+<label className="text-white text-lg">Add a check to agree to us storing your details. We need this to be able to tell you when the app is ready and we&apos;ll occasionally hit your inbox with the latest on JOB.</label>
                </div>
                <div className="w-[48px] h-[48px] shrink-0">
             <input className="w-[48px] h-[48px] opacity-0 absolute" type="checkbox" />
