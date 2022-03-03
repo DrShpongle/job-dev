@@ -10,7 +10,7 @@ export default function Page(props) {
 }
 
 export async function getStaticProps({params, preview = false}) {
-  let slug = params.slug ? params.slug.join('/') : 'home'
+  let slug = params.slug ? params.slug.join('/') : 'teaser'
 
   let sbParams = {
     version: 'draft',

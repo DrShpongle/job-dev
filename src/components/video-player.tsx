@@ -34,8 +34,8 @@ const VideoPlayer: React.FC<{
   controlsClasses = 'top-10 right-10',
 }) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
-  const [innerPlaying, setInnerPlaying] = React.useState(true)
-  const [innerMuted, setInnerMuted] = React.useState(true)
+  const [innerPlaying, setInnerPlaying] = React.useState(playing)
+  const [innerMuted, setInnerMuted] = React.useState(muted)
   const [isFullscreen, setIsFullscreen] = React.useState<boolean>(false)
 
   React.useEffect(() => {
