@@ -43,7 +43,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                 playing={true}
                 url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
                 controls={true}
-                muted={false}
+                muted={true}
                 externalControls={false}
               />
             </div>

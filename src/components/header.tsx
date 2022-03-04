@@ -56,9 +56,10 @@ const Header = () => {
               )
             })}
           </ul>
-          <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 lg:block hover-hover:hover:bg-blue">
+          <div></div>
+          {/* <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 lg:block hover-hover:hover:bg-blue">
             Download app
-          </button> 
+          </button>  */}
           <MobileMenuToggler
             onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
             isOpened={mobileMenuIsOpened}
