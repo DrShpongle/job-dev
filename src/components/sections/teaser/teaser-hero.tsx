@@ -37,7 +37,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
           <div className="absolute w-full h-full pt-2 pr-4 pb-4">
             <div className="w-full h-full overflow-hidden rounded-[75px]">
               <VideoPlayer
-                playing={false}
+                playing={true}
                 url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8" 
                 controls={true}
                 muted={false}
