@@ -44,7 +44,7 @@ const Vlog: React.FC<any> = ({blok}) => {
                 {blok.description}
               </p>
               <Link href="/psych-mag">
-                <a className="self-start rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
+                <a className="self-start rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-blue">
                   More with Jamie
                 </a>
               </Link>

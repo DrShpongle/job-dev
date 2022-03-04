@@ -49,7 +49,7 @@ const Description: React.FC<{
         - period.
       </p>
       <Link href="/sea-trees">
-        <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl xl:px-10 xl:text-[29px]">
+        <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl xl:px-10 xl:text-[29px] hover-hover:hover:bg-blue">
           Find out more
         </a>
       </Link>

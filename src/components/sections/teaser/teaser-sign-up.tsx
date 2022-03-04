@@ -61,7 +61,7 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
             <div className="pt-4 md:pl-4">
               <button
                 type="button"
-                className="h-[48px] w-full bg-blue text-center font-headings text-lg uppercase text-white md:text-xl xl:text-[1.625rem]"
+                className="h-[48px] w-full bg-blue text-center font-headings text-lg uppercase text-white duration-150 md:text-xl xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-blue"
               >
                 Get on the list!
               </button>

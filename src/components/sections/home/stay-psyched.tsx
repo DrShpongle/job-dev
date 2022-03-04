@@ -26,7 +26,7 @@ const StayPsyched: React.FC<any> = ({blok}) => {
                 {blok.description}
               </p>
               <Link href="/psych-mag">
-                <a className="rounded-full bg-blue px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
+                <a className="rounded-full bg-blue px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-white hover-hover:hover:text-blue">
                   Visit the shop
                 </a>
               </Link>
