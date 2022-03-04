@@ -101,7 +101,7 @@ const Footer = () => {
                 <div id="mce-success-response" className="hidden"></div>
               </div>  {/*  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->  */}
               <div className='mailChimp-hiddenTb' aria-hidden="true">
-                <input type="text" name="b_765fbd76204248f87d0fc2620_1367e9561a" tabIndex={-1} value="" />
+                <input type="text" name="b_765fbd76204248f87d0fc2620_1367e9561a" tabIndex={-1} defaultValue="" />
               </div>
 
               <button

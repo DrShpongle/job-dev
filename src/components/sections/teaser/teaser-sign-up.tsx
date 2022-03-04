@@ -8,7 +8,6 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
       className="flex flex-col items-center justify-center bg-pink py-12 md:py-20 xl:py-24"
       style={{ transform: 'translate3d(0,0,0)' }}
     >
-      <form action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div className="container flex flex-col justify-center">
           <div>
             <h3 className="font-accented text-5xl text-white">Need The App?</h3>
@@ -19,7 +18,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
               Pre-register and get in early on Jamie&apos;s epic Surf App.
             </p>
           </div>
-          <form>
+          <form action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
             <div className="grid grid-cols-1 pt-4 md:grid-cols-3">
               <div>
                 <input
@@ -98,7 +97,6 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
             />
           </div>
         </div>
-      </form>
     </section>
   )
 }
