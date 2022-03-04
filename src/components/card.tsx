@@ -86,12 +86,12 @@ const Card: React.FC<{
             {withAnchor ? (
               <div className="flex items-center space-x-4 lg:space-x-6">
                 <Link href={data.full_slug}>
-                  <a className="flex rounded-full bg-pink px-4 py-1 font-headings text-sm uppercase text-white md:px-6 md:py-2 md:text-base lg:text-lg xl:text-xl">
+                  <a className="flex rounded-full bg-pink px-4 py-1 font-headings text-sm uppercase text-white duration-150 md:px-6 md:py-2 md:text-base lg:text-lg xl:text-xl hover-hover:hover:bg-blue">
                     Read more
                   </a>
                 </Link>
                 <Link href={`/psych-mag/#${data.content.category[0].slug}`}>
-                  <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
+                  <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink duration-150 md:text-base lg:text-lg xl:text-xl hover-hover:hover:text-blue">
                     <span>More {data.content.category[0].slug}</span>
                     <span className="translate-y-0.5">&#62;</span>
                   </a>

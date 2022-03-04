@@ -77,12 +77,12 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 <p className="mt-4 md:text-xl">{blok.description}</p>
               </div>
               <div className="flex items-center space-x-6 md:space-x-10">
-                <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:px-10 md:py-4 md:text-xl xl:text-[29px]">
+                <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue">
                   Download App
                 </button>
                 <a
                   href="#"
-                  className="flex items-center space-x-1 font-headings text-pink md:text-[29px]"
+                  className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue"
                 >
                   <span>Learn more</span>
                   <span className="translate-y-0.5">&#62;</span>
@@ -128,12 +128,12 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             </p>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:space-x-10">
-            <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:px-10 md:py-4 md:text-xl xl:text-[29px]">
+            <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue">
               Download App
             </button>
             <a
               href="#"
-              className="flex items-center space-x-1 font-headings text-pink md:text-[29px]"
+              className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue"
             >
               <span>Learn more</span>
               <span className="translate-y-0.5">&#62;</span>

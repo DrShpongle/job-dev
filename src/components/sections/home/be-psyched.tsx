@@ -88,7 +88,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
                 href={blok.book_your_experience_url.url}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]"
+                className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-white hover-hover:hover:text-pink"
               >
                 Book your experience
               </a>
@@ -96,7 +96,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
                 href={blok.learn_more_url.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center space-x-1 whitespace-nowrap font-headings text-pink md:text-2xl lg:text-xl xl:text-[29px]"
+                className="flex items-center space-x-1 whitespace-nowrap font-headings text-pink duration-150 md:text-2xl lg:text-xl xl:text-[29px] hover-hover:hover:text-white"
               >
                 <span>Learn more</span>
                 <span className="translate-y-0.5">&#62;</span>

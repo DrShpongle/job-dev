@@ -35,7 +35,7 @@ const PsychMag = (props: any) => {
             nonsedit, utestiam, sus quia quis doluptio illatem et aut.
           </p>
           <Link href="/psych-mag">
-            <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px]">
+            <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-blue">
               Read the mag
             </a>
           </Link>
