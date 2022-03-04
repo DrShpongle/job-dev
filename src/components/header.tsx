@@ -56,9 +56,10 @@ const Header = () => {
               )
             })}
           </ul>
-          <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white lg:block">
+          <div></div>
+          {/* <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white lg:block">
             Download app
-          </button>
+          </button> */}
           <MobileMenuToggler
             onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
             isOpened={mobileMenuIsOpened}
@@ -75,7 +76,7 @@ const Header = () => {
 export default Header
 
 const navLinks = [
-  {title: 'Surf App', path: '/surf-app'},
+  // {title: 'Surf App', path: '/surf-app'},
   {
     title: 'Surf Experience',
     path: 'https://www.jobsurfexperience.com/',
@@ -86,7 +87,7 @@ const navLinks = [
     path: 'https://www.jamieobrienshop.com/',
     external: true,
   },
-  {title: 'Psych Mag', path: '/psych-mag'},
-  {title: 'About Jamie', path: '/about'},
-  {title: 'Contact', path: '/contact'},
+  // {title: 'Psych Mag', path: '/psych-mag'},
+  // {title: 'About Jamie', path: '/about'},
+  // {title: 'Contact', path: '/contact'},
 ]

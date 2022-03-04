@@ -81,12 +81,12 @@ const MobileMenu: React.FC<{
                 )
               })}
             </ul>
-            <a
+            {/* <a
               href="#"
               className="mt-20 block rounded-full bg-white py-2 px-4 font-headings text-base uppercase text-pink"
             >
               Download app
-            </a>
+            </a> */}
           </div>
           <div className="flex items-center justify-center space-x-3">
             <a href="https://www.instagram.com/whoisjob/'">

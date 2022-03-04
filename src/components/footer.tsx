@@ -101,12 +101,12 @@ const Footer = () => {
 }
 
 const navLinks = [
-  {title: 'Surf App', path: '/surf-app'},
+  // {title: 'Surf App', path: '/surf-app'},
   {title: 'Surf Experience', path: '/surf-experience'},
   {title: 'Surf Store', path: '/surf-store'},
-  {title: 'Psych Mag', path: '/psych-mag'},
-  {title: 'About Jamie', path: '/about'},
-  {title: 'Contact', path: '/contact'},
+  // {title: 'Psych Mag', path: '/psych-mag'},
+  // {title: 'About Jamie', path: '/about'},
+  // {title: 'Contact', path: '/contact'},
 ]
 
 const auxiliaryLinks = [
