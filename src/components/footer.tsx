@@ -1,10 +1,37 @@
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+export interface mailChimpWindow extends Window {
+  fnames: Array<string>;
+  ftypes: Array<string>
+}
+declare let window: mailChimpWindow;
 
 const Footer = () => {
+
+  let [emailAddress, setEmailAddress] = useState('');
+  
+  useEffect(() => {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    window.fnames[0] = 'EMAIL';
+    window.ftypes[0] = 'email';
+    window.fnames[1] = 'FNAME'
+    window.ftypes[1] = 'text'
+    window.fnames[2] = 'LNAME'
+    window.ftypes[2] = 'text'
+    window.fnames[3] = 'ADDRESS'
+    window.ftypes[3] = 'address'
+    window.fnames[4] = 'PHONE'
+    window.ftypes[4] = 'phone'
+    window.fnames[5] = 'BIRTHDAY'
+    window.ftypes[5] = 'birthday';
+  }, [""]);
+
   return (
     <footer
       className="bg-blue pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10"
-      style={{transform: 'translate3d(0,0,0)'}}
+      style={{ transform: 'translate3d(0,0,0)' }}
     >
       <div className="container">
         <div className="flex flex-col md:flex-row">
@@ -59,15 +86,29 @@ const Footer = () => {
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
-            <form className="mt-6 flex flex-col space-y-4">
+            <form className="mt-6 flex flex-col space-y-4" action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
               <input
                 type="text"
                 className="h-[48px] rounded-none border px-4 md:h-[60px] md:px-5 md:text-xl lg:h-[70px] 2xl:text-2xl"
                 placeholder="Enter your email address"
+                value={emailAddress}
+                onChange={(e)=>setEmailAddress(e.target.value)}
+                name="EMAIL"
+                id="mce-EMAIL"
               />
+              <div id="mce-responses" className="clear">
+                <div id="mce-error-response" className="hidden"></div>
+                <div id="mce-success-response" className="hidden"></div>
+              </div>  {/*  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->  */}
+              <div className='mailChimp-hiddenTb' aria-hidden="true">
+                <input type="text" name="b_765fbd76204248f87d0fc2620_1367e9561a" tabIndex={-1} value="" />
+              </div>
+
               <button
-                type="button"
                 className="h-[48px] bg-pink text-center font-headings text-lg uppercase text-white duration-150 md:h-[60px] md:text-xl lg:h-[70px] xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-pink"
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
               >
                 Submit
               </button>
@@ -102,28 +143,28 @@ const Footer = () => {
 
 const navLinks = [
   // {title: 'Surf App', path: '/surf-app'},
-  {title: 'Surf Experience', path: '/surf-experience'},
-  {title: 'Surf Store', path: '/surf-store'},
+  { title: 'Surf Experience', path: '/surf-experience' },
+  { title: 'Surf Store', path: '/surf-store' },
   // {title: 'Psych Mag', path: '/psych-mag'},
   // {title: 'About Jamie', path: '/about'},
   // {title: 'Contact', path: '/contact'},
 ]
 
 const auxiliaryLinks = [
-  {title: 'Privacy Policy', path: '/privacy-policy'},
-  {title: 'Terms of Use', path: '/terms-of-use'},
-  {title: 'Legal', path: '/legal'},
-  {title: 'Site Map', path: '/site-map'},
+  { title: 'Privacy Policy', path: '/privacy-policy' },
+  { title: 'Terms of Use', path: '/terms-of-use' },
+  { title: 'Legal', path: '/legal' },
+  { title: 'Site Map', path: '/site-map' },
 ]
 
 const socialLinks = [
-  {title: 'Instagram', path: 'https://www.instagram.com/whoisjob/'},
-  {title: 'Twitter', path: 'https://twitter.com/whoisjob'},
+  { title: 'Instagram', path: 'https://www.instagram.com/whoisjob/' },
+  { title: 'Twitter', path: 'https://twitter.com/whoisjob' },
   {
     title: 'Youtube',
     path: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
   },
-  {title: 'Facebook', path: 'https://www.facebook.com/whoisjob/'},
+  { title: 'Facebook', path: 'https://www.facebook.com/whoisjob/' },
 ]
 
 export default Footer
