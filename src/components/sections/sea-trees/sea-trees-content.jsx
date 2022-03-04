@@ -47,10 +47,10 @@ const SeaTreesContent = ({blok}) => {
           <div className="mt-8 flex flex-col items-end space-y-8 text-right md:mt-16 md:space-y-12 lg:space-y-12 xl:mt-20 xl:space-y-16 2xl:mt-24">
             <div className="space-y-5">{render(blok.text_2)}</div>
             <a
-              href={blok.link_to_seatrees_website}
+              href={blok.link_to_seatrees_website.url}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full bg-pink py-2 px-6 font-headings text-lg uppercase text-white md:py-3 md:text-xl lg:px-8 lg:text-2xl xl:px-10 xl:text-3xl"
+              className="rounded-full bg-pink py-2 px-6 font-headings text-lg uppercase text-white duration-150 md:py-3 md:text-xl lg:px-8 lg:text-2xl xl:px-10 xl:text-3xl hover-hover:hover:bg-blue"
             >
               visit the seatrees website
             </a>

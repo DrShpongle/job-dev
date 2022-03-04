@@ -13,7 +13,9 @@ const Subheader = () => {
             return (
               <li key={i}>
                 <Link href={`/psych-mag/#${item.anchor}`}>
-                  <a>{item.title}</a>
+                  <a className="text-white duration-150 hover-hover:hover:text-blue">
+                    {item.title}
+                  </a>
                 </Link>
               </li>
             )

@@ -57,16 +57,29 @@ body {
   height: calc(var(--real100vh) - 40px);
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  transition: border-color 150ms;
+}
+
 .swiper-button-prev {
   border-width: 13px 23px 13px 0;
   border-color: transparent #ff119a transparent transparent;
   left: 0;
 }
 
+.swiper-button-prev:hover {
+  border-color: transparent #11c2ff transparent transparent;
+}
+
 .swiper-button-next {
   border-width: 13px 0 13px 23px;
   border-color: transparent transparent transparent #ff119a;
   right: 0;
+}
+
+.swiper-button-next:hover {
+  border-color: transparent transparent transparent #11c2ff;
 }
 
 @media (min-width: 768px) {

@@ -23,7 +23,7 @@ const TopTips = () => {
   return (
     <>
       <section
-        className="bg-white pt-5 pb-10 md:py-7 xl:py-8 2xl:py-12"
+        className="bg-white pt-5 pb-10 md:py-7 lg:pt-24 lg:pb-8 xl:pt-32"
         id="top-tips"
       >
         <div className="container">
