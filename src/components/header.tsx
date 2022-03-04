@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-import MobileMenu, {MobileMenuToggler} from 'components/mobile-menu'
+import MobileMenu, { MobileMenuToggler } from 'components/mobile-menu'
 
 const Header = () => {
   const router = useRouter()
@@ -56,10 +56,10 @@ const Header = () => {
               )
             })}
           </ul>
-          <div></div>
-          {/* <button className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 lg:block hover-hover:hover:bg-blue">
+
+          <button style={{ visibility: 'hidden' }} className="hidden h-10 rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 lg:block hover-hover:hover:bg-blue">
             Download app
-          </button>  */}
+          </button>
           <MobileMenuToggler
             onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
             isOpened={mobileMenuIsOpened}
