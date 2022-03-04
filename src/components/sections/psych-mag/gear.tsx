@@ -20,7 +20,7 @@ const Gear = () => {
   return (
     <>
       <section
-        className="bg-slate-100 py-12 md:bg-white md:py-20 xl:py-24"
+        className="bg-slate-100 py-12 md:bg-white md:py-20 lg:py-32"
         id="gear"
         style={{transform: 'translate3d(0,0,0)'}}
       >

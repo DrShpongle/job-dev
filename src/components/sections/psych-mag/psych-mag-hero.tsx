@@ -19,7 +19,7 @@ const PsychMagHero: React.FC<any> = ({blok}) => {
 
   return (
     <section
-      className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 xl:pt-36 xl:pb-8"
+      className="bg-white pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-36 xl:pt-36 xl:pb-8"
       id="vlog"
     >
       <div className="container">
