@@ -40,7 +40,7 @@ const TravelGuides = () => {
         {itemsToShow < articles.length && (
           <button
             onClick={() => setItemsToShow(itemsToShow + 2)}
-            className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl"
+            className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl hover-hover:hover:bg-white hover-hover:hover:text-pink"
           >
             More features
           </button>

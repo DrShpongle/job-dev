@@ -46,7 +46,7 @@ const Card: React.FC<{
                 {data.content.short_description}
               </p>
               <Link href={data.full_slug}>
-                <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
+                <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink duration-150 md:text-base lg:text-lg xl:text-xl hover-hover:hover:text-blue">
                   <span>Read more</span>
                   <span className="translate-y-0.5">&gt;</span>
                 </a>
@@ -99,7 +99,7 @@ const Card: React.FC<{
               </div>
             ) : (
               <Link href={data.full_slug}>
-                <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink md:text-base lg:text-lg xl:text-xl">
+                <a className="flex items-center space-x-1 whitespace-nowrap font-headings text-sm text-pink duration-150 md:text-base lg:text-lg xl:text-xl hover-hover:hover:text-blue">
                   <span>Read more</span>
                   <span className="translate-y-0.5">&#62;</span>
                 </a>
