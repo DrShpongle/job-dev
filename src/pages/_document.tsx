@@ -69,6 +69,7 @@ class MyDocument extends Document {
             as="font"
             crossOrigin=""
           />
+          {/* <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script> */}
         </Head>
         <body className="w-full font-body leading-normal">
           <Main />

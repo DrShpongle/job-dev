@@ -10,22 +10,51 @@ declare let window: mailChimpWindow;
 const Footer = () => {
 
   let [emailAddress, setEmailAddress] = useState('');
-  
+  let [mailChimpError, setMailChimpError] = useState('');
+  let [mailChimpSuccess, setMailChimpSuccess] = useState(false);
   useEffect(() => {
-    window.fnames = new Array();
-    window.ftypes = new Array();
-    window.fnames[0] = 'EMAIL';
-    window.ftypes[0] = 'email';
-    window.fnames[1] = 'FNAME'
-    window.ftypes[1] = 'text'
-    window.fnames[2] = 'LNAME'
-    window.ftypes[2] = 'text'
-    window.fnames[3] = 'ADDRESS'
-    window.ftypes[3] = 'address'
-    window.fnames[4] = 'PHONE'
-    window.ftypes[4] = 'phone'
-    window.fnames[5] = 'BIRTHDAY'
-    window.ftypes[5] = 'birthday';
+    var frm = document.forms.namedItem('mc-mailinglist');
+
+    frm!.onsubmit = async (e) => {
+      let urlDat = "https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg==";
+      setMailChimpError('');
+      setMailChimpSuccess(false);
+      e.preventDefault();
+      // e.stopPropagation();
+      var form = frm!;
+      if (form.EMAIL.value.length === 0 || form.EMAIL.value.indexOf("@") === -1) {
+        setMailChimpError("Please complete email");
+        return;
+      }
+      
+      var bodyData = {
+        Type: 1,
+        Email: form.EMAIL.value,
+      } as any;
+      try {
+        let response = await fetch(urlDat, {
+          method: 'POST',
+          headers: {
+            'Content-Type': "application/json",
+          },
+          body: JSON.stringify(bodyData)
+        });
+        if (response.bodyUsed) {
+          let result = await response.json();
+          setMailChimpError(result);
+        }
+        else {
+          setMailChimpSuccess(true);
+          form.reset();
+          setEmailAddress('');
+        }
+      }
+      catch (ex) {
+        console.log(ex);
+      }
+
+    }
+
   }, [""]);
 
   return (
@@ -86,13 +115,13 @@ const Footer = () => {
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
-            <form className="mt-6 flex flex-col space-y-4" action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
+            <form className="mt-6 flex flex-col space-y-4" action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" id="mc-mailinglist" name="mc-mailinglist" noValidate>
               <input
                 type="text"
                 className="h-[48px] rounded-none border px-4 md:h-[60px] md:px-5 md:text-xl lg:h-[70px] 2xl:text-2xl"
                 placeholder="Enter your email address"
                 value={emailAddress}
-                onChange={(e)=>setEmailAddress(e.target.value)}
+                onChange={(e) => setEmailAddress(e.target.value)}
                 name="EMAIL"
                 id="mce-EMAIL"
               />
@@ -112,6 +141,8 @@ const Footer = () => {
               >
                 Submit
               </button>
+              {mailChimpError.length>0 &&<p className="pt-4 text-3xl text-white">{mailChimpError}</p>}
+              {mailChimpSuccess && <p className="pt-4 text-3xl text-white">Thanks for the interest!</p>}
             </form>
           </div>
         </div>
