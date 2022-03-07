@@ -19,28 +19,32 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
     if (frm) {
       frm.onsubmit = async (e) => {
         let urlDat = "https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg==";
+
         setMailChimpError('');
         setMailChimpSuccess(false);
         setOnSubmitProgress(true);
         e.preventDefault();
-        // e.stopPropagation();
         var form = frm!;
         if (form.EMAIL.value.length < 8 || form.EMAIL.value.indexOf("@") === -1 || !form.FNAME.value || !form.LNAME.value) {
           setMailChimpError("All fields must be completed!");
           setOnSubmitProgress(false);
           return;
         }
+        let urlParams = new URLSearchParams(window.location.search);
+        let refId = urlParams.get('ref_id') || urlParams.get('refid');
 
         var bodyData = {
           Type: 2,
           Email: form.EMAIL.value,
           Firstname: form.FNAME.value,
           Lastname: form.LNAME.value,
-          AllowStoreDetails: allowStoreDetails
+          AllowStoreDetails: allowStoreDetails,
+          RefId: refId,
         } as any;
         try {
           let response = await fetch(urlDat, {
             method: 'POST',
+            // mode: "no-cors",
             headers: {
               'Content-Type': "application/json",
             },

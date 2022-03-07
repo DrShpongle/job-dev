@@ -23,21 +23,24 @@ const Footer = () => {
       setMailChimpSuccess(false);
       setOnSubmitProgress(true);
       e.preventDefault();
-      // e.stopPropagation();
       var form = frm!;
       if (form.EMAIL.value.length === 0 || form.EMAIL.value.indexOf("@") === -1) {
         setMailChimpError("Please complete email");
         setOnSubmitProgress(false);
         return;
       }
+      let urlParams = new URLSearchParams(window.location.search);
+      let refId = urlParams.get('ref_id') || urlParams.get('refid');
 
       var bodyData = {
         Type: 1,
         Email: form.EMAIL.value,
+        RefId: refId,
       } as any;
       try {
         let response = await fetch(urlDat, {
           method: 'POST',
+          // mode:"no-cors",
           headers: {
             'Content-Type': "application/json",
           },
@@ -183,11 +186,11 @@ const navLinks = [
   // {title: 'Contact', path: '/contact'},
 ]
 
-const auxiliaryLinks = [
-  { title: 'Privacy Policy', path: '/privacy-policy' },
-  { title: 'Terms of Use', path: '/terms-of-use' },
-  { title: 'Legal', path: '/legal' },
-  { title: 'Site Map', path: '/site-map' },
+const auxiliaryLinks:Array<{title:string,path:string}> = [
+  // { title: 'Privacy Policy', path: '/privacy-policy' },
+  // { title: 'Terms of Use', path: '/terms-of-use' },
+  // { title: 'Legal', path: '/legal' },
+  // { title: 'Site Map', path: '/site-map' },
 ]
 
 const socialLinks = [
