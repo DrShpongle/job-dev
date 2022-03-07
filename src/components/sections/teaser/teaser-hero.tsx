@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {motion, useAnimation} from 'framer-motion'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import VideoPlayer from 'components/video-player'
 
@@ -58,8 +59,13 @@ const TeaserHero: React.FC<any> = ({blok}) => {
         </div>
       </div>
       <div className="text-center">
-        <h4 className="px-4 pt-12 pb-8 text-2xl text-white">
+        <h4 className="px-4 pt-12 pb-4 text-2xl text-white">
           Scroll down to register for the sickest surf app
+        </h4>
+      </div>
+      <div className="text-center">
+        <h4 className="pb-8 text-2xl text-white">
+          <ExpandMoreIcon fontSize="large" />
         </h4>
       </div>
     </section>
