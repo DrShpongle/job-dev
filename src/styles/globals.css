@@ -37,6 +37,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.video-mask {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
 .embed-video-wrapper video,
 .video-player video {
   object-fit: cover;
