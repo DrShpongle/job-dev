@@ -5,7 +5,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
   var [allowStoreDetails, setAllowStoreDetails] = React.useState(false);
   var [mailChimpError, setMailChimpError] = React.useState('');
   var [mailChimpSuccess, setMailChimpSuccess] = React.useState(false);
-  var [formHtml, setformHtml] = React.useState<HTMLFormElement | null>(null)
+  var [onSubmitProgress, setOnSubmitProgress] = React.useState(false);
   const mounted = React.useRef(false);
   React.useEffect(() => {
     mounted.current = true;
@@ -21,11 +21,13 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
         let urlDat = "https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg==";
         setMailChimpError('');
         setMailChimpSuccess(false);
+        setOnSubmitProgress(true);
         e.preventDefault();
         // e.stopPropagation();
         var form = frm!;
         if (form.EMAIL.value.length < 8 || form.EMAIL.value.indexOf("@") === -1 || !form.FNAME.value || !form.LNAME.value) {
           setMailChimpError("All fields must be completed!");
+          setOnSubmitProgress(false);
           return;
         }
 
@@ -52,12 +54,13 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
             setMailChimpSuccess(true);
             form.reset();
           }
+          setOnSubmitProgress(false);
         }
         catch (ex) {
           console.log(ex);
+          setOnSubmitProgress(false);
         }
       }
-      setformHtml(frm);
     }
   }, [mounted.current]);
 
@@ -133,11 +136,15 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
                 type="submit"
                 className="h-[48px] w-full bg-blue text-center font-headings text-lg uppercase text-white duration-150 md:text-xl xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-blue"
                 name="subscribe" id="mc-embedded-subscribe"
-              >
-                Get on the list!
+                disabled={mailChimpSuccess}>
+                {onSubmitProgress && <>...</>}
+                {!onSubmitProgress &&
+                  <>
+                    {mailChimpSuccess && <>Thanks for the deets!</>}
+                    {mailChimpError.length > 0 && <>{mailChimpError}</>}
+                    {!mailChimpSuccess && mailChimpError.length == 0 && <>Get on the list!</>}
+                  </>}
               </button>
-              {mailChimpSuccess && <p className="pt-4 text-3xl text-white">Thanks for the deets!</p>}
-              {mailChimpError.length > 0 && <p className="pt-4 text-3xl text-white">{mailChimpError}</p>}
               <div id="mce-responses" className="clear">
                 <div id="mce-error-response" className="hidden"></div>
                 <div id="mce-success-response" className="hidden"></div>

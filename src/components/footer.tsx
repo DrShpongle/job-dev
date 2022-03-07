@@ -12,6 +12,8 @@ const Footer = () => {
   let [emailAddress, setEmailAddress] = useState('');
   let [mailChimpError, setMailChimpError] = useState('');
   let [mailChimpSuccess, setMailChimpSuccess] = useState(false);
+  var [onSubmitProgress, setOnSubmitProgress] = useState(false);
+
   useEffect(() => {
     var frm = document.forms.namedItem('mc-mailinglist');
 
@@ -19,14 +21,16 @@ const Footer = () => {
       let urlDat = "https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg==";
       setMailChimpError('');
       setMailChimpSuccess(false);
+      setOnSubmitProgress(true);
       e.preventDefault();
       // e.stopPropagation();
       var form = frm!;
       if (form.EMAIL.value.length === 0 || form.EMAIL.value.indexOf("@") === -1) {
         setMailChimpError("Please complete email");
+        setOnSubmitProgress(false);
         return;
       }
-      
+
       var bodyData = {
         Type: 1,
         Email: form.EMAIL.value,
@@ -48,9 +52,11 @@ const Footer = () => {
           form.reset();
           setEmailAddress('');
         }
+        setOnSubmitProgress(false);
       }
       catch (ex) {
         console.log(ex);
+        setOnSubmitProgress(false);
       }
 
     }
@@ -125,24 +131,20 @@ const Footer = () => {
                 name="EMAIL"
                 id="mce-EMAIL"
               />
-              <div id="mce-responses" className="clear">
-                <div id="mce-error-response" className="hidden"></div>
-                <div id="mce-success-response" className="hidden"></div>
-              </div>  {/*  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->  */}
-              <div className='mailChimp-hiddenTb' aria-hidden="true">
-                <input type="text" name="b_765fbd76204248f87d0fc2620_1367e9561a" tabIndex={-1} defaultValue="" />
-              </div>
-
               <button
                 className="h-[48px] bg-pink text-center font-headings text-lg uppercase text-white duration-150 md:h-[60px] md:text-xl lg:h-[70px] xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-pink"
                 type="submit"
                 name="subscribe"
                 id="mc-embedded-subscribe"
               >
-                Submit
+                {onSubmitProgress && <>...</>}
+                {!onSubmitProgress &&
+                  <>
+                    {mailChimpSuccess && <>Thanks for the interest!</>}
+                    {mailChimpError.length > 0 && <>{mailChimpError}</>}
+                    {!mailChimpSuccess && mailChimpError.length == 0 && <>Submit</>}
+                  </>}
               </button>
-              {mailChimpError.length>0 &&<p className="pt-4 text-3xl text-white">{mailChimpError}</p>}
-              {mailChimpSuccess && <p className="pt-4 text-3xl text-white">Thanks for the interest!</p>}
             </form>
           </div>
         </div>
