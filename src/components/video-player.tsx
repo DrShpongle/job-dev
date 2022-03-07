@@ -54,6 +54,7 @@ const VideoPlayer: React.FC<{
   return isMounted ? (
     <div className="video-player relative h-full" id="video-player">
       <ReactPlayer
+        className='video-mask h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]'
         playsinline={playsInline}
         playing={innerPlaying}
         muted={externalControls ? muted : innerMuted}

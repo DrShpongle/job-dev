@@ -39,6 +39,7 @@ body {
 
 .video-mask {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  pointer-events: none;
 }
 
 .embed-video-wrapper video,
