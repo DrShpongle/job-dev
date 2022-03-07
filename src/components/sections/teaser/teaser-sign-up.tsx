@@ -144,7 +144,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
                 {onSubmitProgress && <>...</>}
                 {!onSubmitProgress &&
                   <>
-                    {mailChimpSuccess && <>Thanks for the deets!</>}
+                    {mailChimpSuccess && <>Thanks</>}
                     {mailChimpError.length > 0 && <>{mailChimpError}</>}
                     {!mailChimpSuccess && mailChimpError.length == 0 && <>Get on the list!</>}
                   </>}
