@@ -39,7 +39,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
           style={{transform: 'translateZ(0)'}}
         >
           <div className="absolute h-full w-full pt-2 pb-4 md:pr-4">
-            <div className="video-mask h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]">
+            <div className="h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]">
               <VideoPlayer
                 playing={true}
                 url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
