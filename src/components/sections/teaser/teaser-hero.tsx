@@ -25,7 +25,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
       <div className="text-center">
         <h2 className="px-4 text-7xl text-white">Psyched for the Release?</h2>
         <p className="px-4 pt-4 text-2xl text-white">
-          We&apos;re loading up the app with Jamie&apos;s radest videos and
+          We&apos;re loading up the app with Jamie&apos;s raddest videos and
           tutorials.
         </p>
         <p className="px-4 text-2xl text-white">
