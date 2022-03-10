@@ -17,6 +17,23 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* Global site tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-3DDEV708JB"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3DDEV708JB', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
