@@ -8,7 +8,7 @@ function MyApp({Component, pageProps}: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       window.gtag('config', 'G-3DDEV708JB', {
         page_path: url,
       })
