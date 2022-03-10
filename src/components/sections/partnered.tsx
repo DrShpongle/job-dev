@@ -93,14 +93,14 @@ const partneredLogos = [
     url: 'http://www.tokorosurfboards.com/',
   },
   {
-    title: 'Vestal Watches',
-    path: '/images/partnered/vestal.png',
-    url: 'https://vestalwatch.com.au/',
+    title: 'Carver',
+    path: '/images/partnered/carver.png',
+    url: 'https://carverskateboards.com/',
   },
   {
-    title: 'Tools Surf Products',
-    path: '/images/partnered/tools.png',
-    url: 'http://www.tools-international.com/',
+    title: 'Tropic Sport',
+    path: '/images/partnered/tropic.jpg',
+    url: 'https://tropicsport.com/',
   },
 ]
 
