@@ -10,7 +10,7 @@ const Article = ({blok}: any) => {
     <PageLayout>
       <section {...sbEditable(blok)} key={blok._uid}>
         <div className="relative flex h-[65vh] flex-col justify-end pb-10 md:pb-20 lg:h-screen lg:pb-20 xl:pb-24 2xl:pb-28">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 before:absolute before:inset-0 before:z-[1] before:block before:bg-black/20">
             <Image
               layout="fill"
               className="object-cover object-center"
@@ -18,7 +18,7 @@ const Article = ({blok}: any) => {
               alt={blok.title}
             />
           </div>
-          <div className="container">
+          <div className="container relative z-10">
             <h2 className="relative text-5xl leading-none text-white md:max-w-xl md:text-6xl lg:max-w-3xl lg:text-7xl xl:max-w-4xl xl:text-8xl 2xl:max-w-5xl 2xl:text-[111px]">
               {blok.title}
             </h2>
