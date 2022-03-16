@@ -30,7 +30,7 @@ const Article = ({blok}: any) => {
           </div>
         </div>
         <div className="container">
-          <div className="prose-sm py-8 md:prose md:columns-2 md:gap-8 md:py-10 lg:prose-lg lg:gap-12 lg:py-12 xl:prose-xl xl:gap-16 xl:py-16 2xl:prose-2xl 2xl:gap-20 2xl:py-20">
+          <div className="prose-sm max-w-none py-8 md:prose md:max-w-none md:columns-2 md:gap-8 md:py-10 lg:prose-lg lg:max-w-none lg:gap-12 lg:py-12 xl:prose-xl xl:max-w-none xl:columns-3 xl:gap-16 xl:py-16 2xl:prose-2xl 2xl:max-w-none 2xl:gap-20 2xl:py-20">
             {render(blok.content)}
           </div>
         </div>
