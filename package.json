@@ -24,7 +24,7 @@
     "screenfull": "5.1.0",
     "storyblok-js-client": "^4.2.1",
     "storyblok-rich-text-react-renderer": "^2.5.2",
-    "swiper": "^8.0.6",
+    "swiper": "^8.0.7",
     "vercel": "^24.0.0"
   },
   "devDependencies": {
