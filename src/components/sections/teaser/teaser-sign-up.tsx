@@ -38,7 +38,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
           Email: form.EMAIL.value,
           Firstname: form.FNAME.value,
           Lastname: form.LNAME.value,
-          AllowStoreDetails: allowStoreDetails,
+          AllowStoreDetails: form.ALLOWSTORE.checked,
           RefId: refId,
         } as any;
         try {
@@ -114,7 +114,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
             </div>
             <div className="flex pt-4 md:col-span-2">
               <div>
-                <label htmlFor='mce-group[45513]-45513-0' className="text-lg text-white">
+                <label htmlFor='ALLOWSTORE' className="text-lg text-white">
                   Add a check to agree to us storing your details. We need this
                   to be able to tell you when the app is ready and we&apos;ll
                   occasionally hit your inbox with the latest on JOB.
@@ -126,7 +126,7 @@ const TeaserSignUp: React.FC<any> = ({ blok }) => {
                   className="absolute h-[48px] w-[48px] opacity-0"
                   type="checkbox"
                   name="group[45513][1]"
-                  id="mce-group[45513]-45513-0"
+                  id="ALLOWSTORE"
                   onChange={() => setAllowStoreDetails(!allowStoreDetails)}
                   defaultChecked={allowStoreDetails}
                 />
