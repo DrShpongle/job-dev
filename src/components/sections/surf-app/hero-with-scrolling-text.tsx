@@ -13,6 +13,7 @@ import {isBrowser} from 'utils/is-browser'
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
+import VideoPlayer from 'components/video-player'
 import {throttle} from 'lodash'
 
 const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
@@ -138,11 +139,14 @@ const HeroWithScrollableText = ({blok}: any) => {
             animate={controlsPhone}
           >
             <div className="md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
-              <div
-                className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]"
-                style={{transform: 'translateZ(0)'}}
-              >
-                <VideoEmbed url={blok.video_in_the_frame.url} />
+              <div className="absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
+                <VideoPlayer
+                  playing={true}
+                  url={blok.video_in_the_frame.url}
+                  controls={true}
+                  muted={true}
+                  externalControls={false}
+                />
               </div>
               <div className="portrait:hidden md:portrait:block">
                 <Image
