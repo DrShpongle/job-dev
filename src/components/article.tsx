@@ -4,6 +4,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 import PageLayout from 'components/layouts/page-layout'
+import YoutubeBlock from 'components/youtube-block'
 
 const Article = ({blok}: any) => {
   return (
@@ -31,7 +32,13 @@ const Article = ({blok}: any) => {
         </div>
         <div className="container">
           <div className="prose-sm max-w-none py-8 md:prose md:max-w-none md:columns-2 md:gap-8 md:py-10 lg:prose-lg lg:max-w-none lg:gap-12 lg:py-12 xl:prose-xl xl:max-w-none xl:columns-3 xl:gap-16 xl:py-16 2xl:prose-2xl 2xl:max-w-none 2xl:gap-20 2xl:py-20">
-            {render(blok.content)}
+            {render(blok.content, {
+              blokResolvers: {
+                ['youtubeBlock']: ({videoLink}) => (
+                  <YoutubeBlock videoLink={videoLink} />
+                ),
+              },
+            })}
           </div>
         </div>
       </section>
