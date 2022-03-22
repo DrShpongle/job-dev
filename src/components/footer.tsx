@@ -1,75 +1,74 @@
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 
 export interface mailChimpWindow extends Window {
-  fnames: Array<string>;
+  fnames: Array<string>
   ftypes: Array<string>
 }
-declare let window: mailChimpWindow;
+declare let window: mailChimpWindow
 
 const Footer = () => {
-
-  let [emailAddress, setEmailAddress] = useState('');
-  let [mailChimpError, setMailChimpError] = useState('');
-  let [mailChimpSuccess, setMailChimpSuccess] = useState(false);
-  var [onSubmitProgress, setOnSubmitProgress] = useState(false);
+  let [emailAddress, setEmailAddress] = useState('')
+  let [mailChimpError, setMailChimpError] = useState('')
+  let [mailChimpSuccess, setMailChimpSuccess] = useState(false)
+  var [onSubmitProgress, setOnSubmitProgress] = useState(false)
 
   useEffect(() => {
-    var frm = document.forms.namedItem('mc-mailinglist');
+    var frm = document.forms.namedItem('mc-mailinglist')
 
     frm!.onsubmit = async (e) => {
-      let urlDat = "https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg==";
-      setMailChimpError('');
-      setMailChimpSuccess(false);
-      setOnSubmitProgress(true);
-      e.preventDefault();
-      var form = frm!;
-      if (form.EMAIL.value.length === 0 || form.EMAIL.value.indexOf("@") === -1) {
-        setMailChimpError("Please complete email");
-        setOnSubmitProgress(false);
-        return;
+      let urlDat =
+        'https://job-mailchimpprocessor.azurewebsites.net/api/JobMailRegistrations?code=uSo0KhuZAkaFVa1ycfNRApGVZ66byIclij21siZdPu4OqoeH71QrGg=='
+      setMailChimpError('')
+      setMailChimpSuccess(false)
+      setOnSubmitProgress(true)
+      e.preventDefault()
+      var form = frm!
+      if (
+        form.EMAIL.value.length === 0 ||
+        form.EMAIL.value.indexOf('@') === -1
+      ) {
+        setMailChimpError('Please complete email')
+        setOnSubmitProgress(false)
+        return
       }
-      let urlParams = new URLSearchParams(window.location.search);
-      let refId = urlParams.get('ref_id') || urlParams.get('refid');
+      let urlParams = new URLSearchParams(window.location.search)
+      let refId = urlParams.get('ref_id') || urlParams.get('refid')
 
       var bodyData = {
         Type: 1,
         Email: form.EMAIL.value,
         RefId: refId,
-      } as any;
+      } as any
       try {
         let response = await fetch(urlDat, {
           method: 'POST',
           // mode:"no-cors",
           headers: {
-            'Content-Type': "application/json",
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify(bodyData)
-        });
+          body: JSON.stringify(bodyData),
+        })
         if (response.bodyUsed) {
-          let result = await response.json();
-          setMailChimpError(result);
+          let result = await response.json()
+          setMailChimpError(result)
+        } else {
+          setMailChimpSuccess(true)
+          form.reset()
+          setEmailAddress('')
         }
-        else {
-          setMailChimpSuccess(true);
-          form.reset();
-          setEmailAddress('');
-        }
-        setOnSubmitProgress(false);
+        setOnSubmitProgress(false)
+      } catch (ex) {
+        console.log(ex)
+        setOnSubmitProgress(false)
       }
-      catch (ex) {
-        console.log(ex);
-        setOnSubmitProgress(false);
-      }
-
     }
-
-  }, [""]);
+  }, [''])
 
   return (
     <footer
       className="bg-blue pt-8 pb-5 md:py-12 lg:pt-16 lg:pb-10"
-      style={{ transform: 'translate3d(0,0,0)' }}
+      style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
         <div className="flex flex-col md:flex-row">
@@ -83,11 +82,22 @@ const Footer = () => {
                   {navLinks.map((item, index) => {
                     return (
                       <li key={index}>
-                        <Link href={item.path}>
-                          <a className="text-lg text-white duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-pink">
+                        {item.external ? (
+                          <a
+                            className="text-lg text-white duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-pink"
+                            href={item.path}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             {item.title}
                           </a>
-                        </Link>
+                        ) : (
+                          <Link href={item.path}>
+                            <a className="text-lg text-white duration-150 md:text-xl 2xl:text-2xl hover-hover:hover:text-pink">
+                              {item.title}
+                            </a>
+                          </Link>
+                        )}
                       </li>
                     )
                   })}
@@ -124,7 +134,13 @@ const Footer = () => {
               Enter your email and we’ll keep you updated with the latest about
               Jamie:
             </p>
-            <form className="mt-6 flex flex-col space-y-4" action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a" id="mc-mailinglist" name="mc-mailinglist" noValidate>
+            <form
+              className="mt-6 flex flex-col space-y-4"
+              action="https://googlemail.us14.list-manage.com/subscribe/post?u=765fbd76204248f87d0fc2620&amp;id=1367e9561a"
+              id="mc-mailinglist"
+              name="mc-mailinglist"
+              noValidate
+            >
               <input
                 type="text"
                 className="h-[48px] rounded-none border px-4 md:h-[60px] md:px-5 md:text-xl lg:h-[70px] 2xl:text-2xl"
@@ -141,12 +157,15 @@ const Footer = () => {
                 id="mc-embedded-subscribe"
               >
                 {onSubmitProgress && <>...</>}
-                {!onSubmitProgress &&
+                {!onSubmitProgress && (
                   <>
                     {mailChimpSuccess && <>Thanks for the interest!</>}
                     {mailChimpError.length > 0 && <>{mailChimpError}</>}
-                    {!mailChimpSuccess && mailChimpError.length == 0 && <>Submit</>}
-                  </>}
+                    {!mailChimpSuccess && mailChimpError.length == 0 && (
+                      <>Submit</>
+                    )}
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -179,14 +198,22 @@ const Footer = () => {
 
 const navLinks = [
   // {title: 'Surf App', path: '/surf-app'},
-  { title: 'Surf Experience', path: '/surf-experience' },
-  { title: 'Surf Store', path: '/surf-store' },
+  {
+    title: 'Surf Experience',
+    path: 'https://www.jobsurfexperience.com/',
+    external: true,
+  },
+  {
+    title: 'Surf Store',
+    path: 'https://www.jamieobrienshop.com/',
+    external: true,
+  },
   // {title: 'Psych Mag', path: '/psych-mag'},
   // {title: 'About Jamie', path: '/about'},
   // {title: 'Contact', path: '/contact'},
 ]
 
-const auxiliaryLinks:Array<{title:string,path:string}> = [
+const auxiliaryLinks: Array<{title: string; path: string}> = [
   // { title: 'Privacy Policy', path: '/privacy-policy' },
   // { title: 'Terms of Use', path: '/terms-of-use' },
   // { title: 'Legal', path: '/legal' },
@@ -194,13 +221,13 @@ const auxiliaryLinks:Array<{title:string,path:string}> = [
 ]
 
 const socialLinks = [
-  { title: 'Instagram', path: 'https://www.instagram.com/whoisjob/' },
-  { title: 'Twitter', path: 'https://twitter.com/whoisjob' },
+  {title: 'Instagram', path: 'https://www.instagram.com/whoisjob/'},
+  {title: 'Twitter', path: 'https://twitter.com/whoisjob'},
   {
     title: 'Youtube',
     path: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
   },
-  { title: 'Facebook', path: 'https://www.facebook.com/whoisjob/' },
+  {title: 'Facebook', path: 'https://www.facebook.com/whoisjob/'},
 ]
 
 export default Footer
