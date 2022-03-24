@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {motion, useAnimation} from 'framer-motion'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 import VideoPlayer from 'components/video-player'
 
@@ -25,7 +25,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
       <div className="text-center">
         <h2 className="px-4 text-7xl text-white">Psyched for the Release?</h2>
         <p className="px-4 pt-4 text-2xl text-white">
-	  I&apos;ve been busy creating an app that shares so much of what
+          I&apos;ve been busy creating an app that shares so much of what
           I&apos;ve learnt over the last 30 years.
         </p>
         <p className="px-4 text-2xl text-white">
@@ -34,12 +34,9 @@ const TeaserHero: React.FC<any> = ({blok}) => {
         </p>
       </div>
       <div className="flex h-full w-full items-center justify-center pt-8">
-        <div
-          className="w-80 md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]"
-          style={{transform: 'translateZ(0)'}}
-        >
+        <div className="relative w-80 md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
           <div className="absolute h-full w-full pt-2 pb-4 md:pr-4">
-            <div className="h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]">
+            <div className="border-radius-fix h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]">
               <VideoPlayer
                 playing={true}
                 url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"

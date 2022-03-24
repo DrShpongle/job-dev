@@ -30,10 +30,7 @@ const AskJamie = ({blok}: any) => {
             />
           </div>
           <div className="relative flex w-64 md:absolute md:right-0 md:bottom-0 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]">
-            <div
-              className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[25px] xl:inset-3 xl:rounded-[30px] 2xl:inset-4 2xl:rounded-[40px]"
-              style={{transform: 'translateZ(0)'}}
-            >
+            <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[25px] xl:inset-3 xl:rounded-[30px] 2xl:inset-4 2xl:rounded-[40px]">
               <VideoPlayer
                 url={blok.video.url}
                 controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"

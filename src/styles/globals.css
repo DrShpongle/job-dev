@@ -37,9 +37,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.video-mask {
+/* .video-mask {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
-  pointer-events: none;
+  pointer-events: none; 
+} */
+
+.border-radius-fix {
+  transform: translateZ(0);
 }
 
 .embed-video-wrapper video,
@@ -108,7 +112,7 @@ body {
   }
 }
 
-.mailChimp-hiddenTb{
-  position:absolute; 
+.mailChimp-hiddenTb {
+  position: absolute;
   left: -5000px;
 }
