@@ -45,7 +45,9 @@ const SeaTreesContent = ({blok}) => {
           </div>
 
           <div className="mt-8 flex flex-col items-end space-y-8 text-right md:mt-16 md:space-y-12 lg:space-y-12 xl:mt-20 xl:space-y-16 2xl:mt-24">
-            <div className="space-y-5">{render(blok.text_2)}</div>
+            <div className="space-y-5 md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal">
+              {render(blok.text_2)}
+            </div>
             <a
               href={blok.link_to_seatrees_website.url}
               target="_blank"
