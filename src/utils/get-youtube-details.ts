@@ -93,7 +93,7 @@ export const getYoutubeDetails = async () => {
         ...intermediateDetails.find(
           (itemToFind: any) => itemToFind.id === item.id,
         ),
-        thumb: item.snippet.thumbnails.standard.url,
+        thumb: item.snippet.thumbnails.high.url,
         title: item.snippet.title,
         duration: formatDuration(item.contentDetails.duration),
         date: formatDate(item.snippet.publishedAt),
