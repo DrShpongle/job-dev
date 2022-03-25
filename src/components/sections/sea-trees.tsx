@@ -2,7 +2,6 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
-import {sbEditable} from '@storyblok/storyblok-editable'
 
 const EquationBlock: React.FC<{
   leftExpression: string
@@ -57,13 +56,11 @@ const Description: React.FC<{
   )
 }
 
-const SeaTrees = ({blok}: any) => {
+const SeaTrees = () => {
   return (
     <section
       className="relative z-10 bg-white"
       style={{transform: 'translate3d(0,0,0)'}}
-      {...sbEditable(blok)}
-      key={blok._uid}
     >
       <div className="relative">
         <div className="absolute inset-0 z-[-1]">
