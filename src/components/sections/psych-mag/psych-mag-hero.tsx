@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
+import {Navigation} from 'swiper'
 import {isEmpty} from 'lodash'
 
 import {getYoutubeDetails} from 'utils/get-youtube-details'
@@ -44,72 +45,81 @@ const PsychMagHero: React.FC<any> = ({blok}) => {
             controlsClasses="bottom-3 right-3 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 xl:bottom-12 xl:right-12"
           />
         </div>
-        <div className="mt-4 min-h-[140px] w-full overflow-hidden md:mt-6 md:min-h-[214px] lg:min-h-[230px] xl:min-h-[236px] 2xl:mt-8 2xl:min-h-[288px]">
-          <div className="w-[150%] -translate-x-[16.66%] md:w-[133.33%] md:-translate-x-[12.5%]">
-            {isMounted ? (
-              <Swiper
-                spaceBetween={16}
-                slidesPerView={3}
-                breakpoints={{
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 24,
-                  },
-                  1280: {
-                    slidesPerView: 5,
-                    spaceBetween: 32,
-                  },
-                }}
-                loop
-              >
-                {!isEmpty(youtubeDetails) &&
-                  youtubeDetails.map((item: any, i: number) => {
-                    return (
-                      <SwiperSlide key={i}>
-                        <div className="select-none">
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="relative block aspect-video"
-                          >
-                            <div className="absolute inset-0 overflow-hidden">
-                              <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
-                                <Image
-                                  src={item.thumb}
-                                  alt={item.title}
-                                  layout="fill"
-                                  objectFit="cover"
-                                  priority
-                                />
-                              </div>
-                            </div>
-                          </a>
-                          <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3  2xl:mt-4 2xl:space-y-2">
+        <div className="relative w-full px-8 md:px-14">
+          <button className="youtube-swiper-button-prev swiper-button-prev pointer absolute left-0 top-6 z-10 h-0 w-0 border-solid md:top-14" />
+          <button className="youtube-swiper-button-next swiper-button-next pointer absolute right-0 top-6 z-10 h-0 w-0 border-solid md:top-14" />
+          <div className="mt-4 min-h-[140px] w-full overflow-hidden md:mt-6 md:min-h-[214px] lg:min-h-[230px] xl:min-h-[236px] 2xl:mt-8 2xl:min-h-[288px]">
+            <div className="w-[150%] -translate-x-[16.66%] md:w-[133.33%] md:-translate-x-[12.5%]">
+              {isMounted ? (
+                <Swiper
+                  spaceBetween={16}
+                  slidesPerView={3}
+                  breakpoints={{
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                      spaceBetween: 24,
+                    },
+                    1280: {
+                      slidesPerView: 5,
+                      spaceBetween: 32,
+                    },
+                  }}
+                  navigation={{
+                    nextEl: '.youtube-swiper-button-next',
+                    prevEl: '.youtube-swiper-button-prev',
+                  }}
+                  modules={[Navigation]}
+                  loop
+                >
+                  {!isEmpty(youtubeDetails) &&
+                    youtubeDetails.map((item: any, i: number) => {
+                      return (
+                        <SwiperSlide key={i}>
+                          <div className="select-none">
                             <a
                               href={item.url}
                               target="_blank"
                               rel="noreferrer"
-                              className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                              className="relative block aspect-video"
                             >
-                              {item.title}
+                              <div className="absolute inset-0 overflow-hidden">
+                                <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
+                                  <Image
+                                    src={item.thumb}
+                                    alt={item.title}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    priority
+                                  />
+                                </div>
+                              </div>
                             </a>
-                            <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
-                              {item.date}
-                              <div className="mx-1 md:mx-2">|</div>
-                              {item.duration}
+                            <div className="mt-3 flex w-full flex-col items-center space-y-1 md:mt-2 lg:mt-3  2xl:mt-4 2xl:space-y-2">
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="relative block text-center font-headings text-xs text-pink line-clamp-1 lg:text-base xl:text-lg 2xl:text-xl"
+                              >
+                                {item.title}
+                              </a>
+                              <div className="flex flex-nowrap items-center text-xs lg:text-sm xl:text-base 2xl:text-lg">
+                                {item.date}
+                                <div className="mx-1 md:mx-2">|</div>
+                                {item.duration}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </SwiperSlide>
-                    )
-                  })}
-              </Swiper>
-            ) : null}
+                        </SwiperSlide>
+                      )
+                    })}
+                </Swiper>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
