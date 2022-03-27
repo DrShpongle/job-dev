@@ -19,7 +19,7 @@ const LearnFromTheBest = ({blok}: any) => {
   return (
     <section ref={refSection}>
       <div
-        className="learn-from-the-best sticky top-0 h-screen overflow-hidden bg-white bg-cover"
+        className="sticky top-0 h-screen overflow-hidden bg-white bg-cover"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="relative h-full w-full">

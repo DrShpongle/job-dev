@@ -67,7 +67,7 @@ const SuccessPoints = ({blok}: any) => {
   return (
     <section ref={refSection}>
       <div
-        className="learn-from-the-best sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-20 portrait:pt-24 md:portrait:pt-20 lg:portrait:pt-32 xl:landscape:pt-24"
+        className="sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-20 portrait:pt-24 md:portrait:pt-20 lg:portrait:pt-32 xl:landscape:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container flex grow flex-col items-center 2xl:max-w-[1180px]">
