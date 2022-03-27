@@ -84,7 +84,7 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
             Drop us your deets
           </h2>
           <p className="pt-4 text-2xl text-white">
-            Pre-register and get in early on Jamie Obrien&apos;s surf app.
+            Pre-register and get in early on Jamie O&apos;brien&apos;s surf app.
           </p>
         </div>
         <form
