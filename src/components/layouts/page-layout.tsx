@@ -13,7 +13,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
       <Subheader />
       {children}
       <div style={{transform: 'translate3d(0,0,0)'}}>
-        <SeaTrees />
+        {/* <SeaTrees /> */}
         <Partnered />
         <Footer />
       </div>
