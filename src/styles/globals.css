@@ -103,15 +103,6 @@ body {
   }
 }
 
-@media (min-width: 1536px) {
-  .swiper-button-prev {
-    border-width: 31px 54px 31px 0;
-  }
-  .swiper-button-next {
-    border-width: 31px 0 31px 54px;
-  }
-}
-
 .mailChimp-hiddenTb {
   position: absolute;
   left: -5000px;

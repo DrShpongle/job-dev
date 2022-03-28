@@ -46,8 +46,8 @@ const PsychMagHero: React.FC<any> = ({blok}) => {
           />
         </div>
         <div className="relative w-full px-8 md:px-14">
-          <button className="youtube-swiper-button-prev swiper-button-prev pointer absolute left-0 top-6 z-10 h-0 w-0 border-solid md:top-14" />
-          <button className="youtube-swiper-button-next swiper-button-next pointer absolute right-0 top-6 z-10 h-0 w-0 border-solid md:top-14" />
+          <button className="youtube-swiper-button-prev swiper-button-prev pointer absolute left-0 top-16 z-10 h-0 w-0 border-solid md:top-14" />
+          <button className="youtube-swiper-button-next swiper-button-next pointer absolute right-0 top-16 z-10 h-0 w-0 border-solid md:top-14" />
           <div className="mt-4 min-h-[140px] w-full overflow-hidden md:mt-6 md:min-h-[214px] lg:min-h-[230px] xl:min-h-[236px] 2xl:mt-8 2xl:min-h-[288px]">
             <div className="w-[150%] -translate-x-[16.66%] md:w-[133.33%] md:-translate-x-[12.5%]">
               {isMounted ? (
