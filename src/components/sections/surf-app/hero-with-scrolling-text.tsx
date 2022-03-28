@@ -145,7 +145,6 @@ const HeroWithScrollableText = ({blok}: any) => {
                   url={blok.video_in_the_frame.url}
                   controls={true}
                   muted={true}
-                  externalControls={false}
                 />
               </div>
               <div className="pointer-events-none portrait:hidden md:portrait:block">
