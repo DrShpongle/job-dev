@@ -148,7 +148,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   externalControls={false}
                 />
               </div>
-              <div className="portrait:hidden md:portrait:block">
+              <div className="pointer-events-none portrait:hidden md:portrait:block">
                 <Image
                   src="/images/iphone-frame-landscape.png"
                   width={1171}
@@ -157,7 +157,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   priority
                 />
               </div>
-              <div className="md:hidden landscape:hidden">
+              <div className="pointer-events-none md:hidden landscape:hidden">
                 <Image
                   src="/images/iphone-frame-portrait.png"
                   width={580}

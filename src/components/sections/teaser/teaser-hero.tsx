@@ -46,13 +46,15 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               />
             </div>
           </div>
-          <Image
-            src="/images/iphone-frame-landscape.png"
-            width={1171}
-            height={580}
-            alt="Ask Jamie"
-            priority
-          />
+          <div className="pointer-events-none">
+            <Image
+              src="/images/iphone-frame-landscape.png"
+              width={1171}
+              height={580}
+              alt="Ask Jamie"
+              priority
+            />
+          </div>
         </div>
       </div>
       <div className="text-center">
