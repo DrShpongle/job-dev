@@ -56,7 +56,7 @@ const VideoPlayer: React.FC<{
       <ReactPlayer
         className="h-full w-full"
         playsinline={playsInline}
-        playing={innerPlaying}
+        playing={externalControls ? playing : innerPlaying}
         muted={externalControls ? muted : innerMuted}
         loop={loop}
         url={url}
