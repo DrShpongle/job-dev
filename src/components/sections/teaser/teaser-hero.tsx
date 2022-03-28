@@ -34,22 +34,29 @@ const TeaserHero: React.FC<any> = ({blok}) => {
         </p>
       </div>
       <div className="flex h-full w-full items-center justify-center pt-8">
-        <div className="relative w-80 md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
-          <div className="absolute h-full w-full pt-2 pb-4 md:pr-4">
-            <div className="border-radius-fix h-full w-full overflow-hidden rounded-[30px] md:rounded-[40px] xl:rounded-[60px] 2xl:rounded-[75px]">
-              <VideoPlayer
-                playing={true}
-                url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
-                controls={true}
-                muted={true}
-              />
-            </div>
+        <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
+          <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
+            <VideoPlayer
+              playing={true}
+              url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
+              controls={true}
+              muted={true}
+            />
           </div>
-          <div className="pointer-events-none">
+          <div className="pointer-events-none portrait:hidden md:portrait:block">
             <Image
               src="/images/iphone-frame-landscape.png"
               width={1171}
               height={580}
+              alt="Ask Jamie"
+              priority
+            />
+          </div>
+          <div className="pointer-events-none md:hidden landscape:hidden">
+            <Image
+              src="/images/iphone-frame-portrait.png"
+              width={580}
+              height={1171}
               alt="Ask Jamie"
               priority
             />
