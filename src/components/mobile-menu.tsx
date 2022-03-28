@@ -48,8 +48,9 @@ export const MobileMenuToggler: React.FC<{
 
 const MobileMenu: React.FC<{
   isOpened: boolean
+  onClick: () => void
   data: any[]
-}> = ({isOpened, data}) => {
+}> = ({isOpened, onClick, data}) => {
   React.useEffect(() => {
     document.body.style.overflow = isOpened ? 'hidden' : ''
     return () => {
@@ -73,7 +74,10 @@ const MobileMenu: React.FC<{
                 return (
                   <li key={index}>
                     <Link href={item.path}>
-                      <a className="font-headings text-2xl uppercase text-white">
+                      <a
+                        className="font-headings text-2xl uppercase text-white"
+                        onClick={onClick}
+                      >
                         {item.title}
                       </a>
                     </Link>
@@ -89,16 +93,32 @@ const MobileMenu: React.FC<{
             </a> */}
           </div>
           <div className="flex items-center justify-center space-x-3">
-            <a href="https://www.instagram.com/whoisjob/'">
+            <a
+              href="https://www.instagram.com/whoisjob/'"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconInstagram className="h-6 text-white" />
             </a>
-            <a href="https://twitter.com/whoisjob">
+            <a
+              href="https://twitter.com/whoisjob"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconTwitter className="h-[22px] text-white" />
             </a>
-            <a href="https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg">
+            <a
+              href="https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconYoutube className="h-[22px] text-white" />
             </a>
-            <a href="https://www.facebook.com/whoisjob/">
+            <a
+              href="https://www.facebook.com/whoisjob/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconFacebook className="h-6 text-white" />
             </a>
           </div>
