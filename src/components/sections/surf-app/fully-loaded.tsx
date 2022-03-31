@@ -3,6 +3,8 @@ import Image from 'next/image'
 import {motion} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
 
+import VideoPlayer from 'components/video-player'
+
 const MotionItem: React.FC<{url: string}> = ({url}) => {
   const [ref, inView] = useInView({
     threshold: 0.35,
@@ -22,49 +24,62 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
       initial="hidden"
       animate={inView ? 'shown' : 'hidden'}
     >
-      <div className="relative flex h-[516px] w-64 lg:h-[646px] lg:w-80 xl:h-[776px] xl:w-96 2xl:h-[808px] 2xl:w-[400px]">
-        <div
-          className="absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[40px] xl:inset-3 xl:rounded-[40px] 2xl:inset-4"
-          style={{transform: 'translateZ(0)'}}
-        >
-          {/* <VideoEmbed url={url} /> */}
+      <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
+        <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
+          <VideoPlayer playing={true} url={url} controls={true} muted={true} />
         </div>
-        <Image
-          src="/images/iphone-frame-portrait.png"
-          width={580}
-          height={1171}
-          alt="Ask Jamie"
-          priority
-        />
+        <div className="pointer-events-none portrait:hidden md:portrait:block">
+          <Image
+            src="/images/iphone-frame-landscape.png"
+            width={1171}
+            height={580}
+            alt="Ask Jamie"
+            priority
+          />
+        </div>
+        <div className="pointer-events-none md:hidden landscape:hidden">
+          <Image
+            src="/images/iphone-frame-portrait.png"
+            width={580}
+            height={1171}
+            alt="Ask Jamie"
+            priority
+          />
+        </div>
       </div>
     </motion.div>
   )
 }
 
 const FullyLoaded = ({blok}: any) => {
+  console.log('blok:', blok)
   return (
     <section
-      className="min-h-screen bg-blue py-12 xl:py-24"
+      className="min-h-screen py-12 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div className="container">
-        <h2 className="max-w-3xl text-5xl leading-none text-white md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
+        <h2 className="max-w-3xl text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
           {blok.title}
         </h2>
       </div>
-      <div className="container mt-4 md:mt-8">
-        <div className="flex flex-col md:flex-row">
-          <div className="flex shrink-0 flex-col items-center md:w-1/2 md:items-end md:pr-6 lg:pr-8 xl:pr-10">
-            <p className="mb-12 text-white md:mb-20 md:max-w-xl md:text-2xl lg:mb-40 lg:leading-normal xl:mb-52 xl:max-w-3xl xl:text-3xl xl:leading-normal 2xl:mb-64 2xl:text-[34px] 2xl:leading-normal">
-              {blok.description}
-            </p>
-            <MotionItem url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
-          </div>
-          <div className="mt-12 flex shrink-0 flex-col items-center space-y-12 md:mt-0 md:w-1/2 md:items-start md:pl-6 lg:space-y-16 lg:pl-8 xl:space-y-20 xl:pl-10">
-            <MotionItem url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
-            <MotionItem url="https://mytwynmediaservices-euno.akamaized.net/e6a22efa-526b-468f-a6e8-172f3901c6cf/e6a22efa-526b-468f-a6e8-172f3901.ism/manifest(format=m3u8-aapl).m3u8" />
-          </div>
+      <div className="container mt-8 space-y-12 md:mt-12 md:space-y-16 lg:mt-16 xl:space-y-20 2xl:space-y-24">
+        <div className="flex flex-col items-center space-y-8 md:space-y-16 lg:flex-row lg:items-start lg:space-y-0 lg:space-x-16">
+          <p className="2xl:leading shrink bg-blend-normal md:text-2xl lg:max-w-xl lg:leading-normal xl:max-w-3xl xl:text-3xl xl:leading-normal 2xl:text-[34px]">
+            {blok.description}
+          </p>
+          {blok?.tip_video_url_1 && <MotionItem url={blok.tip_video_url_1} />}
         </div>
+        {blok?.tip_video_url_2 && (
+          <div className="flex justify-center lg:justify-start">
+            <MotionItem url={blok.tip_video_url_2} />
+          </div>
+        )}
+        {blok?.tip_video_url_3 && (
+          <div className="flex justify-center lg:justify-start">
+            <MotionItem url={blok.tip_video_url_3} />
+          </div>
+        )}
       </div>
     </section>
   )
