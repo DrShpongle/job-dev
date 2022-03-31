@@ -75,7 +75,7 @@ const FullyLoaded = ({blok}: any) => {
           </div>
         )}
         {blok?.tip_video_url_3 && (
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-end">
             <MotionItem url={blok.tip_video_url_3} />
           </div>
         )}
