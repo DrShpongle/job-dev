@@ -19,7 +19,7 @@ const Partnered = () => {
           <h3 className="text-xl md:text-3xl lg:text-[2.5rem]">
             Proud to be partnered with&hellip;
           </h3>
-          <div className="mt-4 grid grid-cols-3 gap-[1px] overflow-hidden p-[1px] md:mt-8 md:grid-cols-5">
+          <div className="mt-4 grid grid-cols-3 gap-[1px] p-[1px] md:mt-8 md:grid-cols-5">
             {partneredLogos.map((logo, index) => {
               return (
                 <a
