@@ -52,7 +52,6 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
 }
 
 const FullyLoaded = ({blok}: any) => {
-  console.log('blok:', blok)
   return (
     <section
       className="min-h-screen py-12 xl:py-24"
