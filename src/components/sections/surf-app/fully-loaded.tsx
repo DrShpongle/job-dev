@@ -2,6 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import {motion} from 'framer-motion'
 import {useInView} from 'react-intersection-observer'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import VideoPlayer from 'components/video-player'
 
@@ -56,6 +57,8 @@ const FullyLoaded = ({blok}: any) => {
     <section
       className="min-h-screen py-12 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
+      {...sbEditable(blok)}
+      key={blok._uid}
     >
       <div className="container">
         <h2 className="max-w-3xl text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">

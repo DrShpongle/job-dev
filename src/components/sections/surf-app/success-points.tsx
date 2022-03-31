@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import {sbEditable} from '@storyblok/storyblok-editable'
 import {motion, useViewportScroll, useTransform, useSpring} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 import classNames from 'classnames'
@@ -65,7 +66,7 @@ const SuccessPoints = ({blok}: any) => {
   })
 
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
         className="sticky top-0 flex h-screen flex-col overflow-hidden bg-white pt-12 md:pt-20 xl:pt-20 portrait:pt-24 md:portrait:pt-20 lg:portrait:pt-32 xl:landscape:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}

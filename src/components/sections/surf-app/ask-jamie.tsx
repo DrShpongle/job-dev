@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoPlayer from 'components/video-player'
@@ -15,7 +16,7 @@ const AskJamie = ({blok}: any) => {
   const {scrollYProgress} = useViewportScroll()
   const scrollOpacity = useTransform(scrollYProgress, [start, end], [0.05, 1])
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
         className="top-0 flex min-h-screen items-center bg-white py-12 md:sticky xl:py-24"
         style={{transform: 'translate3d(0,0,0)'}}

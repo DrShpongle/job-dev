@@ -7,6 +7,7 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {render} from 'storyblok-rich-text-react-renderer'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
@@ -82,7 +83,7 @@ const NewContent = ({blok}: any) => {
   }
 
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
         className="sticky top-0 h-screen overflow-hidden bg-[#203B74]"
         style={{transform: 'translate3d(0,0,0)'}}

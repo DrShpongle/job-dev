@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import {sbEditable} from '@storyblok/storyblok-editable'
 import {
   motion,
   useViewportScroll,
@@ -98,7 +99,7 @@ const HeroWithScrollableText = ({blok}: any) => {
   }, [])
 
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
           <VideoEmbed url={blok.background_video.url} />

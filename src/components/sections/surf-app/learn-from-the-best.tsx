@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 
@@ -17,9 +18,9 @@ const LearnFromTheBest = ({blok}: any) => {
   )
 
   return (
-    <section ref={refSection}>
+    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
-        className="sticky top-0 h-screen overflow-hidden bg-white bg-cover"
+        className="sticky top-0 h-screen overflow-hidden bg-white"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="relative h-full w-full">
