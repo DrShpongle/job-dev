@@ -21,7 +21,7 @@ const VisualiseAndDo = ({blok}: any) => {
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
         <div className="relative h-full w-full">
-          <VideoEmbed url={blok.bg_video_url.url} />
+          {/* <VideoEmbed url={blok.bg_video_url.url} /> */}
         </div>
         <motion.div
           className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end"
