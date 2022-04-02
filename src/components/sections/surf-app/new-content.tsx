@@ -109,8 +109,8 @@ const NewContent = ({blok}: any) => {
             >
               <Image
                 src={blok.image_01.filename}
-                width={438}
-                height={273}
+                width={876}
+                height={546}
                 alt="New Content"
               />
             </motion.div>
@@ -121,8 +121,8 @@ const NewContent = ({blok}: any) => {
             >
               <Image
                 src={blok.image_02.filename}
-                width={542}
-                height={332}
+                width={1084}
+                height={664}
                 alt="New Content"
               />
             </motion.div>
@@ -134,8 +134,8 @@ const NewContent = ({blok}: any) => {
               <div className="relative">
                 <Image
                   src={blok.image_03.filename}
-                  width={919}
-                  height={525}
+                  width={1838}
+                  height={1050}
                   alt="New Content"
                 />
               </div>
@@ -147,8 +147,8 @@ const NewContent = ({blok}: any) => {
             >
               <Image
                 src={blok.image_04.filename}
-                width={295}
-                height={295}
+                width={590}
+                height={590}
                 alt="New Content"
               />
             </motion.div>
@@ -159,8 +159,8 @@ const NewContent = ({blok}: any) => {
             >
               <Image
                 src={blok.image_05.filename}
-                width={362}
-                height={490}
+                width={724}
+                height={980}
                 alt="New Content"
               />
             </motion.div>
@@ -171,8 +171,8 @@ const NewContent = ({blok}: any) => {
             >
               <Image
                 src={blok.image_06.filename}
-                width={502}
-                height={176}
+                width={1004}
+                height={352}
                 alt="New Content"
               />
             </motion.div>
