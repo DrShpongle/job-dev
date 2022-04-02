@@ -6,7 +6,6 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
-import {render} from 'storyblok-rich-text-react-renderer'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -97,7 +96,7 @@ const NewContent = ({blok}: any) => {
                   {blok.title}
                 </h2>
                 <div className="mt-4 md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
-                  {render(blok.description)}
+                  {blok.description}
                 </div>
               </div>
             </div>
@@ -109,7 +108,7 @@ const NewContent = ({blok}: any) => {
               className="absolute left-4 top-8 z-[1] flex w-[154px] will-change-transform md:left-0 md:top-20 md:w-[438px] lg:top-24"
             >
               <Image
-                src="/images/new-content/01.jpg"
+                src={blok.image_01.filename}
                 width={438}
                 height={273}
                 alt="New Content"
@@ -121,7 +120,7 @@ const NewContent = ({blok}: any) => {
               className="absolute right-0 z-[2] flex w-[154px] will-change-transform md:top-14 md:w-[390px] lg:top-20  lg:w-[542px]"
             >
               <Image
-                src="/images/new-content/02.jpg"
+                src={blok.image_02.filename}
                 width={542}
                 height={332}
                 alt="New Content"
@@ -134,7 +133,7 @@ const NewContent = ({blok}: any) => {
             >
               <div className="relative">
                 <Image
-                  src="/images/new-content/03.jpg"
+                  src={blok.image_03.filename}
                   width={919}
                   height={525}
                   alt="New Content"
@@ -147,7 +146,7 @@ const NewContent = ({blok}: any) => {
               className="absolute bottom-8 left-8 z-[3] flex w-[110px] will-change-transform md:bottom-20 md:left-6 md:w-[295px] lg:left-8"
             >
               <Image
-                src="/images/new-content/04.jpg"
+                src={blok.image_04.filename}
                 width={295}
                 height={295}
                 alt="New Content"
@@ -159,7 +158,7 @@ const NewContent = ({blok}: any) => {
               className="absolute bottom-16 right-4 z-[4] flex w-[110px] will-change-transform md:bottom-16 md:right-6 md:w-[300px] lg:right-8 lg:w-[362px]"
             >
               <Image
-                src="/images/new-content/05.jpg"
+                src={blok.image_05.filename}
                 width={362}
                 height={490}
                 alt="New Content"
@@ -171,7 +170,7 @@ const NewContent = ({blok}: any) => {
               className="absolute bottom-0 left-24 z-[5] flex w-[160px] will-change-transform md:left-64 md:w-[430px] lg:w-[502px]"
             >
               <Image
-                src="/images/new-content/06.jpg"
+                src={blok.image_06.filename}
                 width={502}
                 height={176}
                 alt="New Content"
