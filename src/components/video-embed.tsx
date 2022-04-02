@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 
 const VideoEmbed: React.FC<{url: string; className?: string}> = ({url}) => (
   <>
-    <div className="embed-video-wrapper h-full w-full">
+    <div className="embed-video-wrapper relative h-full w-full">
       <ReactPlayer
         playsinline
         playing

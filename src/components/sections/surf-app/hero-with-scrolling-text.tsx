@@ -102,6 +102,15 @@ const HeroWithScrollableText = ({blok}: any) => {
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
+          <div className="absolute inset-0">
+            <Image
+              src={blok.background_image.filename}
+              width={1920}
+              height={1088}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
           <VideoEmbed url={blok.background_video.url} />
         </div>
         {isMounted ? (
