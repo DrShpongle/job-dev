@@ -98,7 +98,7 @@ const AskJamie = ({blok}: any) => {
                 })}
               </motion.ul>
             </div>
-            <div className="relative flex justify-end">
+            <div className="relative flex justify-center overflow-hidden">
               <motion.div
                 className="relative w-full max-w-[580px]"
                 style={{y: scrollPhone}}
@@ -128,10 +128,10 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </motion.div>
-              <div className="z-10 mt-4 flex items-center space-x-2 md:absolute md:right-64 md:bottom-16 md:mt-0 md:space-x-4 lg:bottom-0 lg:right-0">
+              <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:absolute md:right-64 md:bottom-10 md:mt-0 md:space-x-4 lg:right-0">
                 <button
                   onClick={() => setPlaying(!playing)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray/40 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                 >
                   {playing ? (
                     <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
@@ -141,7 +141,7 @@ const AskJamie = ({blok}: any) => {
                 </button>
                 <button
                   onClick={() => setMuted(!muted)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray/40 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                 >
                   {muted ? (
                     <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
