@@ -24,13 +24,9 @@ const AskJamie = ({blok}: any) => {
 
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
-  // const scrollPhone = useTransform(scrollYProgress, [start, end], ['80%', '0%'])
   const controlsText = useAnimation()
-  const scrollText = useTransform(
-    scrollYProgress,
-    [start + (end - start) * 0.7, end],
-    [0, 1],
-  )
+
+  const scrollText = useTransform(scrollYProgress, [start, end], [0, 1])
 
   const scrollPhone = useTransform(
     scrollYProgress,
@@ -41,7 +37,7 @@ const AskJamie = ({blok}: any) => {
   useIsomorphicLayoutEffect(() => {
     const triggerPhoneAnimation = () => {
       console.log('scrollText.get():', scrollText.get())
-      if (scrollText.get() > 0) {
+      if (scrollText.get() > 0.6) {
         controlsText.start('shown')
       } else {
         controlsText.start('hidden')
@@ -58,7 +54,9 @@ const AskJamie = ({blok}: any) => {
     shown: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.4,
+        stiffness: 400,
+        damping: 90,
       },
     },
   }
@@ -71,7 +69,7 @@ const AskJamie = ({blok}: any) => {
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
-        className="top-0 flex min-h-screen items-stretch bg-white pt-12 md:sticky xl:pt-24"
+        className="top-0 flex min-h-screen items-center bg-white pt-12 md:sticky md:pt-20 lg:items-stretch xl:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
@@ -92,7 +90,7 @@ const AskJamie = ({blok}: any) => {
                 {scrollingTextArr.map((item: string, index: number) => {
                   return (
                     <motion.li key={index} variants={itemVariants}>
-                      <h3 className="text-5xl leading-none text-pink md:text-6xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                      <h3 className="text-5xl leading-none text-pink md:text-3xl xl:text-4xl 2xl:text-5xl">
                         {item}
                       </h3>
                     </motion.li>
@@ -110,7 +108,7 @@ const AskJamie = ({blok}: any) => {
                 }}
               >
                 <div className="absolute w-full">
-                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[30px] lg:rounded-[25px] xl:inset-3 xl:rounded-[30px] 2xl:inset-4 2xl:rounded-[40px]">
+                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
@@ -130,6 +128,28 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </motion.div>
+              <div className="z-10 mt-4 flex items-center space-x-2 md:absolute md:right-64 md:bottom-16 md:mt-0 md:space-x-4 lg:bottom-0 lg:right-0">
+                <button
+                  onClick={() => setPlaying(!playing)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                >
+                  {playing ? (
+                    <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                  ) : (
+                    <IconPlay className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                  )}
+                </button>
+                <button
+                  onClick={() => setMuted(!muted)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                >
+                  {muted ? (
+                    <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                  ) : (
+                    <IconVolumeOn className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
