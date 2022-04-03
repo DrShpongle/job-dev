@@ -1,8 +1,14 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useAnimation,
+} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
+import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
@@ -12,9 +18,14 @@ const AskJamie = ({blok}: any) => {
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
 
+  const scrollingTextArr = blok.questions_block.map((item: any) => {
+    return item.text_line
+  })
+
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
   // const scrollPhone = useTransform(scrollYProgress, [start, end], ['80%', '0%'])
+  const controlsText = useAnimation()
   const scrollText = useTransform(
     scrollYProgress,
     [start + (end - start) * 0.7, end],
@@ -26,6 +37,37 @@ const AskJamie = ({blok}: any) => {
     [start, start + (end - start) * 0.8],
     ['80%', '0%'],
   )
+
+  useIsomorphicLayoutEffect(() => {
+    const triggerPhoneAnimation = () => {
+      console.log('scrollText.get():', scrollText.get())
+      if (scrollText.get() > 0) {
+        controlsText.start('shown')
+      } else {
+        controlsText.start('hidden')
+      }
+    }
+    const unsubscribeY = scrollText.onChange(triggerPhoneAnimation)
+    return () => {
+      unsubscribeY()
+    }
+  }, [])
+
+  const containerVariants = {
+    hidden: {opacity: 0},
+    shown: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: {opacity: 0},
+    shown: {opacity: 1},
+  }
+
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
@@ -41,10 +83,24 @@ const AskJamie = ({blok}: any) => {
               <p className="relative z-10 mt-4 md:mt-8 md:max-w-xl md:text-xl lg:max-w-2xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
                 {blok.description}
               </p>
-              <motion.div></motion.div>
+              <motion.ul
+                className="mt-16 space-y-8 lg:space-y-12"
+                variants={containerVariants}
+                initial="shown"
+                animate={controlsText}
+              >
+                {scrollingTextArr.map((item: string, index: number) => {
+                  return (
+                    <motion.li key={index} variants={itemVariants}>
+                      <h3 className="text-5xl leading-none text-pink md:text-6xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                        {item}
+                      </h3>
+                    </motion.li>
+                  )
+                })}
+              </motion.ul>
             </div>
             <div className="relative flex justify-end">
-              {/* <div className="relative flex w-64 md:w-[200px] lg:w-[250px] xl:w-[280px] 2xl:w-[340px]"> */}
               <motion.div
                 className="relative w-full max-w-[580px]"
                 style={{y: scrollPhone}}
