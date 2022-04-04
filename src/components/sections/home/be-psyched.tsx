@@ -29,7 +29,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
       key={blok._uid}
     >
       <motion.div
-        className="absolute bottom-0 flex w-full lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"
+        className="absolute bottom-0 flex w-full will-change-transform lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"
         initial={showImage && width >= 1024 ? {x: '-90%'} : {}}
         style={showImage && width >= 1024 ? {x: rangeX} : {}}
         transition={{
@@ -61,7 +61,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
         <div className="flex flex-col pb-[250px] md:pb-[500px] lg:flex-row lg:pb-0">
           <div className="relative flex grow items-start justify-end lg:pt-48 lg:pr-8 xl:pr-16 2xl:pr-24">
             <motion.div
-              className="absolute w-32 shrink-0 origin-center md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
+              className="absolute w-32 shrink-0 origin-center will-change-transform md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
               style={showImage && width >= 1024 ? {opacity, rotate} : {}}
             >
               <Image

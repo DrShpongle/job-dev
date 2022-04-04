@@ -24,7 +24,7 @@ const VisualiseAndDo = ({blok}: any) => {
           <VideoEmbed url={blok.bg_video_url.url} />
         </div>
         <motion.div
-          className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end"
+          className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end will-change-transform"
           style={{y: scrollText}}
         >
           <div className="container flex flex-col items-end text-right">

@@ -25,7 +25,7 @@ const AboutHero = ({blok}: any) => {
       className="flex min-h-screen flex-col pt-12 md:pt-20 xl:pt-24"
     >
       <motion.div
-        className="fixed top-40 w-full duration-200"
+        className="fixed top-40 w-full duration-200 will-change-transform"
         style={{opacity: opacityText}}
       >
         <div className="text-center font-headings text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">

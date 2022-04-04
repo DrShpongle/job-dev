@@ -116,7 +116,7 @@ const HeroWithScrollableText = ({blok}: any) => {
           <motion.div
             ref={refTextHolder}
             animate={{opacity: 1, transition: {delay: 1}}}
-            className="absolute bottom-0 z-10 w-full xl:px-20"
+            className="absolute bottom-0 z-10 w-full will-change-transform xl:px-20"
             initial={{y: textBlockHeight, opacity: 0}}
             style={{y: scrollText}}
           >
@@ -129,7 +129,7 @@ const HeroWithScrollableText = ({blok}: any) => {
         ) : null}
         <div className="flex h-full w-full items-center justify-center pt-20">
           <motion.div
-            className="relative z-10"
+            className="relative z-10 will-change-transform"
             variants={{
               hidden: {
                 opacity: 0,

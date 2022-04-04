@@ -113,7 +113,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           </div>
         </div>
         <motion.div
-          className="relative top-40 z-10 hidden w-full px-12 lg:block"
+          className="relative top-40 z-10 hidden w-full px-12 will-change-transform lg:block"
           style={{y: scaleText}}
         >
           <h3 className="font-accented text-3xl text-pink md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px]">
@@ -144,7 +144,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
         <motion.div
           style={{y: scaleIphone}}
           initial={{y: '100%'}}
-          className="absolute bottom-0 left-0 right-0 mx-auto flex w-[280px] translate-y-1/2 justify-center md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px]"
+          className="absolute bottom-0 left-0 right-0 mx-auto flex w-[280px] translate-y-1/2 justify-center will-change-transform md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px]"
         >
           <Image
             src="/images/iphone-frame-portrait.png"
@@ -162,6 +162,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 transition={{
                   duration: 0.5,
                 }}
+                className="will-change-transform"
               >
                 <Image
                   src="/images/job-app-logo.png"

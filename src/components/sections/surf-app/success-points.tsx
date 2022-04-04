@@ -87,7 +87,7 @@ const SuccessPoints = ({blok}: any) => {
                   : animateSlideHandsWithPhone,
             }}
             className={classNames(
-              'relative z-10 flex w-[300px] shrink-0 origin-center justify-center md:w-full',
+              'relative z-10 flex w-[300px] shrink-0 origin-center justify-center will-change-transform md:w-full',
               width / height < 1 ? 'origin-bottom' : 'origin-center',
             )}
           >

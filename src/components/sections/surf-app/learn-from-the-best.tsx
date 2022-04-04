@@ -32,7 +32,7 @@ const LearnFromTheBest = ({blok}: any) => {
           />
         </div>
         <motion.div
-          className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end"
+          className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end will-change-transform"
           style={{y: scrollText}}
         >
           <div className="container">

@@ -64,7 +64,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
             </div>
             <motion.div
               className={classNames(
-                'absolute top-0 bottom-0 z-10 m-auto flex items-center justify-center overflow-hidden duration-100 before:absolute before:inset-0 before:bg-black/20',
+                'absolute top-0 bottom-0 z-10 m-auto flex items-center justify-center overflow-hidden duration-100 will-change-transform before:absolute before:inset-0 before:bg-black/20',
                 width >= height ? '!h-full w-1/3' : 'h-1/3 !w-full',
               )}
               style={{width: scale, height: scale}}

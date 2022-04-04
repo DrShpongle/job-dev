@@ -33,14 +33,14 @@ export const MobileMenuToggler: React.FC<{
         initial="closed"
         animate={isOpened ? 'opened' : 'closed'}
         transition={{duration: 0.25}}
-        className="absolute h-1 w-6 rounded-full bg-pink"
+        className="absolute h-1 w-6 rounded-full bg-pink will-change-transform"
       />
       <motion.div
         variants={variantsTogglerBottom}
         initial="closed"
         animate={isOpened ? 'opened' : 'closed'}
         transition={{duration: 0.25}}
-        className="absolute h-1 w-6 rounded-full bg-pink"
+        className="absolute h-1 w-6 rounded-full bg-pink will-change-transform"
       />
     </div>
   )
@@ -66,7 +66,7 @@ const MobileMenu: React.FC<{
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="mobile-menu fixed top-0 left-0 z-30 mt-10 flex w-full touch-none flex-col items-center justify-between bg-pink pt-16 pb-24 md:mt-14 lg:hidden"
+          className="mobile-menu fixed top-0 left-0 z-30 mt-10 flex w-full touch-none flex-col items-center justify-between bg-pink pt-16 pb-24 will-change-transform md:mt-14 lg:hidden"
         >
           <div className="flex flex-col items-center">
             <ul className="flex flex-col items-center space-y-3">

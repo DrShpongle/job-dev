@@ -88,7 +88,7 @@ const AskJamie = ({blok}: any) => {
                 {blok.description}
               </p>
               <motion.ul
-                className="mt-16 hidden space-y-8 md:block lg:space-y-12"
+                className="mt-16 hidden space-y-8 will-change-transform md:block lg:space-y-12"
                 variants={containerVariants}
                 initial="shown"
                 animate={controlsText}
