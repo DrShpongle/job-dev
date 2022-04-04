@@ -7,7 +7,6 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
-// import {useWindowSize} from 'react-use'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -15,15 +14,9 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
-  // const {width} = useWindowSize()
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
-
-  // let showAnimation = false
-  // if (isFinite(width) && width >= 768) {
-  //   showAnimation = true
-  // }
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
     return item.text_line
@@ -119,9 +112,9 @@ const AskJamie = ({blok}: any) => {
                 })}
               </ul>
             </div>
-            <div className="relative flex flex-col items-center justify-center md:flex-row md:items-stretch md:overflow-hidden">
+            <div className="relative flex flex-col items-center justify-center lg:flex-row lg:items-stretch lg:overflow-hidden">
               <motion.div
-                className="relative hidden w-full max-w-[580px] md:block"
+                className="relative hidden w-full max-w-[580px] lg:block"
                 style={{y: scrollPhone}}
                 transition={{
                   stiffness: 400,
@@ -149,7 +142,7 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </motion.div>
-              <div className="relative w-full max-w-[290px] md:hidden">
+              <div className="relative w-full max-w-[290px] lg:hidden">
                 <div className="w-full">
                   <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[40px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
                     <VideoPlayer
@@ -171,7 +164,7 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </div>
-              <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:absolute md:right-64 md:bottom-10 md:mt-0 md:space-x-4 lg:right-0">
+              <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4 lg:absolute lg:bottom-10 lg:mt-0">
                 <button
                   onClick={() => setPlaying(!playing)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 md:bg-gray/40 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
