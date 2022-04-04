@@ -105,8 +105,6 @@ const HeroWithScrollableText = ({blok}: any) => {
           <div className="absolute inset-0">
             <Image
               src={blok.background_image.filename}
-              width={1920}
-              height={1088}
               layout="fill"
               objectFit="cover"
             />
