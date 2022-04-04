@@ -7,7 +7,7 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import {useWindowSize} from 'react-use'
+// import {useWindowSize} from 'react-use'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -15,15 +15,15 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
-  const {width} = useWindowSize()
+  // const {width} = useWindowSize()
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
 
-  let showAnimation = false
-  if (isFinite(width) && width >= 768) {
-    showAnimation = true
-  }
+  // let showAnimation = false
+  // if (isFinite(width) && width >= 768) {
+  //   showAnimation = true
+  // }
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
     return item.text_line
@@ -88,7 +88,7 @@ const AskJamie = ({blok}: any) => {
                 {blok.description}
               </p>
               <motion.ul
-                className="mt-16 space-y-8 lg:space-y-12"
+                className="mt-16 hidden space-y-8 md:block lg:space-y-12"
                 variants={containerVariants}
                 initial="shown"
                 animate={controlsText}
@@ -107,6 +107,17 @@ const AskJamie = ({blok}: any) => {
                   )
                 })}
               </motion.ul>
+              <ul className="mt-8 space-y-6 md:hidden">
+                {scrollingTextArr.map((item: string, index: number) => {
+                  return (
+                    <li key={index} className="will-change-transform">
+                      <h3 className="text-2xl leading-none text-pink">
+                        {item}
+                      </h3>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
             <div className="relative flex flex-col items-center justify-center md:flex-row md:items-stretch md:overflow-hidden">
               <motion.div
