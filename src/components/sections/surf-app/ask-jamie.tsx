@@ -35,14 +35,14 @@ const AskJamie = ({blok}: any) => {
   )
 
   useIsomorphicLayoutEffect(() => {
-    const triggerPhoneAnimation = () => {
+    const triggerTextAnimation = () => {
       if (scrollText.get() > 0.6) {
         controlsText.start('shown')
       } else {
         controlsText.start('hidden')
       }
     }
-    const unsubscribeY = scrollText.onChange(triggerPhoneAnimation)
+    const unsubscribeY = scrollText.onChange(triggerTextAnimation)
     return () => {
       unsubscribeY()
     }
@@ -53,16 +53,16 @@ const AskJamie = ({blok}: any) => {
     shown: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4,
+        staggerChildren: 0.5,
         stiffness: 400,
-        damping: 90,
+        damping: 40,
       },
     },
   }
 
   const itemVariants = {
-    hidden: {opacity: 0},
-    shown: {opacity: 1},
+    hidden: {opacity: 0, y: '90%', scale: 0.3},
+    shown: {opacity: 1, y: '0%', scale: 1.0},
   }
 
   return (
@@ -88,7 +88,11 @@ const AskJamie = ({blok}: any) => {
               >
                 {scrollingTextArr.map((item: string, index: number) => {
                   return (
-                    <motion.li key={index} variants={itemVariants}>
+                    <motion.li
+                      key={index}
+                      variants={itemVariants}
+                      className="will-change-transform"
+                    >
                       <h3 className="text-5xl leading-none text-pink md:text-3xl xl:text-4xl 2xl:text-5xl">
                         {item}
                       </h3>
