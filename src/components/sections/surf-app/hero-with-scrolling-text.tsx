@@ -107,6 +107,7 @@ const HeroWithScrollableText = ({blok}: any) => {
               src={blok.background_image.filename}
               layout="fill"
               objectFit="cover"
+              priority
             />
           </div>
           <VideoEmbed url={blok.background_video.url} />
