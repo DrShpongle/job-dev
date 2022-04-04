@@ -7,6 +7,7 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
+import {useInView} from 'react-intersection-observer'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -14,6 +15,9 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
+  const {ref, inView, entry} = useInView({
+    threshold: 0,
+  })
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
@@ -64,6 +68,10 @@ const AskJamie = ({blok}: any) => {
     hidden: {opacity: 0, y: '90%', scale: 0.3},
     shown: {opacity: 1, y: '0%', scale: 1.0},
   }
+
+  React.useEffect(() => {
+    setPlaying(inView)
+  }, [inView])
 
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
@@ -121,7 +129,7 @@ const AskJamie = ({blok}: any) => {
                   damping: 90,
                 }}
               >
-                <div className="absolute w-full">
+                <div ref={ref} className="absolute w-full">
                   <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
