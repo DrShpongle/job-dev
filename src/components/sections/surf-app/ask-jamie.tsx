@@ -7,6 +7,7 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
+import {useWindowSize} from 'react-use'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -14,9 +15,15 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
+  const {width} = useWindowSize()
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
   const [muted, setMuted] = React.useState(true)
+
+  let showAnimation = false
+  if (isFinite(width) && width >= 768) {
+    showAnimation = true
+  }
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
     return item.text_line
@@ -68,7 +75,7 @@ const AskJamie = ({blok}: any) => {
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
-        className="top-0 flex min-h-screen items-center bg-white pt-12 md:sticky md:pt-20 lg:items-stretch xl:pt-24"
+        className="top-0 flex min-h-screen items-center bg-white py-12 md:sticky md:pb-0 md:pt-20 lg:items-stretch xl:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
@@ -101,9 +108,9 @@ const AskJamie = ({blok}: any) => {
                 })}
               </motion.ul>
             </div>
-            <div className="relative flex justify-center overflow-hidden">
+            <div className="relative flex flex-col items-center justify-center md:flex-row md:items-stretch md:overflow-hidden">
               <motion.div
-                className="relative w-full max-w-[580px]"
+                className="relative hidden w-full max-w-[580px] md:block"
                 style={{y: scrollPhone}}
                 transition={{
                   stiffness: 400,
@@ -111,7 +118,7 @@ const AskJamie = ({blok}: any) => {
                 }}
               >
                 <div className="absolute w-full">
-                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
+                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
@@ -131,10 +138,32 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </motion.div>
+              <div className="relative w-full max-w-[290px] md:hidden">
+                <div className="w-full">
+                  <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[40px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
+                    <VideoPlayer
+                      url={blok.video.url}
+                      controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
+                      externalControls={true}
+                      playing={playing}
+                      muted={muted}
+                    />
+                  </div>
+                  <div className="pointer-events-none">
+                    <Image
+                      src="/images/iphone-frame-portrait.png"
+                      width={580}
+                      height={1171}
+                      alt="Ask Jamie"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:absolute md:right-64 md:bottom-10 md:mt-0 md:space-x-4 lg:right-0">
                 <button
                   onClick={() => setPlaying(!playing)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray/40 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 md:bg-gray/40 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                 >
                   {playing ? (
                     <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
@@ -144,7 +173,7 @@ const AskJamie = ({blok}: any) => {
                 </button>
                 <button
                   onClick={() => setMuted(!muted)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray/40 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 md:bg-gray/40 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                 >
                   {muted ? (
                     <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
