@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -31,6 +32,20 @@ class MyDocument extends Document {
             gtag('config', 'G-3DDEV708JB', {
               page_path: window.location.pathname,
             });
+          `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              var _urconfig = { sid: "7db37aa7-69a0-46db-91c5-4c651977a521", aip: 0, usePageProtocol: false };
+              (function (d, s) {
+                  var js = d.createElement(s),
+                      sc = d.getElementsByTagName(s)[0];
+                  js.src = "https://hit.uptrendsdata.com/rum.min.js";
+                  js.async = "async";
+                  sc.parentNode.insertBefore(js, sc);
+              }(document, "script"));
           `,
             }}
           />
