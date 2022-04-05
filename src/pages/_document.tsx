@@ -37,7 +37,7 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-              var _urconfig = { sid: "7db37aa7-69a0-46db-91c5-4c651977a521", aip: 0, usePageProtocol: false };
+              var _urconfig = { sid: "62b2f704-2afc-4de1-aadb-d806e25bda64", aip: 0, usePageProtocol: false };
               (function (d, s) {
                   var js = d.createElement(s),
                       sc = d.getElementsByTagName(s)[0];
