@@ -34,6 +34,10 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <meta
+            name="facebook-domain-verification"
+            content="hklkoy16kctd1or20nqdzgib0fvk8m"
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
