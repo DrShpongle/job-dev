@@ -180,8 +180,8 @@ const TeaserSignUp: React.FC<any> = ({blok}) => {
         </form>
         <div className="pt-12">
           <Image
-            width="2500"
-            height="1662"
+            width="1920"
+            height="1000"
             layout="responsive"
             src="/images/teaser-sign-up.jpg"
           />
