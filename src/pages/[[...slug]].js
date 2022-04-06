@@ -1,12 +1,38 @@
+import {NextSeo} from 'next-seo'
 import DynamicComponent from 'components/dynamic-component'
 import Storyblok, {useStoryblok} from 'utils/storyblok-service'
+import {isEmpty} from 'lodash'
 
 export default function Page(props) {
   const {story, preview} = props
   const enableBridge = true
   const actualStory = useStoryblok(story, enableBridge)
+  const seoObj = actualStory.content?.seo?.[0]
+  const seo = isEmpty(seoObj)
+    ? {}
+    : Object.keys(seoObj)
+        .filter(
+          (key) => key !== '_editable' && key !== '_uid' && key !== 'component',
+        )
+        .reduce((obj, key) => {
+          return Object.assign(obj, {
+            [key]: seoObj[key],
+          })
+        }, {})
 
-  return <DynamicComponent blok={actualStory.content} />
+  return (
+    <>
+      <NextSeo
+        title={seo.title}
+        description={seo.description}
+        openGraph={{
+          title: seo.title,
+          description: seo.description,
+        }}
+      />
+      <DynamicComponent blok={actualStory.content} />
+    </>
+  )
 }
 
 export async function getStaticProps({params, preview = false}) {
