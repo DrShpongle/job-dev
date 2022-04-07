@@ -27,32 +27,32 @@ const NewContent = ({blok}: any) => {
 
   React.useEffect(() => {
     const triggerLogoAnimation = () => {
-      if (fadeInImages.get() > 0.15) {
+      if (fadeInImages.get() > 0) {
         controlsFadeInImage01.start('shown')
       } else {
         controlsFadeInImage01.start('hidden')
       }
-      if (fadeInImages.get() > 0.3) {
+      if (fadeInImages.get() > 0.15) {
         controlsFadeInImage05.start('shown')
       } else {
         controlsFadeInImage05.start('hidden')
       }
-      if (fadeInImages.get() > 0.45) {
+      if (fadeInImages.get() > 0.3) {
         controlsFadeInImage04.start('shown')
       } else {
         controlsFadeInImage04.start('hidden')
       }
-      if (fadeInImages.get() > 0.6) {
+      if (fadeInImages.get() > 0.45) {
         controlsFadeInImage02.start('shown')
       } else {
         controlsFadeInImage02.start('hidden')
       }
-      if (fadeInImages.get() > 0.75) {
+      if (fadeInImages.get() > 0.6) {
         controlsFadeInImage06.start('shown')
       } else {
         controlsFadeInImage06.start('hidden')
       }
-      if (fadeInImages.get() > 0.9) {
+      if (fadeInImages.get() > 0.75) {
         controlsFadeInImage03.start('shown')
       } else {
         controlsFadeInImage03.start('hidden')
@@ -95,7 +95,7 @@ const NewContent = ({blok}: any) => {
                 <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
                   {blok.title}
                 </h2>
-                <div className="mt-4 md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-4xl xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
+                <div className="mt-4 max-w-xl md:mt-8 md:text-xl lg:text-2xl lg:leading-normal xl:max-w-3xl xl:text-3xl xl:leading-normal 2xl:max-w-4xl 2xl:text-[34px] 2xl:leading-normal">
                   {blok.description}
                 </div>
               </div>
