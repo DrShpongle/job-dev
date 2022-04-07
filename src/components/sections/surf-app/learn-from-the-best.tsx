@@ -11,11 +11,7 @@ const LearnFromTheBest = ({blok}: any) => {
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
 
-  const scrollText = useTransform(
-    scrollYProgress,
-    [start, end],
-    ['20%', '-100%'],
-  )
+  const scrollText = useTransform(scrollYProgress, [start, end], ['100%', '0%'])
 
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
@@ -23,7 +19,7 @@ const LearnFromTheBest = ({blok}: any) => {
         className="sticky top-0 h-screen overflow-hidden bg-white"
         style={{transform: 'translate3d(0,0,0)'}}
       >
-        <div className="relative h-full w-full">
+        <div className="absolute left-0 top-0 h-full w-full">
           <Image
             layout="fill"
             className="pointer-events-none object-cover object-center"
@@ -32,7 +28,7 @@ const LearnFromTheBest = ({blok}: any) => {
           />
         </div>
         <motion.div
-          className="absolute bottom-0 z-10 flex h-full w-full flex-col justify-end will-change-transform"
+          className="flex h-full w-full flex-col justify-center will-change-transform"
           style={{y: scrollText}}
         >
           <div className="container">
@@ -45,7 +41,7 @@ const LearnFromTheBest = ({blok}: any) => {
           </div>
         </motion.div>
       </div>
-      <div className="h-[200vh]" />
+      <div className="h-[150vh]" />
     </section>
   )
 }
