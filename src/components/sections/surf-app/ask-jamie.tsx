@@ -73,7 +73,7 @@ const AskJamie = ({blok}: any) => {
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div
-        className="top-0 flex min-h-screen items-center bg-white py-12 md:sticky md:pb-0 md:pt-20 lg:items-stretch xl:pt-24"
+        className="top-0 flex min-h-screen items-center bg-white py-12 md:sticky md:pb-0 md:pt-20 xl:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="container">
@@ -117,7 +117,7 @@ const AskJamie = ({blok}: any) => {
                 })}
               </ul>
             </div>
-            <div className="relative flex flex-col items-center justify-center lg:flex-row lg:items-stretch lg:overflow-hidden">
+            <div className="relative flex flex-col items-center justify-center">
               <motion.div
                 className="relative hidden w-full max-w-[400px] lg:block"
                 style={{y: scrollPhone}}
@@ -126,7 +126,7 @@ const AskJamie = ({blok}: any) => {
                   damping: 90,
                 }}
               >
-                <div ref={ref} className="absolute w-full">
+                <div ref={ref} className="relative w-full">
                   <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
@@ -145,6 +145,28 @@ const AskJamie = ({blok}: any) => {
                       priority
                     />
                   </div>
+                </div>
+                <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4">
+                  <button
+                    onClick={() => setPlaying(!playing)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  >
+                    {playing ? (
+                      <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                    ) : (
+                      <IconPlay className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => setMuted(!muted)}
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  >
+                    {muted ? (
+                      <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                    ) : (
+                      <IconVolumeOn className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
+                    )}
+                  </button>
                 </div>
               </motion.div>
               <div className="relative w-full max-w-[290px] lg:hidden">
@@ -169,10 +191,10 @@ const AskJamie = ({blok}: any) => {
                   </div>
                 </div>
               </div>
-              <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4 lg:absolute lg:bottom-10 lg:mt-0">
+              <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4 lg:hidden">
                 <button
                   onClick={() => setPlaying(!playing)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 md:bg-gray/40 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
                   {playing ? (
                     <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
@@ -182,7 +204,7 @@ const AskJamie = ({blok}: any) => {
                 </button>
                 <button
                   onClick={() => setMuted(!muted)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 md:bg-gray/40 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
                   {muted ? (
                     <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
