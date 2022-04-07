@@ -31,7 +31,7 @@ export default function Page(props) {
           url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/${actualStory.slug}`,
           images: [
             {
-              url: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1637345011/egghead-next-pages/home-page/root-og_2x.png',
+              url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/images/og-image.png`,
             },
           ],
         }}
