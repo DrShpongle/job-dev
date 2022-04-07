@@ -20,6 +20,8 @@ const AskJamie = ({blok}: any) => {
   })
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
+  const [trigger, setTrigger] = React.useState(false)
+  console.log('trigger:', trigger)
   const [muted, setMuted] = React.useState(true)
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
@@ -38,12 +40,26 @@ const AskJamie = ({blok}: any) => {
     ['80%', '0%'],
   )
 
+  // useIsomorphicLayoutEffect(() => {
+  //   const triggerTextAnimation = () => {
+  //     if (scrollText.get() > 0.6) {
+  //       controlsText.start('shown')
+  //     } else {
+  //       controlsText.start('hidden')
+  //     }
+  //   }
+  //   const unsubscribeY = scrollText.onChange(triggerTextAnimation)
+  //   return () => {
+  //     unsubscribeY()
+  //   }
+  // }, [])
+
   useIsomorphicLayoutEffect(() => {
     const triggerTextAnimation = () => {
       if (scrollText.get() > 0.6) {
-        controlsText.start('shown')
+        setTrigger(true)
       } else {
-        controlsText.start('hidden')
+        setTrigger(false)
       }
     }
     const unsubscribeY = scrollText.onChange(triggerTextAnimation)
@@ -91,14 +107,16 @@ const AskJamie = ({blok}: any) => {
               <motion.ul
                 className="mt-16 hidden space-y-8 will-change-transform md:block lg:space-y-12"
                 variants={containerVariants}
-                initial="shown"
-                animate={controlsText}
+                initial="hidden"
+                // animate={controlsText}
+                animate={trigger ? 'shown' : 'hidden'}
               >
                 {scrollingTextArr.map((item: string, index: number) => {
                   return (
                     <motion.li
                       key={index}
                       variants={itemVariants}
+                      // initial="hidden"
                       className="will-change-transform"
                     >
                       <h3 className="text-5xl leading-none text-pink md:text-3xl xl:text-4xl 2xl:text-5xl">
