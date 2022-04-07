@@ -1,12 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {useMeasure} from 'react-use'
 import classNames from 'classnames'
 
@@ -59,11 +54,11 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
 
 const HeroWithScrollableText = ({blok}: any) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const [triggerPhoneAnimation, setTriggerPhoneAnimation] =
+    React.useState(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
   const [textBlockRef, {height: textBlockHeight}] = useMeasure<any>()
-
-  const controlsPhone = useAnimation()
 
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
@@ -85,18 +80,18 @@ const HeroWithScrollableText = ({blok}: any) => {
   }, [])
 
   useIsomorphicLayoutEffect(() => {
-    const triggerPhoneAnimation = () => {
+    const phoneAnimation = () => {
       if (scrollText.get() < -windowHeight * 0.5) {
-        controlsPhone.start('shown')
+        setTriggerPhoneAnimation(true)
       } else {
-        controlsPhone.start('hidden')
+        setTriggerPhoneAnimation(false)
       }
     }
-    const unsubscribeY = scrollText.onChange(triggerPhoneAnimation)
+    const unsubscribeY = scrollText.onChange(phoneAnimation)
     return () => {
       unsubscribeY()
     }
-  }, [])
+  }, [triggerPhoneAnimation])
 
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
@@ -145,7 +140,7 @@ const HeroWithScrollableText = ({blok}: any) => {
               type: 'spring',
               duration: 0.3,
             }}
-            animate={controlsPhone}
+            animate={triggerPhoneAnimation ? 'shown' : 'hidden'}
           >
             <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
               <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">

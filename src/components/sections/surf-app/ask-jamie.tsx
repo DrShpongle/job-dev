@@ -1,11 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {useInView} from 'react-intersection-observer'
 
@@ -15,13 +10,12 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
-  const {ref, inView, entry} = useInView({
+  const {ref, inView} = useInView({
     threshold: 0,
   })
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
-  const [trigger, setTrigger] = React.useState(false)
-  console.log('trigger:', trigger)
+  const [triggerTextAnimation, setTriggerTextAnimation] = React.useState(false)
   const [muted, setMuted] = React.useState(true)
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
@@ -30,43 +24,30 @@ const AskJamie = ({blok}: any) => {
 
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useViewportScroll()
-  const controlsText = useAnimation()
 
   const scrollText = useTransform(scrollYProgress, [start, end], [0, 1])
 
   const scrollPhone = useTransform(
     scrollYProgress,
-    [start, start + (end - start) * 0.8],
+    // TODO
+    // [start, start + (end - start) * 0.8],
+    [start, end],
     ['80%', '0%'],
   )
 
-  // useIsomorphicLayoutEffect(() => {
-  //   const triggerTextAnimation = () => {
-  //     if (scrollText.get() > 0.6) {
-  //       controlsText.start('shown')
-  //     } else {
-  //       controlsText.start('hidden')
-  //     }
-  //   }
-  //   const unsubscribeY = scrollText.onChange(triggerTextAnimation)
-  //   return () => {
-  //     unsubscribeY()
-  //   }
-  // }, [])
-
   useIsomorphicLayoutEffect(() => {
-    const triggerTextAnimation = () => {
+    const textAnimation = () => {
       if (scrollText.get() > 0.6) {
-        setTrigger(true)
+        setTriggerTextAnimation(true)
       } else {
-        setTrigger(false)
+        setTriggerTextAnimation(false)
       }
     }
-    const unsubscribeY = scrollText.onChange(triggerTextAnimation)
+    const unsubscribeY = scrollText.onChange(textAnimation)
     return () => {
       unsubscribeY()
     }
-  }, [])
+  }, [triggerTextAnimation])
 
   const containerVariants = {
     hidden: {opacity: 0},
@@ -108,15 +89,13 @@ const AskJamie = ({blok}: any) => {
                 className="mt-16 hidden space-y-8 will-change-transform md:block lg:space-y-12"
                 variants={containerVariants}
                 initial="hidden"
-                // animate={controlsText}
-                animate={trigger ? 'shown' : 'hidden'}
+                animate={triggerTextAnimation ? 'shown' : 'hidden'}
               >
                 {scrollingTextArr.map((item: string, index: number) => {
                   return (
                     <motion.li
                       key={index}
                       variants={itemVariants}
-                      // initial="hidden"
                       className="will-change-transform"
                     >
                       <h3 className="text-5xl leading-none text-pink md:text-3xl xl:text-4xl 2xl:text-5xl">
@@ -140,7 +119,7 @@ const AskJamie = ({blok}: any) => {
             </div>
             <div className="relative flex flex-col items-center justify-center lg:flex-row lg:items-stretch lg:overflow-hidden">
               <motion.div
-                className="relative hidden w-full max-w-[580px] lg:block"
+                className="relative hidden w-full max-w-[400px] lg:block"
                 style={{y: scrollPhone}}
                 transition={{
                   stiffness: 400,
@@ -148,7 +127,7 @@ const AskJamie = ({blok}: any) => {
                 }}
               >
                 <div ref={ref} className="absolute w-full">
-                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4">
+                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
@@ -216,7 +195,7 @@ const AskJamie = ({blok}: any) => {
           </div>
         </div>
       </div>
-      <div className="hidden h-[200vh] md:block" />
+      <div className="hidden h-[150vh] md:block" />
     </section>
   )
 }
