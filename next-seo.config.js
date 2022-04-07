@@ -4,7 +4,6 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://jamieobrien.com/',
     site_name: 'jamieobrien.com',
   },
   twitter: {

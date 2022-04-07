@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const YT_API_KEY = 'AIzaSyCnPv9L7g7ZB0wJh9w02ajbNi8CL91djdI'
-const YT_CHANNEL_ID = 'UCo_q6aOlvPH7M-j_XGWVgXg'
-const MAX_VIDEOS = 5
-const API_ROOT = 'https://youtube.googleapis.com/youtube/v3'
+const YT_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
+const YT_CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID
+const MAX_VIDEOS = process.env.NEXT_PUBLIC_YOUTUBE_MAX_VIDEOS
+const API_ROOT = process.env.NEXT_PUBLIC_YOUTUBE_API_ROOT
 
 const formatDate = (apiDate: any) => {
   const monthsArr = [
