@@ -31,7 +31,9 @@ export default function Page(props) {
           url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/${actualStory.slug}`,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/images/og-image.png`,
+              // TODO
+              // url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/images/og-image.png`,
+              url: 'https://job-dev.vercel.app/images/og-image.png',
             },
           ],
         }}
