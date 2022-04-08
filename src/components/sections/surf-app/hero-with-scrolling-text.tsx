@@ -101,7 +101,7 @@ const HeroWithScrollableText = ({blok}: any) => {
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-black/40">
+        <div className="absolute inset-0 before:absolute before:inset-0 before:z-10 before:bg-black/40">
           <div className="absolute inset-0">
             <Image
               src={blok.background_image.filename}
