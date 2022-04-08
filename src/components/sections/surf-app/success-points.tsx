@@ -47,7 +47,7 @@ const SuccessPoints = ({blok}: any) => {
   const portraitScaleHandsWithPhone = useTransform(
     scrollYProgress,
     [start, end],
-    [1, 2],
+    [1, 1.8],
   )
 
   const portraitScaleHandsWithTablet = useTransform(
