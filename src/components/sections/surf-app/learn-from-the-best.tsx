@@ -22,7 +22,7 @@ const LearnFromTheBest = ({blok}: any) => {
         <div className="absolute left-0 top-0 h-full w-full">
           <Image
             layout="fill"
-            className="pointer-events-none object-cover object-center"
+            className="pointer-events-none object-cover object-[-750px_center] md:object-center md:portrait:object-[-800px_center]"
             src={blok.background_image.filename}
             alt="Learn from the best"
           />
