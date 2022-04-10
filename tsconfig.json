@@ -16,12 +16,6 @@
     "incremental": true,
     "baseUrl": "./src/"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/components/sections/home/page.js",
-    "src/components/sections/home/dynamic-component.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
