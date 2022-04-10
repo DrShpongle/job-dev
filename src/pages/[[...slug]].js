@@ -7,6 +7,7 @@ export default function Page(props) {
   const {story, preview} = props
   const enableBridge = true
   const actualStory = useStoryblok(story, enableBridge)
+  const defaultSeoImage = `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/images/og-image.png`
   const seoPage =
     actualStory.content.component === 'page'
       ? actualStory.content?.seo?.[0]
@@ -46,7 +47,7 @@ export default function Page(props) {
           }${actualStory.slug}`,
           images: [
             {
-              url: seo.image.filename,
+              url: seo?.image?.filename || defaultSeoImage,
             },
           ],
         }}
