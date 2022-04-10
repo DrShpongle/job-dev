@@ -38,7 +38,7 @@ const TravelGuides = ({blok}: any) => {
             onClick={() => setItemsToShow(itemsToShow + 4)}
             className="mt-5 flex h-11 w-full items-center justify-center rounded-sm bg-pink font-headings uppercase text-white duration-150 md:mt-6 md:h-12 md:text-lg lg:mt-7 lg:h-14 lg:text-xl hover-hover:hover:bg-blue"
           >
-            More features
+            More travel guides
           </button>
         )}
       </div>
