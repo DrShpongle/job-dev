@@ -11,13 +11,13 @@ const Storyblok = new StoryblokClient({
 
 export default Storyblok
 
-export function useStoryblok(originalStory, preview) {
+export function useStoryblok(originalStory: any, preview: any) {
   let [story, setStory] = React.useState(originalStory)
 
   // adds the events for updating the visual editor
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#initializing-the-storyblok-js-bridge
   function initEventListeners() {
-    const {StoryblokBridge} = window
+    const {StoryblokBridge}: any = window
     if (typeof StoryblokBridge !== 'undefined') {
       // const storyblokInstance = new StoryblokBridge()
       const storyblokInstance = new StoryblokBridge({
@@ -25,16 +25,16 @@ export function useStoryblok(originalStory, preview) {
       })
 
       // reload on Next.js page on save or publish event in the Visual Editor
-      storyblokInstance.on(['change', 'published'], () => location.reload(true))
+      storyblokInstance.on(['change', 'published'], () => location.reload())
 
       // live update the story on input events
-      storyblokInstance.on('input', (event) => {
+      storyblokInstance.on('input', (event: any) => {
         if (event.story._uid === story._uid) {
           setStory(event.story)
         }
       })
 
-      storyblokInstance.on('enterEditmode', (event) => {
+      storyblokInstance.on('enterEditmode', (event: any) => {
         // loading the draft version on initial enter of editor
         Storyblok.get(`cdn/stories/${event.storyId}`, {
           version: 'draft',
@@ -55,7 +55,7 @@ export function useStoryblok(originalStory, preview) {
 
   // appends the bridge script tag to our document
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#installing-the-storyblok-js-bridge
-  function addBridge(callback) {
+  function addBridge(callback: any) {
     // check if the script is already present
     const existingScript = document.getElementById('storyblokBridge')
     if (!existingScript) {
