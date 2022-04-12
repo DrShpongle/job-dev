@@ -2,7 +2,6 @@ import * as React from 'react'
 import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import {useInView} from 'react-intersection-observer'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -10,9 +9,6 @@ import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
-  const {ref, inView} = useInView({
-    threshold: 0,
-  })
   const refSection = React.useRef<HTMLDivElement>(null)
   const [playing, setPlaying] = React.useState(true)
   const [triggerTextAnimation, setTriggerTextAnimation] = React.useState(false)
@@ -27,13 +23,7 @@ const AskJamie = ({blok}: any) => {
 
   const scrollText = useTransform(scrollYProgress, [start, end], [0, 1])
 
-  const scrollPhone = useTransform(
-    scrollYProgress,
-    // TODO
-    // [start, start + (end - start) * 0.8],
-    [start, end],
-    ['80%', '0%'],
-  )
+  const scrollPhone = useTransform(scrollYProgress, [start, end], ['80%', '0%'])
 
   useIsomorphicLayoutEffect(() => {
     const textAnimation = () => {
@@ -65,10 +55,6 @@ const AskJamie = ({blok}: any) => {
     hidden: {opacity: 0, y: '90%', scale: 0.3},
     shown: {opacity: 1, y: '0%', scale: 1.0},
   }
-
-  React.useEffect(() => {
-    setPlaying(inView)
-  }, [inView])
 
   return (
     <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
@@ -126,12 +112,14 @@ const AskJamie = ({blok}: any) => {
                   damping: 90,
                 }}
               >
-                <div ref={ref} className="relative w-full">
+                <div className="relative w-full">
                   <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
                       externalControls={true}
+                      handleExternalPlay={setPlaying}
+                      handleExternalMute={setMuted}
                       playing={playing}
                       muted={muted}
                     />
