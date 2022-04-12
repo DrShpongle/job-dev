@@ -10,9 +10,11 @@ import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
 
 const AskJamie = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
-  const [playing, setPlaying] = React.useState(true)
-  const [triggerTextAnimation, setTriggerTextAnimation] = React.useState(false)
+  const [playing, setPlaying] = React.useState(false)
   const [muted, setMuted] = React.useState(true)
+  const [playingMobile, setPlayingMobile] = React.useState(false)
+  const [mutedMobile, setMutedMobile] = React.useState(true)
+  const [triggerTextAnimation, setTriggerTextAnimation] = React.useState(false)
 
   const scrollingTextArr = blok.questions_block.map((item: any) => {
     return item.text_line
@@ -112,7 +114,7 @@ const AskJamie = ({blok}: any) => {
                   damping: 90,
                 }}
               >
-                <div className="relative w-full">
+                <div className="relative hidden w-full lg:block">
                   <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
@@ -164,10 +166,10 @@ const AskJamie = ({blok}: any) => {
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
                       externalControls={true}
-                      handleExternalPlay={setPlaying}
-                      handleExternalMute={setMuted}
-                      playing={playing}
-                      muted={muted}
+                      handleExternalPlay={setPlayingMobile}
+                      handleExternalMute={setMutedMobile}
+                      playing={playingMobile}
+                      muted={mutedMobile}
                     />
                   </div>
                   <div className="pointer-events-none">
@@ -183,7 +185,7 @@ const AskJamie = ({blok}: any) => {
               </div>
               <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4 lg:hidden">
                 <button
-                  onClick={() => setPlaying(!playing)}
+                  onClick={() => setPlayingMobile(!playingMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
                   {playing ? (
@@ -193,7 +195,7 @@ const AskJamie = ({blok}: any) => {
                   )}
                 </button>
                 <button
-                  onClick={() => setMuted(!muted)}
+                  onClick={() => setMutedMobile(!mutedMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
                   {muted ? (
