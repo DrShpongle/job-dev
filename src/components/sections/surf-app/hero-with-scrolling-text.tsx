@@ -7,7 +7,7 @@ import {
   useTransform,
   useAnimation,
 } from 'framer-motion'
-import {useMeasure} from 'react-use'
+import {useMeasure, useWindowSize} from 'react-use'
 import classNames from 'classnames'
 
 import {isBrowser} from 'utils/is-browser'
@@ -58,6 +58,7 @@ const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
 }
 
 const HeroWithScrollableText = ({blok}: any) => {
+  const {width} = useWindowSize()
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
   const refTextHolder = React.useRef<HTMLDivElement>(null)
@@ -99,7 +100,12 @@ const HeroWithScrollableText = ({blok}: any) => {
   }, [])
 
   return (
-    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
+    <section
+      ref={refSection}
+      {...sbEditable(blok)}
+      key={blok._uid}
+      style={{transform: 'translate3d(0,0,0)'}}
+    >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:z-10 before:bg-black/20">
           <div className="absolute inset-0">
@@ -151,7 +157,11 @@ const HeroWithScrollableText = ({blok}: any) => {
               <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
                 <VideoPlayer
                   playing={true}
-                  url={blok.video_in_the_frame.url}
+                  url={
+                    isFinite(width) && width < 768
+                      ? blok.video_in_the_frame_mobile.url
+                      : blok.video_in_the_frame.url
+                  }
                   controls={true}
                   muted={true}
                 />
