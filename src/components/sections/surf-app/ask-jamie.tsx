@@ -164,6 +164,8 @@ const AskJamie = ({blok}: any) => {
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
                       externalControls={true}
+                      handleExternalPlay={setPlaying}
+                      handleExternalMute={setMuted}
                       playing={playing}
                       muted={muted}
                     />
