@@ -188,7 +188,7 @@ const AskJamie = ({blok}: any) => {
                   onClick={() => setPlayingMobile(!playingMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
-                  {playing ? (
+                  {playingMobile ? (
                     <IconPause className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
                   ) : (
                     <IconPlay className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
@@ -198,7 +198,7 @@ const AskJamie = ({blok}: any) => {
                   onClick={() => setMutedMobile(!mutedMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
-                  {muted ? (
+                  {mutedMobile ? (
                     <IconVolumeOff className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
                   ) : (
                     <IconVolumeOn className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10" />
