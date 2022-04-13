@@ -31,7 +31,7 @@ const VisualiseAndDo = ({blok}: any) => {
           className="flex h-full w-full flex-col justify-center will-change-transform"
           style={{y: scrollText}}
         >
-          <div className="container flex flex-col items-end text-right">
+          <div className="container flex flex-col items-end text-right text-white">
             <div className="max-w-3xl font-headings text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
               {blok.title}
             </div>
