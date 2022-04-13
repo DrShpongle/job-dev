@@ -81,7 +81,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
 
   return (
     <section
-      className="pb-12 pt-24 md:pt-32 md:pb-20 xl:pt-36 xl:pb-24"
+      className="pb-12 pt-24 md:pt-36 md:pb-20 xl:pt-40 xl:pb-24"
       style={{transform: 'translateZ(0)'}}
     >
       <div className="absolute inset-0 z-[-1] h-full">
@@ -121,23 +121,23 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             <input
               type="text"
               className="h-12 w-full rounded-none px-3 md:px-5 md:text-xl 2xl:text-2xl"
-              placeholder="Jamie"
+              placeholder="First name"
               name="FNAME"
               id="mce-FNAME"
             />
             <input
               type="text"
               className="h-12 w-full rounded-none px-3 md:px-5 md:text-xl 2xl:text-2xl"
-              placeholder="legend@job.com"
-              name="EMAIL"
-              id="mce-EMAIL"
+              placeholder="Last name"
+              name="LNAME"
+              id="mce-LNAME"
             />
             <input
               type="text"
               className="h-12 w-full rounded-none px-3 md:px-5 md:text-xl 2xl:text-2xl"
-              placeholder="O'Brien"
-              name="LNAME"
-              id="mce-LNAME"
+              placeholder="Email"
+              name="EMAIL"
+              id="mce-EMAIL"
             />
             <div className="flex space-x-8">
               <label htmlFor="ALLOWSTORE" className="text-lg text-white">
