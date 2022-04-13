@@ -25,7 +25,11 @@ const AskJamie = ({blok}: any) => {
 
   const scrollText = useTransform(scrollYProgress, [start, end], [0, 1])
 
-  const scrollPhone = useTransform(scrollYProgress, [start, end], ['80%', '0%'])
+  const scrollPhone = useTransform(
+    scrollYProgress,
+    [start, end * 0.85],
+    ['80%', '0%'],
+  )
 
   useIsomorphicLayoutEffect(() => {
     const textAnimation = () => {
@@ -209,7 +213,7 @@ const AskJamie = ({blok}: any) => {
           </div>
         </div>
       </div>
-      <div className="hidden h-[250vh] md:block" />
+      <div className="hidden h-[150vh] md:block" />
     </section>
   )
 }
