@@ -83,7 +83,7 @@ const Header = () => {
 export default Header
 
 const navLinks = [
-  // {title: 'Surf App', path: '/surf-app'},
+  {title: 'Surf App', path: '/surf-app'},
   {
     title: 'Surf Experience',
     path: 'https://www.jobsurfexperience.com/',
