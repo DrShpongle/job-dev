@@ -1,14 +1,10 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {motion, useAnimation} from 'framer-motion'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import {render} from 'storyblok-rich-text-react-renderer'
 
 import VideoPlayer from 'components/video-player'
 
 const TeaserHero: React.FC<any> = ({blok}) => {
-  const refSection = React.useRef<HTMLDivElement>(null)
-  const controlsPhone = useAnimation()
-
   const [allowStoreDetails, setAllowStoreDetails] = React.useState(false)
   const [mailChimpError, setMailChimpError] = React.useState('')
   const [mailChimpSuccess, setMailChimpSuccess] = React.useState(false)
@@ -98,15 +94,10 @@ const TeaserHero: React.FC<any> = ({blok}) => {
 
       <div className="container">
         <div className="text-center">
-          <h2 className="px-4 text-7xl text-white">Psyched for the Release?</h2>
-          <p className="px-4 pt-4 text-2xl text-white">
-            I&apos;ve been busy creating an app that shares so much of what
-            I&apos;ve learnt over the last 30 years.
-          </p>
-          <p className="px-4 text-2xl text-white">
-            Sign up below and we&apos;ll let you know the second it hits the app
-            store.
-          </p>
+          <h2 className="px-4 text-7xl text-white">{blok.title}</h2>
+          <div className="mx-auto mt-6 max-w-5xl text-xl text-white lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
+            {render(blok.subtitle)}
+          </div>
         </div>
         <p className="mt-12 text-center text-2xl text-white">
           Pre-register and get in early on Jamie O&apos;Brien&apos;s surf app.
