@@ -29,7 +29,7 @@ const AskJamie = ({blok}: any) => {
 
   useIsomorphicLayoutEffect(() => {
     const textAnimation = () => {
-      if (scrollText.get() > 0.6) {
+      if (scrollText.get() > 0.3) {
         setTriggerTextAnimation(true)
       } else {
         setTriggerTextAnimation(false)
@@ -209,7 +209,7 @@ const AskJamie = ({blok}: any) => {
           </div>
         </div>
       </div>
-      <div className="hidden h-[150vh] md:block" />
+      <div className="hidden h-[250vh] md:block" />
     </section>
   )
 }
