@@ -108,36 +108,6 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             store.
           </p>
         </div>
-        <div className="flex h-full w-full items-center justify-center pt-8">
-          <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
-            <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
-              <VideoPlayer
-                playing={true}
-                url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
-                controls={true}
-                muted={true}
-              />
-            </div>
-            <div className="pointer-events-none portrait:hidden md:portrait:block">
-              <Image
-                src="/images/iphone-frame-landscape.png"
-                width={1171}
-                height={580}
-                alt="Ask Jamie"
-                priority
-              />
-            </div>
-            <div className="pointer-events-none md:hidden landscape:hidden">
-              <Image
-                src="/images/iphone-frame-portrait.png"
-                width={580}
-                height={1171}
-                alt="Ask Jamie"
-                priority
-              />
-            </div>
-          </div>
-        </div>
         <p className="mt-12 text-center text-2xl text-white">
           Pre-register and get in early on Jamie O&apos;Brien&apos;s surf app.
         </p>
@@ -226,18 +196,37 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
           </div>
         </form>
+        <div className="mt-16 flex h-full w-full items-center justify-center">
+          <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
+            <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
+              <VideoPlayer
+                playing={true}
+                url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
+                controls={true}
+                muted={true}
+              />
+            </div>
+            <div className="pointer-events-none portrait:hidden md:portrait:block">
+              <Image
+                src="/images/iphone-frame-landscape.png"
+                width={1171}
+                height={580}
+                alt="Ask Jamie"
+                priority
+              />
+            </div>
+            <div className="pointer-events-none md:hidden landscape:hidden">
+              <Image
+                src="/images/iphone-frame-portrait.png"
+                width={580}
+                height={1171}
+                alt="Ask Jamie"
+                priority
+              />
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* <div className="text-center">
-        <h4 className="px-4 pt-12 pb-4 text-2xl text-white">
-          Scroll down to pre-register
-        </h4>
-      </div>
-      <div className="text-center">
-        <h4 className="pb-8 text-2xl text-white">
-          <ExpandMoreIcon fontSize="large" />
-        </h4>
-      </div> */}
     </section>
   )
 }
