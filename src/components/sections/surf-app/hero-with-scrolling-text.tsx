@@ -8,50 +8,16 @@ import {
   useAnimation,
 } from 'framer-motion'
 import {useMeasure, useWindowSize} from 'react-use'
-import classNames from 'classnames'
 
 import {isBrowser} from 'utils/is-browser'
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 import VideoPlayer from 'components/video-player'
-import {throttle} from 'lodash'
 
-const TextItem: React.FC<{text: string; firstItem: boolean}> = ({
-  text,
-  firstItem,
-}) => {
-  const [isActive, setIsActive] = React.useState<boolean>(false)
-  const refText = React.useRef<HTMLDivElement>(null)
-
-  const scrollHandler = React.useCallback(() => {
-    const rect = refText.current?.getBoundingClientRect()
-    const point = window.innerHeight / 2
-    if (rect && refText?.current && rect.top < point && rect.bottom > point) {
-      setIsActive(true)
-    } else {
-      setIsActive((window.scrollY === 0 && firstItem) || false)
-    }
-  }, [firstItem])
-
-  React.useEffect(() => {
-    let scrollHandlerTimeout = setTimeout(scrollHandler, 100)
-    const throttledScrollHandler = throttle(scrollHandler, 50)
-    window.addEventListener('scroll', throttledScrollHandler)
-    return () => {
-      window.removeEventListener('scroll', throttledScrollHandler)
-      clearTimeout(scrollHandlerTimeout)
-    }
-  }, [scrollHandler])
-
+const TextItem: React.FC<{text: string}> = ({text}) => {
   return (
-    <div
-      ref={refText}
-      className={classNames(
-        'py-6 font-headings text-5xl leading-none text-white opacity-[0.15] duration-300 first:pt-0 last:pb-0 md:py-8 md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px]',
-        isActive ? 'opacity-100' : 'opacity-10',
-      )}
-    >
+    <div className="py-6 font-headings text-5xl leading-none text-white duration-300 first:pt-0 last:pb-0 md:py-8 md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
       {text}
     </div>
   )
@@ -75,6 +41,12 @@ const HeroWithScrollableText = ({blok}: any) => {
     scrollYProgress,
     [start, end],
     [textBlockHeight - windowHeight / 2 - 100, -windowHeight],
+  )
+
+  const opacityText = useTransform(
+    scrollYProgress,
+    [start, end * 0.5],
+    [1, 0.15],
   )
 
   const scrollingTextArr = blok.scrollingTextBlock.map((item: any) => {
@@ -121,14 +93,12 @@ const HeroWithScrollableText = ({blok}: any) => {
         {isMounted ? (
           <motion.div
             ref={refTextHolder}
-            animate={{opacity: 1, transition: {delay: 1}}}
             className="absolute bottom-0 z-10 w-full will-change-transform xl:px-20"
-            initial={{y: textBlockHeight, opacity: 0}}
-            style={{y: scrollText}}
+            style={{y: scrollText, opacity: opacityText}}
           >
             <div ref={textBlockRef} className="container">
               {scrollingTextArr.map((item: string, i: number) => {
-                return <TextItem key={i} text={item} firstItem={i === 0} />
+                return <TextItem key={i} text={item} />
               })}
             </div>
           </motion.div>
