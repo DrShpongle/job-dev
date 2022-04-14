@@ -17,7 +17,7 @@ const Gear = ({blok}: any) => {
     getScrolledToAnchor('gear')
   }, [])
   return (
-    <section className="bg-blue py-5 md:py-7" id="gear">
+    <section className="bg-blue pb-5 pt-20 md:pb-7 md:pt-20 lg:pt-36" id="gear">
       <div className="container">
         <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">

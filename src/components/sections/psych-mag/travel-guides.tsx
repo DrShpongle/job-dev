@@ -17,9 +17,12 @@ const TravelGuides = ({blok}: any) => {
     getScrolledToAnchor('travel-guides')
   }, [])
   return (
-    <section className="py-5 md:py-7" id="travel-guides">
+    <section
+      className="pt-20 pb-5 md:pt-28 md:pb-7 lg:pt-36"
+      id="travel-guides"
+    >
       <div className="container">
-        <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
+        <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 pb-8 text-center md:space-y-6 md:pb-10 lg:space-y-7 lg:pb-12 xl:space-y-8 xl:pb-14">
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
             {blok.title}
           </h2>
