@@ -37,7 +37,6 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
   triggerTextAnimation()
 
   useIsomorphicLayoutEffect(() => {
-    // TODO: fix return for this useEffect
     const unsubscribeY = scale.onChange(triggerTextAnimation)
     return () => {
       unsubscribeY()
