@@ -202,7 +202,6 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                 src="/images/iphone-frame-landscape.png"
                 width={1171}
                 height={580}
-                layout="responsive"
                 alt="Ask Jamie"
                 priority
               />
@@ -212,7 +211,6 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                 src="/images/iphone-frame-portrait.png"
                 width={580}
                 height={1171}
-                layout="responsive"
                 alt="Ask Jamie"
                 priority
               />
