@@ -97,7 +97,9 @@ const TeaserHero: React.FC<any> = ({blok}) => {
 
       <div className="container max-w-none">
         <div className="text-center">
-          <h2 className="px-4 text-7xl text-white">{blok.title}</h2>
+          <h2 className="px-4 text-7xl text-white sm:h-36 md:h-[4.5rem]">
+            {blok.title}
+          </h2>
           <div className="mx-auto mt-6 max-w-6xl text-xl text-white lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
             {render(blok.subtitle)}
           </div>
