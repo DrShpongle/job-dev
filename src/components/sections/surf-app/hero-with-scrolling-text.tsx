@@ -80,6 +80,9 @@ const HeroWithScrollableText = ({blok}: any) => {
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:z-10 before:bg-black/20">
+          <h1 className="absolute left-0 bottom-0 text-transparent">
+            Surf App
+          </h1>
           <div className="absolute inset-0">
             <Image
               src={blok.background_image.filename}

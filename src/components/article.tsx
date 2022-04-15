@@ -20,9 +20,9 @@ const Article = ({blok}: any) => {
             />
           </div>
           <div className="container relative z-10">
-            <h2 className="relative text-5xl leading-none text-white md:max-w-xl md:text-6xl lg:max-w-3xl lg:text-7xl xl:max-w-4xl xl:text-8xl 2xl:max-w-5xl 2xl:text-[111px]">
+            <h1 className="relative text-5xl leading-none text-white md:max-w-xl md:text-6xl lg:max-w-3xl lg:text-7xl xl:max-w-4xl xl:text-8xl 2xl:max-w-5xl 2xl:text-[111px]">
               {blok.title}
-            </h2>
+            </h1>
           </div>
         </div>
         <div className="bg-blue py-8 text-white md:py-10 md:text-xl lg:py-12 lg:text-4xl xl:py-16 2xl:py-20">

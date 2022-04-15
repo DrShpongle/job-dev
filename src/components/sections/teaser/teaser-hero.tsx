@@ -81,6 +81,9 @@ const TeaserHero: React.FC<any> = ({blok}) => {
       style={{transform: 'translateZ(0)'}}
     >
       <div className="absolute inset-0 z-[-1] h-full">
+        <h1 className="absolute left-0 bottom-0 text-transparent">
+          Jamie O&#8217;Brien
+        </h1>
         <div className="relative h-full w-full">
           <Image
             src="/images/teaser-waves.jpg"

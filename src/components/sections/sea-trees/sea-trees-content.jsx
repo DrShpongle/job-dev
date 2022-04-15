@@ -7,6 +7,7 @@ const SeaTreesContent = ({blok}) => {
   return (
     <>
       <section className="relative flex h-screen items-center justify-center">
+        <h1 className="absolute left-0 bottom-0 text-transparent">SeaTrees</h1>
         <div className="absolute inset-0">
           <div className="relative h-full w-full">
             <Image

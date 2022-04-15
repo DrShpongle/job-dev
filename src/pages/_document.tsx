@@ -54,13 +54,13 @@ class MyDocument extends Document {
           `,
             }}
           />
-          <noscript
+          {/* <noscript
             dangerouslySetInnerHTML={{
               __html: `
               <img height="1" width="1" src="https://www.facebook.com/tr?id=671463990803677&ev=PageView&noscript=1"/>
           `,
             }}
-          />
+          /> */}
           <script
             dangerouslySetInnerHTML={{
               __html: `

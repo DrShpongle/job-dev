@@ -30,7 +30,7 @@ const AboutHero = ({blok}: any) => {
       >
         <div className="text-center font-headings text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
           {descriptionsList.map((item: string, i: number) => {
-            return <div key={i}>{item}</div>
+            return i === 0 ? <h1 key={i}>{item}</h1> : <h2 key={i}>{item}</h2>
           })}
         </div>
       </motion.div>
