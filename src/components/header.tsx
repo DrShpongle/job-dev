@@ -18,8 +18,8 @@ const Header = () => {
             <a className="flex h-6 w-[120px] shrink-0 justify-start md:h-8 md:w-40 xl:h-10 xl:w-[198px]">
               <Image
                 src="/images/logo.svg"
-                width={198}
-                height={40}
+                // width={198}
+                // height={40}
                 alt="Jamie O&#8217;Brien"
                 priority
               />

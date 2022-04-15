@@ -200,8 +200,8 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             <div className="pointer-events-none portrait:hidden md:portrait:block">
               <Image
                 src="/images/iphone-frame-landscape.png"
-                width={1171}
-                height={580}
+                // width={1171}
+                // height={580}
                 alt="Ask Jamie"
                 priority
               />
@@ -209,8 +209,8 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             <div className="pointer-events-none md:hidden landscape:hidden">
               <Image
                 src="/images/iphone-frame-portrait.png"
-                width={580}
-                height={1171}
+                // width={580}
+                // height={1171}
                 alt="Ask Jamie"
                 priority
               />
