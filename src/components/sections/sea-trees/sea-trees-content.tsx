@@ -3,7 +3,7 @@ import {render} from 'storyblok-rich-text-react-renderer'
 
 import VideoPlayer from 'components/video-player'
 
-const SeaTreesContent = ({blok}) => {
+const SeaTreesContent = ({blok}: any) => {
   return (
     <>
       <section className="relative flex h-screen items-center justify-center">

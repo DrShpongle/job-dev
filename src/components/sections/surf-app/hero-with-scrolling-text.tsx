@@ -89,6 +89,7 @@ const HeroWithScrollableText = ({blok}: any) => {
               layout="fill"
               objectFit="cover"
               priority
+              alt="waves"
             />
           </div>
           <VideoEmbed url={blok.background_video.url} />
@@ -144,7 +145,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   src="/images/iphone-frame-landscape.png"
                   width={1171}
                   height={580}
-                  alt="Ask Jamie"
+                  alt="phone frame"
                   priority
                 />
               </div>
@@ -153,7 +154,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   src="/images/iphone-frame-portrait.png"
                   width={580}
                   height={1171}
-                  alt="Ask Jamie"
+                  alt="phone frame"
                   priority
                 />
               </div>

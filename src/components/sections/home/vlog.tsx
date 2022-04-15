@@ -27,7 +27,7 @@ const Vlog: React.FC<any> = ({blok}) => {
               src="/images/tv-frame.png"
               width={1283}
               height={1118}
-              alt="Jamie O'Brien"
+              alt="tv frame"
               priority
             />
           </div>

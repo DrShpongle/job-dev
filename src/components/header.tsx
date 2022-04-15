@@ -20,7 +20,7 @@ const Header = () => {
                 src="/images/logo.svg"
                 width={198}
                 height={40}
-                alt="Jamie O&#8217;Brien"
+                alt="logo"
                 priority
               />
             </a>

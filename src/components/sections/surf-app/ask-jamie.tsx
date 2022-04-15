@@ -135,7 +135,7 @@ const AskJamie = ({blok}: any) => {
                       src="/images/iphone-frame-portrait.png"
                       width={580}
                       height={1171}
-                      alt="Ask Jamie"
+                      alt="phone frame"
                       priority
                     />
                   </div>
@@ -181,7 +181,7 @@ const AskJamie = ({blok}: any) => {
                       src="/images/iphone-frame-portrait.png"
                       width={580}
                       height={1171}
-                      alt="Ask Jamie"
+                      alt="phone frame"
                       priority
                     />
                   </div>

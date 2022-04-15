@@ -150,7 +150,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             src="/images/iphone-frame-portrait.png"
             width={909}
             height={1835}
-            alt="Jamie O'Brien"
+            alt="phone"
             priority
           />
           <div className="absolute top-[15%] w-4/5">
@@ -169,7 +169,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                   width={867}
                   height={664}
                   layout="responsive"
-                  alt="Jamie O'Brien"
+                  alt="app logo"
                   priority
                 />
               </motion.div>

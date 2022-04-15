@@ -111,7 +111,7 @@ const NewContent = ({blok}: any) => {
                 src={blok.image_01.filename}
                 width={876}
                 height={546}
-                alt="New Content"
+                alt="image 01"
               />
             </motion.div>
             <motion.div
@@ -123,7 +123,7 @@ const NewContent = ({blok}: any) => {
                 src={blok.image_02.filename}
                 width={1084}
                 height={664}
-                alt="New Content"
+                alt="image 02"
               />
             </motion.div>
             <motion.div
@@ -136,7 +136,7 @@ const NewContent = ({blok}: any) => {
                   src={blok.image_03.filename}
                   width={1838}
                   height={1050}
-                  alt="New Content"
+                  alt="image 03"
                 />
               </div>
             </motion.div>
@@ -149,7 +149,7 @@ const NewContent = ({blok}: any) => {
                 src={blok.image_04.filename}
                 width={590}
                 height={590}
-                alt="New Content"
+                alt="image 04"
               />
             </motion.div>
             <motion.div
@@ -161,7 +161,7 @@ const NewContent = ({blok}: any) => {
                 src={blok.image_05.filename}
                 width={724}
                 height={980}
-                alt="New Content"
+                alt="image 05"
               />
             </motion.div>
             <motion.div
@@ -173,7 +173,7 @@ const NewContent = ({blok}: any) => {
                 src={blok.image_06.filename}
                 width={1004}
                 height={352}
-                alt="New Content"
+                alt="image 06"
               />
             </motion.div>
           </div>
