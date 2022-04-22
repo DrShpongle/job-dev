@@ -1,10 +1,12 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {render} from 'storyblok-rich-text-react-renderer'
+import {useWindowSize} from 'react-use'
 
 import VideoPlayer from 'components/video-player'
 
 const TeaserHero: React.FC<any> = ({blok}) => {
+  const {width} = useWindowSize()
   const [allowStoreDetails, setAllowStoreDetails] = React.useState(false)
   const [mailChimpError, setMailChimpError] = React.useState('')
   const [mailChimpSuccess, setMailChimpSuccess] = React.useState(false)
@@ -195,7 +197,11 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
               <VideoPlayer
                 playing={true}
-                url="https://mytwyn-global.akamaized.net/877053fb-0352-40e7-a327-bb6563bcde36/877053fb-0352-40e7-a327-bb6563bc.ism/manifest(format=m3u8-aapl).m3u8"
+                url={
+                  isFinite(width) && width < 768
+                    ? blok.video_in_the_frame_mobile.url
+                    : blok.video_in_the_frame.url
+                }
                 controls={true}
                 muted={true}
               />
