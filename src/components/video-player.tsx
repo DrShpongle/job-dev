@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import ReactPlayer from 'react-player'
 import screenfull from 'screenfull'
 import Observer from '@researchgate/react-intersection-observer'
+// @ts-ignore
+import uuid from 'react-uuid'
 
 import {
   IconPlay,
@@ -68,9 +70,11 @@ const VideoPlayer: React.FC<{
     }
   })
 
+  const uniqueId = uuid()
+
   return isMounted ? (
     <Observer {...options}>
-      <div className="video-player relative h-full" id="video-player">
+      <div className="video-player relative h-full" id={uniqueId}>
         <ReactPlayer
           className="h-full w-full"
           playsinline={playsInline}
@@ -108,7 +112,7 @@ const VideoPlayer: React.FC<{
             {fullscreenControl && screenfull.isEnabled && (
               <button
                 onClick={() => {
-                  const elem = document.getElementById('video-player')
+                  const elem = document.getElementById(uniqueId)
                   if (elem) {
                     // @ts-ignore
                     screenfull.toggle(elem)
