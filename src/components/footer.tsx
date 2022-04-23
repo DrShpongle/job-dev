@@ -149,6 +149,7 @@ const Footer = () => {
                 onChange={(e) => setEmailAddress(e.target.value)}
                 name="EMAIL"
                 id="mce-EMAIL"
+                aria-label="email"
               />
               <button
                 className="h-[48px] bg-pink text-center font-headings text-lg uppercase text-white duration-150 md:h-[60px] md:text-xl lg:h-[70px] xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-pink"

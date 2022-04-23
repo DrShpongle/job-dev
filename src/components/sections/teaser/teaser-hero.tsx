@@ -120,6 +120,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               placeholder="First name"
               name="FNAME"
               id="mce-FNAME"
+              aria-label="First name"
             />
             <input
               type="text"
@@ -127,6 +128,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               placeholder="Last name"
               name="LNAME"
               id="mce-LNAME"
+              aria-label="Last name"
             />
             <input
               type="text"
@@ -134,6 +136,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               placeholder="Email"
               name="EMAIL"
               id="mce-EMAIL"
+              aria-label="Email"
             />
             <div className="flex space-x-8">
               <label htmlFor="ALLOWSTORE" className="text-lg text-white">
@@ -150,6 +153,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                   id="ALLOWSTORE"
                   onChange={() => setAllowStoreDetails(!allowStoreDetails)}
                   defaultChecked={allowStoreDetails}
+                  aria-label="agree to us storing your details"
                 />
                 <div className="h-full w-full bg-white text-center">
                   {allowStoreDetails && (
