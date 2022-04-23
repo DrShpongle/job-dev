@@ -2,6 +2,7 @@ import type {AppProps} from 'next/app'
 import {useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {DefaultSeo, SocialProfileJsonLd} from 'next-seo'
+import Head from 'next/head'
 
 import defaultSeoConfig from '../../next-seo.config'
 import '../styles/globals.css'
@@ -23,6 +24,13 @@ function MyApp({Component, pageProps}: AppProps) {
 
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+      </Head>
+
       <DefaultSeo {...defaultSeoConfig} />
       <SocialProfileJsonLd
         type="Person"
