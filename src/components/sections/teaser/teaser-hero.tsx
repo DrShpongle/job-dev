@@ -194,7 +194,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
         </form>
         <div className="mt-16 flex h-full w-full items-center justify-center">
           <div className="relative md:w-[36rem] lg:w-[38rem] xl:w-[44rem] 2xl:w-[54rem] portrait:w-64 md:portrait:w-[36rem] lg:portrait:w-[38rem] xl:portrait:w-[44rem] 2xl:portrait:w-[54rem] landscape:w-[24rem] md:landscape:w-[36rem] lg:landscape:w-[38rem] xl:landscape:w-[44rem] 2xl:landscape:w-[54rem]">
-            <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
+            <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[30px] bg-[#3d3d3d] shadow-iphone md:inset-3 xl:rounded-[40px] 2xl:rounded-[50px]">
               <VideoPlayer
                 playing={true}
                 url={

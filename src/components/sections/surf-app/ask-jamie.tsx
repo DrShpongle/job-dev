@@ -119,7 +119,7 @@ const AskJamie = ({blok}: any) => {
                 }}
               >
                 <div className="relative hidden w-full lg:block">
-                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
+                  <div className="border-radius-fix absolute inset-1 overflow-hidden rounded-[30px] bg-[#3d3d3d] shadow-iphone md:inset-2 md:rounded-[50px] xl:inset-3 2xl:inset-4">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
@@ -165,7 +165,7 @@ const AskJamie = ({blok}: any) => {
               </motion.div>
               <div className="relative w-full max-w-[290px] lg:hidden">
                 <div className="w-full">
-                  <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[40px] md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
+                  <div className="border-radius-fix absolute inset-2 overflow-hidden rounded-[40px] bg-[#3d3d3d] shadow-iphone md:inset-2 md:rounded-[50px] xl:inset-3 xl:rounded-[60px] 2xl:inset-4 2xl:rounded-[50px]">
                     <VideoPlayer
                       url={blok.video.url}
                       controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
