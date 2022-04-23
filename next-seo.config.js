@@ -1,4 +1,5 @@
 export default {
+  lang: 'en',
   titleTemplate: '%s | jamieobrien.com',
   canonical: 'https://jamieobrien.com/',
   openGraph: {
