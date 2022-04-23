@@ -77,7 +77,10 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 <p className="mt-4 md:text-xl">{blok.description}</p>
               </div>
               <div className="flex items-center space-x-6 md:space-x-10">
-                <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue">
+                <button
+                  className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
+                  aria-label="download app"
+                >
                   Download App
                 </button>
                 <a
@@ -128,7 +131,10 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             </p>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:space-x-10">
-            <button className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue">
+            <button
+              className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
+              aria-label="download app"
+            >
               Download App
             </button>
             <a

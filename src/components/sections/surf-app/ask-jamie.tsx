@@ -142,6 +142,7 @@ const AskJamie = ({blok}: any) => {
                 </div>
                 <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4">
                   <button
+                    aria-label={playing ? 'pause' : 'play'}
                     onClick={() => setPlaying(!playing)}
                     className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                   >
@@ -152,6 +153,7 @@ const AskJamie = ({blok}: any) => {
                     )}
                   </button>
                   <button
+                    aria-label={muted ? 'volume on' : 'volume off'}
                     onClick={() => setMuted(!muted)}
                     className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70 lg:h-10 lg:w-10 2xl:h-14 2xl:w-14"
                   >
@@ -189,6 +191,7 @@ const AskJamie = ({blok}: any) => {
               </div>
               <div className="z-10 mt-4 flex w-full items-center justify-center space-x-2 md:space-x-4 lg:hidden">
                 <button
+                  aria-label={playingMobile ? 'pause' : 'play'}
                   onClick={() => setPlayingMobile(!playingMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >
@@ -199,6 +202,7 @@ const AskJamie = ({blok}: any) => {
                   )}
                 </button>
                 <button
+                  aria-label={mutedMobile ? 'volume on' : 'volume off'}
                   onClick={() => setMutedMobile(!mutedMobile)}
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-black/70"
                 >

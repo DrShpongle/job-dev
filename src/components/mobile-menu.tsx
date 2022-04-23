@@ -24,9 +24,10 @@ export const MobileMenuToggler: React.FC<{
   isOpened: boolean
 }> = ({onClick, isOpened}) => {
   return (
-    <div
+    <button
       className="relative flex h-6 w-6 items-center justify-center lg:hidden"
       onClick={onClick}
+      aria-label="mobile menu"
     >
       <motion.div
         variants={variantsTogglerTop}
@@ -42,7 +43,7 @@ export const MobileMenuToggler: React.FC<{
         transition={{duration: 0.25}}
         className="absolute h-1 w-6 rounded-full bg-pink will-change-transform"
       />
-    </div>
+    </button>
   )
 }
 

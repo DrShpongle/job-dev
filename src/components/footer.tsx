@@ -156,6 +156,7 @@ const Footer = () => {
                 type="submit"
                 name="subscribe"
                 id="mc-embedded-subscribe"
+                aria-label="submit form"
               >
                 {onSubmitProgress && <>...</>}
                 {!onSubmitProgress && (

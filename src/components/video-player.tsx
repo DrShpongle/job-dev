@@ -119,6 +119,7 @@ const VideoPlayer: React.FC<{
                   }
                 }}
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
+                aria-label={isFullscreen ? 'fullscreen off' : 'fullscreen on'}
               >
                 {isFullscreen ? (
                   <IconFullscreenOff className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
@@ -130,6 +131,7 @@ const VideoPlayer: React.FC<{
             <button
               onClick={() => setInnerPlaying(!innerPlaying)}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
+              aria-label={innerPlaying ? 'pause' : 'play'}
             >
               {innerPlaying ? (
                 <IconPause className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
@@ -140,6 +142,7 @@ const VideoPlayer: React.FC<{
             <button
               onClick={() => setInnerMuted(!innerMuted)}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-black/70 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12"
+              aria-label={innerMuted ? 'volume on' : 'volume off'}
             >
               {innerMuted ? (
                 <IconVolumeOff className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />

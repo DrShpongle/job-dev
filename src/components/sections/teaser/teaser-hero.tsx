@@ -164,6 +164,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
             <div>
               <button
+                aria-label="submit form"
                 type="submit"
                 className="h-12 w-full bg-blue text-center font-headings text-lg uppercase text-white duration-150 md:text-xl xl:text-[1.625rem] hover-hover:hover:bg-white hover-hover:hover:text-blue"
                 name="subscribe"
