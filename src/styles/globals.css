@@ -17,7 +17,7 @@
   src: url('/fonts/surf-up.otf');
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -25,7 +25,7 @@
   src: url('/fonts/impact.ttf');
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 
 :root {
