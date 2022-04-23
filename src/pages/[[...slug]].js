@@ -39,6 +39,9 @@ export default function Page(props) {
       <NextSeo
         title={seo.title}
         description={seo.description}
+        canonical={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}${
+          actualStory.content.component === 'article' ? '/articles/' : '/'
+        }${actualStory.slug}`}
         openGraph={{
           title: seo.title,
           description: seo.description,
