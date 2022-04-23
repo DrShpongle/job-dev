@@ -37,11 +37,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* .video-mask {
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  pointer-events: none; 
-} */
-
 .border-radius-fix {
   transform: translateZ(0);
 }
