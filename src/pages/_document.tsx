@@ -16,7 +16,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
+        {/* <Head>
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-3DDEV708JB"
@@ -119,7 +119,7 @@ class MyDocument extends Document {
             as="font"
             crossOrigin=""
           />
-        </Head>
+        </Head> */}
         <body className="w-full font-body leading-normal">
           <Main />
           <NextScript />
