@@ -41,13 +41,13 @@ export default function Page(props) {
         description={seo.description}
         canonical={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}${
           actualStory.content.component === 'article' ? '/articles/' : '/'
-        }${actualStory.slug}`}
+        }${actualStory.slug === 'teaser' ? '' : actualStory.slug}`}
         openGraph={{
           title: seo.title,
           description: seo.description,
           url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}${
             actualStory.content.component === 'article' ? '/articles/' : '/'
-          }${actualStory.slug}`,
+          }${actualStory.slug === 'teaser' ? '' : actualStory.slug}`,
           images: [
             {
               url: seo?.image?.filename || defaultSeoImage,
