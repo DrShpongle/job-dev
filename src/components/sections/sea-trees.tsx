@@ -66,7 +66,8 @@ const SeaTrees = () => {
         <div className="absolute inset-0 z-[-1]">
           <div className="relative h-full w-full">
             <Image
-              src="/images/sea-trees.jpg"
+              // src="/images/sea-trees.jpg"
+              src="/images/sea-trees.webp"
               layout="fill"
               objectFit="cover"
               alt="SeaTrees"

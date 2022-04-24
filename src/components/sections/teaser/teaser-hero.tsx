@@ -88,7 +88,8 @@ const TeaserHero: React.FC<any> = ({blok}) => {
         </h1>
         <div className="relative h-full w-full">
           <Image
-            src="/images/teaser-waves.jpg"
+            // src="/images/teaser-waves.jpg"
+            src="/images/teaser-waves.webp"
             layout="fill"
             objectFit="cover"
             alt="Background Image"
@@ -213,7 +214,8 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
             <div className="pointer-events-none portrait:hidden md:portrait:block">
               <Image
-                src="/images/iphone-frame-landscape.png"
+                // src="/images/iphone-frame-landscape.png"
+                src="/images/iphone-frame-landscape.webp"
                 width={1171}
                 height={580}
                 alt="phone frame"
@@ -222,7 +224,8 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
             <div className="pointer-events-none md:hidden landscape:hidden">
               <Image
-                src="/images/iphone-frame-portrait.png"
+                // src="/images/iphone-frame-portrait.png"
+                src="/images/iphone-frame-portrait.webp"
                 width={580}
                 height={1171}
                 alt="phone frame"

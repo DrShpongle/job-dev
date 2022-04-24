@@ -24,7 +24,8 @@ const Vlog: React.FC<any> = ({blok}) => {
               />
             </div>
             <Image
-              src="/images/tv-frame.png"
+              // src="/images/tv-frame.png"
+              src="/images/tv-frame.webp"
               width={1283}
               height={1118}
               alt="tv frame"

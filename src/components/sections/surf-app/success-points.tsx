@@ -116,7 +116,8 @@ const SuccessPoints = ({blok}: any) => {
                 <VideoEmbed url={blok.video.url} />
               </div>
               <Image
-                src="/images/success-points.png"
+                // src="/images/success-points.png"
+                src="/images/success-points.webp"
                 width={3000}
                 height={1873}
                 priority

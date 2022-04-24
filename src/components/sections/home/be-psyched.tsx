@@ -41,7 +41,8 @@ const BePsyched: React.FC<any> = ({blok}) => {
       >
         {showImage && width >= 1024 ? (
           <Image
-            src="/images/surfboards-vertical.png"
+            // src="/images/surfboards-vertical.png"
+            src="/images/surfboards-vertical.webp"
             width={569}
             height={949}
             priority
@@ -49,7 +50,8 @@ const BePsyched: React.FC<any> = ({blok}) => {
           />
         ) : (
           <Image
-            src="/images/surfboards-horizontal.png"
+            // src="/images/surfboards-horizontal.png"
+            src="/images/surfboards-horizontal.webp"
             width={949}
             height={569}
             priority
@@ -65,7 +67,8 @@ const BePsyched: React.FC<any> = ({blok}) => {
               style={showImage && width >= 1024 ? {opacity, rotate} : {}}
             >
               <Image
-                src="/images/job-surf-experience-logo.png"
+                // src="/images/job-surf-experience-logo.png"
+                src="/images/job-surf-experience-logo.webp"
                 width={487}
                 height={492}
                 priority
