@@ -17,11 +17,11 @@ const Vlog: React.FC<any> = ({blok}) => {
         <div className="relative flex justify-center overflow-hidden">
           <div className="relative h-[285px] max-w-xs md:h-[606px] md:max-w-[960px] lg:h-[830px]">
             <div className="absolute bottom-9 w-[280px] md:bottom-[74px] md:w-[610px] lg:bottom-20 lg:w-[830px]">
-              <VideoPlayer
+              {/* <VideoPlayer
                 url={blok.video_url.url}
                 controls={true}
                 controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
-              />
+              /> */}
             </div>
             <Image
               src="/images/tv-frame.png"

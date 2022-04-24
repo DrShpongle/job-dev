@@ -95,7 +95,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           </div>
         </div>
         <div className="absolute bottom-0 h-1/2 w-full before:absolute before:inset-0 before:bg-black/20 md:h-[55%] lg:h-full">
-          <VideoEmbed url={blok.video_url.url} />
+          {/* <VideoEmbed url={blok.video_url.url} /> */}
           <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
             <a href="#" className="flex w-28 md:w-44 xl:w-auto">
               <Image
