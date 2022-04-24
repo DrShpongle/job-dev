@@ -119,7 +119,7 @@ const SuccessPoints = ({blok}: any) => {
                 src="/images/success-points.png"
                 width={3000}
                 height={1873}
-                // priority
+                priority
                 alt="Success Points"
               />
             </motion.div>
