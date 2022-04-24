@@ -93,7 +93,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             layout="fill"
             objectFit="cover"
             alt="Background Image"
-            // priority
+            priority
           />
         </div>
       </div>
@@ -219,7 +219,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                 width={1171}
                 height={580}
                 alt="phone frame"
-                // priority
+                priority
               />
             </div>
             <div className="pointer-events-none md:hidden landscape:hidden">
@@ -229,7 +229,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
                 width={580}
                 height={1171}
                 alt="phone frame"
-                // priority
+                priority
               />
             </div>
           </div>

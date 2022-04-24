@@ -34,7 +34,7 @@ const Description: React.FC<{
             width={75}
             height={89}
             alt="SeaTrees"
-            // priority
+            priority
           />
         </div>
         <h3 className="text-center font-headings text-4xl leading-none md:text-6xl lg:text-left lg:text-7xl xl:text-8xl 2xl:text-[111px]">
@@ -71,7 +71,7 @@ const SeaTrees = () => {
               layout="fill"
               objectFit="cover"
               alt="SeaTrees"
-              // priority
+              priority
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ const SeaTrees = () => {
                   width={75}
                   height={89}
                   alt="SeaTrees"
-                  // priority
+                  priority
                 />
               </div>
               <EquationBlock

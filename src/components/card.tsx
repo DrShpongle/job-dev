@@ -32,7 +32,7 @@ const Card: React.FC<{
                   alt={data.content.title}
                   layout="fill"
                   objectFit="cover"
-                  // priority
+                  priority
                 />
               </div>
             </div>
@@ -72,7 +72,7 @@ const Card: React.FC<{
                 layout="fill"
                 objectFit="cover"
                 alt={data.content?.title}
-                // priority
+                priority
               />
             </div>
           </div>

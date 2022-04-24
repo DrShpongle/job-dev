@@ -40,7 +40,7 @@ const AboutHero = ({blok}: any) => {
           src="/images/job.webp"
           width={1686}
           height={1124}
-          // priority
+          priority
           alt="Jamie O’Brien"
         />
       </div>

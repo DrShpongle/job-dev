@@ -137,7 +137,7 @@ const AskJamie = ({blok}: any) => {
                       width={580}
                       height={1171}
                       alt="phone frame"
-                      // priority
+                      priority
                     />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ const AskJamie = ({blok}: any) => {
                       width={580}
                       height={1171}
                       alt="phone frame"
-                      // priority
+                      priority
                     />
                   </div>
                 </div>

@@ -46,7 +46,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
               width={1171}
               height={580}
               alt="phone frame"
-              // priority
+              priority
             />
           </div>
           <div className="pointer-events-none md:hidden landscape:hidden">
@@ -56,7 +56,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
               width={580}
               height={1171}
               alt="phone frame"
-              // priority
+              priority
             />
           </div>
         </div>

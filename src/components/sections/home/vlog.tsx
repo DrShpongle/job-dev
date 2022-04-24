@@ -29,7 +29,7 @@ const Vlog: React.FC<any> = ({blok}) => {
               width={1283}
               height={1118}
               alt="tv frame"
-              // priority
+              priority
             />
           </div>
         </div>

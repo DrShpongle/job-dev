@@ -99,7 +99,7 @@ const PsychMagHero: React.FC<any> = ({blok}) => {
                                     alt={item.title}
                                     layout="fill"
                                     objectFit="cover"
-                                    // priority
+                                    priority
                                   />
                                 </div>
                               </div>
