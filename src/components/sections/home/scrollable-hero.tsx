@@ -59,7 +59,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
                 width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
               )}
             >
-              {/* <VideoEmbed url={blok.video_left_url.url} /> */}
+              <VideoEmbed url={blok.video_left_url.url} />
             </div>
             <motion.div
               className={classNames(
@@ -68,7 +68,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
               )}
               style={{width: scale, height: scale}}
             >
-              {/* <VideoEmbed url={blok.video_middle_url.url} /> */}
+              <VideoEmbed url={blok.video_middle_url.url} />
               <div className="absolute left-0 w-full space-y-4 overflow-hidden whitespace-nowrap text-center text-white lg:pr-16 lg:text-right xl:pr-20">
                 <motion.h2
                   initial="hidden"
@@ -102,7 +102,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
                 width >= height ? 'h-full w-1/2' : 'h-1/2 w-full',
               )}
             >
-              {/* <VideoEmbed url={blok.video_right_url.url} /> */}
+              <VideoEmbed url={blok.video_right_url.url} />
             </div>
             <div className="absolute bottom-0 left-0 right-0 z-10 m-auto flex w-32 flex-col items-center space-y-4 text-xl text-white">
               <span>scroll down</span>
