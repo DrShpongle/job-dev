@@ -53,7 +53,7 @@ const StayPsyched: React.FC<any> = ({blok}) => {
                           layout="fill"
                           objectFit="contain"
                           alt={item.title}
-                          // priority
+                          priority
                         />
                       </div>
                     )}

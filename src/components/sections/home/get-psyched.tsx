@@ -157,7 +157,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             width={909}
             height={1835}
             alt="phone"
-            // priority
+            priority
           />
           <div className="absolute top-[15%] w-4/5">
             <div className="w-full">
@@ -176,7 +176,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                   height={664}
                   layout="responsive"
                   alt="app logo"
-                  // priority
+                  priority
                 />
               </motion.div>
             </div>
