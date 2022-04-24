@@ -45,7 +45,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
             src="/images/surfboards-vertical.webp"
             width={569}
             height={949}
-            priority
+            // priority
             alt="Surfboards"
           />
         ) : (
@@ -54,7 +54,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
             src="/images/surfboards-horizontal.webp"
             width={949}
             height={569}
-            priority
+            // priority
             alt="Surfboards"
           />
         )}
@@ -71,7 +71,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
                 src="/images/job-surf-experience-logo.webp"
                 width={487}
                 height={492}
-                priority
+                // priority
                 alt="Surf Experience"
               />
             </motion.div>

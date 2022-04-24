@@ -88,7 +88,7 @@ const HeroWithScrollableText = ({blok}: any) => {
               src={blok.background_image.filename}
               layout="fill"
               objectFit="cover"
-              priority
+              // priority
               alt="waves"
             />
           </div>
@@ -147,7 +147,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   width={1171}
                   height={580}
                   alt="phone frame"
-                  priority
+                  // priority
                 />
               </div>
               <div className="pointer-events-none md:hidden landscape:hidden">
@@ -157,7 +157,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                   width={580}
                   height={1171}
                   alt="phone frame"
-                  priority
+                  // priority
                 />
               </div>
             </div>

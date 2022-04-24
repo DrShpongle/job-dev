@@ -120,7 +120,7 @@ const SuccessPoints = ({blok}: any) => {
                 src="/images/success-points.webp"
                 width={3000}
                 height={1873}
-                priority
+                // priority
                 alt="Success Points"
               />
             </motion.div>
