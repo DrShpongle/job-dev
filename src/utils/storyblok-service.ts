@@ -2,7 +2,7 @@ import * as React from 'react'
 import StoryblokClient from 'storyblok-js-client'
 
 const Storyblok = new StoryblokClient({
-  accessToken: 'xF9T9KwYPr5rKrGVW8Unlwtt',
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_KEY,
   cache: {
     clear: 'auto',
     type: 'memory',

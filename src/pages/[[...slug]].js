@@ -2,7 +2,6 @@ import {NextSeo} from 'next-seo'
 import Head from 'next/head'
 import DynamicComponent from 'components/dynamic-component'
 import Storyblok, {useStoryblok} from 'utils/storyblok-service'
-import {isEmpty} from 'lodash'
 
 export default function Page(props) {
   const {story, preview} = props

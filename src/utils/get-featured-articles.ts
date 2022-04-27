@@ -4,7 +4,7 @@ import {isEmpty} from 'lodash'
 export const getFeaturedArticles = async (arr: string[]) => {
   const uuids = isEmpty(arr) ? [] : arr.join(',')
   try {
-    const requestUrl: string = `https://api.storyblok.com/v1/cdn/stories?by_uuids=${uuids}&resolve_relations=article.category&token=xF9T9KwYPr5rKrGVW8Unlwtt`
+    const requestUrl: string = `https://api.storyblok.com/v1/cdn/stories?by_uuids=${uuids}&resolve_relations=article.category&token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}`
     const {
       data: {stories},
     } = await axios.get(requestUrl)
