@@ -1984,7 +1984,7 @@ prettier-plugin-tailwindcss@^0.1.10:
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.10.tgz#437bd0757819c8393fc780e17e50e8a7518e2a6b"
   integrity sha512-ooDGNuXUjgCXfShliVYQ6+0iXqUFXn+zdNInPe0WZN9qINt9srbLGFGY5jeVL4MXtY20/4S8JaBcd8l6N6NfCQ==
 
-prettier@^2.6.2:
+prettier@^2.5.1, prettier@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
   integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
@@ -2174,6 +2174,11 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rollup-plugin-mjs-entry@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-mjs-entry/-/rollup-plugin-mjs-entry-0.1.1.tgz#b3ab47e8d49ddb1916e36ba2480dc8a62a22d533"
+  integrity sha512-uii0Txyrn4YCgP++fypLqsT3LgO3Fx0gAZLZlWRSwKCuZ+bdSzAzdVbJFATmCHcBNlO61i65EgemOVdVQYONHA==
+
 rtl-css-js@^1.14.0:
   version "1.15.0"
   resolved "https://registry.npmjs.org/rtl-css-js/-/rtl-css-js-1.15.0.tgz"
@@ -2303,10 +2308,13 @@ stacktrace-js@^2.0.2:
     stack-generator "^2.0.5"
     stacktrace-gps "^3.0.4"
 
-storyblok-js-client@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.3.1.tgz#fa17e9ce47cc827e7d835481a5f77d3d44580e19"
-  integrity sha512-kdv7G0+0BsCzbVRjAnRC00GPRRWfP0YK0yE0gUj3waEc2ekwxV9iHQBR9cRxz3YYk/hLWn3zJg8lTTrQmzQsdg==
+storyblok-js-client@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.4.0.tgz#a36133f075eb2436abf4d2e6c7c6c195d4ece10e"
+  integrity sha512-QVc+efhHlFiP8f7ZlfqJ6XYaoITjC3UvP1qA9ebjNFGARap/2Q3sUl7DR5OWKVBC9bx7tsN0OWWzuTPvdRwwsQ==
+  dependencies:
+    prettier "^2.5.1"
+    rollup-plugin-mjs-entry "^0.1.1"
 
 storyblok-rich-text-react-renderer@^2.5.3:
   version "2.5.3"
