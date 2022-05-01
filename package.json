@@ -35,7 +35,7 @@
     "eslint": "^8.14.0",
     "eslint-config-next": "12.1.5",
     "lodash": "^4.17.21",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.13",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.10",
     "react-uuid": "^1.0.2",
