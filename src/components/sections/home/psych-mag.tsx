@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {isEmpty} from 'lodash'
 
-import {getFeaturedArticles} from 'utils/get-featured-articles'
+import {getFeaturedArticles} from 'utils/get-articles'
 import Card from 'components/card'
 
 const PsychMag = (props: any) => {
