@@ -164,7 +164,7 @@ export async function getStaticProps({params, preview = false}) {
   let slug = params.slug ? params.slug.join('/') : 'teaser'
 
   let sbParams = {
-    version: 'draft',
+    version: 'published',
   }
 
   if (preview) {
