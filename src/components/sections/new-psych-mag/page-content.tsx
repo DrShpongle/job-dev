@@ -1,17 +1,11 @@
 import * as React from 'react'
-import {isEmpty} from 'lodash'
 import classNames from 'classnames'
 
 import Hero from './hero'
 // import FeaturedArticle from './featured-article'
 // import Articles from './articles'
 
-import {
-  //   getAllArticles,
-  getArticlesByCategory,
-  getArticlesAmount,
-  //   getAllArticlesByCategory,
-} from 'utils/get-articles'
+import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
 
 const PER_PAGE = 6
 
@@ -28,20 +22,13 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
   const [pageNumber, setPageNumber] = React.useState<number>(1)
 
   React.useEffect(() => {
-    // if (currentCategory === 'any') {
     getArticlesByCategory(currentCategory, PER_PAGE, 1).then((data) =>
       setArticles(data),
     )
     getArticlesAmount(currentCategory).then((data) => {
       setArticlesAmount(+data.headers.total)
     })
-    // }
   }, [])
-
-  //   console.log('currentCategory:', currentCategory)
-  //   console.log('articles:', articles)
-  //   console.log('articlesAmount:', articlesAmount)
-  //   console.log('pageNumber:', pageNumber)
 
   return (
     <>
@@ -52,21 +39,21 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
               <button
                 key={i}
                 className={classNames(
-                  currentCategory === item.categorySlug
+                  currentCategory === item.categoryId
                     ? 'text-blue'
                     : 'text-white',
                 )}
                 onClick={() => {
-                  //   if (currentCategory !== item.categorySlug) {
-                  setCurrentCategory(item.categoryId)
-                  setPageNumber(1)
-                  getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
-                    (data) => setArticles(data),
-                  )
-                  getArticlesAmount(item.categoryId).then((data) =>
-                    setArticlesAmount(+data.headers.total),
-                  )
-                  //   }
+                  if (currentCategory !== item.categorySlug) {
+                    setCurrentCategory(item.categoryId)
+                    setPageNumber(1)
+                    getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
+                      (data) => setArticles(data),
+                    )
+                    getArticlesAmount(item.categoryId).then((data) =>
+                      setArticlesAmount(+data.headers.total),
+                    )
+                  }
                 }}
               >
                 {item.title}
@@ -87,25 +74,22 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
             {articles.map((article: any, i: number) => (
               <div key={i}>{article.content.title}</div>
             ))}
-            {/* {articlesAmount / PER_PAGE > pageNumber ? ( */}
-            <button
-              onClick={() => {
-                // if (sortedBy !== 'any') {
-                getArticlesByCategory(
-                  currentCategory,
-                  PER_PAGE,
-                  pageNumber + 1,
-                ).then((data) => {
-                  setPageNumber(pageNumber + 1)
-                  setArticles([...articles, ...data])
-                  setArticlesAmount(data.length)
-                })
-                // }
-              }}
-            >
-              more
-            </button>
-            {/* ) : null} */}
+            {articlesAmount > PER_PAGE * pageNumber ? (
+              <button
+                onClick={() => {
+                  getArticlesByCategory(
+                    currentCategory,
+                    PER_PAGE,
+                    pageNumber + 1,
+                  ).then((data) => {
+                    setPageNumber(pageNumber + 1)
+                    setArticles([...articles, ...data])
+                  })
+                }}
+              >
+                more
+              </button>
+            ) : null}
           </div>
         </div>
       </section>

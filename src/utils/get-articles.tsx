@@ -10,42 +10,6 @@ const allCategories = [
   '44efe4b4-1add-435c-bb18-16fdb7823dfb',
 ]
 
-// const getAllArticles = async (per_page: number = 6, page: number = 1) => {
-//   try {
-//     const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${
-//       process.env.NEXT_PUBLIC_STORYBLOK_API_KEY
-//     }&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${allCategories.join(
-//       ',',
-//     )}&per_page=${per_page}&page=${page}`
-//     const {
-//       data: {stories},
-//     } = await axios.get(requestUrl)
-//     // console.log('stories:', stories)
-//     return stories
-//   } catch (err) {
-//     console.error('getAllArticles', err)
-//     return null
-//   }
-// }
-
-// const getAllArticlesByCategory = async (category: string) => {
-//   try {
-//     const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${
-//       process.env.NEXT_PUBLIC_STORYBLOK_API_KEY
-//     }&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${allCategories.join(
-//       ',',
-//     )}`
-//     const {
-//       data: {stories},
-//     } = await axios.get(requestUrl)
-//     console.log('stories:', stories)
-//     return stories
-//   } catch (err) {
-//     console.error('getAllArticles', err)
-//     return null
-//   }
-// }
-
 const getFeaturedArticles = async (arr: string[]) => {
   const uuids = isEmpty(arr) ? [] : arr.join(',')
   try {
@@ -77,7 +41,6 @@ const getArticlesByCategory = async (
   page: number = 1,
 ) => {
   const categories = category === 'all' ? allCategories.join(',') : category
-  console.log('categories11:', categories)
   try {
     const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${categories}&per_page=${per_page}&page=${page}`
     const {
@@ -90,28 +53,4 @@ const getArticlesByCategory = async (
   }
 }
 
-// const getArticlesByCategory = async (
-//   category: string,
-//   per_page: number = 6,
-//   page: number = 1,
-// ) => {
-//   const categories = category === 'any' ? allCategories.join(',') : category
-//   try {
-//     const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${categories}&per_page=${per_page}&page=${page}`
-//     const {
-//       data: {stories},
-//     } = await axios.get(requestUrl)
-//     return stories
-//   } catch (err) {
-//     console.error('getArticlesByCategory', err)
-//     return null
-//   }
-// }
-
-export {
-  // getAllArticles,
-  getFeaturedArticles,
-  getArticlesByCategory,
-  getArticlesAmount,
-  // getAllArticlesByCategory,
-}
+export {getFeaturedArticles, getArticlesByCategory, getArticlesAmount}
