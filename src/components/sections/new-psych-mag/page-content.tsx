@@ -27,7 +27,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
     getArticlesAmount(currentCategory).then((data) => {
       setArticlesAmount(+data.headers.total)
     })
-  }, [])
+  }, [currentCategory])
 
   const handlerLoadMore = () => {
     getArticlesByCategory(currentCategory, PER_PAGE, pageNumber + 1).then(
@@ -42,11 +42,13 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
     <>
       <div className="fixed top-[80px] z-10 w-full bg-pink">
         <div className="container">
-          <div className="flex h-[44px] items-center space-x-6">
+          <div className="flex h-[44px] items-center space-x-7 font-headings text-lg uppercase text-white">
+            <div>filter by category:</div>
             {filters.map((item, i) => (
               <button
                 key={i}
                 className={classNames(
+                  'uppercase',
                   currentCategory === item.categoryId
                     ? 'text-blue'
                     : 'text-white',
@@ -55,12 +57,13 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
                   if (item.categoryId && currentCategory !== item.categoryId) {
                     setCurrentCategory(item.categoryId)
                     setPageNumber(1)
-                    getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
-                      (data) => setArticles(data),
-                    )
-                    getArticlesAmount(item.categoryId).then((data) =>
-                      setArticlesAmount(+data.headers.total),
-                    )
+                    // TODO
+                    // getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
+                    //   (data) => setArticles(data),
+                    // )
+                    // getArticlesAmount(item.categoryId).then((data) =>
+                    //   setArticlesAmount(+data.headers.total),
+                    // )
                   }
                 }}
               >
