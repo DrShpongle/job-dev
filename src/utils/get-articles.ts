@@ -42,7 +42,7 @@ const getArticlesByCategory = async (
 ) => {
   const categories = category === 'all' ? allCategories.join(',') : category
   try {
-    const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${categories}&per_page=${per_page}&page=${page}`
+    const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:desc&filter_query[category][any_in_array]=${categories}&per_page=${per_page}&page=${page}`
     const {
       data: {stories},
     } = await axios.get(requestUrl)

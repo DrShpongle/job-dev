@@ -1,31 +1,11 @@
 import axios from 'axios'
 
+import {formatDate} from './format-date'
+
 const YT_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
 const YT_CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID
 const MAX_VIDEOS = process.env.NEXT_PUBLIC_YOUTUBE_MAX_VIDEOS
 const API_ROOT = process.env.NEXT_PUBLIC_YOUTUBE_API_ROOT
-
-const formatDate = (apiDate: any) => {
-  const monthsArr = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
-  const day = new Date(apiDate).getDate()
-  const month = new Date(apiDate).getMonth()
-  const year = new Date(apiDate).getFullYear()
-  const realMonth = monthsArr[month]
-  return `${realMonth} ${day}, ${year}`
-}
 
 const formatDuration = (duration: any) => {
   var a = duration.match(/\d+/g)
