@@ -76,7 +76,12 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
       <section className="bg-white pt-20 md:pt-28 lg:pt-48">
         <Hero title={blok.title} subtitle={blok.subtitle} />
         <FeaturedArticle article={{}} />
-        {!isEmpty(articles) && (
+        {isEmpty(articles) ? (
+          <h2 className="my-32 text-center text-5xl">
+            Sorry, there are no articles that belong to this filter
+            yet&nbsp;&nbsp;👻
+          </h2>
+        ) : (
           <Articles
             articles={articles}
             handlerLoadMore={handlerLoadMore}

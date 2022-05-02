@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import {isEmpty} from 'lodash'
 
 import {categories} from 'lib/categories'
 import {formatDate} from 'utils/format-date'
@@ -55,11 +56,13 @@ const Articles: React.FC<{
   return (
     <div className="bg-white py-20">
       <div className="container">
-        <div className="grid grid-cols-3 gap-x-6 gap-y-12">
-          {articles.map((article: any, i: number) => (
-            <Article key={i} article={article} />
-          ))}
-        </div>
+        {!isEmpty(articles) && (
+          <div className="grid grid-cols-3 gap-x-6 gap-y-12">
+            {articles.map((article: any, i: number) => (
+              <Article key={i} article={article} />
+            ))}
+          </div>
+        )}
         {canLoadMore ? (
           <button
             aria-label="load more articles"
