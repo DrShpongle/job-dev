@@ -38,8 +38,6 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
     )
   }
 
-  console.log('articles:', articles)
-
   return (
     <>
       <div className="fixed top-[80px] z-10 w-full bg-pink">
