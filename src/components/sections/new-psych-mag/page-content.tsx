@@ -1,5 +1,6 @@
 import * as React from 'react'
 import classNames from 'classnames'
+import {isEmpty} from 'lodash'
 
 import Hero from './hero'
 // import FeaturedArticle from './featured-article'
@@ -8,12 +9,6 @@ import Hero from './hero'
 import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
 
 const PER_PAGE = 6
-
-const categoryIdFeatures = '3a74027d-ae5a-49ca-82aa-a4a13a017d9c'
-const categoryIdVlog = 'dd9b6f76-022d-4d6a-bc70-11e806944a0a'
-const categoryIdTopTips = '960103db-81c4-4100-a374-27f1785fed32'
-const categoryIdGear = 'a95f141f-d357-43c2-94ae-93dea86ec306'
-const categoryIdTravelGuides = '44efe4b4-1add-435c-bb18-16fdb7823dfb'
 
 const PsychMagPageContent: React.FC<any> = ({blok}) => {
   const [currentCategory, setCurrentCategory] = React.useState<string>('all')
@@ -44,7 +39,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
                     : 'text-white',
                 )}
                 onClick={() => {
-                  if (currentCategory !== item.categorySlug) {
+                  if (item.categoryId && currentCategory !== item.categoryId) {
                     setCurrentCategory(item.categoryId)
                     setPageNumber(1)
                     getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
@@ -71,9 +66,10 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
             <p className="mx-auto max-w-4xl text-center md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
               {blok.subtitle}
             </p>
-            {articles.map((article: any, i: number) => (
-              <div key={i}>{article.content.title}</div>
-            ))}
+            {!isEmpty(articles) &&
+              articles.map((article: any, i: number) => (
+                <div key={i}>{article.content.title}</div>
+              ))}
             {articlesAmount > PER_PAGE * pageNumber ? (
               <button
                 onClick={() => {
@@ -102,32 +98,26 @@ export default PsychMagPageContent
 const filters = [
   {
     title: 'all',
-    categorySlug: 'all',
     categoryId: 'all',
   },
   {
     title: 'features',
-    categorySlug: 'features',
-    categoryId: categoryIdFeatures,
+    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
   },
   {
     title: 'vlog',
-    categorySlug: 'vlog',
-    categoryId: categoryIdVlog,
+    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
   },
   {
     title: 'top tips',
-    categorySlug: 'top-tips',
-    categoryId: categoryIdTopTips,
+    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_TOP_TIPS,
   },
   {
     title: 'gear',
-    categorySlug: 'gear',
-    categoryId: categoryIdGear,
+    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
   },
   {
     title: 'travel guides',
-    categorySlug: 'travel-guides',
-    categoryId: categoryIdTravelGuides,
+    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
   },
 ]

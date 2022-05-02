@@ -1,13 +1,13 @@
-import Storyblok, {useStoryblok} from 'utils/storyblok-service'
+import Storyblok from 'utils/storyblok-service'
 import axios from 'axios'
 import {isEmpty} from 'lodash'
 
 const allCategories = [
-  '3a74027d-ae5a-49ca-82aa-a4a13a017d9c',
-  'dd9b6f76-022d-4d6a-bc70-11e806944a0a',
-  '960103db-81c4-4100-a374-27f1785fed32',
-  'a95f141f-d357-43c2-94ae-93dea86ec306',
-  '44efe4b4-1add-435c-bb18-16fdb7823dfb',
+  process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
+  process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
+  process.env.NEXT_PUBLIC_CATEGORY_ID_TOP_TIPS,
+  process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
+  process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
 ]
 
 const getFeaturedArticles = async (arr: string[]) => {
