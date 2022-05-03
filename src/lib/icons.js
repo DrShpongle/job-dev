@@ -130,3 +130,29 @@ export const IconFullscreenOff = ({className}) => (
     <path d="M21.313 10.688h4v2.625h-6.625V6.688h2.625v4zm-2.625 14.625v-6.625h6.625v2.625h-4v4h-2.625zm-8-14.625v-4h2.625v6.625H6.688v-2.625h4zm-4 10.625v-2.625h6.625v6.625h-2.625v-4h-4z" />
   </svg>
 )
+
+export const IconChevronDown = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    className={classNames(className)}
+  >
+    <path d="M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83a.697.697 0 01-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969s.709-.268.979 0L10 13.25l7.418-7.141z" />
+  </svg>
+)
+
+export const IconChevronUp = ({className}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    className={classNames(className)}
+  >
+    <path d="M2.582 13.891c-.272.268-.709.268-.979 0s-.271-.701 0-.969l7.908-7.83a.697.697 0 01.979 0l7.908 7.83c.27.268.27.701 0 .969s-.709.268-.978 0L10 6.75l-7.418 7.141z" />
+  </svg>
+)
