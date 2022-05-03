@@ -9,7 +9,7 @@ import YoutubeBlock from 'components/youtube-block'
 const Article = ({blok}: any) => {
   return (
     <PageLayout>
-      <section {...sbEditable(blok)} key={blok._uid}>
+      <section {...sbEditable(blok)}>
         <div className="relative flex h-[65vh] flex-col justify-end pb-10 md:pb-20 lg:h-screen lg:pb-20 xl:pb-24 2xl:pb-28">
           <div className="absolute inset-0 before:absolute before:inset-0 before:z-[1] before:block before:bg-black/20">
             <Image

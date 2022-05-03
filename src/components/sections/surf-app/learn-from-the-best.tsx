@@ -14,7 +14,7 @@ const LearnFromTheBest = ({blok}: any) => {
   const scrollText = useTransform(scrollYProgress, [start, end], ['100%', '0%'])
 
   return (
-    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
+    <section ref={refSection} {...sbEditable(blok)}>
       <div
         className="sticky top-0 h-screen overflow-hidden bg-white"
         style={{transform: 'translate3d(0,0,0)'}}

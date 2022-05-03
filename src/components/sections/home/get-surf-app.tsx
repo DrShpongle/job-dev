@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 
-const GetSurfApp: React.FC<any> = ({blok}) => {
+const GetSurfApp: React.FC<any> = () => {
   return (
     <section
       className="flex h-screen flex-col items-center justify-center bg-blue py-12 md:py-20 xl:py-24"

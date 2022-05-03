@@ -44,7 +44,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
   }, [end])
 
   return (
-    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
+    <section ref={refSection} {...sbEditable(blok)}>
       <div className="sticky top-0 flex h-screen items-center justify-center bg-blue">
         {isMounted ? (
           <section

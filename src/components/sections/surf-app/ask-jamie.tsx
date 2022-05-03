@@ -63,7 +63,7 @@ const AskJamie = ({blok}: any) => {
   }
 
   return (
-    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
+    <section ref={refSection} {...sbEditable(blok)}>
       <div
         className="top-0 flex min-h-screen items-center bg-white py-12 md:sticky md:pb-0 md:pt-20 xl:pt-24"
         style={{transform: 'translate3d(0,0,0)'}}

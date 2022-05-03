@@ -26,7 +26,6 @@ const BePsyched: React.FC<any> = ({blok}) => {
       className="relative min-h-screen overflow-hidden bg-blue pt-8 md:pt-10 lg:py-20 xl:py-28 2xl:py-36"
       style={{transform: 'translate3d(0,0,0)'}}
       {...sbEditable(blok)}
-      key={blok._uid}
     >
       <motion.div
         className="absolute bottom-0 flex w-full will-change-transform lg:top-0 lg:w-[450px] xl:w-[500px] 2xl:w-[630px]"

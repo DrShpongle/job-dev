@@ -17,7 +17,6 @@ const VisualiseAndDo = ({blok}: any) => {
     <section
       ref={refSection}
       {...sbEditable(blok)}
-      key={blok._uid}
       style={{transform: 'translate3d(0,0,0)'}}
     >
       <div

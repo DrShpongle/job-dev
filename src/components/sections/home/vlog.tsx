@@ -11,7 +11,6 @@ const Vlog: React.FC<any> = ({blok}) => {
       className="bg-white py-12 md:py-20 xl:py-24"
       style={{transform: 'translate3d(0,0,0)'}}
       {...sbEditable(blok)}
-      key={blok._uid}
     >
       <div className="container">
         <div className="relative flex justify-center overflow-hidden">

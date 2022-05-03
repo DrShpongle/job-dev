@@ -62,7 +62,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
   })
 
   return (
-    <section ref={refSection} {...sbEditable(blok)} key={blok._uid}>
+    <section ref={refSection} {...sbEditable(blok)}>
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
         <div className="h-1/2 pt-10 pb-6 md:h-[45%] md:pb-8 md:pt-16 lg:hidden">
           <div className="container h-full">
