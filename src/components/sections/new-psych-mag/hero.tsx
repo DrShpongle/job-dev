@@ -6,7 +6,7 @@ const Hero: React.FC<{title: string; subtitle: string}> = ({
 }) => {
   return (
     <div className="container">
-      <div className="space-y-5 pb-20 md:space-y-6 lg:space-y-7 xl:space-y-8">
+      <div className="space-y-5 pb-10 md:space-y-6 lg:space-y-7 xl:space-y-8">
         <h1 className="text-center text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
           {title}
         </h1>
