@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {isEmpty} from 'lodash'
 
-import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {scrollToAnchor} from 'utils/scroll-to-anchor'
 import {getArticlesByCategory} from 'utils/get-articles'
 import Card from 'components/card'
 
@@ -14,7 +14,7 @@ const TravelGuides = ({blok}: any) => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor('travel-guides')
+    scrollToAnchor('travel-guides')
   }, [])
   return (
     <section

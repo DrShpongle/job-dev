@@ -1,4 +1,4 @@
-export const getScrolledToAnchor = (id: string) => {
+export const scrollToAnchor = (id: string) => {
   const path = window.location.hash
   if (path && path.includes(`#${id}`)) {
     const el = window.document.getElementById(id)

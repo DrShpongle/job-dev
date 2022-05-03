@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {isEmpty} from 'lodash'
 
-import {getScrolledToAnchor} from 'utils/get-scrolled-to-anchor'
+import {scrollToAnchor} from 'utils/scroll-to-anchor'
 import {getArticlesByCategory} from 'utils/get-articles'
 import Card from 'components/card'
 
@@ -14,7 +14,7 @@ const Gear = ({blok}: any) => {
     )
   }, [])
   React.useEffect(() => {
-    getScrolledToAnchor('gear')
+    scrollToAnchor('gear')
   }, [])
   return (
     <section className="bg-blue pb-5 pt-20 md:pb-7 md:pt-20 lg:pt-36" id="gear">
