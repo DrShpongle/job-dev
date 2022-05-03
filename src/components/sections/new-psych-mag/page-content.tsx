@@ -45,12 +45,12 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <section className="bg-white pt-24 md:pt-28 lg:pt-48">
+      <section className="bg-white pt-24 md:pt-36 lg:pt-48">
         <Hero title={blok.title} subtitle={blok.subtitle} />
         <FeaturedArticle article={{}} />
         {isEmpty(articles) ? (
           <div className="container">
-            <h2 className="my-16 text-center text-3xl md:my-32 md:text-5xl">
+            <h2 className="my-16 text-center text-3xl md:my-32 md:text-4xl xl:text-5xl">
               Sorry, there are no articles that belong to this filter
               yet&nbsp;&nbsp;👻
             </h2>

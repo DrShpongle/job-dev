@@ -1,6 +1,7 @@
 import * as React from 'react'
 import classNames from 'classnames'
 import {motion} from 'framer-motion'
+import {useWindowSize} from 'react-use'
 
 import {IconChevronDown, IconChevronUp} from 'lib/icons'
 
@@ -9,11 +10,12 @@ const FiltersBar: React.FC<{
   setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
 }> = ({currentCategory, setCurrentCategory}) => {
   const [expanded, setExpanded] = React.useState<boolean>(false)
+  const {width} = useWindowSize()
 
   return (
     <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
       <div className="lg:container">
-        <div className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white lg:h-20 lg:justify-between lg:space-x-7">
+        <div className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white md:h-11 lg:justify-start lg:space-x-5 xl:space-x-7">
           <div className="hidden lg:block">filter by category:</div>
           <button
             className="flex items-center space-x-2 text-white lg:hidden"
@@ -32,15 +34,19 @@ const FiltersBar: React.FC<{
               expanded: {height: 'auto'},
             }}
             initial="collapsed"
-            animate={expanded ? 'expanded' : 'collapsed'}
+            animate={
+              expanded || (isFinite(width) && width > 768)
+                ? 'expanded'
+                : 'collapsed'
+            }
             transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
-            className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink lg:static lg:w-auto lg:translate-y-0 lg:flex-row lg:space-x-7"
+            className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink lg:static lg:w-auto lg:translate-y-0 lg:flex-row lg:space-x-5 xl:space-x-7"
           >
             {filters.map((item, i) => (
               <button
                 key={i}
                 className={classNames(
-                  'mb-2 uppercase',
+                  'mb-2 uppercase lg:mb-0',
                   currentCategory === item.categoryId
                     ? 'text-blue'
                     : 'text-white',
