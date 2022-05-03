@@ -40,7 +40,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
 
   return (
     <>
-      <div className="fixed top-[80px] z-10 w-full bg-pink">
+      <div className="fixed top-10 z-10 w-full bg-pink md:top-20">
         <div className="container">
           <div className="flex h-[44px] items-center space-x-7 font-headings text-lg uppercase text-white">
             <div>filter by category:</div>
@@ -73,7 +73,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
           </div>
         </div>
       </div>
-      <section className="bg-white pt-20 md:pt-28 lg:pt-48">
+      <section className="bg-white pt-24 md:pt-28 lg:pt-48">
         <Hero title={blok.title} subtitle={blok.subtitle} />
         <FeaturedArticle article={{}} />
         {isEmpty(articles) ? (
