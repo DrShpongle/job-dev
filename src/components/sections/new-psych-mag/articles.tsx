@@ -27,20 +27,20 @@ const Article: React.FC<any> = ({article}) => {
             />
           </div>
         </div>
-        <div className="mt-7 flex items-baseline justify-between">
-          <h3 className="text-[2rem] uppercase text-pink">
+        <div className="mt-4 flex items-baseline justify-between md:mt-7">
+          <h3 className="text-sm uppercase text-pink md:text-[2rem]">
             {categories[categoryKey].title}
           </h3>
-          <h4 className="text-[1.3rem] uppercase opacity-40">
+          <h4 className="text-xs uppercase opacity-40 md:text-[1.3rem]">
             {formatDate(article.published_at)}
           </h4>
         </div>
-        <div className="min-h-[105px]">
-          <h2 className="mt-6 text-[2.625rem] leading-tight line-clamp-2">
+        <div className="min-h-[75px] md:min-h-[105px]">
+          <h2 className="mt-2 text-3xl leading-tight line-clamp-2 md:mt-6 md:text-[3.5rem] md:leading-tight">
             {article.content.title}
           </h2>
         </div>
-        <p className="mt-6 text-2xl line-clamp-2">
+        <p className="mt-2 text-sm line-clamp-2 md:mt-6 md:text-2xl">
           {article.content.short_description}
         </p>
       </a>
@@ -57,7 +57,7 @@ const Articles: React.FC<{
     <div className="bg-white py-20">
       <div className="container">
         {!isEmpty(articles) && (
-          <div className="grid grid-cols-3 gap-x-6 gap-y-12">
+          <div className="grid gap-y-8 md:grid-cols-3 md:gap-x-6 md:gap-y-12">
             {articles.map((article: any, i: number) => (
               <Article key={i} article={article} />
             ))}
