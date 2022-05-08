@@ -16,7 +16,30 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            cross-origin="true"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+          />
+          <link
+            rel="preload"
+            href="/fonts/surf-up.otf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/impact.ttf"
+            as="font"
+            crossOrigin=""
+          />
+        </Head>
         <body className="w-full font-body leading-normal">
           <Main />
           <NextScript />

@@ -120,7 +120,7 @@ export default function Page(props) {
           content="/favicon/browserconfig.xml"
         />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -136,7 +136,7 @@ export default function Page(props) {
           as="font"
           crossOrigin=""
         />
-        <link rel="preload" href="/fonts/impact.ttf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/impact.ttf" as="font" crossOrigin="" /> */}
       </Head>
       <NextSeo
         title={seo.title}
