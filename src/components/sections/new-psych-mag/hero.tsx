@@ -29,7 +29,7 @@ const Hero: React.FC<{title: string; subtitle: string; articles: any[]}> = ({
                 )
               })}
             </div>
-            <div className="xl:1/3 w-2/5 shrink-0 space-y-8 pt-40">
+            <div className="xl:1/3 w-2/5 shrink-0 space-y-10 pt-40">
               {secondaryArticles.map((article, i) => {
                 return (
                   <Article key={i} article={article} withMinHeight={false} />

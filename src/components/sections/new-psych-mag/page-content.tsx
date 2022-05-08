@@ -18,6 +18,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
   const [articles, setArticles] = React.useState<any>([])
   const [articlesAmount, setArticlesAmount] = React.useState<any>()
   const [pageNumber, setPageNumber] = React.useState<number>(2)
+  const [isFetching, setIsFetching] = React.useState<boolean>(false)
 
   const canLoadMore = articlesAmount > PER_PAGE * pageNumber
 
@@ -35,8 +36,10 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
   }, [currentCategory])
 
   const handlerLoadMore = () => {
+    setIsFetching(true)
     getArticlesByCategory(currentCategory, PER_PAGE, pageNumber + 1).then(
       (data) => {
+        setIsFetching(false)
         setPageNumber(pageNumber + 1)
         setArticles([...articles, ...data])
       },
@@ -61,6 +64,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
             articles={articles}
             handlerLoadMore={handlerLoadMore}
             canLoadMore={canLoadMore}
+            isFetching={isFetching}
           />
         )}
       </section>
