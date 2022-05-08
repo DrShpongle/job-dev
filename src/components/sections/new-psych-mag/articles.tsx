@@ -28,19 +28,19 @@ const Article: React.FC<any> = ({article}) => {
           </div>
         </div>
         <div className="mt-2 flex items-baseline justify-between md:mt-4 lg:mt-7">
-          <h3 className="text-sm uppercase text-pink md:text-lg lg:text-[2rem]">
+          <h3 className="text-sm uppercase text-pink md:text-lg lg:text-2xl xl:text-[2rem]">
             {categories[categoryKey].title}
           </h3>
-          <h4 className="hidden uppercase opacity-40 lg:block lg:text-[1.3rem]">
+          <h4 className="hidden uppercase opacity-40 lg:block lg:text-lg xl:text-[1.3rem]">
             {formatDate(article.published_at)}
           </h4>
         </div>
-        <div className="mt-1 min-h-[75px] md:mt-2 md:min-h-[112px] lg:mt-6">
-          <h2 className="text-xl leading-tight line-clamp-4 md:text-4xl md:leading-tight md:line-clamp-3 lg:line-clamp-2">
+        <div className="mt-1 min-h-[75px] md:mt-2 md:min-h-[112px] lg:mt-4 lg:min-h-[90px] xl:mt-5">
+          <h2 className="text-xl leading-tight line-clamp-4 md:text-4xl md:leading-tight md:line-clamp-3 lg:line-clamp-2 xl:text-[2.625rem]">
             {article.content.title}
           </h2>
         </div>
-        <p className="mt-2 hidden text-sm lg:mt-6 lg:block lg:text-2xl lg:line-clamp-2">
+        <p className="mt-2 hidden text-sm lg:mt-4 lg:block lg:text-xl lg:line-clamp-2 xl:mt-5 xl:text-2xl">
           {article.content.short_description}
         </p>
         <h4 className="mt-1 text-xs uppercase opacity-40 md:mt-2 md:text-base lg:mt-0 lg:hidden">

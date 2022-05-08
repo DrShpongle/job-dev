@@ -35,7 +35,7 @@ const FiltersBar: React.FC<{
             }}
             initial="collapsed"
             animate={
-              expanded || (isFinite(width) && width > 768)
+              expanded || (isFinite(width) && width >= 1024)
                 ? 'expanded'
                 : 'collapsed'
             }
