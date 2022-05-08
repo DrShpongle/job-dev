@@ -1,9 +1,11 @@
 import * as React from 'react'
 
-const Hero: React.FC<{title: string; subtitle: string}> = ({
+const Hero: React.FC<{title: string; subtitle: string; articles: any[]}> = ({
   title,
   subtitle,
+  articles,
 }) => {
+  // console.log('articles from Hero:', articles)
   return (
     <div className="container">
       <div className="space-y-5 pb-10 md:space-y-6 lg:space-y-7 xl:space-y-8">

@@ -2,6 +2,7 @@ import Storyblok from 'utils/storyblok-service'
 import axios from 'axios'
 import {isEmpty} from 'lodash'
 
+// TODO
 const allCategories = [
   process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
   process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
@@ -9,6 +10,34 @@ const allCategories = [
   process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
   process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
 ]
+
+const categories = {
+  features: {
+    id: process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
+    slug: 'features',
+    title: 'features',
+  },
+  vlog: {
+    id: process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
+    slug: 'vlog',
+    title: 'vlog',
+  },
+  'top-tips': {
+    id: process.env.NEXT_PUBLIC_CATEGORY_ID_TOP_TIPS,
+    slug: 'top-tips',
+    title: 'top tips',
+  },
+  gear: {
+    id: process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
+    slug: 'gear',
+    title: 'gear',
+  },
+  'travel-guides': {
+    id: process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
+    slug: 'travel-guides',
+    title: 'travel guides',
+  },
+}
 
 const getFeaturedArticles = async (arr: string[]) => {
   const uuids = isEmpty(arr) ? [] : arr.join(',')
@@ -53,4 +82,16 @@ const getArticlesByCategory = async (
   }
 }
 
-export {getFeaturedArticles, getArticlesByCategory, getArticlesAmount}
+const getCategoryName = (categoryId: string) => {
+  const categoryKey = (
+    Object.keys(categories) as Array<keyof typeof categories>
+  ).find((key) => categories[key].id === categoryId)
+  return categoryKey ? categories[categoryKey].title : ''
+}
+
+export {
+  getFeaturedArticles,
+  getArticlesByCategory,
+  getArticlesAmount,
+  getCategoryName,
+}
