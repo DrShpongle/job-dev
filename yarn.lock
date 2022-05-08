@@ -2321,10 +2321,10 @@ stacktrace-js@^2.0.2:
     stack-generator "^2.0.5"
     stacktrace-gps "^3.0.4"
 
-storyblok-js-client@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.4.0.tgz#a36133f075eb2436abf4d2e6c7c6c195d4ece10e"
-  integrity sha512-QVc+efhHlFiP8f7ZlfqJ6XYaoITjC3UvP1qA9ebjNFGARap/2Q3sUl7DR5OWKVBC9bx7tsN0OWWzuTPvdRwwsQ==
+storyblok-js-client@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.0.tgz#335a751d3ec649ca223bc89a7aafa4b9754c7f4f"
+  integrity sha512-VRxVnivvc15RV0Osfbn5a5OWjYwhM3UnUJ3CjuAiK9pJasWBzF6X8GwwasKg3ZDCz/NU40+lj/t5APHS7P7ZcQ==
   dependencies:
     prettier "^2.5.1"
     rollup-plugin-mjs-entry "^0.1.1"
