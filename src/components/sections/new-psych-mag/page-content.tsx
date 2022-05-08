@@ -49,7 +49,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <section className="bg-white pt-24 md:pt-36 lg:pt-48">
+      <section className="bg-white pt-20">
         <Hero
           title={blok.title}
           subtitle={blok.subtitle}
@@ -69,12 +69,3 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
 }
 
 export default PsychMagPageContent
-
-// (
-//   <div className="container">
-//     <h2 className="my-16 text-center text-3xl md:my-32 md:text-4xl xl:text-5xl">
-//       Sorry, there are no articles that belong to this filter
-//       yet&nbsp;&nbsp;👻
-//     </h2>
-//   </div>
-// )
