@@ -1,5 +1,7 @@
 import {NextSeo} from 'next-seo'
 import Head from 'next/head'
+import Script from 'next/script'
+
 import DynamicComponent from 'components/dynamic-component'
 import Storyblok, {useStoryblok} from 'utils/storyblok-service'
 
@@ -38,7 +40,21 @@ export default function Page(props) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3DDEV708JB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3DDEV708JB', {
+            page_path: window.location.pathname,
+          });
+        `}
+        </Script>
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-3DDEV708JB"
         />
@@ -53,12 +69,26 @@ export default function Page(props) {
             });
           `,
           }}
-        />
+        /> */}
         <meta
           name="facebook-domain-verification"
           content="hklkoy16kctd1or20nqdzgib0fvk8m"
         />
-        <script
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window,document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '671463990803677'); 
+          fbq('track', 'PageView');
+        `}
+        </Script>
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -73,8 +103,20 @@ export default function Page(props) {
               fbq('track', 'PageView');
           `,
           }}
-        />
-        <script
+        /> */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          var _urconfig = { sid: "7db37aa7-69a0-46db-91c5-4c651977a521", aip: 0, usePageProtocol: false };
+          (function (d, s) {
+              var js = d.createElement(s),
+                  sc = d.getElementsByTagName(s)[0];
+              js.src = "https://hit.uptrendsdata.com/rum.min.js";
+              js.async = "async";
+              sc.parentNode.insertBefore(js, sc);
+          }(document, "script"));
+        `}
+        </Script>
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               var _urconfig = { sid: "7db37aa7-69a0-46db-91c5-4c651977a521", aip: 0, usePageProtocol: false };
@@ -87,7 +129,7 @@ export default function Page(props) {
               }(document, "script"));
           `,
           }}
-        />
+        /> */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
