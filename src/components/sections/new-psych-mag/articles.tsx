@@ -14,7 +14,7 @@ const Article: React.FC<any> = ({article}) => {
       >
         <a className="block">
           <div className="aspect-video overflow-hidden">
-            <div className="relative h-full w-full duration-700 hover:scale-110">
+            <div className="relative h-full w-full duration-700 hover-hover:hover:scale-110">
               <Image
                 src={article.content.hero_image.filename}
                 alt="article.content.title"
@@ -39,7 +39,7 @@ const Article: React.FC<any> = ({article}) => {
         <Link
           href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/articles/${article.slug}`}
         >
-          <a className="block duration-500 hover:-translate-y-1">
+          <a className="block duration-500 hover-hover:hover:-translate-y-1">
             <h2 className="text-xl leading-tight line-clamp-4 md:text-3xl md:leading-tight md:line-clamp-3 lg:text-4xl lg:leading-tight lg:line-clamp-2 xl:text-[2.625rem] xl:leading-tight">
               {article.content.title}
             </h2>
