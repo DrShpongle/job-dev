@@ -27,22 +27,25 @@ const Article: React.FC<any> = ({article}) => {
             />
           </div>
         </div>
-        <div className="mt-4 flex items-baseline justify-between md:mt-7">
-          <h3 className="text-sm uppercase text-pink md:text-[2rem]">
+        <div className="mt-2 flex items-baseline justify-between md:mt-4 lg:mt-7">
+          <h3 className="text-sm uppercase text-pink md:text-lg lg:text-[2rem]">
             {categories[categoryKey].title}
           </h3>
-          <h4 className="text-xs uppercase opacity-40 md:text-[1.3rem]">
+          <h4 className="hidden uppercase opacity-40 lg:block lg:text-[1.3rem]">
             {formatDate(article.published_at)}
           </h4>
         </div>
-        <div className="min-h-[75px] md:min-h-[105px]">
-          <h2 className="mt-2 text-3xl leading-tight line-clamp-2 md:mt-6 md:text-[3.5rem] md:leading-tight">
+        <div className="mt-1 min-h-[75px] md:mt-2 md:min-h-[112px] lg:mt-6">
+          <h2 className="text-xl leading-tight line-clamp-4 md:text-4xl md:leading-tight md:line-clamp-3 lg:line-clamp-2">
             {article.content.title}
           </h2>
         </div>
-        <p className="mt-2 text-sm line-clamp-2 md:mt-6 md:text-2xl">
+        <p className="mt-2 hidden text-sm lg:mt-6 lg:block lg:text-2xl lg:line-clamp-2">
           {article.content.short_description}
         </p>
+        <h4 className="mt-1 text-xs uppercase opacity-40 md:mt-2 md:text-base lg:mt-0 lg:hidden">
+          {formatDate(article.published_at)}
+        </h4>
       </a>
     </Link>
   )
@@ -54,10 +57,10 @@ const Articles: React.FC<{
   canLoadMore: boolean
 }> = ({articles, handlerLoadMore, canLoadMore}) => {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-6 md:py-16 lg:py-20">
       <div className="container">
         {!isEmpty(articles) && (
-          <div className="grid gap-y-8 md:grid-cols-3 md:gap-x-6 md:gap-y-12">
+          <div className="grid grid-cols-3 gap-y-6 gap-x-2 md:gap-x-6 md:gap-y-12">
             {articles.map((article: any, i: number) => (
               <Article key={i} article={article} />
             ))}
