@@ -33,7 +33,7 @@ const Articles: React.FC<{
               isFetching ? 'bg-blue' : 'bg-pink',
             )}
           >
-            {isFetching ? 'fetching...' : 'more'}
+            {isFetching ? 'loading...' : 'more'}
           </button>
         ) : null}
       </div>
