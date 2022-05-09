@@ -36,7 +36,6 @@ const AboutHero = ({blok}: any) => {
       </motion.div>
       <div className="container flex grow flex-col justify-end pt-72">
         <Image
-          // src="/images/job.png"
           src="/images/job.webp"
           width={1686}
           height={1124}

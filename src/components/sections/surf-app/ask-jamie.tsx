@@ -132,7 +132,6 @@ const AskJamie = ({blok}: any) => {
                   </div>
                   <div className="pointer-events-none">
                     <Image
-                      // src="/images/iphone-frame-portrait.png"
                       src="/images/iphone-frame-portrait.webp"
                       width={580}
                       height={1171}
@@ -181,7 +180,6 @@ const AskJamie = ({blok}: any) => {
                   </div>
                   <div className="pointer-events-none">
                     <Image
-                      // src="/images/iphone-frame-portrait.png"
                       src="/images/iphone-frame-portrait.webp"
                       width={580}
                       height={1171}

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {render} from 'storyblok-rich-text-react-renderer'
+import {NODE_IMAGE, render} from 'storyblok-rich-text-react-renderer'
 import {useWindowSize} from 'react-use'
 
 import VideoPlayer from 'components/video-player'
@@ -87,8 +87,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
           Jamie O&#8217;Brien
         </h1>
         <div className="relative h-full w-full">
-          <Image
-            // src="/images/teaser-waves.jpg"
+          <NODE_IMAGE
             src="/images/teaser-waves.webp"
             layout="fill"
             objectFit="cover"
@@ -214,7 +213,6 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
             <div className="pointer-events-none portrait:hidden md:portrait:block">
               <Image
-                // src="/images/iphone-frame-landscape.png"
                 src="/images/iphone-frame-landscape.webp"
                 width={1171}
                 height={580}
@@ -224,7 +222,6 @@ const TeaserHero: React.FC<any> = ({blok}) => {
             </div>
             <div className="pointer-events-none md:hidden landscape:hidden">
               <Image
-                // src="/images/iphone-frame-portrait.png"
                 src="/images/iphone-frame-portrait.webp"
                 width={580}
                 height={1171}

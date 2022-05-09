@@ -153,7 +153,6 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           className="absolute bottom-0 left-0 right-0 mx-auto flex w-[280px] translate-y-1/2 justify-center will-change-transform md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px]"
         >
           <Image
-            // src="/images/iphone-frame-portrait.png"
             src="/images/iphone-frame-portrait.webp"
             width={909}
             height={1835}
@@ -172,7 +171,6 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 className="will-change-transform"
               >
                 <Image
-                  // src="/images/job-app-logo.png"
                   src="/images/job-app-logo.webp"
                   width={867}
                   height={664}
