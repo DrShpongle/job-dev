@@ -52,7 +52,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <section className="bg-white pt-20">
+      <section className="bg-white pt-28 md:pt-20">
         <Hero
           title={blok.title}
           subtitle={blok.subtitle}

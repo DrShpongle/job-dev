@@ -11,7 +11,7 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
     <div className="bg-blue py-8 text-white md:py-10 lg:py-12 xl:py-14">
       <div className="container">
         <div className="flex flex-col-reverse items-center md:flex-row md:items-end md:space-x-8 lg:space-x-12 xl:space-x-16">
-          <div className="mt-4 w-full shrink-0 md:mt-0 md:w-2/5 xl:w-1/3">
+          <div className="mt-4 w-full shrink-0 md:mt-0 md:w-2/5 2xl:w-1/3">
             <div className="flex items-baseline justify-between">
               {getCategoryName(article.content.category[0]) && (
                 <h3 className="text-sm uppercase text-pink md:text-lg lg:text-2xl xl:text-[2rem]">

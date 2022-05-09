@@ -6,7 +6,11 @@ import classNames from 'classnames'
 import {getCategoryName} from 'utils/get-articles'
 import {formatDate} from 'utils/format-date'
 
-const Article: React.FC<any> = ({article, withMinHeight = true}) => {
+const Article: React.FC<{
+  article: any
+  withMinHeight?: boolean
+  primary?: boolean
+}> = ({article, withMinHeight = true, primary = false}) => {
   return (
     <div>
       <Link
@@ -39,14 +43,21 @@ const Article: React.FC<any> = ({article, withMinHeight = true}) => {
         className={classNames(
           'mt-1 md:mt-2 lg:mt-4',
           withMinHeight &&
-            'min-h-[100px] md:min-h-[113px] lg:min-h-[90px] xl:min-h-[105px]',
+            'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
         )}
       >
         <Link
           href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/articles/${article.slug}`}
         >
           <a className="block duration-500 hover-hover:hover:-translate-y-1">
-            <h2 className="text-xl leading-tight line-clamp-4 md:text-3xl md:leading-tight md:line-clamp-3 lg:text-4xl lg:leading-tight lg:line-clamp-2 xl:text-[2.625rem] xl:leading-tight">
+            <h2
+              className={classNames(
+                'leading-[1.15] line-clamp-4 md:leading-[1.15] md:line-clamp-3 lg:leading-[1.15] lg:line-clamp-2 xl:leading-[1.15]',
+                primary
+                  ? 'text-[31px] md:text-4xl lg:text-[2.625rem] xl:text-[3.5rem]'
+                  : 'text-[21px] md:text-3xl lg:text-4xl xl:text-[2.625rem]',
+              )}
+            >
               {article.content.title}
             </h2>
           </a>
