@@ -19,7 +19,7 @@ const Page404: NextPage = () => {
             layout="fill"
             objectFit="cover"
             priority
-            alt="waves"
+            alt="404"
             className="object-bottom"
           />
         </div>
