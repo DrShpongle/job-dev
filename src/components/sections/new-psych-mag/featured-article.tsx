@@ -8,7 +8,7 @@ import {formatDate} from 'utils/format-date'
 
 const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
   return isEmpty(article) ? null : (
-    <div className="bg-blue py-8 text-white md:py-10 lg:py-12 xl:py-14">
+    <div className="bg-blue py-5 text-white md:py-10 lg:py-12 xl:py-14">
       <div className="container">
         <div className="flex flex-col-reverse items-center md:flex-row md:items-end md:space-x-8 lg:space-x-12 xl:space-x-16">
           <div className="mt-4 w-full shrink-0 md:mt-0 md:w-2/5 2xl:w-1/3">
@@ -18,7 +18,7 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
                   {getCategoryName(article.content.category[0])}
                 </h3>
               )}
-              <h4 className="text-xs uppercase md:text-base lg:text-lg xl:text-[1.3rem]">
+              <h4 className="text-[10px] uppercase md:text-sm lg:text-lg xl:text-[1.3rem]">
                 {formatDate(article.published_at)}
               </h4>
             </div>
@@ -31,7 +31,7 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
                 </h2>
               </a>
             </Link>
-            <p className="mt-2 hidden text-sm lg:mt-4 lg:block lg:text-xl xl:text-2xl">
+            <p className="mt-2 text-sm line-clamp-3 lg:mt-4 lg:text-xl xl:text-2xl">
               {article.content.short_description}
             </p>
           </div>

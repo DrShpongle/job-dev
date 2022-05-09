@@ -8,9 +8,9 @@ import {formatDate} from 'utils/format-date'
 
 const Article: React.FC<{
   article: any
-  withMinHeight?: boolean
   primary?: boolean
-}> = ({article, withMinHeight = true, primary = false}) => {
+  secondary?: boolean
+}> = ({article, primary, secondary}) => {
   return (
     <div>
       <Link
@@ -29,22 +29,34 @@ const Article: React.FC<{
           </div>
         </a>
       </Link>
-      <div className="mt-2 flex items-baseline justify-between md:mt-4 lg:mt-7">
+      <div className="mt-2 flex items-baseline justify-between lg:mt-6">
         {getCategoryName(article.content.category[0]) && (
           <h3 className="text-sm uppercase text-pink md:text-lg lg:text-2xl xl:text-[2rem]">
             {getCategoryName(article.content.category[0])}
           </h3>
         )}
-        <h4 className="hidden uppercase opacity-40 lg:block lg:text-lg xl:text-[1.3rem]">
+        <h4
+          className={classNames(
+            ' text-[10px] uppercase opacity-40 md:text-sm lg:text-base xl:text-[1.3rem]',
+            !primary && !secondary && 'hidden lg:block',
+          )}
+        >
           {formatDate(article.published_at)}
         </h4>
       </div>
       <div
         className={classNames(
-          'mt-1 md:mt-2 lg:mt-4',
-          withMinHeight &&
+          'mt-1 md:mt-2 lg:mt-5',
+          secondary && 'min-h-[49px] md:min-h-0',
+          !primary &&
+            !secondary &&
             'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
         )}
+        // className={classNames(
+        //   'mt-1 min-h-[97px] md:mt-2 lg:mt-4',
+        //   withMinHeight &&
+        //     'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
+        // )}
       >
         <Link
           href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/articles/${article.slug}`}
@@ -52,10 +64,14 @@ const Article: React.FC<{
           <a className="block duration-500 hover-hover:hover:-translate-y-1">
             <h2
               className={classNames(
-                'leading-[1.15] line-clamp-4 md:leading-[1.15] md:line-clamp-3 lg:leading-[1.15] lg:line-clamp-2 xl:leading-[1.15]',
-                primary
-                  ? 'text-[31px] md:text-4xl lg:text-[2.625rem] xl:text-[3.5rem]'
-                  : 'text-[21px] md:text-3xl lg:text-4xl xl:text-[2.625rem]',
+                'leading-[1.15] md:leading-[1.15] lg:leading-[1.15] xl:leading-[1.15]',
+                primary &&
+                  'text-[31px] md:text-4xl lg:text-[2.625rem] xl:text-[3.5rem]',
+                secondary &&
+                  'text-[21px] line-clamp-2 md:text-3xl md:line-clamp-none lg:text-4xl xl:text-[2.625rem]',
+                !primary &&
+                  !secondary &&
+                  'text-[21px] line-clamp-4 md:text-3xl md:line-clamp-3 lg:text-4xl lg:line-clamp-2 xl:text-[2.625rem]',
               )}
             >
               {article.content.title}
@@ -63,12 +79,20 @@ const Article: React.FC<{
           </a>
         </Link>
       </div>
-      <p className="mt-2 hidden text-sm lg:mt-4 lg:block lg:text-xl lg:line-clamp-3 xl:text-2xl">
+      <p
+        className={classNames(
+          'mt-2 text-sm lg:mt-3 lg:text-xl xl:text-2xl',
+          secondary && 'line-clamp-4',
+          !primary && !secondary && 'hidden lg:block lg:line-clamp-3',
+        )}
+      >
         {article.content.short_description}
       </p>
-      <h4 className="mt-1 text-xs uppercase opacity-40 md:mt-2 md:text-base lg:mt-0 lg:hidden">
-        {formatDate(article.published_at)}
-      </h4>
+      {!primary && !secondary && (
+        <h4 className="mt-1 text-[10px] uppercase opacity-40 md:mt-2 md:text-sm lg:mt-0 lg:hidden">
+          {formatDate(article.published_at)}
+        </h4>
+      )}
     </div>
   )
 }
