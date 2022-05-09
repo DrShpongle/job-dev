@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classNames from 'classnames'
 import {motion} from 'framer-motion'
-import {useWindowSize} from 'react-use'
+import {useWindowSize, useClickAway} from 'react-use'
 
 import {IconChevronDown, IconChevronUp} from 'lib/icons'
 
@@ -9,13 +9,22 @@ const FiltersBar: React.FC<{
   currentCategory: string
   setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
 }> = ({currentCategory, setCurrentCategory}) => {
+  const ref = React.useRef(null)
   const [expanded, setExpanded] = React.useState<boolean>(false)
   const {width} = useWindowSize()
+
+  useClickAway(ref, (e) => {
+    console.log('e:', e)
+    setExpanded(false)
+  })
 
   return (
     <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
       <div className="lg:container">
-        <div className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white md:h-11 lg:justify-start lg:space-x-5 xl:space-x-7">
+        <div
+          ref={ref}
+          className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white md:h-11 lg:justify-start lg:space-x-5 xl:space-x-7"
+        >
           <div className="hidden lg:block">filter by category:</div>
           <button
             className="flex items-center space-x-2 text-white lg:hidden"
