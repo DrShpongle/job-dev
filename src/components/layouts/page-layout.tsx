@@ -11,7 +11,7 @@ const PageLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
   const router = useRouter()
   const matchString = /^\/sea-trees/
   return (
-    <div className="">
+    <div>
       <Header />
       <Subheader />
       {children}
