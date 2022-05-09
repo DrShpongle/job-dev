@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {NODE_IMAGE, render} from 'storyblok-rich-text-react-renderer'
+import {render} from 'storyblok-rich-text-react-renderer'
 import {useWindowSize} from 'react-use'
 
 import VideoPlayer from 'components/video-player'
@@ -87,7 +87,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
           Jamie O&#8217;Brien
         </h1>
         <div className="relative h-full w-full">
-          <NODE_IMAGE
+          <Image
             src="/images/teaser-waves.webp"
             layout="fill"
             objectFit="cover"
