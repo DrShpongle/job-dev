@@ -52,11 +52,6 @@ const Article: React.FC<{
             !secondary &&
             'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
         )}
-        // className={classNames(
-        //   'mt-1 min-h-[97px] md:mt-2 lg:mt-4',
-        //   withMinHeight &&
-        //     'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
-        // )}
       >
         <Link
           href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/articles/${article.slug}`}

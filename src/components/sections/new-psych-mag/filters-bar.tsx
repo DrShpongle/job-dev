@@ -55,14 +55,6 @@ const FiltersBar: React.FC<{
                   if (item.categoryId && currentCategory !== item.categoryId) {
                     setCurrentCategory(item.categoryId)
                     setExpanded(false)
-                    // TODO
-                    // setPageNumber(1)
-                    // getArticlesByCategory(item.categoryId, PER_PAGE, 1).then(
-                    //   (data) => setArticles(data),
-                    // )
-                    // getArticlesAmount(item.categoryId).then((data) =>
-                    //   setArticlesAmount(+data.headers.total),
-                    // )
                   }
                 }}
               >
