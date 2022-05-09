@@ -5,7 +5,7 @@ import {isEmpty} from 'lodash'
 
 import {getYoutubeDetails} from 'utils/get-youtube-details'
 import VideoPlayer from 'components/video-player'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const PsychMagHero: React.FC<any> = ({blok}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)

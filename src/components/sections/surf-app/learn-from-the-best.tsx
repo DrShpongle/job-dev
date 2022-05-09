@@ -3,7 +3,7 @@ import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const LearnFromTheBest = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)

@@ -4,7 +4,7 @@ import {isEmpty} from 'lodash'
 
 import {getCategoryName} from 'utils/get-articles'
 import {formatDate} from 'utils/format-date'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
   return isEmpty(article) ? null : (

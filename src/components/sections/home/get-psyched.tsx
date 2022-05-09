@@ -10,7 +10,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const GetPsyched: React.FC<any> = ({blok}) => {
   const {width, height} = useWindowSize()

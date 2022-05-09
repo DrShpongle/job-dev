@@ -3,7 +3,7 @@ import {render} from 'storyblok-rich-text-react-renderer'
 import {useWindowSize} from 'react-use'
 
 import VideoPlayer from 'components/video-player'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const TeaserHero: React.FC<any> = ({blok}) => {
   const {width} = useWindowSize()

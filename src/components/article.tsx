@@ -2,7 +2,7 @@ import React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {render} from 'storyblok-rich-text-react-renderer'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 import PageLayout from 'components/layouts/page-layout'
 import YoutubeBlock from 'components/youtube-block'
 

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const Partnered = () => {
   return (

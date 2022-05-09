@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const GetSurfApp: React.FC<any> = () => {
   return (

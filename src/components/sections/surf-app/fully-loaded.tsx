@@ -4,7 +4,7 @@ import Observer from '@researchgate/react-intersection-observer'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import VideoPlayer from 'components/video-player'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const MotionItem: React.FC<{url: string}> = ({url}) => {
   const [shown, setShown] = React.useState(false)

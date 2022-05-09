@@ -2,7 +2,7 @@ import * as React from 'react'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const AboutHero = ({blok}: any) => {
   const [_, setIsMounted] = React.useState<boolean>(false)

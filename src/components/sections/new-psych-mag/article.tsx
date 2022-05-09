@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 import {getCategoryName} from 'utils/get-articles'
 import {formatDate} from 'utils/format-date'
 

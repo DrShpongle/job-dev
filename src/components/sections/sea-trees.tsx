@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const EquationBlock: React.FC<{
   leftExpression: string

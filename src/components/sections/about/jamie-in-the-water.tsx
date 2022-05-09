@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {render} from 'storyblok-rich-text-react-renderer'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const JamieInTheWater = ({blok}: any) => {
   return (

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import VideoPlayer from 'components/video-player'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const Vlog: React.FC<any> = ({blok}) => {
   return (

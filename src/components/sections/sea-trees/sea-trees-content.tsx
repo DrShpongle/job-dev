@@ -2,7 +2,7 @@ import Image from 'next/image'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 import VideoPlayer from 'components/video-player'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const SeaTreesContent = ({blok}: any) => {
   return (

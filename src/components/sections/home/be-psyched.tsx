@@ -4,7 +4,7 @@ import {useWindowSize} from 'react-use'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgressFromTop} from 'hooks/useRefScrollProgressFromTop'
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const BePsyched: React.FC<any> = ({blok}) => {
   const {width} = useWindowSize()

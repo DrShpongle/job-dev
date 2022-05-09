@@ -3,7 +3,7 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const StayPsyched: React.FC<any> = ({blok}) => {
   return (

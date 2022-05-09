@@ -3,7 +3,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 import MobileMenu, {MobileMenuToggler} from 'components/mobile-menu'
 
 const Header = () => {

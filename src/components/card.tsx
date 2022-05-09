@@ -3,7 +3,7 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import {isEmpty} from 'lodash'
 
-import ImageWithBlur from 'components/image'
+import ImageWithBlur from 'components/image-with-blur'
 
 const Card: React.FC<{
   data: any
