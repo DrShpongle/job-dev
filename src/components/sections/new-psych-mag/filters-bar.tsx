@@ -13,8 +13,7 @@ const FiltersBar: React.FC<{
   const [expanded, setExpanded] = React.useState<boolean>(false)
   const {width} = useWindowSize()
 
-  useClickAway(ref, (e) => {
-    console.log('e:', e)
+  useClickAway(ref, () => {
     setExpanded(false)
   })
 
