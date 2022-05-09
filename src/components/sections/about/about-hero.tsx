@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
+import ImageWithBlur from 'components/image'
 
 const AboutHero = ({blok}: any) => {
   const [_, setIsMounted] = React.useState<boolean>(false)
@@ -35,7 +35,7 @@ const AboutHero = ({blok}: any) => {
         </div>
       </motion.div>
       <div className="container flex grow flex-col justify-end pt-72">
-        <Image
+        <ImageWithBlur
           src="/images/job.webp"
           width={1686}
           height={1124}
@@ -48,9 +48,3 @@ const AboutHero = ({blok}: any) => {
 }
 
 export default AboutHero
-
-const textArray = [
-  'Imagine if you could get 5 minutes with one of the best surfers of all time. Now you can.',
-  'You want to get spat out of a monster barrel and have everyone on the beach Scream? Jamie’s got you.',
-  'Or how about learning how to do a perfect bottom turn? Just grab your phone and get an instant answer on how to improve. Let’s GO!',
-]

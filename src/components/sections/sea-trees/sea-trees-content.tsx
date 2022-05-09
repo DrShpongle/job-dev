@@ -2,6 +2,7 @@ import Image from 'next/image'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const SeaTreesContent = ({blok}: any) => {
   return (
@@ -10,7 +11,7 @@ const SeaTreesContent = ({blok}: any) => {
         <h1 className="absolute left-0 bottom-0 text-transparent">SeaTrees</h1>
         <div className="absolute inset-0">
           <div className="relative h-full w-full">
-            <Image
+            <ImageWithBlur
               src={blok.hero_image.filename}
               layout="fill"
               objectFit="cover"
@@ -60,7 +61,7 @@ const SeaTreesContent = ({blok}: any) => {
           </div>
         </div>
         <div className="relative mt-8 flex h-[65vh] w-full md:mt-12 md:h-[85vh] xl:mt-16 2xl:mt-20">
-          <Image
+          <ImageWithBlur
             src="/images/sea-trees-palms.jpg"
             layout="fill"
             objectFit="cover"

@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import {isEmpty} from 'lodash'
 
 import {getCategoryName} from 'utils/get-articles'
 import {formatDate} from 'utils/format-date'
+import ImageWithBlur from 'components/image'
 
 const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
   return isEmpty(article) ? null : (
@@ -42,7 +42,7 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
               <a className="block">
                 <div className="aspect-video overflow-hidden">
                   <div className="relative h-full w-full duration-700 hover-hover:hover:scale-110">
-                    <Image
+                    <ImageWithBlur
                       src={article.content.hero_image.filename}
                       alt="article.content.title"
                       layout="fill"

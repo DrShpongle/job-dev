@@ -1,11 +1,11 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Navigation} from 'swiper'
 import {isEmpty} from 'lodash'
 
 import {getYoutubeDetails} from 'utils/get-youtube-details'
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const PsychMagHero: React.FC<any> = ({blok}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
@@ -94,7 +94,7 @@ const PsychMagHero: React.FC<any> = ({blok}) => {
                             >
                               <div className="absolute inset-0 overflow-hidden">
                                 <div className="relative h-full w-full duration-300 hover-hover:hover:scale-[1.15]">
-                                  <Image
+                                  <ImageWithBlur
                                     src={item.thumb}
                                     alt={item.title}
                                     layout="fill"

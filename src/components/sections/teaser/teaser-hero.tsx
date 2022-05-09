@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {render} from 'storyblok-rich-text-react-renderer'
 import {useWindowSize} from 'react-use'
 
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const TeaserHero: React.FC<any> = ({blok}) => {
   const {width} = useWindowSize()
@@ -87,7 +87,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
           Jamie O&#8217;Brien
         </h1>
         <div className="relative h-full w-full">
-          <Image
+          <ImageWithBlur
             src="/images/teaser-waves.webp"
             layout="fill"
             objectFit="cover"
@@ -212,7 +212,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               />
             </div>
             <div className="pointer-events-none portrait:hidden md:portrait:block">
-              <Image
+              <ImageWithBlur
                 src="/images/iphone-frame-landscape.webp"
                 width={1171}
                 height={580}
@@ -221,7 +221,7 @@ const TeaserHero: React.FC<any> = ({blok}) => {
               />
             </div>
             <div className="pointer-events-none md:hidden landscape:hidden">
-              <Image
+              <ImageWithBlur
                 src="/images/iphone-frame-portrait.webp"
                 width={580}
                 height={1171}

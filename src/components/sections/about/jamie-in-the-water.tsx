@@ -1,6 +1,7 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {render} from 'storyblok-rich-text-react-renderer'
+
+import ImageWithBlur from 'components/image'
 
 const JamieInTheWater = ({blok}: any) => {
   return (
@@ -21,7 +22,7 @@ const JamieInTheWater = ({blok}: any) => {
           </div>
         </div>
         <div className="mt-8 flex md:mt-16 xl:mt-20 2xl:mt-24">
-          <Image
+          <ImageWithBlur
             src={blok.image.filename}
             width={1920}
             height={1078}

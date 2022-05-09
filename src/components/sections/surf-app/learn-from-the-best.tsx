@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
+import ImageWithBlur from 'components/image'
 
 const LearnFromTheBest = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
@@ -20,7 +20,7 @@ const LearnFromTheBest = ({blok}: any) => {
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="absolute left-0 top-0 h-full w-full">
-          <Image
+          <ImageWithBlur
             layout="fill"
             className="pointer-events-none object-cover object-[-700px_center] md:object-center md:portrait:object-[-750px_center]"
             src={blok.background_image.filename}

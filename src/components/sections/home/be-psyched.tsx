@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgressFromTop} from 'hooks/useRefScrollProgressFromTop'
+import ImageWithBlur from 'components/image'
 
 const BePsyched: React.FC<any> = ({blok}) => {
   const {width} = useWindowSize()
@@ -39,7 +39,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
         }}
       >
         {showImage && width >= 1024 ? (
-          <Image
+          <ImageWithBlur
             src="/images/surfboards-vertical.webp"
             width={569}
             height={949}
@@ -47,7 +47,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
             alt="Surfboards"
           />
         ) : (
-          <Image
+          <ImageWithBlur
             src="/images/surfboards-horizontal.webp"
             width={949}
             height={569}
@@ -63,7 +63,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
               className="absolute w-32 shrink-0 origin-center will-change-transform md:w-56 lg:w-[250px] xl:w-[350px] 2xl:w-[487px]"
               style={showImage && width >= 1024 ? {opacity, rotate} : {}}
             >
-              <Image
+              <ImageWithBlur
                 src="/images/job-surf-experience-logo.webp"
                 width={487}
                 height={492}

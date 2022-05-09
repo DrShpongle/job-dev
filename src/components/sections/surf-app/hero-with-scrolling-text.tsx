@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {
   motion,
@@ -14,6 +13,7 @@ import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const TextItem: React.FC<{text: string}> = ({text}) => {
   return (
@@ -83,7 +83,7 @@ const HeroWithScrollableText = ({blok}: any) => {
             Surf App
           </h1>
           <div className="absolute inset-0">
-            <Image
+            <ImageWithBlur
               src={blok.background_image.filename}
               layout="fill"
               objectFit="cover"
@@ -140,7 +140,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                 />
               </div>
               <div className="pointer-events-none portrait:hidden md:portrait:block">
-                <Image
+                <ImageWithBlur
                   src="/images/iphone-frame-landscape.webp"
                   width={1171}
                   height={580}
@@ -149,7 +149,7 @@ const HeroWithScrollableText = ({blok}: any) => {
                 />
               </div>
               <div className="pointer-events-none md:hidden landscape:hidden">
-                <Image
+                <ImageWithBlur
                   src="/images/iphone-frame-portrait.webp"
                   width={580}
                   height={1171}

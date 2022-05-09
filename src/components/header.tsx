@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
-import Image from 'next/image'
 import classNames from 'classnames'
 
+import ImageWithBlur from 'components/image'
 import MobileMenu, {MobileMenuToggler} from 'components/mobile-menu'
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex h-6 w-[120px] shrink-0 justify-start md:h-8 md:w-40 xl:h-10 xl:w-[198px]">
-              <Image
+              <ImageWithBlur
                 src="/images/logo.svg"
                 width={198}
                 height={40}

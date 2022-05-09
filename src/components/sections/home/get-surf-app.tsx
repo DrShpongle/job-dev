@@ -1,5 +1,6 @@
 import * as React from 'react'
-import Image from 'next/image'
+
+import ImageWithBlur from 'components/image'
 
 const GetSurfApp: React.FC<any> = () => {
   return (
@@ -18,7 +19,7 @@ const GetSurfApp: React.FC<any> = () => {
         </div>
         <div className="space-y-3">
           <a href="#" className="flex w-28 md:w-44 xl:w-auto">
-            <Image
+            <ImageWithBlur
               src="/images/download-on-app-store.svg"
               width={240}
               height={80}
@@ -26,7 +27,7 @@ const GetSurfApp: React.FC<any> = () => {
             />
           </a>
           <a href="#" className="flex w-28 md:w-44 xl:w-auto">
-            <Image
+            <ImageWithBlur
               src="/images/get-it-on-google-play.svg"
               width={240}
               height={80}

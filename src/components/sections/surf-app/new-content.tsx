@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {
   motion,
   useViewportScroll,
@@ -9,6 +8,7 @@ import {
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
+import ImageWithBlur from 'components/image'
 
 const NewContent = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
@@ -107,7 +107,7 @@ const NewContent = ({blok}: any) => {
               animate={controlsFadeInImage01}
               className="absolute left-4 top-8 z-[1] flex w-[154px] will-change-transform md:left-0 md:top-20 md:w-[438px] lg:top-24"
             >
-              <Image
+              <ImageWithBlur
                 src={blok.image_01.filename}
                 width={876}
                 height={546}
@@ -119,7 +119,7 @@ const NewContent = ({blok}: any) => {
               animate={controlsFadeInImage02}
               className="absolute right-0 z-[2] flex w-[154px] will-change-transform md:top-14 md:w-[390px] lg:top-20  lg:w-[542px]"
             >
-              <Image
+              <ImageWithBlur
                 src={blok.image_02.filename}
                 width={1084}
                 height={664}
@@ -132,7 +132,7 @@ const NewContent = ({blok}: any) => {
               className="absolute inset-0 z-[6] m-auto flex h-1 w-[919px] max-w-[75%] items-center will-change-transform"
             >
               <div className="relative">
-                <Image
+                <ImageWithBlur
                   src={blok.image_03.filename}
                   width={1838}
                   height={1050}
@@ -145,7 +145,7 @@ const NewContent = ({blok}: any) => {
               animate={controlsFadeInImage04}
               className="absolute bottom-8 left-8 z-[3] flex w-[110px] will-change-transform md:bottom-20 md:left-6 md:w-[295px] lg:left-8"
             >
-              <Image
+              <ImageWithBlur
                 src={blok.image_04.filename}
                 width={590}
                 height={590}
@@ -157,7 +157,7 @@ const NewContent = ({blok}: any) => {
               animate={controlsFadeInImage05}
               className="absolute bottom-16 right-4 z-[4] flex w-[110px] will-change-transform md:bottom-16 md:right-6 md:w-[300px] lg:right-8 lg:w-[362px]"
             >
-              <Image
+              <ImageWithBlur
                 src={blok.image_05.filename}
                 width={724}
                 height={980}
@@ -169,7 +169,7 @@ const NewContent = ({blok}: any) => {
               animate={controlsFadeInImage06}
               className="absolute bottom-0 left-24 z-[5] flex w-[160px] will-change-transform md:left-64 md:w-[430px] lg:w-[502px]"
             >
-              <Image
+              <ImageWithBlur
                 src={blok.image_06.filename}
                 width={1004}
                 height={352}

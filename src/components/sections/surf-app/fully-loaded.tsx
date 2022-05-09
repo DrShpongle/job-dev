@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {motion} from 'framer-motion'
 import Observer from '@researchgate/react-intersection-observer'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const MotionItem: React.FC<{url: string}> = ({url}) => {
   const [shown, setShown] = React.useState(false)
@@ -40,7 +40,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
             />
           </div>
           <div className="pointer-events-none portrait:hidden md:portrait:block">
-            <Image
+            <ImageWithBlur
               src="/images/iphone-frame-landscape.webp"
               width={1171}
               height={580}
@@ -49,7 +49,7 @@ const MotionItem: React.FC<{url: string}> = ({url}) => {
             />
           </div>
           <div className="pointer-events-none md:hidden landscape:hidden">
-            <Image
+            <ImageWithBlur
               src="/images/iphone-frame-portrait.webp"
               width={580}
               height={1171}

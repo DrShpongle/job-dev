@@ -1,8 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {render} from 'storyblok-rich-text-react-renderer'
 
+import ImageWithBlur from 'components/image'
 import PageLayout from 'components/layouts/page-layout'
 import YoutubeBlock from 'components/youtube-block'
 
@@ -12,7 +12,7 @@ const Article = ({blok}: any) => {
       <section {...sbEditable(blok)}>
         <div className="relative flex h-[65vh] flex-col justify-end pb-10 md:pb-20 lg:h-screen lg:pb-20 xl:pb-24 2xl:pb-28">
           <div className="absolute inset-0 before:absolute before:inset-0 before:z-[1] before:block before:bg-black/20">
-            <Image
+            <ImageWithBlur
               layout="fill"
               className="object-cover object-center"
               src={blok.hero_image.filename}

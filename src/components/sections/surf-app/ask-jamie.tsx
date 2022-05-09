@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {motion, useViewportScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
@@ -7,6 +6,7 @@ import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoPlayer from 'components/video-player'
 import {IconPlay, IconPause, IconVolumeOn, IconVolumeOff} from 'lib/icons'
+import ImageWithBlur from 'components/image'
 
 const AskJamie = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
@@ -131,7 +131,7 @@ const AskJamie = ({blok}: any) => {
                     />
                   </div>
                   <div className="pointer-events-none">
-                    <Image
+                    <ImageWithBlur
                       src="/images/iphone-frame-portrait.webp"
                       width={580}
                       height={1171}
@@ -179,7 +179,7 @@ const AskJamie = ({blok}: any) => {
                     />
                   </div>
                   <div className="pointer-events-none">
-                    <Image
+                    <ImageWithBlur
                       src="/images/iphone-frame-portrait.webp"
                       width={580}
                       height={1171}

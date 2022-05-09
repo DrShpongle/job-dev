@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Image from 'next/image'
 import {
   motion,
   useViewportScroll,
@@ -11,6 +10,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
+import ImageWithBlur from 'components/image'
 
 const GetPsyched: React.FC<any> = ({blok}) => {
   const {width, height} = useWindowSize()
@@ -98,7 +98,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           <VideoEmbed url={blok.video_url.url} />
           <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
             <a href="#" className="flex w-28 md:w-44 xl:w-auto">
-              <Image
+              <ImageWithBlur
                 src="/images/download-on-app-store.svg"
                 width={240}
                 height={80}
@@ -106,7 +106,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
               />
             </a>
             <a href="#" className="flex w-28 md:w-44 xl:w-auto">
-              <Image
+              <ImageWithBlur
                 src="/images/get-it-on-google-play.svg"
                 width={240}
                 height={80}
@@ -152,7 +152,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           initial={{y: '100%'}}
           className="absolute bottom-0 left-0 right-0 mx-auto flex w-[280px] translate-y-1/2 justify-center will-change-transform md:w-[380px] lg:w-[460px] xl:w-[540px] 2xl:w-[580px]"
         >
-          <Image
+          <ImageWithBlur
             src="/images/iphone-frame-portrait.webp"
             width={909}
             height={1835}
@@ -170,7 +170,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 }}
                 className="will-change-transform"
               >
-                <Image
+                <ImageWithBlur
                   src="/images/job-app-logo.webp"
                   width={867}
                   height={664}

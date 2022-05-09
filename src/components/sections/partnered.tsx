@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import classNames from 'classnames'
+
+import ImageWithBlur from 'components/image'
 
 const Partnered = () => {
   return (
@@ -33,7 +34,7 @@ const Partnered = () => {
                   rel="noreferrer"
                 >
                   <div className="relative aspect-square duration-300 ease-in hover-hover:group-hover:scale-[1.15]">
-                    <Image
+                    <ImageWithBlur
                       src={logo.path}
                       layout="fill"
                       objectFit="contain"

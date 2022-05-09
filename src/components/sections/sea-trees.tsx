@@ -1,7 +1,8 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
+
+import ImageWithBlur from 'components/image'
 
 const EquationBlock: React.FC<{
   leftExpression: string
@@ -29,7 +30,7 @@ const Description: React.FC<{
     <div className="flex flex-col items-center space-y-6 md:space-y-10 lg:items-start lg:space-y-12 lg:text-white">
       <div className="flex flex-nowrap justify-center lg:items-center lg:justify-start lg:space-x-4">
         <div className="hidden shrink-0 lg:block">
-          <Image
+          <ImageWithBlur
             src="/images/sea-trees-logo-small.png"
             width={75}
             height={89}
@@ -65,7 +66,7 @@ const SeaTrees = () => {
       <div className="relative">
         <div className="absolute inset-0 z-[-1]">
           <div className="relative h-full w-full">
-            <Image
+            <ImageWithBlur
               src="/images/sea-trees.webp"
               layout="fill"
               objectFit="cover"
@@ -83,7 +84,7 @@ const SeaTrees = () => {
                 className="self-start"
               />
               <div className="mx-4 w-10 shrink-0 md:w-auto lg:hidden">
-                <Image
+                <ImageWithBlur
                   src="/images/sea-trees-logo-small.png"
                   width={75}
                   height={89}

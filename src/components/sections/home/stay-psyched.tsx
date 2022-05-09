@@ -1,8 +1,9 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
 import {sbEditable} from '@storyblok/storyblok-editable'
+
+import ImageWithBlur from 'components/image'
 
 const StayPsyched: React.FC<any> = ({blok}) => {
   return (
@@ -47,12 +48,11 @@ const StayPsyched: React.FC<any> = ({blok}) => {
                   >
                     {item?.image?.filename && (
                       <div className="relative w-full grow duration-300 hover-hover:group-hover:scale-110">
-                        <Image
+                        <ImageWithBlur
                           src={item.image.filename}
                           layout="fill"
                           objectFit="contain"
                           alt={item.title}
-                          priority
                         />
                       </div>
                     )}

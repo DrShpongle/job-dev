@@ -1,8 +1,9 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
 import {isEmpty} from 'lodash'
+
+import ImageWithBlur from 'components/image'
 
 const Card: React.FC<{
   data: any
@@ -27,7 +28,7 @@ const Card: React.FC<{
           >
             <div className="absolute inset-0">
               <div className="relative h-full w-full">
-                <Image
+                <ImageWithBlur
                   src={data.content.hero_image.filename}
                   alt={data.content.title}
                   layout="fill"
@@ -67,12 +68,11 @@ const Card: React.FC<{
         <>
           <div className="absolute inset-0 origin-center duration-500 ease-in hover-hover:group-hover:scale-110">
             <div className="relative h-full w-full">
-              <Image
+              <ImageWithBlur
                 src={data?.content?.hero_image?.filename}
                 layout="fill"
                 objectFit="cover"
                 alt={data.content?.title}
-                priority
               />
             </div>
           </div>

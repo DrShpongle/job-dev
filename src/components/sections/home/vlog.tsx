@@ -1,9 +1,9 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import VideoPlayer from 'components/video-player'
+import ImageWithBlur from 'components/image'
 
 const Vlog: React.FC<any> = ({blok}) => {
   return (
@@ -22,7 +22,7 @@ const Vlog: React.FC<any> = ({blok}) => {
                 controlsClasses="bottom-4 right-12 md:bottom-8 md:right-24 lg:bottom-14 lg:right-36 xl:bottom-16 xl:right-44"
               />
             </div>
-            <Image
+            <ImageWithBlur
               src="/images/tv-frame.webp"
               width={1283}
               height={1118}
