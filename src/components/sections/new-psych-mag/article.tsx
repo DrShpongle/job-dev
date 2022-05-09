@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
 
+import ImageWithBlur from 'components/image'
 import {getCategoryName} from 'utils/get-articles'
 import {formatDate} from 'utils/format-date'
 
@@ -19,7 +19,7 @@ const Article: React.FC<{
         <a className="block">
           <div className="aspect-video overflow-hidden">
             <div className="relative h-full w-full duration-700 hover-hover:hover:scale-110">
-              <Image
+              <ImageWithBlur
                 src={article.content.hero_image.filename}
                 alt="article.content.title"
                 layout="fill"
