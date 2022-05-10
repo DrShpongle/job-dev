@@ -31,7 +31,7 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
                 </h2>
               </a>
             </Link>
-            <p className="mt-2 text-sm line-clamp-3 lg:mt-4 lg:text-xl xl:text-2xl">
+            <p className="mt-2 text-sm line-clamp-3 md:text-base lg:mt-4 lg:text-xl xl:text-2xl">
               {article.content.short_description}
             </p>
           </div>

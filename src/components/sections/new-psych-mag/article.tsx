@@ -48,7 +48,7 @@ const Article: React.FC<{
       <div
         className={classNames(
           'mt-1 md:mt-2 lg:mt-5',
-          secondary && 'min-h-[88px] md:min-h-0',
+          secondary && 'min-h-[66px] md:min-h-0',
           !primary &&
             !secondary &&
             'min-h-[88px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
@@ -64,7 +64,7 @@ const Article: React.FC<{
                 primary &&
                   'text-[31px] md:text-4xl lg:text-[2.625rem] xl:text-[3.5rem]',
                 secondary &&
-                  'text-[19px] line-clamp-4 md:text-3xl md:line-clamp-none lg:text-4xl xl:text-[2.625rem]',
+                  'text-[19px] line-clamp-3 md:text-3xl md:line-clamp-none lg:text-4xl xl:text-[2.625rem]',
                 !primary &&
                   !secondary &&
                   'text-[19px] line-clamp-4 md:text-3xl md:line-clamp-3 lg:text-4xl lg:line-clamp-2 xl:text-[2.625rem]',
@@ -77,7 +77,7 @@ const Article: React.FC<{
       </div>
       <p
         className={classNames(
-          'mt-2 text-sm lg:mt-3 lg:text-xl xl:text-2xl',
+          'mt-2 text-sm md:text-base lg:mt-3 lg:text-xl xl:text-2xl',
           secondary && 'line-clamp-5',
           !primary && !secondary && 'hidden lg:block lg:line-clamp-3',
         )}
