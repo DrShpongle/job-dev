@@ -20,7 +20,8 @@ const Hero: React.FC<{title: string; subtitle: string; articles: any[]}> = ({
           {subtitle}
         </p>
         <div className="mt-8 flex flex-col items-start md:mt-0 md:flex-row">
-          <div className="w-full grow space-y-6 md:space-y-8 md:pt-32 md:pr-8 lg:space-y-10 lg:pt-40 lg:pr-10 xl:space-y-12">
+          {/* <div className="w-full grow space-y-6 md:space-y-8 md:pt-32 md:pr-8 lg:space-y-10 lg:pt-40 lg:pr-10 xl:space-y-12"> */}
+          <div className="top-0 inline-block w-full grow space-y-6 md:sticky md:space-y-8 md:pt-32 md:pr-8 lg:space-y-10 lg:pt-40 lg:pr-10 xl:space-y-12">
             {!isEmpty(primaryArticles) &&
               primaryArticles.map((article, i) => {
                 return <Article key={i} article={article} primary />

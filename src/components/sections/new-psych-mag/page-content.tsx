@@ -8,7 +8,7 @@ import Articles from './articles'
 
 import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
 
-const PER_PAGE = 6
+const PER_PAGE = 9
 const INITIAL_CATEGORY = 'all'
 
 const PsychMagPageContent: React.FC<any> = ({blok}) => {
