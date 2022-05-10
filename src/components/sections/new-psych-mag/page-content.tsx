@@ -8,7 +8,7 @@ import Articles from './articles'
 
 import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
 
-const PER_PAGE = 9
+const PER_PAGE = 6
 const INITIAL_CATEGORY = 'all'
 
 const PsychMagPageContent: React.FC<any> = ({blok}) => {
@@ -58,7 +58,7 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
           subtitle={blok.subtitle}
           articles={firstArticles.slice(0, -1)}
         />
-        <FeaturedArticle article={firstArticles[8]} />
+        <FeaturedArticle article={firstArticles[5]} />
         {isEmpty(articles) ? null : (
           <Articles
             articles={articles}
