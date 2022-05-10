@@ -25,8 +25,8 @@ const FeaturedArticle: React.FC<{article: any}> = ({article}) => {
             <Link
               href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}/articles/${article.slug}`}
             >
-              <a className="block duration-500 hover-hover:hover:-translate-y-1">
-                <h2 className="mt-1 text-3xl leading-tight md:mt-2 lg:mt-4 lg:text-4xl lg:leading-tight xl:mt-5 xl:text-[2.625rem]">
+              <a className="mt-1 block duration-500 md:mt-2 lg:mt-5 hover-hover:hover:-translate-y-1">
+                <h2 className="text-[21px] leading-[1.15] md:text-3xl md:leading-[1.15] lg:text-4xl lg:leading-[1.15] xl:text-[2.625rem] xl:leading-[1.15]">
                   {article.content.title}
                 </h2>
               </a>
