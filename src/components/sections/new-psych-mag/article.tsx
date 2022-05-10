@@ -38,6 +38,7 @@ const Article: React.FC<{
         <h4
           className={classNames(
             ' text-[10px] uppercase opacity-40 md:text-sm lg:text-base xl:text-[1.3rem]',
+            secondary && 'hidden md:block',
             !primary && !secondary && 'hidden lg:block',
           )}
         >
@@ -47,10 +48,10 @@ const Article: React.FC<{
       <div
         className={classNames(
           'mt-1 md:mt-2 lg:mt-5',
-          secondary && 'min-h-[49px] md:min-h-0',
+          secondary && 'min-h-[88px] md:min-h-0',
           !primary &&
             !secondary &&
-            'min-h-[97px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
+            'min-h-[88px] md:min-h-[104px] lg:min-h-[83px] xl:min-h-[97px]',
         )}
       >
         <Link
@@ -63,10 +64,10 @@ const Article: React.FC<{
                 primary &&
                   'text-[31px] md:text-4xl lg:text-[2.625rem] xl:text-[3.5rem]',
                 secondary &&
-                  'text-[21px] line-clamp-2 md:text-3xl md:line-clamp-none lg:text-4xl xl:text-[2.625rem]',
+                  'text-[19px] line-clamp-4 md:text-3xl md:line-clamp-none lg:text-4xl xl:text-[2.625rem]',
                 !primary &&
                   !secondary &&
-                  'text-[21px] line-clamp-4 md:text-3xl md:line-clamp-3 lg:text-4xl lg:line-clamp-2 xl:text-[2.625rem]',
+                  'text-[19px] line-clamp-4 md:text-3xl md:line-clamp-3 lg:text-4xl lg:line-clamp-2 xl:text-[2.625rem]',
               )}
             >
               {article.content.title}
@@ -77,12 +78,17 @@ const Article: React.FC<{
       <p
         className={classNames(
           'mt-2 text-sm lg:mt-3 lg:text-xl xl:text-2xl',
-          secondary && 'line-clamp-4',
+          secondary && 'line-clamp-5',
           !primary && !secondary && 'hidden lg:block lg:line-clamp-3',
         )}
       >
         {article.content.short_description}
       </p>
+      {secondary && (
+        <h4 className="mt-1 text-[10px] uppercase opacity-40 md:hidden">
+          {formatDate(article.published_at)}
+        </h4>
+      )}
       {!primary && !secondary && (
         <h4 className="mt-1 text-[10px] uppercase opacity-40 md:mt-2 md:text-sm lg:mt-0 lg:hidden">
           {formatDate(article.published_at)}
