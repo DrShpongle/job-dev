@@ -5,12 +5,7 @@ import BePsyched from 'components/sections/home/be-psyched'
 import StayPsyched from 'components/sections/home/stay-psyched'
 import Vlog from 'components/sections/home/vlog'
 import PsychMag from 'components/sections/home/psych-mag'
-import PsychMagPageContent from 'components/sections/new-psych-mag/page-content'
-import PsychMagHero from 'components/sections/psych-mag/psych-mag-hero'
-import Features from 'components/sections/psych-mag/features'
-import TopTips from 'components/sections/psych-mag/top-tips'
-import Gear from 'components/sections/psych-mag/gear'
-import TravelGuides from 'components/sections/psych-mag/travel-guides'
+import PsychMagPageContent from 'components/sections/psych-mag/page-content'
 import AboutHero from 'components/sections/about/about-hero'
 import PromoVideos from 'components/sections/about/promo-videos'
 import JamieInTheWater from 'components/sections/about/jamie-in-the-water'
@@ -35,11 +30,6 @@ const Components = {
   vlog: Vlog,
   psychMag: PsychMag,
   psychMagPageContent: PsychMagPageContent,
-  psychMagHero: PsychMagHero,
-  features: Features,
-  topTips: TopTips,
-  gear: Gear,
-  travelGuides: TravelGuides,
   aboutHero: AboutHero,
   promoVideos: PromoVideos,
   moreAboutSection: JamieInTheWater,
