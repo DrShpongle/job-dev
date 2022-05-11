@@ -5,56 +5,83 @@ import {useWindowSize, useClickAway} from 'react-use'
 
 import {IconChevronDown, IconChevronUp} from 'lib/icons'
 
-const FiltersBar: React.FC<{
+const FilterDesktop: React.FC<{
+  currentCategory: string
+  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
+}> = ({currentCategory, setCurrentCategory}) => {
+  return (
+    <div className="relative flex h-10 items-center space-x-5 font-headings text-lg uppercase text-white md:h-11 xl:space-x-7">
+      <div>filter by category:</div>
+      <ul className="flex items-center space-x-5 xl:space-x-7">
+        {filters.map((item, i) => (
+          <li key={i}>
+            <button
+              className={classNames(
+                'uppercase',
+                currentCategory === item.categoryId
+                  ? 'text-blue'
+                  : 'text-white',
+              )}
+              onClick={() => {
+                if (item.categoryId && currentCategory !== item.categoryId) {
+                  setCurrentCategory(item.categoryId)
+                }
+              }}
+            >
+              {item.title}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const FilterMobile: React.FC<{
   currentCategory: string
   setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
 }> = ({currentCategory, setCurrentCategory}) => {
   const ref = React.useRef(null)
   const [expanded, setExpanded] = React.useState<boolean>(false)
-  const {width} = useWindowSize()
 
   useClickAway(ref, () => {
     setExpanded(false)
   })
 
   return (
-    <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
-      <div className="lg:container">
-        <div
-          ref={ref}
-          className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white md:h-11 lg:justify-start lg:space-x-5 xl:space-x-7"
-        >
-          <div className="hidden lg:block">filter by category:</div>
-          <button
-            className="flex items-center space-x-2 text-white lg:hidden"
-            onClick={() => setExpanded(!expanded)}
-          >
-            <span>Filter</span>
-            {expanded ? (
-              <IconChevronUp className="h-4 w-4" />
-            ) : (
-              <IconChevronDown className="h-4 w-4" />
-            )}
-          </button>
-          <motion.div
-            variants={{
-              collapsed: {height: 0},
-              expanded: {height: 'auto'},
-            }}
-            initial="collapsed"
-            animate={
-              expanded || (isFinite(width) && width >= 1024)
-                ? 'expanded'
-                : 'collapsed'
-            }
-            transition={{type: 'spring', duration: 0.6, bounce: 0.3}}
-            className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink lg:static lg:w-auto lg:translate-y-0 lg:flex-row lg:space-x-5 xl:space-x-7"
-          >
-            {filters.map((item, i) => (
+    <div
+      ref={ref}
+      className="relative flex h-10 items-center justify-center font-headings text-lg uppercase text-white md:h-11"
+    >
+      <button
+        className="flex items-center space-x-2 text-white lg:hidden"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <span>Filter</span>
+        {expanded ? (
+          <IconChevronUp className="h-4 w-4" />
+        ) : (
+          <IconChevronDown className="h-4 w-4" />
+        )}
+      </button>
+      <motion.div
+        variants={{
+          collapsed: {height: 0, transition: {duration: 0.5}},
+          expanded: {
+            height: 'auto',
+            transition: {type: 'spring', duration: 0.6, bounce: 0.3},
+          },
+        }}
+        initial="collapsed"
+        animate={expanded ? 'expanded' : 'collapsed'}
+        className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink"
+      >
+        <ul className="flex flex-col items-center space-y-2 pt-2 pb-3">
+          {filters.map((item, i) => (
+            <li key={i}>
               <button
-                key={i}
                 className={classNames(
-                  'mb-2 uppercase lg:mb-0',
+                  'uppercase',
                   currentCategory === item.categoryId
                     ? 'text-blue'
                     : 'text-white',
@@ -68,16 +95,45 @@ const FiltersBar: React.FC<{
               >
                 {item.title}
               </button>
-            ))}
-          </motion.div>
-        </div>
-      </div>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
     </div>
   )
 }
 
+const FiltersBar: React.FC<{
+  currentCategory: string
+  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
+}> = ({currentCategory, setCurrentCategory}) => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  const {width} = useWindowSize()
+  React.useEffect(() => {
+    setIsMounted(true)
+  })
+  return isMounted ? (
+    <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
+      <div className="lg:container">
+        {isFinite(width) && width < 1024 ? (
+          <FilterMobile
+            currentCategory={currentCategory}
+            setCurrentCategory={setCurrentCategory}
+          />
+        ) : (
+          <FilterDesktop
+            currentCategory={currentCategory}
+            setCurrentCategory={setCurrentCategory}
+          />
+        )}
+      </div>
+    </div>
+  ) : null
+}
+
 export default FiltersBar
 
+// TODO
 const filters = [
   {
     title: 'all',
