@@ -1,4 +1,4 @@
-export const categories = {
+export const categories: any = {
   all: {
     id: [
       process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,

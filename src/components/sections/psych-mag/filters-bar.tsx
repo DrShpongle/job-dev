@@ -16,7 +16,7 @@ const FilterDesktop: React.FC<{
     <div className="relative flex h-10 items-center space-x-5 font-headings text-lg uppercase text-white md:h-11 xl:space-x-7">
       <div>filter by category:</div>
       <ul className="flex items-center space-x-5 xl:space-x-7">
-        {allCategories.map((item, i) => (
+        {allCategories.map((item: any, i: number) => (
           <li key={i}>
             <button
               className={classNames(
@@ -78,7 +78,7 @@ const FilterMobile: React.FC<{
         className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink"
       >
         <ul className="flex flex-col items-center space-y-2 pt-2 pb-3">
-          {allCategories.map((item, i) => (
+          {allCategories.map((item: any, i: number) => (
             <li key={i}>
               <button
                 className={classNames(
