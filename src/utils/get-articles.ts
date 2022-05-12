@@ -2,35 +2,7 @@ import Storyblok from 'utils/storyblok-service'
 import axios from 'axios'
 import {isEmpty} from 'lodash'
 
-const categories = {
-  features: {
-    id: process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
-    slug: 'features',
-    title: 'features',
-  },
-  vlog: {
-    id: process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
-    slug: 'vlog',
-    title: 'vlog',
-  },
-  'top-tips': {
-    id: process.env.NEXT_PUBLIC_CATEGORY_ID_TOP_TIPS,
-    slug: 'top-tips',
-    title: 'top tips',
-  },
-  gear: {
-    id: process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
-    slug: 'gear',
-    title: 'gear',
-  },
-  'travel-guides': {
-    id: process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
-    slug: 'travel-guides',
-    title: 'travel guides',
-  },
-}
-
-const categoryIds = Object.values(categories).map((item) => item.id)
+import {categories} from 'lib/categories'
 
 const getFeaturedArticles = async (arr: string[]) => {
   const uuids = isEmpty(arr) ? [] : arr.join(',')
@@ -47,9 +19,8 @@ const getFeaturedArticles = async (arr: string[]) => {
 }
 
 const getArticlesAmount = async (category: string) => {
-  const categories = category === 'all' ? categoryIds.join(',') : category
   const initial = await Storyblok.client.head(
-    `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${categories}`,
+    `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:asc&filter_query[category][any_in_array]=${categories[category].id}`,
     {
       params: {token: Storyblok.accessToken},
     },
@@ -62,9 +33,8 @@ const getArticlesByCategory = async (
   per_page: number = 6,
   page: number = 1,
 ) => {
-  const categories = category === 'all' ? categoryIds.join(',') : category
   try {
-    const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:desc&filter_query[category][any_in_array]=${categories}&per_page=${per_page}&page=${page}`
+    const requestUrl: string = `https://api.storyblok.com/v2/cdn/stories/?token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}&starts_with=articles/&sort_by=published_at:desc&filter_query[category][any_in_array]=${categories[category].id}&per_page=${per_page}&page=${page}`
     const {
       data: {stories},
     } = await axios.get(requestUrl)
@@ -87,4 +57,5 @@ export {
   getArticlesByCategory,
   getArticlesAmount,
   getCategoryName,
+  categories,
 }

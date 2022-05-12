@@ -6,7 +6,11 @@ import Hero from './hero'
 import FeaturedArticle from './featured-article'
 import Articles from './articles'
 
-import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
+import {
+  getArticlesByCategory,
+  getArticlesAmount,
+  categories,
+} from 'utils/get-articles'
 
 const PER_PAGE = 6
 const INITIAL_CATEGORY = 'all'

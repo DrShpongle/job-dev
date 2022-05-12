@@ -4,6 +4,9 @@ import {motion} from 'framer-motion'
 import {useWindowSize, useClickAway} from 'react-use'
 
 import {IconChevronDown, IconChevronUp} from 'lib/icons'
+import {categories} from 'lib/categories'
+
+const allCategories = Object.values(categories)
 
 const FilterDesktop: React.FC<{
   currentCategory: string
@@ -13,18 +16,16 @@ const FilterDesktop: React.FC<{
     <div className="relative flex h-10 items-center space-x-5 font-headings text-lg uppercase text-white md:h-11 xl:space-x-7">
       <div>filter by category:</div>
       <ul className="flex items-center space-x-5 xl:space-x-7">
-        {filters.map((item, i) => (
+        {allCategories.map((item, i) => (
           <li key={i}>
             <button
               className={classNames(
                 'uppercase',
-                currentCategory === item.categoryId
-                  ? 'text-blue'
-                  : 'text-white',
+                currentCategory === item.slug ? 'text-blue' : 'text-white',
               )}
               onClick={() => {
-                if (item.categoryId && currentCategory !== item.categoryId) {
-                  setCurrentCategory(item.categoryId)
+                if (currentCategory !== item.slug) {
+                  setCurrentCategory(item.slug)
                 }
               }}
             >
@@ -77,18 +78,16 @@ const FilterMobile: React.FC<{
         className="absolute left-0 top-0 flex w-full translate-y-10 flex-col items-center overflow-hidden bg-pink"
       >
         <ul className="flex flex-col items-center space-y-2 pt-2 pb-3">
-          {filters.map((item, i) => (
+          {allCategories.map((item, i) => (
             <li key={i}>
               <button
                 className={classNames(
                   'uppercase',
-                  currentCategory === item.categoryId
-                    ? 'text-blue'
-                    : 'text-white',
+                  currentCategory === item.slug ? 'text-blue' : 'text-white',
                 )}
                 onClick={() => {
-                  if (item.categoryId && currentCategory !== item.categoryId) {
-                    setCurrentCategory(item.categoryId)
+                  if (currentCategory !== item.slug) {
+                    setCurrentCategory(item.slug)
                     setExpanded(false)
                   }
                 }}
@@ -132,31 +131,3 @@ const FiltersBar: React.FC<{
 }
 
 export default FiltersBar
-
-// TODO
-const filters = [
-  {
-    title: 'all',
-    categoryId: 'all',
-  },
-  {
-    title: 'features',
-    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_FEATURES,
-  },
-  {
-    title: 'vlog',
-    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_VLOG,
-  },
-  {
-    title: 'top tips',
-    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_TOP_TIPS,
-  },
-  {
-    title: 'gear',
-    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_GEAR,
-  },
-  {
-    title: 'travel guides',
-    categoryId: process.env.NEXT_PUBLIC_CATEGORY_ID_TRAVEL_GUIDES,
-  },
-]
