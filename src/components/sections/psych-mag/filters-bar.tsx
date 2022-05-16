@@ -110,7 +110,7 @@ const FiltersBar: React.FC<{
   const {width} = useWindowSize()
   React.useEffect(() => {
     setIsMounted(true)
-  })
+  }, [])
   return isMounted ? (
     <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
       <div className="lg:container">
