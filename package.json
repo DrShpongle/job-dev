@@ -19,7 +19,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-player": "^2.10.1",
-    "react-use": "^17.3.2",
+    "react-use": "^17.4.0",
     "screenfull": "5.1.0",
     "storyblok-js-client": "^4.5.2",
     "storyblok-rich-text-react-renderer": "^2.5.3",
