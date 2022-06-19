@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import {
   motion,
   useViewportScroll,
@@ -77,19 +78,19 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 <p className="mt-4 md:text-xl">{blok.description}</p>
               </div>
               <div className="flex items-center space-x-6 md:space-x-10">
-                <button
+                <a
+                  href="https://surfapp.app.link/get-psyched"
                   className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
                   aria-label="download app"
                 >
                   Download App
-                </button>
-                <a
-                  href="#"
-                  className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue"
-                >
-                  <span>Learn more</span>
-                  <span className="translate-y-0.5">&#62;</span>
                 </a>
+                <Link href="/surf-app">
+                  <a className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue">
+                    <span>Learn more</span>
+                    <span className="translate-y-0.5">&#62;</span>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -97,7 +98,10 @@ const GetPsyched: React.FC<any> = ({blok}) => {
         <div className="absolute bottom-0 h-1/2 w-full before:absolute before:inset-0 before:bg-black/20 md:h-[55%] lg:h-full">
           <VideoEmbed url={blok.video_url.url} />
           <div className="absolute top-6 z-20 flex w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
-            <a href="#" className="flex w-28 md:w-44 xl:w-auto">
+            <a
+              href="https://surfapp.app.link/get-psyched"
+              className="flex w-28 md:w-44 xl:w-auto"
+            >
               <ImageWithBlur
                 src="/images/download-on-app-store.svg"
                 width={240}
@@ -105,7 +109,10 @@ const GetPsyched: React.FC<any> = ({blok}) => {
                 alt="Download on App Store"
               />
             </a>
-            <a href="#" className="flex w-28 md:w-44 xl:w-auto">
+            <a
+              href="https://surfapp.app.link/get-psyched"
+              className="flex w-28 md:w-44 xl:w-auto"
+            >
               <ImageWithBlur
                 src="/images/get-it-on-google-play.svg"
                 width={240}
@@ -131,19 +138,19 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             </p>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:space-x-10">
-            <button
+            <a
+              href="https://surfapp.app.link/get-psyched"
               className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
               aria-label="download app"
             >
               Download App
-            </button>
-            <a
-              href="#"
-              className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue"
-            >
-              <span>Learn more</span>
-              <span className="translate-y-0.5">&#62;</span>
             </a>
+            <Link href="/surf-app">
+              <a className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue">
+                <span>Learn more</span>
+                <span className="translate-y-0.5">&#62;</span>
+              </a>
+            </Link>
           </div>
         </motion.div>
 

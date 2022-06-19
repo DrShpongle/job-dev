@@ -18,7 +18,10 @@ const GetSurfApp: React.FC<any> = () => {
           </h1>
         </div>
         <div className="space-y-3">
-          <a href="#" className="flex w-28 md:w-44 xl:w-auto">
+          <a
+            href="https://surfapp.app.link/get-psyched"
+            className="flex w-28 md:w-44 xl:w-auto"
+          >
             <ImageWithBlur
               src="/images/download-on-app-store.svg"
               width={240}
@@ -26,7 +29,10 @@ const GetSurfApp: React.FC<any> = () => {
               alt="Download on App Store"
             />
           </a>
-          <a href="#" className="flex w-28 md:w-44 xl:w-auto">
+          <a
+            href="https://surfapp.app.link/get-psyched"
+            className="flex w-28 md:w-44 xl:w-auto"
+          >
             <ImageWithBlur
               src="/images/get-it-on-google-play.svg"
               width={240}
