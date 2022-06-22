@@ -33,6 +33,9 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
     getArticlesAmount(currentCategory as string).then((data) => {
       setArticlesAmount(+data.headers.total)
     })
+    return () => {
+      setArticles([])
+    }
   }, [currentCategory])
 
   const handlerLoadMore = () => {
