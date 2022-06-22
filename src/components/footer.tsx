@@ -174,7 +174,7 @@ const Footer = () => {
         </div>
         <div className="lg:space-between flex w-full flex-col-reverse justify-between border-white/80 text-center text-sm md:mt-14 md:items-center md:text-lg lg:flex-row lg:border-t lg:pt-6 lg:text-left 2xl:text-2xl">
           <div className="mt-7 w-full border-t border-white/80 pt-4 text-white md:pt-6 lg:mt-0 lg:border-none lg:pt-0">
-            Copyright © 2021 Jamie O&#8217;Brien. All rights reserved.
+            Copyright © 2022 Jamie O&#8217;Brien. All rights reserved.
           </div>
           <ul className="mt-8 flex flex-col flex-nowrap items-center space-y-3 md:flex-row md:space-y-0 md:space-x-4 lg:mt-0">
             {auxiliaryLinks.map((item, index) => {
