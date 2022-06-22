@@ -27,11 +27,10 @@ const PsychMag = (props: any) => {
       <div className="container">
         <div className="flex w-full flex-col items-center space-y-5 bg-white px-5 py-8 text-center md:space-y-6 md:py-10 lg:space-y-7 lg:py-12 xl:space-y-8 xl:py-14">
           <h2 className="text-5xl leading-none md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[111px]">
-            Psych Mag
+            {blok.title}
           </h2>
           <p className="max-w-4xl md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:max-w-5xl 2xl:text-[34px] 2xl:leading-normal">
-            Expliqua sitibusa pe nullest, velitiust porerum vel escipsamusae nem
-            nonsedit, utestiam, sus quia quis doluptio illatem et aut.
+            {blok.subtitle}
           </p>
           <Link href="/psych-mag">
             <a className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-blue">
