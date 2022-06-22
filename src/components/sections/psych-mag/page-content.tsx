@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {useRouter} from 'next/router'
 import {isEmpty} from 'lodash'
 
 import FiltersBar from './filters-bar'
@@ -6,18 +7,13 @@ import Hero from './hero'
 import FeaturedArticle from './featured-article'
 import Articles from './articles'
 
-import {
-  getArticlesByCategory,
-  getArticlesAmount,
-  categories,
-} from 'utils/get-articles'
+import {getArticlesByCategory, getArticlesAmount} from 'utils/get-articles'
 
 const PER_PAGE = 6
-const INITIAL_CATEGORY = 'all'
 
 const PsychMagPageContent: React.FC<any> = ({blok}) => {
-  const [currentCategory, setCurrentCategory] =
-    React.useState<string>(INITIAL_CATEGORY)
+  const router = useRouter()
+  const currentCategory = router.query.filter || 'all'
   const [firstArticles, setFirstArticles] = React.useState<any>([])
   const [articles, setArticles] = React.useState<any>([])
   const [articlesAmount, setArticlesAmount] = React.useState<any>()
@@ -28,34 +24,33 @@ const PsychMagPageContent: React.FC<any> = ({blok}) => {
 
   React.useEffect(() => {
     setPageNumber(2)
-    getArticlesByCategory(currentCategory, PER_PAGE, 1).then((data) =>
+    getArticlesByCategory(currentCategory as string, PER_PAGE, 1).then((data) =>
       setFirstArticles(data),
     )
-    getArticlesByCategory(currentCategory, PER_PAGE, 2).then((data) =>
+    getArticlesByCategory(currentCategory as string, PER_PAGE, 2).then((data) =>
       setArticles(data),
     )
-    getArticlesAmount(currentCategory).then((data) => {
+    getArticlesAmount(currentCategory as string).then((data) => {
       setArticlesAmount(+data.headers.total)
     })
   }, [currentCategory])
 
   const handlerLoadMore = () => {
     setIsFetching(true)
-    getArticlesByCategory(currentCategory, PER_PAGE, pageNumber + 1).then(
-      (data) => {
-        setIsFetching(false)
-        setPageNumber(pageNumber + 1)
-        setArticles([...articles, ...data])
-      },
-    )
+    getArticlesByCategory(
+      currentCategory as string,
+      PER_PAGE,
+      pageNumber + 1,
+    ).then((data) => {
+      setIsFetching(false)
+      setPageNumber(pageNumber + 1)
+      setArticles([...articles, ...data])
+    })
   }
 
   return (
     <>
-      <FiltersBar
-        currentCategory={currentCategory}
-        setCurrentCategory={setCurrentCategory}
-      />
+      <FiltersBar currentCategory={currentCategory as string} />
       <section className="bg-white pt-28 md:pt-20">
         <Hero
           title={blok.title}

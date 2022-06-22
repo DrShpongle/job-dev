@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import classNames from 'classnames'
 import {motion} from 'framer-motion'
 import {useWindowSize, useClickAway} from 'react-use'
@@ -10,27 +11,30 @@ const allCategories = Object.values(categories)
 
 const FilterDesktop: React.FC<{
   currentCategory: string
-  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
-}> = ({currentCategory, setCurrentCategory}) => {
+}> = ({currentCategory}) => {
   return (
     <div className="relative flex h-10 items-center space-x-5 font-headings text-lg uppercase text-white md:h-11 xl:space-x-7">
       <div>filter by category:</div>
       <ul className="flex items-center space-x-5 xl:space-x-7">
         {allCategories.map((item: any, i: number) => (
           <li key={i}>
-            <button
-              className={classNames(
-                'uppercase',
-                currentCategory === item.slug ? 'text-blue' : 'text-white',
-              )}
-              onClick={() => {
-                if (currentCategory !== item.slug) {
-                  setCurrentCategory(item.slug)
-                }
+            <Link
+              href={{
+                pathname: '/psych-mag',
+                query: {
+                  filter: item.slug,
+                },
               }}
             >
-              {item.title}
-            </button>
+              <a
+                className={classNames(
+                  'uppercase',
+                  currentCategory === item.slug ? 'text-blue' : 'text-white',
+                )}
+              >
+                {item.title}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -40,8 +44,7 @@ const FilterDesktop: React.FC<{
 
 const FilterMobile: React.FC<{
   currentCategory: string
-  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
-}> = ({currentCategory, setCurrentCategory}) => {
+}> = ({currentCategory}) => {
   const ref = React.useRef(null)
   const [expanded, setExpanded] = React.useState<boolean>(false)
 
@@ -80,20 +83,28 @@ const FilterMobile: React.FC<{
         <ul className="flex flex-col items-center space-y-2 pt-2 pb-3">
           {allCategories.map((item: any, i: number) => (
             <li key={i}>
-              <button
-                className={classNames(
-                  'uppercase',
-                  currentCategory === item.slug ? 'text-blue' : 'text-white',
-                )}
-                onClick={() => {
-                  if (currentCategory !== item.slug) {
-                    setCurrentCategory(item.slug)
-                    setExpanded(false)
-                  }
+              <Link
+                href={{
+                  pathname: '/psych-mag',
+                  query: {
+                    filter: item.slug,
+                  },
                 }}
               >
-                {item.title}
-              </button>
+                <a
+                  className={classNames(
+                    'uppercase',
+                    currentCategory === item.slug ? 'text-blue' : 'text-white',
+                  )}
+                  onClick={() => {
+                    if (currentCategory !== item.slug) {
+                      setExpanded(false)
+                    }
+                  }}
+                >
+                  {item.title}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -104,8 +115,7 @@ const FilterMobile: React.FC<{
 
 const FiltersBar: React.FC<{
   currentCategory: string
-  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>
-}> = ({currentCategory, setCurrentCategory}) => {
+}> = ({currentCategory}) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const {width} = useWindowSize()
   React.useEffect(() => {
@@ -115,15 +125,9 @@ const FiltersBar: React.FC<{
     <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
       <div className="lg:container">
         {isFinite(width) && width < 1024 ? (
-          <FilterMobile
-            currentCategory={currentCategory}
-            setCurrentCategory={setCurrentCategory}
-          />
+          <FilterMobile currentCategory={currentCategory} />
         ) : (
-          <FilterDesktop
-            currentCategory={currentCategory}
-            setCurrentCategory={setCurrentCategory}
-          />
+          <FilterDesktop currentCategory={currentCategory} />
         )}
       </div>
     </div>
