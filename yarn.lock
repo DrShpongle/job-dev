@@ -3196,10 +3196,10 @@ storyblok-js-client@^4.5.2:
     prettier "^2.5.1"
     rollup-plugin-mjs-entry "^0.1.1"
 
-storyblok-rich-text-react-renderer@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.5.4.tgz#5d0f348a793779df71f422305e98b00af9f707b2"
-  integrity sha512-u4nfqDJGBCSsxKw4FGyBtG2+YMgadEi618ZkuGO8FEGWshq3oo9ZqtaBef8bDY/NbZcUVVDRJoNZ53+NF76YKg==
+storyblok-rich-text-react-renderer@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.6.0.tgz#e2fe7765f9b4e4926bbe61887f0d1e180f1a0611"
+  integrity sha512-XFF6YnVJm2RpxvLTrDuBi+i0Oes/nIvY9LwR9ADNV/M596+a7j7YV6uzz+kTU3GFDXCXF2Th3q2hmcblXCTDWg==
 
 streamsearch@0.1.2:
   version "0.1.2"
