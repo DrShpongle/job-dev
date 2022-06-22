@@ -28,7 +28,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
     variableOffset = '40%'
   }
   if (width >= 1024 && width / height >= 1) {
-    variableOffset = '30%'
+    variableOffset = '20%'
   }
   if (width >= 1024 && width / height < 1) {
     variableOffset = '10%'
