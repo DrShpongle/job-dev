@@ -4,7 +4,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 import {isEmpty} from 'lodash'
 
 import {getFeaturedArticles} from 'utils/get-articles'
-import Card from 'components/card'
+import Card from './card'
 
 const PsychMag = (props: any) => {
   const {blok} = props
@@ -42,7 +42,7 @@ const PsychMag = (props: any) => {
         <div className="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-7">
           {!isEmpty(featuredStories) &&
             featuredStories.map((item: any, i: number) => {
-              return <Card key={item.uuid || i} data={item} withAnchor />
+              return <Card key={item.uuid || i} data={item} />
             })}
         </div>
       </div>

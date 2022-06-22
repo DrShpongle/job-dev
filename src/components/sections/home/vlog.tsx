@@ -42,7 +42,14 @@ const Vlog: React.FC<any> = ({blok}) => {
               <p className="md:text-xl lg:text-2xl lg:leading-normal xl:text-3xl xl:leading-normal 2xl:text-[34px] 2xl:leading-normal">
                 {blok.description}
               </p>
-              <Link href="/psych-mag">
+              <Link
+                href={{
+                  pathname: '/psych-mag',
+                  query: {
+                    filter: 'vlog',
+                  },
+                }}
+              >
                 <a className="self-start rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:py-4 md:text-xl lg:text-lg xl:px-10 xl:text-2xl 2xl:text-[29px] hover-hover:hover:bg-blue">
                   More with Jamie
                 </a>
