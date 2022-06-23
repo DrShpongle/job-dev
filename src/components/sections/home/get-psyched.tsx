@@ -71,13 +71,13 @@ const GetPsyched: React.FC<any> = ({blok}) => {
               <h3 className="font-accented text-3xl text-pink md:text-4xl">
                 {blok.title}
               </h3>
-              <div className="grow md:max-w-2xl">
+              <div className="md:max-w-2xl">
                 <h2 className="max-w-[14rem] text-4xl leading-none md:max-w-sm md:text-6xl">
                   {blok.subtitle}
                 </h2>
                 <p className="mt-4 md:text-xl">{blok.description}</p>
               </div>
-              <div className="flex items-center space-x-6 md:space-x-10">
+              <div className="mt-6 flex items-center space-x-6 md:space-x-10">
                 <a
                   href="https://surfapp.app.link/get-psyched"
                   className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
