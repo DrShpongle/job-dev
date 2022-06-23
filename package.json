@@ -21,7 +21,7 @@
     "react-player": "^2.10.1",
     "react-use": "^17.4.0",
     "screenfull": "5.1.0",
-    "storyblok-js-client": "^4.5.2",
+    "storyblok-js-client": "^4.5.3",
     "storyblok-rich-text-react-renderer": "^2.6.0",
     "swiper": "^8.2.3",
     "vercel": "^25.1.0"
