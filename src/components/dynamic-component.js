@@ -1,5 +1,5 @@
 import ScrollableHero from 'components/sections/home/scrollable-hero'
-import GetSurfApp from 'components/sections/home/get-surf-app'
+// import GetSurfApp from 'components/sections/home/get-surf-app'
 import GetPsyched from 'components/sections/home/get-psyched'
 import BePsyched from 'components/sections/home/be-psyched'
 import StayPsyched from 'components/sections/home/stay-psyched'
@@ -23,7 +23,7 @@ import Page from './page'
 
 const Components = {
   scrollableHero: ScrollableHero,
-  getSurfApp: GetSurfApp,
+  // getSurfApp: GetSurfApp,
   getPsyched: GetPsyched,
   bePsyched: BePsyched,
   stayPsyched: StayPsyched,
