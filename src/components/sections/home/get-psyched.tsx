@@ -51,16 +51,6 @@ const GetPsyched: React.FC<any> = ({blok}) => {
     [end - progressDelta / 4, end],
     ['0%', '-130%'],
   )
-  // const scrollIphone = useTransform(
-  //   scrollYProgress,
-  //   [start, end],
-  //   ['150%', variableOffset],
-  // )
-  // const scrollText = useTransform(
-  //   scrollYProgress,
-  //   [start * 1.15, end],
-  //   ['0%', '-150%'],
-  // )
 
   const triggerLogoAnimation = () => {
     if (parseInt(scrollIphone.get()) < parseInt(variableOffset) + 5) {
