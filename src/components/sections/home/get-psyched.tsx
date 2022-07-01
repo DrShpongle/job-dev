@@ -38,18 +38,20 @@ const GetPsyched: React.FC<any> = ({blok}) => {
 
   const transitionBlueScreen = useTransform(
     scrollYProgress,
-    [start + progressDelta / 4, start + (progressDelta / 4) * 2],
+    [start - progressDelta / 7, start + progressDelta / 4],
     [1, 0],
   )
-  const scrollIphone = useTransform(
-    scrollYProgress,
-    [end - progressDelta / 4, end],
-    ['150%', variableOffset],
-  )
+
   const scrollText = useTransform(
     scrollYProgress,
-    [end - progressDelta / 4, end],
+    [start + progressDelta / 3, start + (progressDelta / 3) * 2],
     ['0%', '-130%'],
+  )
+
+  const scrollIphone = useTransform(
+    scrollYProgress,
+    [end - (progressDelta / 3) * 2, end],
+    ['150%', variableOffset],
   )
 
   const triggerLogoAnimation = () => {
@@ -225,7 +227,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
           </div>
         </motion.div>
       </div>
-      <div className="h-[250vh]" />
+      <div className="h-[150vh]" />
     </section>
   )
 }
