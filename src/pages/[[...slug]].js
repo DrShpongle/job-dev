@@ -42,13 +42,13 @@ export default function Page(props) {
         description={seo.description}
         canonical={`${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}${
           actualStory.content.component === 'article' ? '/articles/' : '/'
-        }${actualStory.slug === 'teaser' ? '' : actualStory.slug}`}
+        }${actualStory.slug === 'home' ? '' : actualStory.slug}`}
         openGraph={{
           title: seo.title,
           description: seo.description,
           url: `${process.env.NEXT_PUBLIC_DEPLOYMENT_URL}${
             actualStory.content.component === 'article' ? '/articles/' : '/'
-          }${actualStory.slug === 'teaser' ? '' : actualStory.slug}`,
+          }${actualStory.slug === 'home' ? '' : actualStory.slug}`,
           images: [
             {
               url: seo?.image?.filename || defaultSeoImage,
@@ -102,7 +102,7 @@ export default function Page(props) {
 }
 
 export async function getStaticProps({params, preview = false}) {
-  let slug = params.slug ? params.slug.join('/') : 'teaser'
+  let slug = params.slug ? params.slug.join('/') : 'home'
 
   let sbParams = {
     version: 'published',
@@ -135,7 +135,7 @@ export async function getStaticPaths() {
 
     const slug = data.links[linkKey].slug
     let splittedSlug = slug.split('/')
-    if (slug === 'teaser') splittedSlug = false
+    if (slug === 'home') splittedSlug = false
 
     paths.push({params: {slug: splittedSlug}})
   })
