@@ -1,22 +1,7 @@
 import Storyblok from 'utils/storyblok-service'
 import axios from 'axios'
-import {isEmpty} from 'lodash'
 
 import {categories} from 'lib/categories'
-
-const getFeaturedArticles = async (arr: string[]) => {
-  const uuids = isEmpty(arr) ? [] : arr.join(',')
-  try {
-    const requestUrl: string = `https://api.storyblok.com/v1/cdn/stories?by_uuids=${uuids}&resolve_relations=article.category&token=${process.env.NEXT_PUBLIC_STORYBLOK_API_KEY}`
-    const {
-      data: {stories},
-    } = await axios.get(requestUrl)
-    return stories
-  } catch (err) {
-    console.error('getFeaturedArticles', err)
-    return null
-  }
-}
 
 const getArticlesAmount = async (category: string) => {
   const initial = await Storyblok.client.head(
@@ -52,10 +37,4 @@ const getCategoryName = (categoryId: string) => {
   return categoryKey ? categories[categoryKey].title : ''
 }
 
-export {
-  getFeaturedArticles,
-  getArticlesByCategory,
-  getArticlesAmount,
-  getCategoryName,
-  categories,
-}
+export {getArticlesByCategory, getArticlesAmount, getCategoryName, categories}

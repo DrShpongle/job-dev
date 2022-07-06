@@ -3,21 +3,19 @@ import Link from 'next/link'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import {isEmpty} from 'lodash'
 
-import {getFeaturedArticles} from 'utils/get-articles'
+import {getArticlesByCategory} from 'utils/get-articles'
 import Card from './card'
 
 const PsychMag = (props: any) => {
   const {blok} = props
   const [featuredStories, setFeaturedStories] = React.useState<any>(
-    [...Array(6).keys()].map(() => {
+    [...Array(4).keys()].map(() => {
       return {}
     }),
   )
   React.useEffect(() => {
-    getFeaturedArticles(blok.featured_articles).then((data) =>
-      setFeaturedStories(data),
-    )
-  }, [blok.featured_articles])
+    getArticlesByCategory('all', 4, 1).then((data) => setFeaturedStories(data))
+  }, [])
   return (
     <section
       className="bg-blue py-5 md:py-7 xl:py-8 2xl:py-12"
