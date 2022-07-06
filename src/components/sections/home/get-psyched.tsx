@@ -12,6 +12,7 @@ import {sbEditable} from '@storyblok/storyblok-editable'
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 import ImageWithBlur from 'components/image-with-blur'
+import {isTouchDevice} from 'utils/is-touch-device'
 
 const GetPsyched: React.FC<any> = ({blok}) => {
   const {width, height} = useWindowSize()
@@ -22,7 +23,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
 
   const progressDelta = end - start
 
-  let variableOffset = '50%'
+  let variableOffset = '40%'
   if (width >= 768 && width < 1024) {
     variableOffset = '25%'
   }
@@ -87,77 +88,81 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             </h1>
           </div>
         </motion.div>
-        <div className="h-1/2 pt-10 pb-6 md:h-[45%] md:pb-8 md:pt-16 lg:hidden">
+        <div className="h-1/2 pt-6 pb-6 md:h-[45%] md:pb-8 md:pt-16 lg:hidden">
           <div className="container h-full">
             <div className="flex h-full flex-col">
-              <h3 className="mt-4 font-accented text-3xl text-pink md:text-4xl lg:mt-0">
+              <h3 className="mt-4 font-accented text-2xl text-pink md:text-4xl lg:mt-0">
                 {blok.title}
               </h3>
               <div className="md:max-w-2xl">
-                <h2 className="max-w-[14rem] text-4xl leading-none md:max-w-sm md:text-6xl">
+                <h2 className="max-w-[14rem] text-3xl leading-none md:max-w-sm md:text-6xl">
                   {blok.subtitle}
                 </h2>
-                <p className="mt-4 md:text-xl">{blok.description}</p>
+                <p className="mt-2 md:text-xl">{blok.description}</p>
                 <Link href="/surf-app">
-                  <a className="mt-6 flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue">
+                  <a className="mt-2 flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue">
                     <span>Learn more</span>
                     <span className="translate-y-0.5">&#62;</span>
                   </a>
                 </Link>
               </div>
-              <div className="mt-6 flex w-full items-center space-x-3 lg:hidden">
-                <a
-                  href="https://surfapp.app.link/get-psyched"
-                  className="flex w-28 md:w-44 xl:w-auto"
-                >
-                  <ImageWithBlur
-                    src="/images/download-on-app-store.svg"
-                    width={240}
-                    height={80}
-                    alt="Download on App Store"
-                  />
-                </a>
-                <a
-                  href="https://surfapp.app.link/get-psyched"
-                  className="flex w-28 md:w-44 xl:w-auto"
-                >
-                  <ImageWithBlur
-                    src="/images/get-it-on-google-play.svg"
-                    width={240}
-                    height={80}
-                    alt="Get it on Google Play"
-                  />
-                </a>
-              </div>
+              {isTouchDevice() && (
+                <div className="mt-3 flex w-full items-center space-x-3 lg:hidden">
+                  <a
+                    href="https://surfapp.app.link/get-psyched"
+                    className="flex w-28 md:w-44 xl:w-auto"
+                  >
+                    <ImageWithBlur
+                      src="/images/download-on-app-store.svg"
+                      width={240}
+                      height={80}
+                      alt="Download on App Store"
+                    />
+                  </a>
+                  <a
+                    href="https://surfapp.app.link/get-psyched"
+                    className="flex w-28 md:w-44 xl:w-auto"
+                  >
+                    <ImageWithBlur
+                      src="/images/get-it-on-google-play.svg"
+                      width={240}
+                      height={80}
+                      alt="Get it on Google Play"
+                    />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
         <div className="absolute bottom-0 h-1/2 w-full before:absolute before:inset-0 before:bg-black/20 md:h-[55%] lg:h-full">
           <VideoEmbed url={blok.video_url.url} />
-          <div className="absolute top-6 z-20 hidden w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
-            <a
-              href="https://surfapp.app.link/get-psyched"
-              className="flex w-28 md:w-44 xl:w-auto"
-            >
-              <ImageWithBlur
-                src="/images/download-on-app-store.svg"
-                width={240}
-                height={80}
-                alt="Download on App Store"
-              />
-            </a>
-            <a
-              href="https://surfapp.app.link/get-psyched"
-              className="flex w-28 md:w-44 xl:w-auto"
-            >
-              <ImageWithBlur
-                src="/images/get-it-on-google-play.svg"
-                width={240}
-                height={80}
-                alt="Get it on Google Play"
-              />
-            </a>
-          </div>
+          {isTouchDevice() && (
+            <div className="absolute top-6 z-20 hidden w-full justify-center space-x-3 lg:right-12 lg:top-32 lg:flex lg:flex-col lg:items-end lg:space-x-0 lg:space-y-3">
+              <a
+                href="https://surfapp.app.link/get-psyched"
+                className="flex w-28 md:w-44 xl:w-auto"
+              >
+                <ImageWithBlur
+                  src="/images/download-on-app-store.svg"
+                  width={240}
+                  height={80}
+                  alt="Download on App Store"
+                />
+              </a>
+              <a
+                href="https://surfapp.app.link/get-psyched"
+                className="flex w-28 md:w-44 xl:w-auto"
+              >
+                <ImageWithBlur
+                  src="/images/get-it-on-google-play.svg"
+                  width={240}
+                  height={80}
+                  alt="Get it on Google Play"
+                />
+              </a>
+            </div>
+          )}
         </div>
         <motion.div
           className="relative top-40 z-10 hidden w-full px-12 will-change-transform lg:block"
@@ -175,13 +180,15 @@ const GetPsyched: React.FC<any> = ({blok}) => {
             </p>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:space-x-10">
-            <a
-              href="https://surfapp.app.link/get-psyched"
-              className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
-              aria-label="download app"
-            >
-              Download App
-            </a>
+            {isTouchDevice() && (
+              <a
+                href="https://surfapp.app.link/get-psyched"
+                className="rounded-full bg-pink px-6 py-2 font-headings uppercase text-white duration-150 md:px-10 md:py-4 md:text-xl xl:text-[29px] hover-hover:hover:bg-blue"
+                aria-label="download app"
+              >
+                Download App
+              </a>
+            )}
             <Link href="/surf-app">
               <a className="flex items-center space-x-1 font-headings text-pink duration-150 md:text-[29px] hover-hover:hover:text-blue">
                 <span>Learn more</span>

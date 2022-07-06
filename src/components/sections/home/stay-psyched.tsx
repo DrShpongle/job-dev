@@ -45,16 +45,16 @@ const StayPsyched: React.FC<any> = ({blok}) => {
                     target="_blank"
                     rel="noreferrer"
                     className={classNames(
-                      'group flex h-[400px] flex-col items-center space-y-7 overflow-hidden bg-white px-2 pt-4 pb-2 md:h-[498px] md:pt-7 md:pb-4',
+                      'group flex h-[400px] flex-col items-center space-y-7 overflow-hidden bg-white px-4 pt-4 pb-2 md:h-[498px] md:px-5 md:pt-5 md:pb-4',
                       i === 0 && 'col-span-2',
                     )}
                   >
                     {item?.image?.filename && (
-                      <div className="relative w-full grow duration-300 hover-hover:group-hover:scale-110">
+                      <div className="relative w-full grow duration-300 hover-hover:group-hover:scale-[1.05]">
                         <ImageWithBlur
                           src={item.image.filename}
                           layout="fill"
-                          objectFit="contain"
+                          objectFit="cover"
                           alt={item.title}
                         />
                       </div>
