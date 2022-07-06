@@ -24,7 +24,7 @@
     "storyblok-js-client": "^4.5.5",
     "storyblok-rich-text-react-renderer": "^2.6.0",
     "swiper": "^8.2.6",
-    "vercel": "^25.2.2"
+    "vercel": "^25.2.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
@@ -32,7 +32,7 @@
     "@types/node": "17.0.31",
     "@types/react": "17.0.43",
     "autoprefixer": "^10.4.7",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-next": "12.1.6",
     "lodash": "^4.17.21",
     "postcss": "^8.4.14",
