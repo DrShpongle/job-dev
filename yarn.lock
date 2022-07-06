@@ -2894,10 +2894,10 @@ stacktrace-js@^2.0.2:
     stack-generator "^2.0.5"
     stacktrace-gps "^3.0.4"
 
-storyblok-js-client@^4.5.5:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.5.tgz#00b34b7f6d0a66a486cfc700472c267a62652d7a"
-  integrity sha512-PP71RWU3/3XgiFPQ83hz0T2zuI6syoPePPtDGYJwkHOwarjf+rbbQVS1xx1CDvxlfQCFkv0fPenG9ekH1fHFXQ==
+storyblok-js-client@^4.5.6:
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.6.tgz#caab0bb1ead8618f84afcc35be9305883d85e628"
+  integrity sha512-S0cXKkEqGDibD32K48FFodjeu/+eF++nrHhrLzo/bKxrnyQiPChPccFAnzsJCQ6uMvRuVGZzjKwM5/sMeBRthg==
 
 storyblok-rich-text-react-renderer@^2.6.0:
   version "2.6.0"
