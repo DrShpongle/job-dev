@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {motion, useScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -9,7 +9,7 @@ const VisualiseAndDo = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
 
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   const scrollText = useTransform(scrollYProgress, [start, end], ['100%', '0%'])
 

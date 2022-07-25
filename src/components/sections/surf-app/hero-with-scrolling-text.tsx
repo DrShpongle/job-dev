@@ -1,11 +1,6 @@
 import * as React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useScroll, useTransform, useAnimation} from 'framer-motion'
 import {useMeasure, useWindowSize} from 'react-use'
 
 import {isBrowser} from 'utils/is-browser'
@@ -33,7 +28,7 @@ const HeroWithScrollableText = ({blok}: any) => {
   const controlsPhone = useAnimation()
 
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   const windowHeight = (isBrowser && window.innerHeight) || 0
 

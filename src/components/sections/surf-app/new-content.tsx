@@ -1,10 +1,5 @@
 import * as React from 'react'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useScroll, useTransform, useAnimation} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
@@ -14,7 +9,7 @@ const NewContent = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
 
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   const fadeInImages = useTransform(scrollYProgress, [start, end], [0, 1])
 

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import {motion, useViewportScroll, useTransform, useSpring} from 'framer-motion'
+import {motion, useScroll, useTransform, useSpring} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 import classNames from 'classnames'
 
@@ -13,7 +13,7 @@ const SuccessPoints = ({blok}: any) => {
   const refSection = React.useRef<HTMLDivElement>(null)
   const {width, height} = useWindowSize()
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   let topShift = 100
   if (width < 768) {

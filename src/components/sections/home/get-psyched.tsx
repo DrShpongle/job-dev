@@ -1,11 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useScroll, useTransform, useAnimation} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
@@ -18,7 +13,7 @@ const GetPsyched: React.FC<any> = ({blok}) => {
   const {width, height} = useWindowSize()
   const refSection = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
   const controlsLogo = useAnimation()
 
   const progressDelta = end - start

@@ -1,12 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import {useWindowSize} from 'react-use'
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useAnimation,
-} from 'framer-motion'
+import {motion, useScroll, useTransform, useAnimation} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
@@ -18,7 +13,7 @@ const ScrollableHero: React.FC<any> = ({blok}) => {
   const refSection = React.useRef<HTMLDivElement>(null)
   const {start, end} = useRefScrollProgress(refSection)
   const {width, height} = useWindowSize()
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
   const scale = useTransform(scrollYProgress, [start, end], ['33%', '100%'])
   const controlsText = useAnimation()
 

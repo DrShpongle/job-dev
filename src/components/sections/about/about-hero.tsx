@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {motion, useScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import ImageWithBlur from 'components/image-with-blur'
@@ -8,7 +8,7 @@ const AboutHero = ({blok}: any) => {
   const [_, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef(null)
   const {start, end} = useRefScrollProgress(refSection, 0)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   const descriptionsList = blok.descriptions_list.map((item: any) => {
     return item.description_line

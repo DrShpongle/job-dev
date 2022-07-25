@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {motion, useScroll, useTransform} from 'framer-motion'
 import {useWindowSize} from 'react-use'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
@@ -11,7 +11,7 @@ const BePsyched: React.FC<any> = ({blok}) => {
   const refBoards = React.useRef<HTMLDivElement>(null)
   const [showImage, setShowImage] = React.useState<boolean>(false)
   const {start, end} = useRefScrollProgressFromTop(refBoards)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
   const rangeX = useTransform(scrollYProgress, [start, end], ['-90%', '0%'])
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1])
   const rotate = useTransform(scrollYProgress, [start, end], [0, 720])

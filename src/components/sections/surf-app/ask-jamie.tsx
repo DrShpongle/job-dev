@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {motion, useViewportScroll, useTransform} from 'framer-motion'
+import {motion, useScroll, useTransform} from 'framer-motion'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
 import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
@@ -21,7 +21,7 @@ const AskJamie = ({blok}: any) => {
   })
 
   const {start, end} = useRefScrollProgress(refSection)
-  const {scrollYProgress} = useViewportScroll()
+  const {scrollYProgress} = useScroll()
 
   const scrollText = useTransform(scrollYProgress, [start, end], [0, 1])
 
