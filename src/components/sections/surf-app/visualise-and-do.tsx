@@ -6,12 +6,17 @@ import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
 import VideoEmbed from 'components/video-embed'
 
 const VisualiseAndDo = ({blok}: any) => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const refSection = React.useRef<HTMLDivElement>(null)
 
   const {start, end} = useRefScrollProgress(refSection)
   const {scrollYProgress} = useScroll()
 
   const scrollText = useTransform(scrollYProgress, [start, end], ['100%', '0%'])
+
+  React.useEffect(() => {
+    setIsMounted(true)
+  })
 
   return (
     <section
@@ -24,7 +29,7 @@ const VisualiseAndDo = ({blok}: any) => {
         style={{transform: 'translate3d(0,0,0)'}}
       >
         <div className="absolute left-0 top-0 h-full w-full">
-          <VideoEmbed url={blok.bg_video_url.url} />
+          {isMounted && <VideoEmbed url={blok.bg_video_url.url} />}
         </div>
         <motion.div
           className="flex h-full w-full flex-col justify-center will-change-transform"

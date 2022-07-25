@@ -48,10 +48,6 @@ const HeroWithScrollableText = ({blok}: any) => {
     return item.text_line
   })
 
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
   useIsomorphicLayoutEffect(() => {
     const triggerPhoneAnimation = () => {
       if (scrollText.get() < -windowHeight * 0.5) {
@@ -64,6 +60,10 @@ const HeroWithScrollableText = ({blok}: any) => {
     return () => {
       unsubscribeY()
     }
+  }, [])
+
+  React.useEffect(() => {
+    setIsMounted(true)
   }, [])
 
   return (
@@ -86,9 +86,9 @@ const HeroWithScrollableText = ({blok}: any) => {
               alt="waves"
             />
           </div>
-          <VideoEmbed url={blok.background_video.url} />
+          {isMounted && <VideoEmbed url={blok.background_video.url} />}
         </div>
-        {isMounted ? (
+        {isMounted && (
           <motion.div
             ref={refTextHolder}
             className="absolute bottom-0 z-10 w-full will-change-transform xl:px-20"
@@ -100,7 +100,7 @@ const HeroWithScrollableText = ({blok}: any) => {
               })}
             </div>
           </motion.div>
-        ) : null}
+        )}
         <div className="flex h-full w-full items-center justify-center pt-20">
           <motion.div
             className="relative z-10 will-change-transform"

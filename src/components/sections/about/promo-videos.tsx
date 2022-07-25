@@ -3,6 +3,10 @@ import VideoEmbed from 'components/video-embed'
 import {render} from 'storyblok-rich-text-react-renderer'
 
 const PromoVideos = ({blok}: any) => {
+  const [isMounted, setIsMounted] = React.useState<boolean>(false)
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
   return (
     <section
       className="bg-white py-12 md:py-20 xl:py-24"
@@ -20,10 +24,10 @@ const PromoVideos = ({blok}: any) => {
         </div>
         <div className="mt-8 grid gap-6 md:mt-16 md:grid-cols-2 md:gap-8 lg:gap-10 xl:mt-20 xl:gap-12 2xl:mt-24 2xl:gap-16">
           <div className="aspect-square">
-            <VideoEmbed url={blok.video_left.url} />
+            {isMounted && <VideoEmbed url={blok.video_left.url} />}
           </div>
           <div className="aspect-square">
-            <VideoEmbed url={blok.video_right.url} />
+            {isMounted && <VideoEmbed url={blok.video_right.url} />}
           </div>
         </div>
       </div>

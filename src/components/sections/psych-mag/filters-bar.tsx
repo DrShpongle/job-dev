@@ -116,12 +116,8 @@ const FilterMobile: React.FC<{
 const FiltersBar: React.FC<{
   currentCategory: string
 }> = ({currentCategory}) => {
-  const [isMounted, setIsMounted] = React.useState<boolean>(false)
   const {width} = useWindowSize()
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  return isMounted ? (
+  return (
     <div className="fixed top-10 z-10 w-full bg-pink md:top-14 lg:top-20">
       <div className="lg:container">
         {isFinite(width) && width < 1024 ? (
@@ -131,7 +127,7 @@ const FiltersBar: React.FC<{
         )}
       </div>
     </div>
-  ) : null
+  )
 }
 
 export default FiltersBar
