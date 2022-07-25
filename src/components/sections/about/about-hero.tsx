@@ -1,8 +1,8 @@
 import * as React from 'react'
+import Image from 'next/image'
 import {motion, useScroll, useTransform} from 'framer-motion'
 
 import {useRefScrollProgress} from 'hooks/useRefScrollProgress'
-import ImageWithBlur from 'components/image-with-blur'
 
 const AboutHero = ({blok}: any) => {
   const refSection = React.useRef(null)
@@ -30,7 +30,7 @@ const AboutHero = ({blok}: any) => {
         </div>
       </motion.div>
       <div className="container flex grow flex-col justify-end pt-72">
-        <ImageWithBlur
+        <Image
           src="/images/job.webp"
           width={1686}
           height={1124}
