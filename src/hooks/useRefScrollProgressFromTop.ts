@@ -5,7 +5,7 @@ import {useIsomorphicLayoutEffect} from 'hooks/useIsomorphicLayoytEffect'
 
 export const useRefScrollProgressFromTop = (inputRef: any) => {
   const {width} = useWindowSize()
-  const ref = inputRef || React.useRef()
+  const ref = inputRef
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(0)
   useIsomorphicLayoutEffect(() => {
