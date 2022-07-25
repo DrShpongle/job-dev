@@ -67,9 +67,7 @@ const Header = () => {
           <MobileMenuToggler
             onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
             isOpened={mobileMenuIsOpened}
-          >
-            X
-          </MobileMenuToggler>
+          />
           <MobileMenu
             data={navLinks}
             isOpened={mobileMenuIsOpened}
