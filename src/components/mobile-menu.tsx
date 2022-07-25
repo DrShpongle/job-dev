@@ -20,7 +20,7 @@ const variantsTogglerBottom = {
 }
 
 export const MobileMenuToggler: React.FC<{
-  onClick: () => void
+  onClick: any
   isOpened: boolean
 }> = ({onClick, isOpened}) => {
   return (
@@ -49,8 +49,8 @@ export const MobileMenuToggler: React.FC<{
 
 const MobileMenu: React.FC<{
   isOpened: boolean
-  onClick: () => void
-  data: any[]
+  onClick: any
+  data: {title: string; path: string; external?: boolean}[]
 }> = ({isOpened, onClick, data}) => {
   React.useEffect(() => {
     document.body.style.overflow = isOpened ? 'hidden' : ''
